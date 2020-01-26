@@ -13,6 +13,12 @@
 		D427DB3323DDC66900849489 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2C23DDC66900849489 /* main.swift */; };
 		D427DB3423DDC66900849489 /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
 		D427DB3523DDC66900849489 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
+		D4D03C1B23DDDE9D005B54B5 /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
+		D4D03C2123DDE104005B54B5 /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
+		D4D03C2223DDE113005B54B5 /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
+		D4D03C2323DDE113005B54B5 /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
+		D4D03C2423DDE113005B54B5 /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
+		D4D03C2523DDE113005B54B5 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +29,12 @@
 		D427DB2C23DDC66900849489 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Int_Extensions.swift; sourceTree = "<group>"; };
 		D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_String_Extensions.swift; sourceTree = "<group>"; };
-		D488EBA423DDCB250040737A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D49DBEA823DDC7A8004006AB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D4D03C1823DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Collection_Tests.swift; sourceTree = "<group>"; };
+		D4D03C1C23DDDE9D005B54B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4D411A823DDC5AD00D607F7 /* RVS_Generic_Swift_Toolbox */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D5954323DDC92E00473A49 /* .jazzy.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .jazzy.yaml; sourceTree = "<group>"; };
 		D4D5954423DDC92F00473A49 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		D4D5954523DDC93A00473A49 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -66,28 +72,43 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D49DBEA723DDC79D004006AB /* Meta */ = {
+		D49DBEA723DDC79D004006AB /* meta */ = {
 			isa = PBXGroup;
 			children = (
-				D49DBEA823DDC7A8004006AB /* README.md */,
-				D4D5954523DDC93A00473A49 /* CHANGELOG.md */,
-				D488EBA423DDCB250040737A /* LICENSE */,
 				D4D5954423DDC92F00473A49 /* .swiftlint.yml */,
 				D4D5954323DDC92E00473A49 /* .jazzy.yaml */,
 				D427413C23DDCAA0008AAB76 /* Warnings.xcconfig */,
+				D427DB2B23DDC66900849489 /* Main */,
+				D4D411A923DDC5AD00D607F7 /* Products */,
 			);
-			name = Meta;
+			name = meta;
+			sourceTree = "<group>";
+		};
+		D4D03C1923DDDE9D005B54B5 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */,
+				D4D03C1C23DDDE9D005B54B5 /* Info.plist */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		D4D03C2023DDE029005B54B5 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D427DB2823DDC66900849489 /* Collection Tools */,
+				D427DB2623DDC66900849489 /* Debug Tools */,
+				D427DB2D23DDC66900849489 /* Extensions */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		D4D4119F23DDC5AC00D607F7 = {
 			isa = PBXGroup;
 			children = (
-				D49DBEA723DDC79D004006AB /* Meta */,
-				D427DB2823DDC66900849489 /* Collection Tools */,
-				D427DB2623DDC66900849489 /* Debug Tools */,
-				D427DB2D23DDC66900849489 /* Extensions */,
-				D427DB2B23DDC66900849489 /* Main */,
-				D4D411A923DDC5AD00D607F7 /* Products */,
+				D49DBEA723DDC79D004006AB /* meta */,
+				D4D03C1923DDDE9D005B54B5 /* tests */,
+				D4D03C2023DDE029005B54B5 /* src */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				D4D411A823DDC5AD00D607F7 /* RVS_Generic_Swift_Toolbox */,
+				D4D03C1823DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +124,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D4D03C1723DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4D03C1D23DDDE9D005B54B5 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests" */;
+			buildPhases = (
+				D4D03C1423DDDE9D005B54B5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RVS_Generic_Swift_Toolbox_Tests;
+			productName = RVS_Generic_Swift_Toolbox_Tests;
+			productReference = D4D03C1823DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D4D411A723DDC5AD00D607F7 /* RVS_Generic_Swift_Toolbox */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4D411AF23DDC5AD00D607F7 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox" */;
@@ -128,6 +165,9 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
+					D4D03C1723DDDE9D005B54B5 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					D4D411A723DDC5AD00D607F7 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -147,6 +187,7 @@
 			projectRoot = "";
 			targets = (
 				D4D411A723DDC5AD00D607F7 /* RVS_Generic_Swift_Toolbox */,
+				D4D03C1723DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -173,6 +214,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D4D03C1423DDDE9D005B54B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4D03C2523DDE113005B54B5 /* RVS_String_Extensions.swift in Sources */,
+				D4D03C1B23DDDE9D005B54B5 /* RVS_Collection_Tests.swift in Sources */,
+				D4D03C2323DDE113005B54B5 /* RVS_DebugTools.swift in Sources */,
+				D4D03C2123DDE104005B54B5 /* RVS_FIFOQueue.swift in Sources */,
+				D4D03C2223DDE113005B54B5 /* RVS_SequenceProtocol.swift in Sources */,
+				D4D03C2423DDE113005B54B5 /* RVS_Int_Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4D411A423DDC5AD00D607F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,6 +243,44 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		D4D03C1E23DDDE9D005B54B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				INFOPLIST_FILE = tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D4D03C1F23DDDE9D005B54B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				INFOPLIST_FILE = tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		D4D411AD23DDC5AD00D607F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D427413C23DDCAA0008AAB76 /* Warnings.xcconfig */;
@@ -329,6 +421,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D4D03C1D23DDDE9D005B54B5 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4D03C1E23DDDE9D005B54B5 /* Debug */,
+				D4D03C1F23DDDE9D005B54B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D4D411A323DDC5AD00D607F7 /* Build configuration list for PBXProject "RVS_Generic_Swift_Toolbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

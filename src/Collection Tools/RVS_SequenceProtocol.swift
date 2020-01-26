@@ -35,7 +35,7 @@ public protocol RVS_SequenceProtocol: Sequence {
     /**
      :nodoc: The implementor is required to have an Array of Element (required by Sequence).
      */
-    var sequence_contents: [Element] { get set }
+    var sequence_contents: Array<Element> { get set }
     
     /* ################################################################## */
     /**
@@ -83,7 +83,7 @@ extension RVS_SequenceProtocol {
      - parameter inIndex: The 0-based integer index. Must be less than the total count of elements.
      */
     public subscript(_ inIndex: Int) -> Element {
-        precondition((0..<count).contains(inIndex))   // Standard precondition. Index needs to be 0 or greater, and less than the count.
+        precondition((0..<count).contains(inIndex), "Index out of range.")   // Standard precondition. Index needs to be 0 or greater, and less than the count.
         
         return sequence_contents[inIndex]
     }

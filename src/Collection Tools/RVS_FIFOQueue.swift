@@ -62,6 +62,12 @@ public protocol OLEB_Queue {
      Removes and returns the first element from the beginning (front) of the queue. nil, if the queue is empty.
      */
     mutating func dequeue() -> Element?
+    
+    /* ################################################################## */
+    /**
+     Deletes all data in the queue.
+     */
+    mutating func removeAll()
 }
 
 /* ###################################################################################################################################### */

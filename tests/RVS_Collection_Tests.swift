@@ -81,4 +81,53 @@ class RVS_FIFOQueue_Tests: XCTestCase {
         XCTAssertEqual(0, testTargetStringArray.count)
         XCTAssertEqual("HOWRU", valueStringArray)
     }
+    
+    /* ################################################################## */
+    /**
+     This uses a typless type, and tests the iterator functionality of the queue struct.
+     */
+    func testMultipleDifferentValuesAndIterator() {
+        var testTarget = RVS_FIFOQueue<Any?>()
+        XCTAssertEqual(0, testTarget.count)
+        testTarget.enqueue(0)
+        testTarget.enqueue(1)
+        testTarget.enqueue("One")
+        testTarget.enqueue("Two")
+        XCTAssertEqual(4, testTarget.count)
+        
+        for item in testTarget {
+            if let item = item as? Int {
+                XCTAssertTrue(0 == item || 1 == item)
+            } else if let item = item as? String {
+                XCTAssertTrue("One" == item || "Two" == item)
+            }
+        }
+        
+        XCTAssertEqual(4, testTarget.count, "Items should not have been dequeued by the iterator.")
+        
+        testTarget.removeAll()
+        
+        XCTAssertTrue(testTarget.isEmpty)
+        
+        let testArray: [Any] = [0, 1, "One", "Two"]
+        
+        testTarget.enqueue(testArray)
+        XCTAssertEqual(1, testTarget.count, "Should count as 1 item.")
+        
+        if let dequeued = testTarget.dequeue() as? [Any] {
+            XCTAssertTrue(testTarget.isEmpty)
+            XCTAssertEqual(testArray.count, dequeued.count)
+            for item in dequeued {
+                if let item = item as? Int {
+                    XCTAssertTrue(0 == item || 1 == item)
+                } else if let item = item as? String {
+                    XCTAssertTrue("One" == item || "Two" == item)
+                } else {
+                    XCTFail("Illegal type!")
+                }
+            }
+        } else {
+            XCTFail("This should not be empty.")
+        }
+    }
 }

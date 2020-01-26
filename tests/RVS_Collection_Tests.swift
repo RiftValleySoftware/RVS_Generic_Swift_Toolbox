@@ -161,4 +161,68 @@ class RVS_FIFOQueue_Tests: XCTestCase {
             XCTAssertEqual(lastValue - 1, value)
         }
     }
+    
+    /* ################################################################## */
+    /**
+     This tests enqueing and dequeueing in a mixed manner.
+     */
+    func testMixedQueueing() {
+        let testCount = 5000
+        var indexAdd = 0
+        var indexRemove = 0
+
+        var testTargetInt = RVS_FIFOQueue<Int>()
+        XCTAssertEqual(0, testTargetInt.count)
+        
+        let initializerArray: [Int] = [Int](0..<(testCount * 10))
+        var expectation = XCTestExpectation()
+        
+        func enqueuenext() {
+            let ind = indexAdd
+            indexAdd += 1
+            let val = initializerArray[ind]
+            testTargetInt.enqueue(val)
+            expectation.fulfill()
+        }
+        
+        func dequeuenext() {
+            if let val = testTargetInt.dequeue() {
+                XCTAssertEqual(indexRemove, val)
+                indexRemove += 1
+                expectation.fulfill()
+            } else {
+                XCTAssertTrue(testTargetInt.isEmpty)
+            }
+        }
+        
+        expectation.expectedFulfillmentCount = testCount * 2
+        
+        for _ in 0..<testCount {
+            enqueuenext()
+            enqueuenext()
+            dequeuenext()
+            enqueuenext()
+            dequeuenext()
+            dequeuenext()
+            enqueuenext()
+            dequeuenext()
+            dequeuenext()
+            enqueuenext()
+            enqueuenext()
+            enqueuenext()
+            dequeuenext()
+            enqueuenext()
+            enqueuenext()
+            enqueuenext()
+            dequeuenext()
+        }
+
+        while let val = testTargetInt.dequeue() {
+            XCTAssertEqual(indexRemove, val)
+            indexRemove += 1
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
 }

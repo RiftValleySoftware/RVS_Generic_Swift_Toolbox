@@ -154,11 +154,11 @@ class RVS_FIFOQueue_Tests: XCTestCase {
         
         XCTAssertEqual(testCount, testTargetInt.count, "Should not have been dequeued.")
         
-        var lastValue = -1
+        var lastValue = 0
         while let value = testTargetInt.dequeue() {
-            XCTAssertEqual(testTargetInt.count, initializerArray.count - (value + 1))
-            XCTAssertEqual(lastValue + 1, value)
-            lastValue = value
+            lastValue += 1
+            XCTAssertEqual(testTargetInt.count, initializerArray.count - lastValue)
+            XCTAssertEqual(lastValue - 1, value)
         }
     }
 }

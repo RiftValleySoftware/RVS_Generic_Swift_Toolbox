@@ -34,12 +34,20 @@ class RVS_FIFOQueue_Tests: XCTestCase {
      Just tests the simple creation of the class instance, and stores and removes an element in order to assure type.
      */
     func testSimpleInstantiation() {
-        var testTarget = RVS_FIFOQueue<Int>()
-        XCTAssertEqual(0, testTarget.count)
-        testTarget.enqueue(10)
-        XCTAssertEqual(1, testTarget.count)
-        let val = testTarget.dequeue()
-        XCTAssertEqual(0, testTarget.count)
-        XCTAssertEqual(10, val)
+        var testTargetInt = RVS_FIFOQueue<Int>()
+        XCTAssertEqual(0, testTargetInt.count)
+        testTargetInt.enqueue(10)
+        XCTAssertEqual(1, testTargetInt.count)
+        let valueInt = testTargetInt.dequeue()
+        XCTAssertEqual(0, testTargetInt.count)
+        XCTAssertEqual(10, valueInt)
+        
+        var testTargetString = RVS_FIFOQueue<String>()
+        XCTAssertEqual(0, testTargetString.count)
+        testTargetString.enqueue("HI HOWAYA")
+        XCTAssertEqual(1, testTargetString.count)
+        let valueString = testTargetString.dequeue()
+        XCTAssertEqual(0, testTargetString.count)
+        XCTAssertEqual("HI HOWAYA", valueString)
     }
 }

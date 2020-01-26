@@ -8,4 +8,4 @@
 
 import Foundation
 
-print("Hello, World!")
+print("What are you looking for here? Run the tests, dude.")

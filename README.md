@@ -1,4 +1,4 @@
-![Icon](icon.png)
+![Icon](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/raw/master/icon.png)
 
 RVS_Generic_Swift_Toolbox
 =

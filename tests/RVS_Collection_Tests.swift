@@ -31,7 +31,7 @@ import XCTest
 class RVS_FIFOQueue_Tests: XCTestCase {
     /* ################################################################## */
     /**
-     Just tests the simple creation of the class instance, and stores and removes an element in order to assure type.
+     Just tests the simple creation of the class instance, and stores and removes some elements in order to assure type.
      */
     func testSimpleInstantiation() {
         var testTargetInt = RVS_FIFOQueue<Int>()
@@ -42,6 +42,22 @@ class RVS_FIFOQueue_Tests: XCTestCase {
         XCTAssertEqual(0, testTargetInt.count)
         XCTAssertEqual(10, valueInt)
         
+        var testTargetIntArray = RVS_FIFOQueue<Int>()
+        XCTAssertEqual(0, testTargetIntArray.count)
+        testTargetIntArray.enqueue([0, 1])
+        XCTAssertEqual(2, testTargetIntArray.count)
+        testTargetIntArray.enqueue(2)
+        XCTAssertEqual(3, testTargetIntArray.count)
+        var valueIntArray = testTargetIntArray.dequeue()
+        XCTAssertEqual(2, testTargetIntArray.count)
+        XCTAssertEqual(0, valueIntArray)
+        valueIntArray = testTargetIntArray.dequeue()
+        XCTAssertEqual(1, testTargetIntArray.count)
+        XCTAssertEqual(1, valueIntArray)
+        valueIntArray = testTargetIntArray.dequeue()
+        XCTAssertEqual(0, testTargetIntArray.count)
+        XCTAssertEqual(2, valueIntArray)
+
         var testTargetString = RVS_FIFOQueue<String>()
         XCTAssertEqual(0, testTargetString.count)
         testTargetString.enqueue("HI HOWAYA")
@@ -49,5 +65,20 @@ class RVS_FIFOQueue_Tests: XCTestCase {
         let valueString = testTargetString.dequeue()
         XCTAssertEqual(0, testTargetString.count)
         XCTAssertEqual("HI HOWAYA", valueString)
+        
+        var testTargetStringArray = RVS_FIFOQueue<String>()
+        XCTAssertEqual(0, testTargetStringArray.count)
+        testTargetStringArray.enqueue(["HI HOWAYA", "IM FINE"])
+        XCTAssertEqual(2, testTargetStringArray.count)
+        testTargetStringArray.enqueue("HOWRU")
+        var valueStringArray = testTargetStringArray.dequeue()
+        XCTAssertEqual(2, testTargetStringArray.count)
+        XCTAssertEqual("HI HOWAYA", valueStringArray)
+        valueStringArray = testTargetStringArray.dequeue()
+        XCTAssertEqual(1, testTargetStringArray.count)
+        XCTAssertEqual("IM FINE", valueStringArray)
+        valueStringArray = testTargetStringArray.dequeue()
+        XCTAssertEqual(0, testTargetStringArray.count)
+        XCTAssertEqual("HOWRU", valueStringArray)
     }
 }

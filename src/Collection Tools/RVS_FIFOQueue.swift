@@ -120,7 +120,7 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
     /**
      Removes and returns from the front of the queue.
      Returns nil for an empty queue.
-     - returns: The first Element. Nil, if none.
+     - returns: The first Element. Nil, if none. Can be ignored.
      - Complexity: Amortized O(1).
      The "Amortized" is because there's a one-time "charge" for dumping the right queue into the left queue.
      The way that this works, is that the right queue is a "staging" queue. It's cheap to shove elements onto the top.
@@ -128,6 +128,7 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
      When the left queue is empty, we dump the entire right (staging) queue into it, as reversed.
      The idea is to keep all the operations on the tops of the queues. That prevents massive memory movements every time we access the bottom.
      */
+    @discardableResult
     mutating public func dequeue() -> Element? {
         if _leftQueue.isEmpty { // If we are empty, then we simply dump the right queue into the left queue, all at once, as reversed.
             _leftQueue = _rightQueue.reversed()

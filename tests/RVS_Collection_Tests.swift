@@ -130,4 +130,35 @@ class RVS_FIFOQueue_Tests: XCTestCase {
             XCTFail("This should not be empty.")
         }
     }
+    
+    /* ################################################################## */
+    /**
+     This simply jamss a whole bunch of values into a queue, and then makes sure that it iterates and dequeues properly.
+     */
+    func testABigBunchOfIntValues() {
+        let testCount = 5000
+        
+        var testTargetInt = RVS_FIFOQueue<Int>()
+        XCTAssertEqual(0, testTargetInt.count)
+        let initializerArray: [Int] = [Int](0..<testCount)  // This is a cheap way to get an incremented range of ints in an Array.
+        testTargetInt.enqueue(initializerArray)
+        XCTAssertEqual(testCount, testTargetInt.count)
+        XCTAssertEqual(0, testTargetInt[0])
+        XCTAssertEqual(testCount - 1, testTargetInt[testCount - 1])
+        XCTAssertEqual(testCount, testTargetInt.count, "Should not have been dequeued.")
+        
+        for value in testTargetInt.enumerated() {
+            XCTAssertEqual(value.offset, value.element)
+            XCTAssertEqual(value.offset, initializerArray[value.offset])
+        }
+        
+        XCTAssertEqual(testCount, testTargetInt.count, "Should not have been dequeued.")
+        
+        var lastValue = -1
+        while let value = testTargetInt.dequeue() {
+            XCTAssertEqual(testTargetInt.count, initializerArray.count - (value + 1))
+            XCTAssertEqual(lastValue + 1, value)
+            lastValue = value
+        }
+    }
 }

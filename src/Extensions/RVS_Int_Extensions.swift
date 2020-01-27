@@ -26,7 +26,7 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 /**
  These are a variety of cool Int extensions that add some great extra cheese on the pizza.
  */
-public extension Int {
+public extension UInt {
     /* ################################################################## */
     /**
      This method allows us to mask a discrete bit range within the number, and return its value as a basic Int.
@@ -58,6 +58,7 @@ public extension Int {
      This is BIT-based, not BYTE-based, and assumes the number is in a linear (bigendian) format, in which the least significant bit is the rightmost one (position one).
      In reality, this doesn't matter, as the language takes care of transposing byte order.
      
+     The value of the Int must be positive. It is declared as an Int, in order to provide as much flexibility as possible.
      The parameters must be positive, but are declared as signed Int, in order to be as flexible as possible.
      
      - parameters:
@@ -66,14 +67,12 @@ public extension Int {
      
      - returns: An Int, with the masked value.
      */
-    func maskedValue(firstPlace: Int, runLength: Int) -> Int {
-        precondition(0 <= firstPlace, "First Place Must be Positive")
-        precondition(0 <= runLength, "Run Length Must be Positive")
+    func maskedValue(firstPlace: UInt, runLength: UInt) -> UInt {
         precondition((firstPlace + runLength) <= (MemoryLayout<Self>.size * 8), "Requested Mask is Out of Bounds")
         guard 0 < runLength else { return 0 }   // Shortcut, if they aren't looking for anything.
         // We create a mask, starting at bit one, then shift our value down to fit that mask.
-        let mask = UInt64(1 << runLength) - 1   // Simple way to do a 1-mask.
-        let shifted = UInt64(self >> firstPlace)
-        return Int(shifted & mask)
+        let mask = UInt((1 << runLength) - 1)  // Simple way to do a 1-mask.
+        let shifted = self >> firstPlace
+        return shifted & mask
     }
 }

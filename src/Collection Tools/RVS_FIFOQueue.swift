@@ -29,6 +29,8 @@ import Foundation
  This was taken straight from the objc.io book "Advanced Swift." It's so damn useful, that I have it made into a standard tool.
  
  The original design was done by Ole Begemann and Chris Eidhoff. I have modified it slightly; but not much.
+ 
+ It is fast all git-go.
 
  A type that can efficiently "enqueue" and "dequeue" elements. It works on one element at a time. You cannot dequeue groups of elements.
  */
@@ -86,6 +88,7 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
     /* ################################################################## */
     /**
      This will push the single element into the 0th (first) place.
+     It is not an efficient operation, but may be necessary, in some cases.
      - parameter inNewElement: The Element to be enqueued (placed on the front of the list).
      */
     mutating public func cutTheLine(_ inNewElement: Element) {
@@ -113,7 +116,7 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
     /**
      Add an Array of Element to the end of the queue.
      - parameter inNewElements: The Elements to be enqueued (placed on the end of the list). They are appened in the order presented.
-     - Complexity: O(m).
+     - Complexity: O(n), where n is the number of elements in the input Array.
      */
     mutating public func enqueue(_ inNewElements: [Element]) {
         #if DEBUG

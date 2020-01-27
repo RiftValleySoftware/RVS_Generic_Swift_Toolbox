@@ -29,19 +29,31 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 public extension Int {
     /* ################################################################## */
     /**
-     This method allows us to mask a certaing bit range within the number, and return its value as a basic Int.
+     This method allows us to mask a discrete bit range within the number, and return its value as a basic Int.
      For example, if we have the hex number 0xF30 (3888 decimal, or 111100110000 binary), we can mask parts of it to get masked values, like so:
      ```
+        // 111100110000 (Value, in binary)
+     
+        // 111111111111 (Mask, in binary)
+        let wholeValue = 3888.maskedValue(firstPlace: 0, runLength: 12)     // Returns 3888
+        // 111111110000
+        let lastByte = 3888.maskedValue(firstPlace: 4, runLength: 8)        // Returns 243
+        // 000000000011
         let lowestTwoBits = 3888.maskedValue(firstPlace: 0, runLength: 2)   // Returns 0
-        let lowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 4, runLength: 2)   // Returns 3
-        let secondToLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 5, runLength: 2)   // Returns 1
-        let thirdFromLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 6, runLength: 2)   // Returns 0
-        let wholeValue = 3888.maskedValue(firstPlace: 0, runLength: 12) // Returns 3888
+        // 000000111100
+        let middleTwelve = 3888.maskedValue(firstPlace: 2, runLength: 4)    // Returns 12
+        // 000111100000
+        let middleNine = 3888.maskedValue(firstPlace: 5, runLength: 4)      // Returns 9
+        // 011111111111
         let theFirstElevenBits = 3888.maskedValue(firstPlace: 0, runLength: 11) // Returns 1840
+        // 111111111110
         let theLastElevenBits = 3888.maskedValue(firstPlace: 1, runLength: 11)  // Returns 1944
-        let middleTwelve = 3888.maskedValue(firstPlace: 2, runLength: 4)  // Returns 12
-        let middleNine = 3888.maskedValue(firstPlace: 5, runLength: 4)  // Returns 9
-        let lastByte = 3888.maskedValue(firstPlace: 4, runLength: 8)    // Returns 243
+        // 000000110000
+        let lowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 4, runLength: 2)          // Returns 3
+        // 000001100000
+        let secondToLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 5, runLength: 2)  // Returns 1
+        // 000011000000
+        let thirdFromLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 6, runLength: 2) // Returns 0
      ```
      This is BIT-based, not BYTE-based, and assumes the number is in a linear (bigendian) format, in which the least significant bit is the rightmost one (position one).
      In reality, this doesn't matter, as the language takes care of transposing byte order.

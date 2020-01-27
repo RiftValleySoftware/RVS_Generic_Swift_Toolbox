@@ -226,3 +226,146 @@ class RVS_FIFOQueue_Tests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 }
+
+/* ###################################################################################################################################### */
+// MARK: - RVS_SequenceProtocol_Tests -
+/* ###################################################################################################################################### */
+/**
+ These are specific unit tests for the RVS_SequenceProtocol protocol.
+ */
+class RVS_SequenceProtocol_Tests: XCTestCase {
+    /* ################################################################################################################################## */
+    // MARK: - TestProtocolImplementation_Int -
+    /* ################################################################################################################################## */
+    /**
+     This is a very simple implementation with an Int data type.
+     */
+    struct TestProtocolImplementation_Int: RVS_SequenceProtocol {
+        typealias Element = Int
+        var sequence_contents: [Element] = []
+    }
+    
+    /* ################################################################################################################################## */
+    // MARK: - TestProtocolImplementation_String -
+    /* ################################################################################################################################## */
+    /**
+     This is a very simple implementation with a String data type.
+     */
+    struct TestProtocolImplementation_String: RVS_SequenceProtocol {
+        typealias Element = String
+        var sequence_contents: [Element] = []
+    }
+    
+    /* ################################################################################################################################## */
+    // MARK: - TestProtocolImplementation_Tuple -
+    /* ################################################################################################################################## */
+    /**
+     This is a very simple implementation with a special Tuple data type.
+     */
+    struct TestProtocolImplementation_Tuple: RVS_SequenceProtocol {
+        typealias Element = (intVal: Int, stringVal: String)
+        var sequence_contents: [Element] = []
+    }
+    
+    /* ################################################################################################################################## */
+    // MARK: - TestProtocolImplementation_Tuple_Class -
+    /* ################################################################################################################################## */
+    /**
+     This is a very simple implementation with a special Tuple data type, but as a class.
+     */
+    class TestProtocolImplementation_Tuple_Class: RVS_SequenceProtocol {
+        typealias Element = (intVal: Int, stringVal: String)
+        var sequence_contents: [Element] = []
+        required init(sequence_contents inSequence_contents: [(intVal: Int, stringVal: String)]) {
+            sequence_contents = inSequence_contents
+        }
+    }
+
+    /* ################################################################## */
+    /**
+     Just tests the simple creation of the class instances, and iterates them.
+     
+     This pretty much tests everything we need for this simple protocol.
+     */
+    func testSimpleInstantiation() {
+        let testTargetInt = TestProtocolImplementation_Int(sequence_contents: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        
+        XCTAssertEqual(10, testTargetInt.count)
+
+        for testValue in testTargetInt.enumerated() {
+            XCTAssertEqual(testValue.offset, testValue.element)
+        }
+        
+        for index in 0..<testTargetInt.count {
+            XCTAssertEqual(index, testTargetInt[index])
+        }
+
+        XCTAssertEqual(10, testTargetInt.count)
+
+        let testTargetString = TestProtocolImplementation_String(sequence_contents: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+        
+        XCTAssertEqual(10, testTargetString.count)
+
+        for testValue in testTargetString.enumerated() {
+            XCTAssertEqual(testValue.offset, Int(testValue.element, radix: 10) ?? -1)
+        }
+        
+        for index in 0..<testTargetString.count {
+            XCTAssertEqual(index, Int(testTargetString[index], radix: 10) ?? -1)
+        }
+
+        XCTAssertEqual(10, testTargetString.count)
+        
+        var testTargetTuple = TestProtocolImplementation_Tuple(sequence_contents: [ (intVal: 0, stringVal: "0"),
+                                                                                    (intVal: 1, stringVal: "1"),
+                                                                                    (intVal: 2, stringVal: "2"),
+                                                                                    (intVal: 3, stringVal: "3"),
+                                                                                    (intVal: 4, stringVal: "4"),
+                                                                                    (intVal: 5, stringVal: "5"),
+                                                                                    (intVal: 6, stringVal: "6"),
+                                                                                    (intVal: 7, stringVal: "7"),
+                                                                                    (intVal: 8, stringVal: "8"),
+                                                                                    (intVal: 9, stringVal: "9")
+        ])
+        XCTAssertEqual(10, testTargetTuple.count)
+        
+        for testValue in testTargetTuple.enumerated() {
+            XCTAssertEqual(testValue.offset, testValue.element.intVal)
+            XCTAssertEqual(testValue.offset, Int(testValue.element.stringVal, radix: 10) ?? -1)
+        }
+        
+        for index in 0..<testTargetTuple.count {
+            XCTAssertEqual(index, testTargetTuple[index].intVal)
+            XCTAssertEqual(index, Int(testTargetTuple[index].stringVal, radix: 10) ?? -1)
+        }
+
+        XCTAssertEqual(10, testTargetTuple.count)
+        testTargetTuple.removeAll()
+        XCTAssertTrue(testTargetTuple.isEmpty)
+        XCTAssertEqual(0, testTargetTuple.count)
+        
+        var testTargetTupleClass = TestProtocolImplementation_Tuple_Class(sequence_contents: [  (intVal: 0, stringVal: "0"),
+                                                                                                (intVal: 1, stringVal: "1"),
+                                                                                                (intVal: 2, stringVal: "2"),
+                                                                                                (intVal: 3, stringVal: "3"),
+                                                                                                (intVal: 4, stringVal: "4"),
+                                                                                                (intVal: 5, stringVal: "5"),
+                                                                                                (intVal: 6, stringVal: "6"),
+                                                                                                (intVal: 7, stringVal: "7"),
+                                                                                                (intVal: 8, stringVal: "8"),
+                                                                                                (intVal: 9, stringVal: "9")
+        ])
+        
+        XCTAssertEqual(10, testTargetTupleClass.count)
+
+        for testValue in testTargetTupleClass.enumerated() {
+            XCTAssertEqual(testValue.offset, testValue.element.intVal)
+            XCTAssertEqual(testValue.offset, Int(testValue.element.stringVal, radix: 10) ?? -1)
+        }
+        
+        XCTAssertEqual(10, testTargetTupleClass.count)
+        testTargetTupleClass.removeAll()
+        XCTAssertTrue(testTargetTupleClass.isEmpty)
+        XCTAssertEqual(0, testTargetTupleClass.count)
+    }
+}

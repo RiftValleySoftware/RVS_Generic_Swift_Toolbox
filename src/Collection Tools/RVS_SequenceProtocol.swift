@@ -29,6 +29,8 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
  You'll need to set up a sequence_contents Array (read/write), and set the Element type, and that's about all.
  
  This also gives you a read-only subscript.
+ 
+ This cannot be applied to enums, as it requires a stored property.
  */
 public protocol RVS_SequenceProtocol: Sequence {
     /* ################################################################## */
@@ -44,6 +46,18 @@ public protocol RVS_SequenceProtocol: Sequence {
      - parameter index: The 0-based index to subscript. Must be less than count.
      */
     subscript(_ inIndex: Int) -> Element { get }
+    
+    /* ################################################################## */
+    /**
+     - parameter sequence_contents: An Array of the element type, to initialize the value.
+     */
+    init(sequence_contents: [Element])
+    
+    /* ################################################################## */
+    /**
+     This allows us to remove all the elements in the sequence. It is a mutating function/method.
+     */
+    mutating func removeAll()
 }
 
 /* ###################################################################################################################################### */
@@ -58,6 +72,14 @@ extension RVS_SequenceProtocol {
      */
     public func makeIterator() -> Array<Element>.Iterator {
         return sequence_contents.makeIterator()
+    }
+    
+    /* ################################################################## */
+    /**
+     Default implementation should do fine for us.
+     */
+    public mutating func removeAll() {
+        sequence_contents = []
     }
     
     /* ################################################################## */

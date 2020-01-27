@@ -72,9 +72,10 @@ public extension UInt {
         precondition((inFirstPlace + inRunLength) <= maxRunLength, "Requested Mask is Out of Bounds")
         guard 0 < inRunLength else { return 0 }   // Shortcut, if they aren't looking for anything.
         // We create a mask, starting at bit one, then shift our value down to fit that mask.
-        let mask = inRunLength == maxRunLength ? UInt(0xFFFFFFFFFFFFFFFF) : inRunLength == (maxRunLength - 1) ? UInt(0x7FFFFFFFFFFFFFFF) : UInt((1 << inRunLength) - 1)  // Simple way to do a 1-mask.
+        // We do the crazy ternary operator stuff, because the library can't really do our shortcut for the top byte.
+        let mask = UInt64(0xFFFFFFFFFFFFFFFF) >> (UInt64(maxRunLength) - UInt64(inRunLength))
         let shifted = UInt(self >> inFirstPlace)
-        return shifted & mask
+        return shifted & UInt(mask)
     }
 }
 

@@ -134,8 +134,10 @@ class RVS_Int_Extensions_Tests: XCTestCase {
         // 000011000000
         XCTAssertEqual(0, UInt(3888).maskedValue(firstPlace: 6, runLength: 2))
         
-        for indent in 0...UInt(MemoryLayout<UInt>.size * 8) {
-            XCTAssertEqual(UInt.max >> indent, (UInt.max).maskedValue(firstPlace: 0, runLength: UInt(MemoryLayout<UInt>.size * 8) - indent))
+        let maxSize = UInt(MemoryLayout<Int>.size * 8)
+
+        for indent in 0...maxSize {
+            XCTAssertEqual(UInt.max >> indent, (UInt.max).maskedValue(firstPlace: 0, runLength: UInt(maxSize - indent)))
         }
     }
 }

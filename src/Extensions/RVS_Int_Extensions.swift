@@ -65,14 +65,70 @@ public extension UInt {
         - firstPlace: The 1-based (1 is the first bit) starting position for the mask. Must be a positive integer.
         - runLength: The inclusive (includes the starting place) number of bits to mask. Must be a positive integer. If 0, then the return will always be 0.
      
+     - returns: An Unsigned Int, with the masked value.
+     */
+    func maskedValue(firstPlace inFirstPlace: UInt, runLength inRunLength: UInt) -> UInt {
+        let maxRunLength = (MemoryLayout<Self>.size * 8)
+        precondition((inFirstPlace + inRunLength) <= maxRunLength, "Requested Mask is Out of Bounds")
+        guard 0 < inRunLength else { return 0 }   // Shortcut, if they aren't looking for anything.
+        // We create a mask, starting at bit one, then shift our value down to fit that mask.
+        let mask = inRunLength == maxRunLength ? UInt(0xFFFFFFFFFFFFFFFF) : inRunLength == (maxRunLength - 1) ? UInt(0x7FFFFFFFFFFFFFFF) : UInt((1 << inRunLength) - 1)  // Simple way to do a 1-mask.
+        let shifted = UInt(self >> inFirstPlace)
+        return shifted & mask
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - Int Extension -
+/* ###################################################################################################################################### */
+/**
+ These are a variety of cool Int extensions that add some great extra cheese on the pizza.
+ */
+public extension Int {
+    /* ################################################################## */
+    /**
+     This method allows us to mask a discrete bit range within the number, and return its value as a basic Int.
+     For example, if we have the hex number 0xF30 (3888 decimal, or 111100110000 binary), we can mask parts of it to get masked values, like so:
+     ```
+        // 111100110000 (Value, in binary)
+     
+        // 111111111111 (Mask, in binary)
+        let wholeValue = 3888.maskedValue(firstPlace: 0, runLength: 12)     // Returns 3888
+        // 111111110000
+        let lastByte = 3888.maskedValue(firstPlace: 4, runLength: 8)        // Returns 243
+        // 000000000011
+        let lowestTwoBits = 3888.maskedValue(firstPlace: 0, runLength: 2)   // Returns 0
+        // 000000111100
+        let middleTwelve = 3888.maskedValue(firstPlace: 2, runLength: 4)    // Returns 12
+        // 000111100000
+        let middleNine = 3888.maskedValue(firstPlace: 5, runLength: 4)      // Returns 9
+        // 011111111111
+        let theFirstElevenBits = 3888.maskedValue(firstPlace: 0, runLength: 11) // Returns 1840
+        // 111111111110
+        let theLastElevenBits = 3888.maskedValue(firstPlace: 1, runLength: 11)  // Returns 1944
+        // 000000110000
+        let lowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 4, runLength: 2)          // Returns 3
+        // 000001100000
+        let secondToLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 5, runLength: 2)  // Returns 1
+        // 000011000000
+        let thirdFromLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 6, runLength: 2) // Returns 0
+     ```
+     This is BIT-based, not BYTE-based, and assumes the number is in a linear (bigendian) format, in which the least significant bit is the rightmost one (position one).
+     In reality, this doesn't matter, as the language takes care of transposing byte order.
+     
+     The value of the Int must be positive. It is declared as an Int, in order to provide as much flexibility as possible.
+     The parameters must be positive, but are declared as signed Int, in order to be as flexible as possible.
+     
+     - parameters:
+        - firstPlace: The 1-based (1 is the first bit) starting position for the mask. Must be a positive integer.
+        - runLength: The inclusive (includes the starting place) number of bits to mask. Must be a positive integer. If 0, then the return will always be 0.
+     
      - returns: An Int, with the masked value.
      */
-    func maskedValue(firstPlace: UInt, runLength: UInt) -> UInt {
-        precondition((firstPlace + runLength) <= (MemoryLayout<Self>.size * 8), "Requested Mask is Out of Bounds")
-        guard 0 < runLength else { return 0 }   // Shortcut, if they aren't looking for anything.
-        // We create a mask, starting at bit one, then shift our value down to fit that mask.
-        let mask = UInt((1 << runLength) - 1)  // Simple way to do a 1-mask.
-        let shifted = self >> firstPlace
-        return shifted & mask
+    func maskedValue(firstPlace inFirstPlace: Int, runLength inRunLength: Int) -> UInt {
+        precondition(0 <= self, "Value cannot be negative")
+        precondition(0 <= inFirstPlace, "First position cannot be negative")
+        precondition(0 <= inRunLength, "Run length cannot be negative")
+        return UInt(self).maskedValue(firstPlace: UInt(inFirstPlace), runLength: UInt(inRunLength))
     }
 }

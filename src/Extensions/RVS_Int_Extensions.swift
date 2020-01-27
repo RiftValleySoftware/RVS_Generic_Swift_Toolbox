@@ -126,10 +126,10 @@ public extension Int {
      
      - returns: An Int, with the masked value.
      */
-    func maskedValue(firstPlace inFirstPlace: Int, runLength inRunLength: Int) -> UInt {
+    func maskedValue(firstPlace inFirstPlace: Int, runLength inRunLength: Int) -> Int {
         precondition(0 <= self, "Value cannot be negative")
         precondition(0 <= inFirstPlace, "First position cannot be negative")
         precondition(0 <= inRunLength, "Run length cannot be negative")
-        return UInt(self).maskedValue(firstPlace: UInt(inFirstPlace), runLength: UInt(inRunLength))
+        return Int(UInt(self).maskedValue(firstPlace: UInt(inFirstPlace), runLength: UInt(inRunLength)))
     }
 }

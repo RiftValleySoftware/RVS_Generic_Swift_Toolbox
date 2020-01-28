@@ -77,8 +77,7 @@ public extension UInt64 {
      */
     func maskedValue(firstPlace inFirstPlace: UInt, runLength inRunLength: UInt) -> UInt64 {
         let maxRunLength = UInt(64)
-        // The + 1 is because this is inclusive.
-        precondition((inFirstPlace + inRunLength) <= (maxRunLength + 1), "Requested Mask is Out of Bounds")
+        precondition((inFirstPlace + inRunLength) <= maxRunLength, "Requested Mask is Out of Bounds")
         guard 0 < inRunLength else { return 0 }   // Shortcut, if they aren't looking for anything.
         // The first thing we do, is shift the main value down to the start of our mask.
         let shifted = UInt64(self >> inFirstPlace)

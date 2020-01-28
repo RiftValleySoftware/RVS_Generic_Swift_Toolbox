@@ -256,4 +256,20 @@ class RVS_String_Extensions_Tests: XCTestCase {
         let testString2 = ""
         XCTAssertEqual("D41D8CD98F00B204E9800998ECF8427E", testString2.md5)
     }
+    
+    /* ################################################################## */
+    /**
+     Test our md5 computed property.
+     */
+    func testSHA256() {
+        XCTAssertEqual("B21E0C613CEEC9A65AFB9FD0E25E58BE7BA5CAB933F40A89AE45BB52A92116D7", "How now, brown cow?".sha256)
+        XCTAssertEqual("902F24E682A0F016F64D8C16DA76897AD0726B44A07FCC412D98D48D52B37F0B", "The Foxy Cabbage Absconds With the Sleepy Canine.".sha256)
+        XCTAssertEqual("1E2847A4A9E34B70C3B196241BFE0CA2B4D4FEBA8E39DDE200C6081EE1792AD9", "All Your Bases Belongs To Us!".sha256)
+        
+        let testString1 = "Luke, I Am Your Farter!"
+        XCTAssertEqual("1FC51E504917018E57B6D52371552339CEF83BEEE0D4BA1360F54CBCACDF3387", testString1.sha256)
+        
+        let testString2 = ""
+        XCTAssertEqual("E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855", testString2.sha256)
+    }
 }

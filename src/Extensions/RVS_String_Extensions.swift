@@ -43,8 +43,8 @@ public extension StringProtocol {
      
      Mostly from [Matt Eaton's blog entry](https://www.agnosticdev.com/content/how-use-commoncrypto-apis-swift-5).
      
-     It has direct access to CC as per [this SO question](https://stackoverflow.com/a/55639723/879365)
-     
+     It has direct access to Apple's built-in CommonCrypto library as per [this SO question](https://stackoverflow.com/a/55639723/879365)
+
      - Here are a couple of sites that you can use to validate the results of this operation:
         - [MD5 Hash Generator](https://www.md5hashgenerator.com)
         - [Miracle Salad MD5 Hash Generator](https://www.miraclesalad.com/webtools/md5.php)
@@ -55,13 +55,13 @@ public extension StringProtocol {
         // The reason we are declaring these here, is so we don't have to actally import the CC module. We will just grope around and find the entry point, ourselves.
         
         // This is a cast for the MD5 function. The convention attribute just says that it's a "raw" C function.
-        typealias CC_MD5_Type = @convention(c) (UnsafeRawPointer, UInt32, UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
+        typealias CC_MD5_TYPE = @convention(c) (UnsafeRawPointer, UInt32, UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
         
         // This is a flag, telling the name lookup to happen in the global scope. No dlopen required.
         let RTLD_DEFAULT = UnsafeMutableRawPointer(bitPattern: -2)
         
         // This loads a function pointer with the CommonCrypto MD5 function.
-        let CC_MD5 = unsafeBitCast(dlsym(RTLD_DEFAULT, "CC_MD5")!, to: CC_MD5_Type.self)
+        let CC_MD5 = unsafeBitCast(dlsym(RTLD_DEFAULT, "CC_MD5")!, to: CC_MD5_TYPE.self)
         
         // This is the length of the hash
         let CC_MD5_DIGEST_LENGTH = 16
@@ -96,6 +96,65 @@ public extension StringProtocol {
         return ""
     }
     
+    /* ################################################################## */
+    /**
+     This calculates a SHA256 checksum of the String, and returns it as an uppercase hex String.
+     
+     Mostly from [Matt Eaton's blog entry](https://www.agnosticdev.com/content/how-use-commoncrypto-apis-swift-5).
+     
+     It has direct access to Apple's built-in CommonCrypto library as per [this SO question](https://stackoverflow.com/a/55639723/879365)
+     
+     - Here are a couple of sites that you can use to validate the results of this operation:
+        - [SHA256 Online](https://emn178.github.io/online-tools/sha256.html)
+        - [FreeFormatter SHA256 Generator](https://www.freeformatter.com/sha256-generator.html)
+     
+     - returns: a SHA256 hash of the String, as an uppercase hex String.
+     */
+    var sha256: String {
+        // The reason we are declaring these here, is so we don't have to actally import the CC module. We will just grope around and find the entry point, ourselves.
+        
+        // This is a cast for the SHA256 function. The convention attribute just says that it's a "raw" C function.
+        typealias CC_SHA256_TYPE = @convention(c) (UnsafeRawPointer, UInt32, UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
+        
+        // This is a flag, telling the name lookup to happen in the global scope. No dlopen required.
+        let RTLD_DEFAULT = UnsafeMutableRawPointer(bitPattern: -2)
+        
+        // This loads a function pointer with the CommonCrypto MD5 function.
+        let CC_SHA256 = unsafeBitCast(dlsym(RTLD_DEFAULT, "CC_SHA256")!, to: CC_SHA256_TYPE.self)
+        
+        // This is the length of the hash
+        let CC_SHA256_DIGEST_LENGTH = 32
+    
+        if let strData = self.data(using: .utf8) {
+            /// Creates an array of unsigned 8 bit integers that contains 16 zeros
+            var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+
+            /// CC_SHA256 performs digest calculation and places the result in the caller-supplied buffer for digest (md)
+            /// Calls the given closure with a pointer to the underlying unsafe bytes of the strData’s contiguous storage.
+            _ = strData.withUnsafeBytes { (inBytes) -> Int in
+                // CommonCrypto
+                // extern unsigned char *CC_MD5(const void *data, CC_LONG len, unsigned char *md) --|
+                // OpenSSL                                                                          |
+                // unsigned char *MD5(const unsigned char *d, size_t n, unsigned char *md)        <-|
+                if let baseAddr = inBytes.baseAddress {
+                    _ = CC_SHA256(baseAddr, UInt32(strData.count), &digest)
+                }
+
+                return 0
+            }
+            
+            var sha256String = ""
+            // Convert the numerical response to an uppercase hex string.
+            for byte in digest {
+                sha256String += String(format: "%02X", UInt8(byte))
+            }
+            
+            return sha256String
+        }
+        
+        return ""
+    }
+
     /* ################################################################## */
     /**
      - returns: The String, converted into an Array of uppercase 2-digit hex strings (leading 0s, 1 8-bit character per element).

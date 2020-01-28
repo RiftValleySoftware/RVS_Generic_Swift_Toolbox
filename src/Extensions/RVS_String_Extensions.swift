@@ -39,42 +39,55 @@ public extension StringProtocol {
     
     /* ################################################################## */
     /**
-     From here: https://stackoverflow.com/q/24123518/879365, but modified from here: https://stackoverflow.com/a/55639723/879365
+     This calculates an MD5 checksum of the String, and returns it as an uppercase hex String.
+     
+     Mostly from here: https://www.agnosticdev.com/content/how-use-commoncrypto-apis-swift-5
+     It has added the direct access to CC from this SO question: https://stackoverflow.com/a/55639723/879365
+     
      - returns: an MD5 hash of the String
      */
     var md5: String {
-        var hash = ""
+        // The reason we are declaring these here, is so we don't have to actally import the CC module. We will just grope around and find the entry point, ourselves.
+        // This is a cast for the MD5 function. The convention attribute just says that it's a "raw" C function.
+        typealias CC_MD5_Type = @convention(c) (UnsafeRawPointer, UInt32, UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
         
-        // Start by getting a C-style string of our string as UTF-8.
-        if let str = self.cString(using: .utf8) {
-            // This is a cast for the MD5 function. The convention attribute just says that it's a "raw" C function.
-            typealias CC_MD5_Type = @convention(c) (UnsafeRawPointer, UInt32, UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
-            
-            // This is a flag, telling the name lookup to happen in the global scope. No dlopen required.
-            let RTLD_DEFAULT = UnsafeMutableRawPointer(bitPattern: -2)
-            
-            // This loads a function pointer with the CommonCrypto MD5 function.
-            let CC_MD5 = unsafeBitCast(dlsym(RTLD_DEFAULT, "CC_MD5")!, to: CC_MD5_Type.self)
-            
-            // This is the length of the hash
-            let CC_MD5_DIGEST_LENGTH = 16
-            
-            // This is where our MD5 hash goes. It's a simple 16-byte buffer.
-            let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: CC_MD5_DIGEST_LENGTH)
-            
-            // Execute the MD5 hash. Save the result in our buffer.
-            _ = CC_MD5(str, CUnsignedInt(str.count), result)
-            
-            // Turn it into a normal Swift String of hex digits.
-            for i in 0..<CC_MD5_DIGEST_LENGTH {
-                hash.append(String(format: "%02x", result[i]))
+        // This is a flag, telling the name lookup to happen in the global scope. No dlopen required.
+        let RTLD_DEFAULT = UnsafeMutableRawPointer(bitPattern: -2)
+        
+        // This loads a function pointer with the CommonCrypto MD5 function.
+        let CC_MD5 = unsafeBitCast(dlsym(RTLD_DEFAULT, "CC_MD5")!, to: CC_MD5_Type.self)
+        
+        // This is the length of the hash
+        let CC_MD5_DIGEST_LENGTH = 16
+    
+        if let strData = self.data(using: .utf8) {
+            /// Creates an array of unsigned 8 bit integers that contains 16 zeros
+            var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
+
+            /// CC_MD5 performs digest calculation and places the result in the caller-supplied buffer for digest (md)
+            /// Calls the given closure with a pointer to the underlying unsafe bytes of the strData’s contiguous storage.
+            _ = strData.withUnsafeBytes { (inBytes) -> Int in
+                // CommonCrypto
+                // extern unsigned char *CC_MD5(const void *data, CC_LONG len, unsigned char *md) --|
+                // OpenSSL                                                                          |
+                // unsigned char *MD5(const unsigned char *d, size_t n, unsigned char *md)        <-|
+                if let baseAddr = inBytes.baseAddress {
+                    _ = CC_MD5(baseAddr, UInt32(strData.count), &digest)
+                }
+
+                return 0
             }
             
-            // Don't need this anymore.
-            result.deallocate()
+            var md5String = ""
+            // Convert the numerical response to an uppercase hex string.
+            for byte in digest {
+                md5String += String(format: "%02X", UInt8(byte))
+            }
+            
+            return md5String
         }
         
-        return hash
+        return ""
     }
     
     /* ################################################################## */

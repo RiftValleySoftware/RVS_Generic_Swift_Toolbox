@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D427DB3323DDC66900849489 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2C23DDC66900849489 /* main.swift */; };
+		D461C7DF23E0BBF300680972 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D461C7DD23E0BAB400680972 /* Localizable.strings */; };
 		D4CE2A7823DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */; };
 		D4D03C1B23DDDE9D005B54B5 /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
 		D4D03C2123DDE104005B54B5 /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
@@ -30,6 +31,7 @@
 		D427DB2C23DDC66900849489 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Int_Extensions.swift; sourceTree = "<group>"; };
 		D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_String_Extensions.swift; sourceTree = "<group>"; };
+		D461C7DC23E0BAB400680972 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Extensions_Tests.swift; sourceTree = "<group>"; };
 		D4D03C1823DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Collection_Tests.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */,
 				D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */,
+				D461C7DD23E0BAB400680972 /* Localizable.strings */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 			buildConfigurationList = D4D03C1D23DDDE9D005B54B5 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests" */;
 			buildPhases = (
 				D4D03C1423DDDE9D005B54B5 /* Sources */,
+				D461C7DE23E0BBEA00680972 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +199,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		D461C7DE23E0BBEA00680972 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D461C7DF23E0BBF300680972 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXShellScriptBuildPhase section */
 		D4D5954623DDC98100473A49 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -245,6 +260,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D461C7DD23E0BAB400680972 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D461C7DC23E0BAB400680972 /* en */,
+			);
+			name = Localizable.strings;
+			path = tests;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D4D03C1E23DDDE9D005B54B5 /* Debug */ = {

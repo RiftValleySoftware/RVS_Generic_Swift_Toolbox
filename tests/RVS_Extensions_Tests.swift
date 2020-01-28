@@ -209,6 +209,23 @@ class RVS_Int_Extensions_Tests: XCTestCase {
 }
 
 /* ###################################################################################################################################### */
+// MARK: - NSLocalizedString Override -
+/* ###################################################################################################################################### */
+/**
+ We override this, because we are running a test, so the bundle is in the XCTest bundle. We override this to intercept the standard call, and reference the testing bundle.
+ 
+ - parameters:
+    - inKey: The String we are using to key the token.
+    - comment: Ignored
+ 
+ - returns: The localized String (if the key matches).
+ */
+public func NSLocalizedString(_ inKey: String, comment: String) -> String {
+    let bundle = Bundle(for: RVS_String_Extensions_Tests.self)
+    return NSLocalizedString(inKey, tableName: nil, bundle: bundle, comment: "")
+}
+
+/* ###################################################################################################################################### */
 // MARK: - RVS_String_Extensions_Tests -
 /* ###################################################################################################################################### */
 /**
@@ -217,7 +234,26 @@ class RVS_Int_Extensions_Tests: XCTestCase {
 class RVS_String_Extensions_Tests: XCTestCase {
     /* ################################################################## */
     /**
+     Test our localizedVariant computed property.
      */
-    func testSimpleInstantiation() {
+    func testLocalizedVariant() {
+        XCTAssertEqual("Test String 1", "TEST-1-SLUG".localizedVariant)
+        XCTAssertEqual("Test String Two", "TEST-2-SLUG".localizedVariant)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test our md5 computed property.
+     */
+    func testMD5() {
+        XCTAssertEqual("860820C8ABCB42F9C831CB5CA982A06D", "How now, brown cow?".md5)
+        XCTAssertEqual("DC8BD40E7C60AA1D8EA9E450DAE4DDFB", "The Foxy Cabbage Absconds With the Sleepy Canine.".md5)
+        XCTAssertEqual("A0FF1D5CC6CFC4A81C91EFDA93C77187", "All Your Bases Belongs To Us!".md5)
+        
+        let testString1 = "Luke, I Am Your Farter!"
+        XCTAssertEqual("97EA9B296503B4A173C182829BDD5E49", testString1.md5)
+        
+        let testString2 = ""
+        XCTAssertEqual("D41D8CD98F00B204E9800998ECF8427E", testString2.md5)
     }
 }

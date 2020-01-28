@@ -101,7 +101,7 @@
 
                 </div>
               </div>
-            <p>These are a variety of cool Int extensions that add some great extra cheese on the pizza.</p>
+            <p>This extension will add a new set of capabilities to the native UInt data type.</p>
 
           </div>
         </section>
@@ -153,8 +153,13 @@
 <p>This is BIT-based, not BYTE-based, and assumes the number is in a linear (bigendian) format, in which the least significant bit is the rightmost one (position one).
 In reality, this doesn&rsquo;t matter, as the language takes care of transposing byte order.</p>
 
-<p>The value of the Int must be positive. It is declared as an Int, in order to provide as much flexibility as possible.
-The parameters must be positive, but are declared as signed Int, in order to be as flexible as possible.</p>
+<ul>
+<li><p>prerequisites:</p>
+
+<ul>
+<li>The sum of <code>firstPlace</code> and <code>runLength</code> cannot exceed the maximum size of a UInt64.</li>
+</ul></li>
+</ul>
 
                       </div>
                       <div class="declaration">

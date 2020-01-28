@@ -126,16 +126,16 @@ public extension StringProtocol {
         let CC_SHA256_DIGEST_LENGTH = 32
     
         if let strData = self.data(using: .utf8) {
-            /// Creates an array of unsigned 8 bit integers that contains 16 zeros
+            /// Creates an array of unsigned 8 bit integers that contains 32 zeros
             var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
 
             /// CC_SHA256 performs digest calculation and places the result in the caller-supplied buffer for digest (md)
-            /// Calls the given closure with a pointer to the underlying unsafe bytes of the strData’s contiguous storage.
+            /// Takes the strData referenced value (const unsigned char *d) and hashes it into a reference to the digest parameter.
             _ = strData.withUnsafeBytes { (inBytes) -> Int in
                 // CommonCrypto
-                // extern unsigned char *CC_MD5(const void *data, CC_LONG len, unsigned char *md) --|
-                // OpenSSL                                                                          |
-                // unsigned char *MD5(const unsigned char *d, size_t n, unsigned char *md)        <-|
+                // extern unsigned char *CC_SHA256(const void *data, CC_LONG len, unsigned char *md)  -|
+                // OpenSSL                                                                             |
+                // unsigned char *SHA256(const unsigned char *d, size_t n, unsigned char *md)        <-|
                 if let baseAddr = inBytes.baseAddress {
                     _ = CC_SHA256(baseAddr, UInt32(strData.count), &digest)
                 }
@@ -144,6 +144,7 @@ public extension StringProtocol {
             }
             
             var sha256String = ""
+            
             // Convert the numerical response to an uppercase hex string.
             for byte in digest {
                 sha256String += String(format: "%02X", UInt8(byte))

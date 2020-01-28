@@ -154,7 +154,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>From here: <a href="https://stackoverflow.com/q/24123518/879365">https://stackoverflow.com/q/24123518/879365</a>, but modified from here: <a href="https://stackoverflow.com/a/55639723/879365">https://stackoverflow.com/a/55639723/879365</a></p>
+                        <p>This calculates an MD5 checksum of the String, and returns it as an uppercase hex String.</p>
+
+<p>Mostly from <a href="https://www.agnosticdev.com/content/how-use-commoncrypto-apis-swift-5">Matt Eaton&rsquo;s blog entry</a>.</p>
+
+<p>It has direct access to Apple&rsquo;s built-in CommonCrypto library as per <a href="https://stackoverflow.com/a/55639723/879365">this SO question</a></p>
+
+<ul>
+<li><p>Here are a couple of sites that you can use to validate the results of this operation:</p>
+
+<ul>
+<li><a href="https://www.md5hashgenerator.com">MD5 Hash Generator</a></li>
+<li><a href="https://www.miraclesalad.com/webtools/md5.php">Miracle Salad MD5 Hash Generator</a></li>
+</ul></li>
+</ul>
 
                       </div>
                       <div class="declaration">
@@ -167,7 +180,51 @@
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>an MD5 hash of the String</p>
+                        <p>an MD5 hash of the String, as an uppercase hex String.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE6sha256SSvp"></a>
+                    <a name="//apple_ref/swift/Property/sha256" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE6sha256SSvp">sha256</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This calculates a SHA256 checksum of the String, and returns it as an uppercase hex String.</p>
+
+<p>Mostly from <a href="https://www.agnosticdev.com/content/how-use-commoncrypto-apis-swift-5">Matt Eaton&rsquo;s blog entry</a>.</p>
+
+<p>It has direct access to Apple&rsquo;s built-in CommonCrypto library as per <a href="https://stackoverflow.com/a/55639723/879365">this SO question</a></p>
+
+<ul>
+<li><p>Here are a couple of sites that you can use to validate the results of this operation:</p>
+
+<ul>
+<li><a href="https://emn178.github.io/online-tools/sha256.html">SHA256 Online</a></li>
+<li><a href="https://www.freeformatter.com/sha256-generator.html">FreeFormatter SHA256 Generator</a></li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">sha256</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a SHA256 hash of the String, as an uppercase hex String.</p>
                       </div>
                     </section>
                   </div>
@@ -197,7 +254,7 @@
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The String, converted into an Array of hex strings (leading 0s, 1 8-bit character per element).</p>
+                        <p>The String, converted into an Array of uppercase 2-digit hex strings (leading 0s, 1 8-bit character per element).</p>
                       </div>
                     </section>
                   </div>
@@ -227,7 +284,7 @@
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The String, converted into an Array of hex strings (leading 0s, 1 16-bit character per element).</p>
+                        <p>The String, converted into an Array of uppercase 4-digit hex strings (leading 0s, 1 16-bit character per element).</p>
                       </div>
                     </section>
                   </div>

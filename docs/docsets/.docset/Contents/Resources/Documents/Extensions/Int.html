@@ -61,6 +61,12 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/StringProtocol.html">StringProtocol</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UInt.html">UInt</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UInt64.html">UInt64</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -117,8 +123,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This method allows us to mask a discrete bit range within the number, and return its value as a basic Int.
-For example, if we have the hex number 0xF30 (3888 decimal, or 111100110000 binary), we can mask parts of it to get masked values, like so:</p>
+                        <p>This method allows us to mask a discrete bit range within the number, and return its value as a basic Int.</p>
+
+<p>For example, if we have the hex number 0xF30 (3888 decimal, or 111100110000 binary), we can mask parts of it to get masked values, like so:</p>
 <pre class="highlight swift"><code>   <span class="c1">// 111100110000 (Value, in binary)</span>
 
    <span class="c1">// 111111111111 (Mask, in binary)</span>
@@ -146,14 +153,21 @@ For example, if we have the hex number 0xF30 (3888 decimal, or 111100110000 bina
 <p>This is BIT-based, not BYTE-based, and assumes the number is in a linear (bigendian) format, in which the least significant bit is the rightmost one (position one).
 In reality, this doesn&rsquo;t matter, as the language takes care of transposing byte order.</p>
 
-<p>The parameters must be positive, but are declared as signed Int, in order to be as flexible as possible.</p>
+<ul>
+<li><p>prerequisites:</p>
+
+<ul>
+<li>The value of the Int must be positive.</li>
+<li>The parameters must be positive.</li>
+</ul></li>
+</ul>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">maskedValue</span><span class="p">(</span><span class="nv">firstPlace</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">runLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">maskedValue</span><span class="p">(</span><span class="n">firstPlace</span> <span class="nv">inFirstPlace</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">runLength</span> <span class="nv">inRunLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>

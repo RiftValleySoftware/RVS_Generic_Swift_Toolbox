@@ -84,13 +84,8 @@ public extension StringProtocol {
                 return 0
             }
             
-            var md5String = ""
             // Convert the numerical response to an uppercase hex string.
-            for byte in digest {
-                md5String += String(format: "%02X", UInt8(byte))
-            }
-            
-            return md5String
+            return digest.map { String(format: "%02X", UInt8($0)) }.joined()
         }
         
         return ""
@@ -143,14 +138,8 @@ public extension StringProtocol {
                 return 0
             }
             
-            var sha256String = ""
-            
             // Convert the numerical response to an uppercase hex string.
-            for byte in digest {
-                sha256String += String(format: "%02X", UInt8(byte))
-            }
-            
-            return sha256String
+            return digest.map { String(format: "%02X", UInt8($0)) }.joined()
         }
         
         return ""

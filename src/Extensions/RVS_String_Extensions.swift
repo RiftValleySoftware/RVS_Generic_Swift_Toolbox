@@ -41,13 +41,19 @@ public extension StringProtocol {
     /**
      This calculates an MD5 checksum of the String, and returns it as an uppercase hex String.
      
-     Mostly from here: https://www.agnosticdev.com/content/how-use-commoncrypto-apis-swift-5
-     It has added the direct access to CC from this SO question: https://stackoverflow.com/a/55639723/879365
+     Mostly from [Matt Eaton's blog entry](https://www.agnosticdev.com/content/how-use-commoncrypto-apis-swift-5).
      
-     - returns: an MD5 hash of the String
+     It has direct access to CC as per [this SO question](https://stackoverflow.com/a/55639723/879365)
+     
+     - Here are a couple of sites that you can use to validate the results of this operation:
+        - [MD5 Hash Generator](https://www.md5hashgenerator.com)
+        - [Miracle Salad MD5 Hash Generator](https://www.miraclesalad.com/webtools/md5.php)
+     
+     - returns: an MD5 hash of the String, as an uppercase hex String.
      */
     var md5: String {
         // The reason we are declaring these here, is so we don't have to actally import the CC module. We will just grope around and find the entry point, ourselves.
+        
         // This is a cast for the MD5 function. The convention attribute just says that it's a "raw" C function.
         typealias CC_MD5_Type = @convention(c) (UnsafeRawPointer, UInt32, UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
         
@@ -92,13 +98,13 @@ public extension StringProtocol {
     
     /* ################################################################## */
     /**
-     - returns: The String, converted into an Array of hex strings (leading 0s, 1 8-bit character per element).
+     - returns: The String, converted into an Array of uppercase 2-digit hex strings (leading 0s, 1 8-bit character per element).
      */
     var hexDump8: [String] {
         var hexString = [String]()
         for char in self {
             for ch in char.utf8 {
-                hexString.append(String(format: "%02x", ch))
+                hexString.append(String(format: "%02X", ch))
             }
         }
         
@@ -107,13 +113,13 @@ public extension StringProtocol {
     
     /* ################################################################## */
     /**
-     - returns: The String, converted into an Array of hex strings (leading 0s, 1 16-bit character per element).
+     - returns: The String, converted into an Array of uppercase 4-digit hex strings (leading 0s, 1 16-bit character per element).
      */
     var hexDump16: [String] {
         var hexString = [String]()
         for char in self {
             for ch in char.utf16 {
-                hexString.append(String(format: "%04x", ch))
+                hexString.append(String(format: "%04X", ch))
             }
         }
         

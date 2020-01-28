@@ -21,10 +21,10 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 */
 
 /* ###################################################################################################################################### */
-// MARK: - Int Extension -
+// MARK: - UInt64 Extension -
 /* ###################################################################################################################################### */
 /**
- These are a variety of cool Int extensions that add some great extra cheese on the pizza.
+ This extension will add a new set of capabilities to the native UInt64 data type.
  */
 public extension UInt64 {
     /* ################################################################## */
@@ -56,12 +56,19 @@ public extension UInt64 {
         // 000011000000
         let thirdFromLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 6, runLength: 2) // Returns 0
      ```
+     This is useful for interpeting bitfields, such as the OBD DTS response.
+     
      This is BIT-based, not BYTE-based, and assumes the number is in a linear (bigendian) format, in which the least significant bit is the rightmost one (position one).
      In reality, this doesn't matter, as the language takes care of transposing byte order.
      
-     The value of the Int must be positive. It is declared as an Int, in order to provide as much flexibility as possible.
-     The parameters must be positive, but are declared as signed Int, in order to be as flexible as possible.
+     Bit 1 is the least signficant (rightmost) bit in the value. The maximum value for `firstPlace` is 64.
+     Run Length means the selected (by `firstPlace`) first bit, and leftward (towards more significant bits). It includes the first bit.
      
+     The UInt64 variant of this is the "main" one.
+     
+     - prerequisites:
+        - The sum of `firstPlace` and `runLength` cannot exceed the maximum size of a UInt64.
+
      - parameters:
         - firstPlace: The 1-based (1 is the first bit) starting position for the mask.
         - runLength: The inclusive (includes the starting place) number of bits to mask. If 0, then the return will always be 0.
@@ -72,10 +79,11 @@ public extension UInt64 {
         let maxRunLength = UInt(64)
         precondition((inFirstPlace + inRunLength) <= maxRunLength, "Requested Mask is Out of Bounds")
         guard 0 < inRunLength else { return 0 }   // Shortcut, if they aren't looking for anything.
-        // We create a mask, starting at bit one, then shift our value down to fit that mask.
-        // We do the crazy ternary operator stuff, because the library can't really do our shortcut for the top byte.
-        let mask = UInt64(0xFFFFFFFFFFFFFFFF) >> (maxRunLength - inRunLength)
+        // The first thing we do, is shift the main value down to the start of our mask.
         let shifted = UInt64(self >> inFirstPlace)
+        // We make a mask quite simply. We just shift down a "full house."
+        let mask = UInt64(0xFFFFFFFFFFFFFFFF) >> (maxRunLength - inRunLength)
+        // By masking out anything not in the run length, we return a value.
         return shifted & UInt64(mask)
     }
 }
@@ -84,7 +92,7 @@ public extension UInt64 {
 // MARK: - UInt Extension -
 /* ###################################################################################################################################### */
 /**
- These are a variety of cool Int extensions that add some great extra cheese on the pizza.
+ This extension will add a new set of capabilities to the native UInt data type.
  */
 public extension UInt {
     /* ################################################################## */
@@ -119,8 +127,8 @@ public extension UInt {
      This is BIT-based, not BYTE-based, and assumes the number is in a linear (bigendian) format, in which the least significant bit is the rightmost one (position one).
      In reality, this doesn't matter, as the language takes care of transposing byte order.
      
-     The value of the Int must be positive. It is declared as an Int, in order to provide as much flexibility as possible.
-     The parameters must be positive, but are declared as signed Int, in order to be as flexible as possible.
+     - prerequisites:
+        - The sum of `firstPlace` and `runLength` cannot exceed the maximum size of a UInt64.
      
      - parameters:
         - firstPlace: The 1-based (1 is the first bit) starting position for the mask.
@@ -137,7 +145,7 @@ public extension UInt {
 // MARK: - Int Extension -
 /* ###################################################################################################################################### */
 /**
- These are a variety of cool Int extensions that add some great extra cheese on the pizza.
+ This extension will add a new set of capabilities to the native Int data type.
  */
 public extension Int {
     /* ################################################################## */
@@ -173,6 +181,7 @@ public extension Int {
      In reality, this doesn't matter, as the language takes care of transposing byte order.
      
      - prerequisites:
+        - The sum of `firstPlace` and `runLength` cannot exceed the maximum size of a UInt64.
         - The value of the Int must be positive.
         - The parameters must be positive.
      

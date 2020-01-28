@@ -81,7 +81,7 @@ class RVS_Int_Extensions_Tests: XCTestCase {
         let maxSize = (MemoryLayout<Int>.size * 8) - 1
         let testVal = Int.max
         
-        for indent in 0...maxSize {
+        for indent in 1...maxSize {
             XCTAssertEqual(testVal >> indent, testVal.maskedValue(firstPlace: 0, runLength: maxSize - indent))
             if indent == maxSize {
                 XCTAssertEqual(0, testVal.maskedValue(firstPlace: indent, runLength: 1))
@@ -143,11 +143,9 @@ class RVS_Int_Extensions_Tests: XCTestCase {
         let maxSize = MemoryLayout<UInt>.size * 8
         let testVal = UInt.max
         
-        for indent in 0...maxSize {
+        for indent in 1..<maxSize {
             XCTAssertEqual(testVal >> indent, testVal.maskedValue(firstPlace: 0, runLength: UInt(maxSize - indent)))
-            if indent < maxSize {
-                XCTAssertEqual(1, testVal.maskedValue(firstPlace: UInt(indent), runLength: 1))
-            }
+            XCTAssertEqual(1, testVal.maskedValue(firstPlace: UInt(indent), runLength: 1))
         }
     }
     
@@ -203,11 +201,9 @@ class RVS_Int_Extensions_Tests: XCTestCase {
         let maxSize = MemoryLayout<UInt64>.size * 8
         let testVal = UInt64.max
         
-        for indent in 0...maxSize {
+        for indent in 1..<maxSize {
             XCTAssertEqual(testVal >> indent, testVal.maskedValue(firstPlace: 0, runLength: UInt(maxSize - indent)))
-            if indent < maxSize {
-                XCTAssertEqual(1, testVal.maskedValue(firstPlace: UInt(indent), runLength: 1))
-            }
+            XCTAssertEqual(1, testVal.maskedValue(firstPlace: UInt(indent), runLength: 1))
         }
     }
 }

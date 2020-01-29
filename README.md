@@ -5,6 +5,43 @@ RVS_Generic_Swift_Toolbox
 
 [This is the technical documentation for this repository](https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/)
 
+DESCRIPTION
+-
+This repository is an Xcode project with a set of ambidextrous (That's what I really mean by "generic"; not just using generics) tools that can be applied to Swift projects deployed for [iOS](https://apple.com/ios), [iPadOS](https://apple.com/ipados), [MacOS](https://apple.com/macos), [WatchOS](https://apple.com/watchos) and [TVOS](https://apple.com/tvos).
+
+These tools will work for all of these platforms, and will, at most, rely only on [the Foundation library](https://developer.apple.com/documentation/foundation).
+
+- **COLLECTION TOOLS**
+    - **RVS_FIFOQueue**
+This is a high-performance generic FIFO queue data structure. It's based on the work of [Ole Begemann](https://oleb.net), who used it as an example in his [Advanced Swift](https://oleb.net/advanced-swift/) book.
+    - **RVS_SequenceProtocol**
+This is a simple protocol that gives classes and structs that conform to it some basic [Sequence](https://developer.apple.com/documentation/swift/sequence) behavior.
+
+- **DEBUG TOOLS**
+    - **RVS_DebugTools**
+This is a set of tools used to aid debugging and testing code.
+
+- **EXTENSIONS**
+    - **RVS_Int_Extensions**
+Extensions to integer data types.
+    - **RVS_String_Extensions**
+Extensions to the [StringProtocol protocol](https://developer.apple.com/documentation/swift/stringprotocol). This adds some significant capabilities, such as [MD5](https://en.wikipedia.org/wiki/MD5)/[SHA](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms)-hashing, substring searching, simple localization, and basic parsing.
+
+USAGE
+-
+- **CARTHAGE**
+You are probably best off using [Carthage](https://github.com/Carthage/Carthage) to install these tools. It's extremely simple to use, and squeaky clean. You will only need to include references to the files into your project.
+You implement it by adding the following line in your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md):
+
+    `github "RiftValleySoftware/RVS_Generic_Swift_Toolbox"`
+    
+    Once you have done this, navigate the Terminal to the directory containing the Cartfile, and execute:
+    
+    `carthage update`
+
+    This will result in a directory, at the same level as the Cartfile, called `Carthage`. Inside of that directory, will be another directory, called `Checkouts`. Inside of that directory, will be a directory called `RVS_Generic_Swift_Toolbox`.
+    The files that you are looking for will be in the `src` directory. They are arranged in the grouping they are documented, above.
+
 REQUIREMENTS
 -
 

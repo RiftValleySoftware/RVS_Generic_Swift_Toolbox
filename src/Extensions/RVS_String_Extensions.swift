@@ -62,7 +62,7 @@ public extension StringProtocol {
         let RTLD_DEFAULT = UnsafeMutableRawPointer(bitPattern: -2)
         
         // This loads a function pointer with the CommonCrypto MD5 function.
-        // dlsym is a symbol lookup. It finds the symbol in our library, and returns a pointer to it.
+        // [dlsym](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/dlsym.3.html_ is a symbol lookup. It finds the symbol in our library, and returns a pointer to it.
         let CC_MD5 = unsafeBitCast(dlsym(RTLD_DEFAULT, "CC_MD5")!, to: CC_MD5_TYPE.self)
         
         // This is the length of the hash
@@ -117,7 +117,7 @@ public extension StringProtocol {
         let RTLD_DEFAULT = UnsafeMutableRawPointer(bitPattern: -2)
         
         // This loads a function pointer with the CommonCrypto MD5 function.
-        // dlsym is a symbol lookup. It finds the symbol in our library, and returns a pointer to it.
+        // [dlsym](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/dlsym.3.html_ is a symbol lookup. It finds the symbol in our library, and returns a pointer to it.
         let CC_SHA256 = unsafeBitCast(dlsym(RTLD_DEFAULT, "CC_SHA256")!, to: CC_SHA256_TYPE.self)
         
         // This is the length of the hash
@@ -150,7 +150,7 @@ public extension StringProtocol {
 
     /* ################################################################## */
     /**
-     - returns: The String, converted into an Array of uppercase 2-digit hex strings (leading 0s, 1 8-bit character per element).
+     - returns: The String, converted into an Array of uppercase 2-digit hex strings (leading 0s, 1 8-bit character per element). This actually takes the UTF8 value of each character.
      */
     var hexDump8: [String] {
         var hexString = [String]()
@@ -165,7 +165,7 @@ public extension StringProtocol {
     
     /* ################################################################## */
     /**
-     - returns: The String, converted into an Array of uppercase 4-digit hex strings (leading 0s, 1 16-bit character per element).
+     - returns: The String, converted into an Array of uppercase 4-digit hex strings (leading 0s, 1 16-bit character per element). This actually takes the UTF16 value of each character.
      */
     var hexDump16: [String] {
         var hexString = [String]()
@@ -296,7 +296,7 @@ public extension StringProtocol {
      
      - returns: The String, assumed to be hex numbers (two characters, 0-F, separated by non-hex characters, or not separated); converted to an ASCII string (no spaces).
                 Nil, if the string failed to yeild a UTF8 value.
-                This requires two characters (0-9a-fA-F), side-by-side for each character. They may or may not be separated.
+                This requires two characters (0-9a-fA-F), side-by-side for each character. They may or may not be separated. Single characters are ignored.
      */
     var hex2UTF8: String! {
         var ret: String!

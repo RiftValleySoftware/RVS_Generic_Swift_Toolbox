@@ -272,4 +272,81 @@ class RVS_String_Extensions_Tests: XCTestCase {
         let testString2 = ""
         XCTAssertEqual("E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855", testString2.sha256)
     }
+    
+    /* ################################################################## */
+    /**
+     Test the two hexDump8/16 computed properties.
+     */
+    func testHexDumps() {
+        let testTarget = "05FE6410ACD6"
+        XCTAssertEqual(["30", "35", "46", "45", "36", "34", "31", "30", "41", "43", "44", "36"], testTarget.hexDump8)
+        XCTAssertEqual(["0030", "0035", "0046", "0045", "0036", "0034", "0031", "0030", "0041", "0043", "0044", "0036"], testTarget.hexDump16)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the firstUppercased computed property.
+     */
+    func testFirstUppercased() {
+        let testTarget = "john jacob jingleheimerschmidt"
+        XCTAssertEqual("John jacob jingleheimerschmidt", testTarget.firstUppercased)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the URL encoding/decoding computed properties.
+     */
+    func testURLEncoding() {
+        let testTarget = "Sticks & Stones-May/Break+My%Bones"
+        let urlencoded = testTarget.urlEncodedString
+        XCTAssertEqual("Sticks%20&%20Stones-May/Break+My%25Bones", urlencoded)
+        XCTAssertEqual("Sticks & Stones-May/Break+My%Bones", urlencoded?.urlDecodedString)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the various "XXOnly" computed properties.
+     */
+    func testBinaryOctalHexOnly() {
+        let testTarget = "1 Is Too Many, A Thousand Never Enough, Unless you have 2, 7, 8, or 9 more than 0."
+        XCTAssertEqual("10", testTarget.binaryOnly)
+        XCTAssertEqual("1270", testTarget.octalOnly)
+        XCTAssertEqual("127890", testTarget.decimalOnly)
+        XCTAssertEqual("1AAADEEEEAE2789EA0", testTarget.hexOnly)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the UTF8 converter computed property.
+     */
+    func testHex2UTF8() {
+        var testTarget = "30 35 46 45 36 34 31 30 41 43 44 36"
+        XCTAssertEqual("05FE6410ACD6", testTarget.hex2UTF8)
+        testTarget = "30354645 36 34 31 304143 44 36"
+        XCTAssertEqual("05FE6410ACD6", testTarget.hex2UTF8)
+        testTarget = "30354645D36 34 31 304143 44 36"
+        XCTAssertEqual("05FEÓ410ACD6", testTarget.hex2UTF8)
+        testTarget = "30354645 D 36 34 31 304143 44 36"
+        XCTAssertEqual("05FE6410ACD6", testTarget.hex2UTF8)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the Int converter computed property.
+     */
+    func testHex2Int() {
+        let testTarget = "20"
+        XCTAssertEqual(32, testTarget.hex2Int)
+        XCTAssertEqual(61696, "F100".hex2Int)
+        XCTAssertEqual(3, "3".hex2Int)
+        XCTAssertNil("G".hex2Int)
+        XCTAssertEqual(238, "George".hex2Int)
+    }
+    
+    /* ################################################################## */
+    /**
+     This tests the various substring methods of the extension.
+     */
+    func testSubstringFinder() {
+    }
 }

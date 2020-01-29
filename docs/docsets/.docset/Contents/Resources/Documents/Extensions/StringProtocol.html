@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-           Docs
+          Rift Valley Software Generic Swift Toolbox
         </a>
         
       </p>
@@ -32,6 +32,12 @@
         </form>
       </p>
     
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
     
     </header>
 
@@ -255,7 +261,7 @@ NOTE: These extensions feature some use of <a href="https://developer.apple.com/
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The String, converted into an Array of uppercase 2-digit hex strings (leading 0s, 1 8-bit character per element).</p>
+                        <p>The String, converted into an Array of uppercase 2-digit hex strings (leading 0s, 1 8-bit character per element). This actually takes the UTF8 value of each character.</p>
                       </div>
                     </section>
                   </div>
@@ -285,7 +291,7 @@ NOTE: These extensions feature some use of <a href="https://developer.apple.com/
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The String, converted into an Array of uppercase 4-digit hex strings (leading 0s, 1 16-bit character per element).</p>
+                        <p>The String, converted into an Array of uppercase 4-digit hex strings (leading 0s, 1 16-bit character per element). This actually takes the UTF16 value of each character.</p>
                       </div>
                     </section>
                   </div>
@@ -526,7 +532,7 @@ From here: <a href="https://stackoverflow.com/a/28288340/879365">https://stackov
                         <h4>Return Value</h4>
                         <p>The String, assumed to be hex numbers (two characters, 0-F, separated by non-hex characters, or not separated); converted to an ASCII string (no spaces).
        Nil, if the string failed to yeild a UTF8 value.
-       This requires two characters (0-9a-fA-F), side-by-side for each character. They may or may not be separated.</p>
+       This requires two characters (0-9a-fA-F), side-by-side for each character. They may or may not be separated. Single characters are ignored.</p>
                       </div>
                     </section>
                   </div>

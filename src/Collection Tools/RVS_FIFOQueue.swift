@@ -28,7 +28,7 @@ import Foundation
 /**
  This was taken straight from the objc.io book "Advanced Swift." It's so damn useful, that I have it made into a standard tool.
  
- The original design was done by Ole Begemann and Chris Eidhoff. I have modified it slightly; but not much.
+ The original design was done by [Ole Begemann](https://oleb.net) and [Chris Eidhof](https://chris.eidhof.nl). I have modified it slightly; but not much.
  
  It is fast all git-go.
 

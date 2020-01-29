@@ -31,7 +31,7 @@ USAGE
 -
 - **CARTHAGE**
     You are probably best off using [Carthage](https://github.com/Carthage/Carthage) to install these tools. It's extremely simple to use, and squeaky clean. You will only need to include references to the files into your project.
-You implement it by adding the following line in your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md):
+    You implement it by adding the following line in your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md):
 
     `github "RiftValleySoftware/RVS_Generic_Swift_Toolbox"`
     

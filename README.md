@@ -47,6 +47,18 @@ USAGE
     Once you have done this, navigate the Terminal to the directory containing the Cartfile, and execute:
     
     `carthage update`
+    
+    You will likely see the following output:
+    
+        Dependency "RVS_Generic_Swift_Toolbox" has no shared framework schemes
+
+        If you believe this to be an error, please file an issue with the maintainers at     https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/issues/new
+        *** Skipped building RVS_PersistentPrefs due to the error:
+        Dependency "RVS_PersistentPrefs" has no shared framework schemes
+
+        If you believe this to be an error, please file an issue with the maintainers at    https://github.com/RiftValleySoftware/RVS_PersistentPrefs/issues/new
+        
+    You can safely ignore this.
 
     This will result in a directory, at the same level as the Cartfile, called `Carthage`. Inside of that directory, will be another directory, called `Checkouts`. Inside of that directory, will be a directory called `RVS_Generic_Swift_Toolbox`.
     The files that you are looking for will be in the `src` directory. They are arranged in the grouping they are documented, above.

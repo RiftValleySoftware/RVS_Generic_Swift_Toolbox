@@ -38,3 +38,4 @@ cyclomatic_complexity:
 excluded:
 - Pods
 - Carthage
+- tests

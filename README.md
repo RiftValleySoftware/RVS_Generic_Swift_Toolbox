@@ -48,6 +48,8 @@ USAGE
 
     This will result in a directory, at the same level as the Cartfile, called `Carthage`. Inside of that directory, will be another directory, called `Checkouts`. Inside of that directory, will be a directory called `RVS_Generic_Swift_Toolbox`.
     The files that you are looking for will be in the `src` directory. They are arranged in the grouping they are documented, above.
+    
+    Just drag those files into your Xcode project, and add them to the appropriate targets.
 
 REQUIREMENTS
 -

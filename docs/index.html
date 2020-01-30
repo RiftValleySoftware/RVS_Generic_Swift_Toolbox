@@ -171,8 +171,14 @@ If you believe this to be an error, please file an issue with the maintainers at
 The files that you are looking for will be in the <code>src</code> directory. They are arranged in the grouping they are documented, above.</p>
 
 <p>Just drag those files into your Xcode project, and add them to the appropriate targets.</p></li>
+<li><p><strong><a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git Submodule</a></strong></p>
+
+<p>You could also directly include the project as a Git Submodule.  Submodules can be annoying to work with, but are a good way to maintain ironclad version integrity.
+If you do this, then you should do the same as above, but instead of a Carthage directory, you will have whatever directory you choose to use to place the submodule.</p></li>
 </ul>
 <h2 id='requirements' class='heading'>REQUIREMENTS</h2>
+
+<p>These utilities require <a href="https://developer.apple.com/swift/">the Swift programming language</a>, and are not designed to be abstracted via a framework or bundle. They should be directly added to the source of your intended application.</p>
 <h2 id='license' class='heading'>LICENSE</h2>
 
 <p>© Copyright 2019, <a href="https://riftvalleysoftware.com">The Great Rift Valley Software Company</a></p>

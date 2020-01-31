@@ -90,7 +90,7 @@ public extension StringProtocol {
             
             // Convert the numerical response to an uppercase hex string.
             return digest.reduce("") { (current, new) -> String in
-                String(format: "\(current)%02X", UInt8(new))
+                String(format: "\(current)%02X", new)
             }
         }
         
@@ -147,7 +147,7 @@ public extension StringProtocol {
             
             // Convert the numerical response to an uppercase hex string.
             return digest.reduce("") { (current, new) -> String in
-                String(format: "\(current)%02X", UInt8(new))
+                String(format: "\(current)%02X", new)
             }
         }
         

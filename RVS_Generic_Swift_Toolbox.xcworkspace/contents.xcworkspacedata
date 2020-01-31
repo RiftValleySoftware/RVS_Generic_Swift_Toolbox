@@ -13,7 +13,4 @@
    <FileRef
       location = "group:RVS_Generic_Swift_Toolbox.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
 </Workspace>

@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.0
+Version: 1.0.1
 */
 
 import Foundation   // Required for the NS stuff.
@@ -89,7 +89,9 @@ public extension StringProtocol {
             }
             
             // Convert the numerical response to an uppercase hex string.
-            return digest.map { String(format: "%02X", UInt8($0)) }.joined()
+            return digest.reduce("") { (current, new) -> String in
+                String(format: "\(current)%02X", UInt8(new))
+            }
         }
         
         return ""
@@ -144,7 +146,9 @@ public extension StringProtocol {
             }
             
             // Convert the numerical response to an uppercase hex string.
-            return digest.map { String(format: "%02X", UInt8($0)) }.joined()
+            return digest.reduce("") { (current, new) -> String in
+                String(format: "\(current)%02X", UInt8(new))
+            }
         }
         
         return ""

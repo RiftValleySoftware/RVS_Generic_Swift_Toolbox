@@ -57,7 +57,7 @@ public extension StringProtocol {
     var md5: String {
         // The reason we are declaring these here, is so we don't have to actally import the CC module. We will just grope around and find the entry point, ourselves.
         
-        // This is a cast for [the MD5 function](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/CC_MD5.3cc.html#//apple_ref/doc/man/3cc/CC_MD5). The convention attribute just says that it's a "raw" C function.
+        /// This is a cast for [the MD5 function](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/CC_MD5.3cc.html#//apple_ref/doc/man/3cc/CC_MD5). The convention attribute just says that it's a "raw" C function.
         typealias CC_MD5_TYPE = @convention(c) (UnsafeRawPointer, UInt32, UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
         
         // This is a flag, telling the name lookup to happen in the global scope. No dlopen required.
@@ -114,7 +114,7 @@ public extension StringProtocol {
     var sha256: String {
         // The reason we are declaring these here, is so we don't have to actally import the CC module. We will just grope around and find the entry point, ourselves.
         
-        // This is a cast for [the SHA256 function](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/CC_SHA.3cc.html#//apple_ref/doc/man/3cc/CC_SHA). The convention attribute just says that it's a "raw" C function.
+        /// This is a cast for [the SHA256 function](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/CC_SHA.3cc.html#//apple_ref/doc/man/3cc/CC_SHA). The convention attribute just says that it's a "raw" C function.
         typealias CC_SHA256_TYPE = @convention(c) (UnsafeRawPointer, UInt32, UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
         
         // This is a flag, telling the name lookup to happen in the global scope. No dlopen required.

@@ -279,6 +279,27 @@ class RVS_String_Extensions_Tests: XCTestCase {
     
     /* ################################################################## */
     /**
+     Test our UUID scrubber computed property.
+     */
+    func testUUIDParser() {
+        XCTAssertEqual("0123", "0123".uuidFormat)
+        XCTAssertNil("01234".uuidFormat)
+        XCTAssertNil("0123A".uuidFormat)
+        XCTAssertEqual("0123", "0123g".uuidFormat)
+        XCTAssertEqual("0123", "0123-".uuidFormat)
+        XCTAssertEqual("01234567-8901-2345-6789-012345678901", "01234567890123456789012345678901".uuidFormat)
+        
+        XCTAssertEqual("01234567-89AB-CDEF-0123-456789ABCDEF", "0123456789ABcdEf0123456789abcdEF".uuidFormat)
+        
+        XCTAssertEqual("01234567-89AB-CDEF-0123-456789ABCDEF", "0123456789ABcdEf012345RowRowRowYour6789abcdEFShip".uuidFormat)
+
+        XCTAssertEqual("89AB", "89a-b".uuidFormat)
+        
+        XCTAssertEqual("89AB", "89axb".uuidFormat)
+    }
+    
+    /* ################################################################## */
+    /**
      Test our md5 computed property.
      */
     func testSHA256() {

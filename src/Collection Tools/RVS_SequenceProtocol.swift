@@ -1,5 +1,5 @@
 /**
-© Copyright 2019, The Great Rift Valley Software Company
+© Copyright 2019-2020, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.0.1
+Version: 1.0.3
 */
 
 /* ###################################################################################################################################### */
@@ -72,33 +72,25 @@ extension RVS_SequenceProtocol {
      
      - returns: The Array iterator for our elements.
      */
-    public func makeIterator() -> Array<Element>.Iterator {
-        return sequence_contents.makeIterator()
-    }
+    public func makeIterator() -> Array<Element>.Iterator { sequence_contents.makeIterator() }
     
     /* ################################################################## */
     /**
      Default implementation should do fine for us.
      */
-    public mutating func removeAll() {
-        sequence_contents = []
-    }
+    public mutating func removeAll() { sequence_contents = [] }
     
     /* ################################################################## */
     /**
      Returns true, if yes, we have no bananas.
      */
-    public var isEmpty: Bool {
-        return sequence_contents.isEmpty
-    }
+    public var isEmpty: Bool { sequence_contents.isEmpty }
     
     /* ################################################################## */
     /**
      The number of elements we have. 1-based. 0 is no elements (isEmpty is true).
      */
-    public var count: Int {
-        return sequence_contents.count
-    }
+    public var count: Int { sequence_contents.count }
 
     /* ################################################################## */
     /**

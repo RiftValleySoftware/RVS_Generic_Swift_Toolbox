@@ -1,5 +1,5 @@
 /**
-© Copyright 2019, The Great Rift Valley Software Company
+© Copyright 2019-2020, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.0.1
+Version: 1.0.3
 */
 
 /* ###################################################################################################################################### */
@@ -138,9 +138,7 @@ public extension UInt {
      
      - returns: An Int, with the masked value.
      */
-    func maskedValue(firstPlace inFirstPlace: UInt, runLength inRunLength: UInt) -> UInt {
-        return UInt(UInt64(self).maskedValue(firstPlace: inFirstPlace, runLength: inRunLength))
-    }
+    func maskedValue(firstPlace inFirstPlace: UInt, runLength inRunLength: UInt) -> UInt { UInt(UInt64(self).maskedValue(firstPlace: inFirstPlace, runLength: inRunLength)) }
 }
 
 /* ###################################################################################################################################### */

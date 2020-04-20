@@ -1,5 +1,5 @@
 /**
-© Copyright 2019, The Great Rift Valley Software Company
+© Copyright 2019-2020, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.0.1
+Version: 1.0.3
 */
 
 import Foundation   // Required for the ProcessInfo stuff.
@@ -37,7 +37,5 @@ public class RVS_DebugTools {
      
      - returns: True, if we are currently in a unit test.
      */
-    static public var isRunningUnitTests: Bool {
-        return nil != NSClassFromString("XCTest")
-    }
+    static public var isRunningUnitTests: Bool { nil != NSClassFromString("XCTest") }
 }

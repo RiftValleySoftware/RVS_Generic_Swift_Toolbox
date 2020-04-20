@@ -1,5 +1,5 @@
 /**
-© Copyright 2019, The Great Rift Valley Software Company
+© Copyright 2019-2020, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.0.1
+Version: 1.0.3
 */
 
 import Foundation
@@ -111,6 +111,7 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
         #if DEBUG
             print("Enqueuing: \(String(describing: inNewElement))")
         #endif
+        
         _rightQueue.append(inNewElement)
     }
     
@@ -124,6 +125,7 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
         #if DEBUG
             print("Enqueuing: \(String(describing: inNewElements))")
         #endif
+        
         _rightQueue.append(contentsOf: inNewElements)
     }
 
@@ -145,9 +147,11 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
             _leftQueue = _rightQueue.reversed()
             _rightQueue.removeAll()
         }
+        
         #if DEBUG
             print("Dequeuing: \(String(describing: _leftQueue.last))")
         #endif
+        
         return _leftQueue.popLast() // Since we are popping off the top, the cost is negligible.
     }
     
@@ -161,6 +165,7 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
         #if DEBUG
             print("Clearing the Decks. Removing \(count) items.")
         #endif
+        
         _leftQueue.removeAll()
         _rightQueue.removeAll()
     }
@@ -191,17 +196,13 @@ extension RVS_FIFOQueue: MutableCollection {
     /**
      - returns: 0. The start is always 0.
      */
-    public var startIndex: Int {
-        return 0
-    }
+    public var startIndex: Int { 0 }
 
     /* ################################################################## */
     /**
      - returns: The length of both internal queues, combined.
      */
-    public var endIndex: Int {
-        return _leftQueue.count + _rightQueue.count
-    }
+    public var endIndex: Int { _leftQueue.count + _rightQueue.count }
     
     /* ################################################################## */
     /**

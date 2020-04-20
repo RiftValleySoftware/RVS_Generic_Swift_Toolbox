@@ -1,5 +1,5 @@
 /**
-© Copyright 2019, The Great Rift Valley Software Company
+© Copyright 2019-2020, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.0.2
+Version: 1.0.3
 */
 
 import Foundation   // Required for the NS stuff.
@@ -36,9 +36,7 @@ public extension StringProtocol {
     /**
      - returns: the localized string (main bundle) for this string.
      */
-    var localizedVariant: String {
-        return NSLocalizedString(String(self), comment: "") // Need to force self into a String.
-    }
+    var localizedVariant: String { return NSLocalizedString(String(self), comment: "") }
     
     /* ################################################################## */
     /**
@@ -70,31 +68,27 @@ public extension StringProtocol {
         // This is the length of the hash
         let CC_MD5_DIGEST_LENGTH = 16
     
-        if let strData = self.data(using: .utf8) {
-            /// Creates an array of unsigned 8 bit integers that contains 16 zeros
-            var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
+        guard let strData = self.data(using: .utf8) else { return "" }
+        
+        /// Creates an array of unsigned 8 bit integers that contains 16 zeros
+        var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
 
-            /// CC_MD5 performs digest calculation and places the result in the caller-supplied buffer for digest (md)
-            /// Calls the given closure with a pointer to the underlying unsafe bytes of the strData’s contiguous storage.
-            _ = strData.withUnsafeBytes { (inBytes) -> Int in
-                // CommonCrypto
-                // extern unsigned char *CC_MD5(const void *data, CC_LONG len, unsigned char *md) --|
-                // OpenSSL                                                                          |
-                // unsigned char *MD5(const unsigned char *d, size_t n, unsigned char *md)        <-|
-                if let baseAddr = inBytes.baseAddress {
-                    _ = CC_MD5(baseAddr, UInt32(strData.count), &digest)
-                }
+        /// CC_MD5 performs digest calculation and places the result in the caller-supplied buffer for digest (md)
+        /// Calls the given closure with a pointer to the underlying unsafe bytes of the strData’s contiguous storage.
+        _ = strData.withUnsafeBytes { (inBytes) -> Int in
+            // CommonCrypto
+            // extern unsigned char *CC_MD5(const void *data, CC_LONG len, unsigned char *md) --|
+            // OpenSSL                                                                          |
+            // unsigned char *MD5(const unsigned char *d, size_t n, unsigned char *md)        <-|
+            if let baseAddr = inBytes.baseAddress {
+                _ = CC_MD5(baseAddr, UInt32(strData.count), &digest)
+            }
 
-                return 0
-            }
-            
-            // Convert the numerical response to an uppercase hex string.
-            return digest.reduce("") { (current, new) -> String in
-                String(format: "\(current)%02X", new)
-            }
+            return 0
         }
         
-        return ""
+        // Convert the numerical response to an uppercase hex string.
+        return digest.reduce("") { (current, new) -> String in String(format: "\(current)%02X", new) }
     }
     
     /* ################################################################## */
@@ -127,31 +121,27 @@ public extension StringProtocol {
         // This is the length of the hash
         let CC_SHA256_DIGEST_LENGTH = 32
     
-        if let strData = self.data(using: .utf8) {
-            /// Creates an array of unsigned 8 bit integers that contains 32 zeros
-            var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+        guard let strData = self.data(using: .utf8) else { return "" }
+        
+        /// Creates an array of unsigned 8 bit integers that contains 32 zeros
+        var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
 
-            /// CC_SHA256 performs digest calculation and places the result in the caller-supplied buffer for digest (md)
-            /// Takes the strData referenced value (const unsigned char *d) and hashes it into a reference to the digest parameter.
-            _ = strData.withUnsafeBytes { (inBytes) -> Int in
-                // CommonCrypto
-                // extern unsigned char *CC_SHA256(const void *data, CC_LONG len, unsigned char *md)  -|
-                // OpenSSL                                                                             |
-                // unsigned char *SHA256(const unsigned char *d, size_t n, unsigned char *md)        <-|
-                if let baseAddr = inBytes.baseAddress {
-                    _ = CC_SHA256(baseAddr, UInt32(strData.count), &digest)
-                }
+        /// CC_SHA256 performs digest calculation and places the result in the caller-supplied buffer for digest (md)
+        /// Takes the strData referenced value (const unsigned char *d) and hashes it into a reference to the digest parameter.
+        _ = strData.withUnsafeBytes { (inBytes) -> Int in
+            // CommonCrypto
+            // extern unsigned char *CC_SHA256(const void *data, CC_LONG len, unsigned char *md)  -|
+            // OpenSSL                                                                             |
+            // unsigned char *SHA256(const unsigned char *d, size_t n, unsigned char *md)        <-|
+            if let baseAddr = inBytes.baseAddress {
+                _ = CC_SHA256(baseAddr, UInt32(strData.count), &digest)
+            }
 
-                return 0
-            }
-            
-            // Convert the numerical response to an uppercase hex string.
-            return digest.reduce("") { (current, new) -> String in
-                String(format: "\(current)%02X", new)
-            }
+            return 0
         }
         
-        return ""
+        // Convert the numerical response to an uppercase hex string.
+        return digest.reduce("") { (current, new) -> String in String(format: "\(current)%02X", new) }
     }
 
     /* ################################################################## */
@@ -160,11 +150,8 @@ public extension StringProtocol {
      */
     var hexDump8: [String] {
         var hexString = [String]()
-        for char in self {
-            for ch in char.utf8 {
-                hexString.append(String(format: "%02X", ch))
-            }
-        }
+        
+        forEach { $0.utf8.forEach { (ch) in hexString.append(String(format: "%02X", ch)) } }
         
         return hexString
     }
@@ -175,11 +162,8 @@ public extension StringProtocol {
      */
     var hexDump16: [String] {
         var hexString = [String]()
-        for char in self {
-            for ch in char.utf16 {
-                hexString.append(String(format: "%04X", ch))
-            }
-        }
+        
+        forEach { $0.utf16.forEach { (ch) in hexString.append(String(format: "%04X", ch)) } }
         
         return hexString
     }
@@ -193,6 +177,7 @@ public extension StringProtocol {
      */
     var firstUppercased: String {
         guard let first = self.first else { return "" }
+        
         return String(first).uppercased() + self.dropFirst()
     }
     
@@ -205,12 +190,9 @@ public extension StringProtocol {
      - returns: a string, cleaned for URI.
      */
     var urlEncodedString: String? {
-        let customAllowedSet =  CharacterSet.urlQueryAllowed
-        if let ret = self.addingPercentEncoding(withAllowedCharacters: customAllowedSet) {
-            return ret
-        } else {
-            return ""
-        }
+        guard let ret = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { return "" }
+       
+        return ret
     }
     
     /* ################################################################## */
@@ -222,11 +204,9 @@ public extension StringProtocol {
      - returns: a string, restored from URI encoding.
      */
     var urlDecodedString: String? {
-        if let ret = self.removingPercentEncoding {
-            return ret
-        } else {
-            return ""
-        }
+        guard let ret = self.removingPercentEncoding else { return "" }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -394,9 +374,7 @@ public extension StringProtocol where Index == String.Index {
      
      - returns: The index of the first occurrence. Nil, if does not occur.
      */
-    func index(of inString: Self, options inOptions: String.CompareOptions = []) -> Index? {
-        return range(of: inString, options: inOptions)?.lowerBound
-    }
+    func index(of inString: Self, options inOptions: String.CompareOptions = []) -> Index? { range(of: inString, options: inOptions)?.lowerBound }
 
     /* ################################################################## */
     /**
@@ -407,9 +385,7 @@ public extension StringProtocol where Index == String.Index {
      
      - returns: The index of the last occurrence. Nil, if does not occur.
      */
-    func endIndex(of inString: Self, options inOptions: String.CompareOptions = []) -> Index? {
-        return range(of: inString, options: inOptions)?.upperBound
-    }
+    func endIndex(of inString: Self, options inOptions: String.CompareOptions = []) -> Index? { range(of: inString, options: inOptions)?.upperBound }
     
     /* ################################################################## */
     /**

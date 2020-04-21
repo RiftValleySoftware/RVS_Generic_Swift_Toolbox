@@ -1,3 +1,6 @@
+*Version 1.0.4.0000* **April 21, 2020**
+- Added the Data extension, and the casting function.
+
 *Version 1.0.3.0000* **April 20, 2020**
 - Some basic refactoring to improve "swiftiness."
 

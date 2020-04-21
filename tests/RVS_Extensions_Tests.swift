@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.0.3
+Version: 1.0.4
 */
 
 import XCTest
@@ -469,5 +469,63 @@ class RVS_String_Extensions_Tests: XCTestCase {
         XCTAssertEqual(11, rangesOf3.count)
         XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: indexesOf3[0]))
         XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: indexesOf3[10]))
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the generic data cast method.
+     */
+    func testDataCasts() {
+        var int_64 = Int64(12345)
+
+        var data = Data(bytes: &int_64, count: MemoryLayout<Int64>.size)
+        
+        int_64 = 0
+        
+        let test_cast = data.castInto(&int_64)
+        XCTAssertEqual(int_64, Int64(12345))
+        XCTAssertEqual(int_64, test_cast)
+        
+        int_64 = Int64(7890).bigEndian
+
+        var data2 = Data(bytes: &int_64, count: MemoryLayout<Int64>.size)
+        
+        int_64 = 0
+        
+        let test_cast2 = data2.castInto(&int_64)
+        XCTAssertEqual(int_64, Int64(7890).bigEndian)
+        XCTAssertEqual(int_64, test_cast2)
+        
+        var stringVal = "The Rain In Spain Falls Mainly On the Plain."
+        let strlen = stringVal.lengthOfBytes(using: .utf8)
+        var data3 = Data(bytes: &stringVal, count: strlen)
+        
+        var stringVal2 = String(repeatElement(" ", count: strlen))
+        let test_cast3 = data3.castInto(&stringVal2)
+        XCTAssertEqual(test_cast3, "The Rain In Spain Falls Mainly On the Plain.")
+        XCTAssertEqual(stringVal2, test_cast3)
+
+        let test_cast4 = data3.castInto(&int_64)
+        
+        XCTAssertEqual(test_cast4, Int64(-3458764513820540884))
+        XCTAssertEqual(test_cast4, int_64)
+
+        var in_8_array: [UInt8] = [0, 1, 2]
+        var data5 = Data(bytes: &in_8_array, count: 3)
+        var destinationInt: UInt32 = 0
+        let test_cast5 = data5.castInto(&destinationInt)
+        XCTAssertEqual(test_cast5, UInt32(0x00020100))
+
+        var int_8 = UInt8(3)
+
+        int_64 = 0
+        var data6 = Data(bytes: &int_8, count: MemoryLayout<Int8>.size)
+        let test_cast6 = data6.castInto(&int_64)
+        XCTAssertEqual(test_cast6, Int64(3))
+        
+        var doubleValue = Double(0.12345)
+        var data7 = Data(bytes: &doubleValue, count: MemoryLayout<Double>.size)
+        let test_cast7 = data7.castInto(&doubleValue)
+        XCTAssertEqual(test_cast7, Double(0.12345))
     }
 }

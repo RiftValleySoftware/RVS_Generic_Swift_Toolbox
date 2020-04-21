@@ -22,20 +22,30 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 Version: 1.0.4
 */
 
-import Foundation   // Required for the ProcessInfo stuff.
+import Foundation
 
 /* ###################################################################################################################################### */
-// MARK: - Debug Tools Class -
+// MARK: - Data Extension -
 /* ###################################################################################################################################### */
 /**
- This class is a "junk drawer" of vrious debug/testing tools.
+ This extension adds the ability to extract data fron a Data instance, cast into various types.
  */
-public class RVS_DebugTools {
+public extension Data {
     /* ################################################################## */
     /**
-     This is used to see whether or not we are running under unit tests. It is optional, and isn't really supposed to be replaced.
+     This method allows a Data instance to be cast into various standard types.
      
-     - returns: True, if we are currently in a unit test.
+     - parameter inValue: This is an inout parameter, and the type will be used to determine the cast.
+     - returns: the cast value (the parameter will also be set to the cast value). Can be ignored.
      */
-    static public var isRunningUnitTests: Bool { nil != NSClassFromString("XCTest") }
+    @discardableResult
+    mutating func castInto<T>(_ inValue: inout T) -> T {
+        // Makes sure that we don't try to read past the end of the data.
+        let len = Swift.min(MemoryLayout<T>.size, self.count)
+        _ = Swift.withUnsafeMutableBytes(of: &inValue) {
+            self.copyBytes(to: $0, from: 0..<len)
+        }
+        
+        return inValue
+    }
 }

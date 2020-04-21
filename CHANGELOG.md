@@ -1,3 +1,6 @@
+*Version 1.0.5.0000* **April 21, 2020**
+- Removed the Data extension, because it's sort of unsafe, and probably not something that should be in a public utility.
+
 *Version 1.0.4.0000* **April 21, 2020**
 - Added the Data extension, and the casting function.
 

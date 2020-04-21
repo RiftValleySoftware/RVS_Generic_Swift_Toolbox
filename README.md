@@ -3,7 +3,7 @@
 RVS_Generic_Swift_Toolbox
 =
 
-***Version:*** *1.0.4 (April 21, 2020)*
+***Version:*** *1.0.5 (April 21, 2020)*
 
 [This is the technical documentation for this repository](https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/)
 
@@ -27,10 +27,6 @@ These tools will work for all of these platforms, and will, at most, rely only o
         This is a set of tools used to aid debugging and testing code.
 
 - [**EXTENSIONS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/src/Extensions)
-    - [**RVS_Data_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/src/Extensions/RVS_Data_Extensions.swift)
-    
-        Extensions to the Data type.
-        
     - [**RVS_Int_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/src/Extensions/RVS_Int_Extensions.swift)
     
         Extensions to integer data types.

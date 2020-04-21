@@ -28,7 +28,7 @@ import Foundation
 // MARK: - Data Extension -
 /* ###################################################################################################################################### */
 /**
- This extension adds the ability to extract data fron a Data instance, cast into various types.
+ This extension adds the ability to extract data from a Data instance, cast into various types.
  */
 public extension Data {
     /* ################################################################## */

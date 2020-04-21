@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RVS_DebugTools Class Reference</title>
+    <title>Data Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/RVS_DebugTools" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Extension/Data" class="dashAnchor"></a>
 
-    <a title="RVS_DebugTools Class Reference"></a>
+    <a title="Data Extension Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">RVS_Generic_Swift_Toolbox Reference</a>
       <img class="carat" src="../img/carat.png" />
-      RVS_DebugTools Class Reference
+      Data Extension Reference
     </p>
 
     <div class="content-wrapper">
@@ -103,14 +103,14 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>RVS_DebugTools</h1>
+            <h1>Data</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RVS_DebugTools</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Data</span></code></pre>
 
                 </div>
               </div>
-            <p>This class is a &ldquo;junk drawer&rdquo; of vrious debug/testing tools.</p>
+            <p>This extension adds the ability to extract data fron a Data instance, cast into various types.</p>
 
           </div>
         </section>
@@ -122,9 +122,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:25RVS_Generic_Swift_Toolbox0A11_DebugToolsC18isRunningUnitTestsSbvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/isRunningUnitTests" class="dashAnchor"></a>
-                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A11_DebugToolsC18isRunningUnitTestsSbvpZ">isRunningUnitTests</a>
+                    <a name="/s:10Foundation4DataV25RVS_Generic_Swift_ToolboxE8castIntoyxxzlF"></a>
+                    <a name="//apple_ref/swift/Method/castInto(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation4DataV25RVS_Generic_Swift_ToolboxE8castIntoyxxzlF">castInto(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -132,20 +132,40 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is used to see whether or not we are running under unit tests. It is optional, and isn&rsquo;t really supposed to be replaced.</p>
+                        <p>This method allows a Data instance to be cast into various standard types.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">isRunningUnitTests</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="k">mutating</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="n">castInto</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">inValue</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span></code></pre>
 
                         </div>
                       </div>
                       <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is an inout parameter, and the type will be used to determine the cast.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
                         <h4>Return Value</h4>
-                        <p>True, if we are currently in a unit test.</p>
+                        <p>the cast value (the parameter will also be set to the cast value). Can be ignored.</p>
                       </div>
                     </section>
                   </div>

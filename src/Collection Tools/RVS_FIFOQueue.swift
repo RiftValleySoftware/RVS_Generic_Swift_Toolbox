@@ -90,7 +90,6 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
     /* ################################################################## */
     /**
      This will push the single element into the 0th (first) place.
-     It is not an efficient operation, but may be necessary, in some cases.
      - parameter inNewElement: The Element to be enqueued (placed on the front of the list).
      */
     mutating public func cutTheLine(_ inNewElement: Element) {
@@ -98,7 +97,7 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
             print("Adding to the front of the queue: \(String(describing: inNewElement))")
         #endif
         
-        _leftQueue.insert(inNewElement, at: 0)
+        _leftQueue.append(inNewElement)
     }
 
     /* ################################################################## */

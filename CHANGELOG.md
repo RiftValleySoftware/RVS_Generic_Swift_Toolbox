@@ -1,3 +1,7 @@
+*Version 1.0.6.0000* **May 22, 2020**
+- My "cutTheLine(_:)" method was wrong. Fixed.
+- Updated to latest Xcode.
+
 *Version 1.0.5.0000* **April 21, 2020**
 - Removed the Data extension, because it's sort of unsafe, and probably not something that should be in a public utility.
 

@@ -32,7 +32,7 @@ import Foundation
  
  The original design was done by [Ole Begemann](https://oleb.net) and [Chris Eidhof](https://chris.eidhof.nl). I have modified it slightly; but not much.
  
- It is fast all git-go.
+ It is fast as all git-go.
 
  A type that can efficiently "enqueue" and "dequeue" elements. It works on one element at a time. You cannot dequeue groups of elements.
  */
@@ -91,6 +91,7 @@ public struct RVS_FIFOQueue<Element>: OLEB_Queue {
     /**
      This will push the single element into the 0th (first) place.
      - parameter inNewElement: The Element to be enqueued (placed on the front of the list).
+     - Complexity: O(1).
      */
     mutating public func cutTheLine(_ inNewElement: Element) {
         #if DEBUG

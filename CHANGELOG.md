@@ -1,3 +1,9 @@
+*Version 1.1.0.0000* **June 13, 2020**
+- Renamed the test directory.
+- Renamed the meta dir to match my regular naming.
+- Removed the podfile.
+- Added excutable SwiftLint.
+
 *Version 1.0.6.0000* **May 22, 2020**
 - My "cutTheLine(_:)" method was wrong. Fixed.
 - Updated to latest Xcode.

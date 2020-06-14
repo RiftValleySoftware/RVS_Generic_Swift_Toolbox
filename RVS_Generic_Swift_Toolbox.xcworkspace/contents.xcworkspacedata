@@ -11,6 +11,9 @@
       location = "group:LICENSE">
    </FileRef>
    <FileRef
+      location = "group:Package.swift">
+   </FileRef>
+   <FileRef
       location = "group:RVS_Generic_Swift_Toolbox.xcodeproj">
    </FileRef>
 </Workspace>

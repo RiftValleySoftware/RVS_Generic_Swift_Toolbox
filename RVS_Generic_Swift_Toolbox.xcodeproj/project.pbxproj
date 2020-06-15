@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		D427DB3323DDC66900849489 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2C23DDC66900849489 /* main.swift */; };
+		D46D807F2496EB890087DD9B /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
+		D46D80802496EB890087DD9B /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
+		D46D80812496EB890087DD9B /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
+		D46D80822496EB890087DD9B /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
+		D46D80832496EB890087DD9B /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
+		D46D80912496EBBA0087DD9B /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
+		D46D80922496EBBA0087DD9B /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
+		D46D80932496EBBA0087DD9B /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
+		D46D80942496EBBA0087DD9B /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
+		D46D80952496EBBA0087DD9B /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
+		D46D80A32496EC0C0087DD9B /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
+		D46D80A42496EC0C0087DD9B /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
+		D46D80A52496EC0C0087DD9B /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
+		D46D80A62496EC0C0087DD9B /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
+		D46D80A72496EC0C0087DD9B /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
 		D4907AC424956330007FAE32 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4907AC324956330007FAE32 /* Warnings.xcconfig */; };
 		D4907AC824956501007FAE32 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4907AC624956501007FAE32 /* Localizable.strings */; };
 		D4B4CF38249698E0003936DF /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
@@ -36,6 +51,12 @@
 		D427DB2C23DDC66900849489 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Int_Extensions.swift; sourceTree = "<group>"; };
 		D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_String_Extensions.swift; sourceTree = "<group>"; };
+		D46D80772496EB610087DD9B /* RVS_Generic_Swift_Toolbox_MacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_MacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D46D807A2496EB610087DD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D46D80892496EBAF0087DD9B /* RVS_Generic_Swift_Toolbox_WatchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_WatchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D46D808C2496EBAF0087DD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D46D809B2496EBD70087DD9B /* RVS_Generic_Swift_Toolbox_TVOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_TVOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D46D809E2496EBD70087DD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4907AC324956330007FAE32 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4907AC724956501007FAE32 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D4B4CF3024969861003936DF /* RVS_Generic_Swift_Toolbox_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +71,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D46D80742496EB610087DD9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46D80862496EBAF0087DD9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46D80982496EBD70087DD9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4B4CF2D24969861003936DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,6 +134,30 @@
 				D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D46D80782496EB610087DD9B /* RVS_Generic_Swift_Toolbox_MacOS */ = {
+			isa = PBXGroup;
+			children = (
+				D46D807A2496EB610087DD9B /* Info.plist */,
+			);
+			path = RVS_Generic_Swift_Toolbox_MacOS;
+			sourceTree = "<group>";
+		};
+		D46D808A2496EBAF0087DD9B /* RVS_Generic_Swift_Toolbox_WatchOS */ = {
+			isa = PBXGroup;
+			children = (
+				D46D808C2496EBAF0087DD9B /* Info.plist */,
+			);
+			path = RVS_Generic_Swift_Toolbox_WatchOS;
+			sourceTree = "<group>";
+		};
+		D46D809C2496EBD70087DD9B /* RVS_Generic_Swift_Toolbox_TVOS */ = {
+			isa = PBXGroup;
+			children = (
+				D46D809E2496EBD70087DD9B /* Info.plist */,
+			);
+			path = RVS_Generic_Swift_Toolbox_TVOS;
 			sourceTree = "<group>";
 		};
 		D49DBEA723DDC79D004006AB /* meta */ = {
@@ -142,6 +208,9 @@
 				D4D03C1923DDDE9D005B54B5 /* test */,
 				D4D03C2023DDE029005B54B5 /* src */,
 				D4B4CF3124969861003936DF /* RVS_Generic_Swift_Toolbox_iOS */,
+				D46D80782496EB610087DD9B /* RVS_Generic_Swift_Toolbox_MacOS */,
+				D46D808A2496EBAF0087DD9B /* RVS_Generic_Swift_Toolbox_WatchOS */,
+				D46D809C2496EBD70087DD9B /* RVS_Generic_Swift_Toolbox_TVOS */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +220,9 @@
 				D4D411A823DDC5AD00D607F7 /* RVS_Generic_Swift_Toolbox */,
 				D4D03C1823DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests.xctest */,
 				D4B4CF3024969861003936DF /* RVS_Generic_Swift_Toolbox_iOS.framework */,
+				D46D80772496EB610087DD9B /* RVS_Generic_Swift_Toolbox_MacOS.framework */,
+				D46D80892496EBAF0087DD9B /* RVS_Generic_Swift_Toolbox_WatchOS.framework */,
+				D46D809B2496EBD70087DD9B /* RVS_Generic_Swift_Toolbox_TVOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +230,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		D46D80722496EB610087DD9B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46D80842496EBAF0087DD9B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46D80962496EBD70087DD9B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4B4CF2B24969861003936DF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -168,6 +261,60 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D46D80762496EB610087DD9B /* RVS_Generic_Swift_Toolbox_MacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D46D807E2496EB610087DD9B /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_MacOS" */;
+			buildPhases = (
+				D46D80722496EB610087DD9B /* Headers */,
+				D46D80732496EB610087DD9B /* Sources */,
+				D46D80742496EB610087DD9B /* Frameworks */,
+				D46D80752496EB610087DD9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RVS_Generic_Swift_Toolbox_MacOS;
+			productName = RVS_Generic_Swift_Toolbox_MacOS;
+			productReference = D46D80772496EB610087DD9B /* RVS_Generic_Swift_Toolbox_MacOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D46D80882496EBAF0087DD9B /* RVS_Generic_Swift_Toolbox_WatchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D46D808E2496EBAF0087DD9B /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_WatchOS" */;
+			buildPhases = (
+				D46D80842496EBAF0087DD9B /* Headers */,
+				D46D80852496EBAF0087DD9B /* Sources */,
+				D46D80862496EBAF0087DD9B /* Frameworks */,
+				D46D80872496EBAF0087DD9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RVS_Generic_Swift_Toolbox_WatchOS;
+			productName = RVS_Generic_Swift_Toolbox_WatchOS;
+			productReference = D46D80892496EBAF0087DD9B /* RVS_Generic_Swift_Toolbox_WatchOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D46D809A2496EBD70087DD9B /* RVS_Generic_Swift_Toolbox_TVOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D46D80A02496EBD70087DD9B /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_TVOS" */;
+			buildPhases = (
+				D46D80962496EBD70087DD9B /* Headers */,
+				D46D80972496EBD70087DD9B /* Sources */,
+				D46D80982496EBD70087DD9B /* Frameworks */,
+				D46D80992496EBD70087DD9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RVS_Generic_Swift_Toolbox_TVOS;
+			productName = RVS_Generic_Swift_Toolbox_TVOS;
+			productReference = D46D809B2496EBD70087DD9B /* RVS_Generic_Swift_Toolbox_TVOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D4B4CF2F24969861003936DF /* RVS_Generic_Swift_Toolbox_iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4B4CF3724969861003936DF /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_iOS" */;
@@ -228,6 +375,15 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
+					D46D80762496EB610087DD9B = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					D46D80882496EBAF0087DD9B = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					D46D809A2496EBD70087DD9B = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					D4B4CF2F24969861003936DF = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -255,6 +411,9 @@
 				D4D411A723DDC5AD00D607F7 /* RVS_Generic_Swift_Toolbox */,
 				D4D03C1723DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests */,
 				D4B4CF2F24969861003936DF /* RVS_Generic_Swift_Toolbox_iOS */,
+				D46D80762496EB610087DD9B /* RVS_Generic_Swift_Toolbox_MacOS */,
+				D46D80882496EBAF0087DD9B /* RVS_Generic_Swift_Toolbox_WatchOS */,
+				D46D809A2496EBD70087DD9B /* RVS_Generic_Swift_Toolbox_TVOS */,
 			);
 		};
 /* End PBXProject section */
@@ -266,6 +425,27 @@
 			files = (
 				D4907AC824956501007FAE32 /* Localizable.strings in Resources */,
 				D4907AC424956330007FAE32 /* Warnings.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46D80752496EB610087DD9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46D80872496EBAF0087DD9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46D80992496EBD70087DD9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +480,42 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D46D80732496EB610087DD9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46D80802496EB890087DD9B /* RVS_SequenceProtocol.swift in Sources */,
+				D46D807F2496EB890087DD9B /* RVS_FIFOQueue.swift in Sources */,
+				D46D80812496EB890087DD9B /* RVS_DebugTools.swift in Sources */,
+				D46D80832496EB890087DD9B /* RVS_String_Extensions.swift in Sources */,
+				D46D80822496EB890087DD9B /* RVS_Int_Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46D80852496EBAF0087DD9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46D80922496EBBA0087DD9B /* RVS_SequenceProtocol.swift in Sources */,
+				D46D80912496EBBA0087DD9B /* RVS_FIFOQueue.swift in Sources */,
+				D46D80932496EBBA0087DD9B /* RVS_DebugTools.swift in Sources */,
+				D46D80952496EBBA0087DD9B /* RVS_String_Extensions.swift in Sources */,
+				D46D80942496EBBA0087DD9B /* RVS_Int_Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46D80972496EBD70087DD9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46D80A42496EC0C0087DD9B /* RVS_SequenceProtocol.swift in Sources */,
+				D46D80A32496EC0C0087DD9B /* RVS_FIFOQueue.swift in Sources */,
+				D46D80A52496EC0C0087DD9B /* RVS_DebugTools.swift in Sources */,
+				D46D80A72496EC0C0087DD9B /* RVS_String_Extensions.swift in Sources */,
+				D46D80A62496EC0C0087DD9B /* RVS_Int_Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4B4CF2C24969861003936DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,6 +569,188 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D46D807C2496EB610087DD9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0000;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RVS_Generic_Swift_Toolbox_MacOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-MacOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D46D807D2496EB610087DD9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0000;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RVS_Generic_Swift_Toolbox_MacOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-MacOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D46D808F2496EBAF0087DD9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0000;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RVS_Generic_Swift_Toolbox_WatchOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-WatchOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Debug;
+		};
+		D46D80902496EBAF0087DD9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0000;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RVS_Generic_Swift_Toolbox_WatchOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-WatchOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Release;
+		};
+		D46D80A12496EBD70087DD9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0000;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RVS_Generic_Swift_Toolbox_TVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-TVOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D46D80A22496EBD70087DD9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0000;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RVS_Generic_Swift_Toolbox_TVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-TVOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		D4B4CF3524969861003936DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -600,6 +998,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D46D807E2496EB610087DD9B /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D46D807C2496EB610087DD9B /* Debug */,
+				D46D807D2496EB610087DD9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D46D808E2496EBAF0087DD9B /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_WatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D46D808F2496EBAF0087DD9B /* Debug */,
+				D46D80902496EBAF0087DD9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D46D80A02496EBD70087DD9B /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_TVOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D46D80A12496EBD70087DD9B /* Debug */,
+				D46D80A22496EBD70087DD9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D4B4CF3724969861003936DF /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -33,6 +33,6 @@ let package = Package(
         )
     ],
     swiftLanguageVersions: [
-        5.0
+        5.2
     ]
 )

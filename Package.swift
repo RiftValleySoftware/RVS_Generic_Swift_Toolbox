@@ -31,8 +31,5 @@ let package = Package(
             name: "RVS_Generic_Swift_Toolbox_TVOS",
             path: "RVS_Generic_Swift_Toolbox_TVOS"
         )
-    ],
-    swiftLanguageVersions: [
-        5.2
     ]
 )

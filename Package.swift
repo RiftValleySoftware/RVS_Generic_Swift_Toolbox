@@ -6,7 +6,7 @@ let package = Package(
     name: "RVS_Generic_Swift_Toolbox",
     products: [
         .library(
-            name: "RVS_Generic_Swift_Toolbox",
+            name: "RVS-Generic-Swift-Toolbox",
             type: .dynamic,
             targets: ["RVS_Generic_Swift_Toolbox"]),
     ],

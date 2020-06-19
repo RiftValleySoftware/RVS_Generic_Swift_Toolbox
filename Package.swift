@@ -3,10 +3,10 @@
 import PackageDescription
 
 let package = Package(
-    name: "RVS_Generic_Swift_Toolbox",
+    name: "RVSGenericSwiftToolbox",
     products: [
         .library(
-            name: "RVS_Generic_Swift_Toolbox",
+            name: "RVSGenericSwiftToolbox",
             type: .dynamic,
             targets: ["RVS_Generic_Swift_Toolbox"]),
     ],

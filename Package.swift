@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "RVS_Generic_Swift_Toolbox",
+    type: .dynamic,
     platforms: [
         .macOS(.v10_14),
         .iOS(.v12),

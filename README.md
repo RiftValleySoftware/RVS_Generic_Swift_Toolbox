@@ -3,7 +3,7 @@
 RVS_Generic_Swift_Toolbox
 =
 
-***Version:*** *1.0.5 (April 21, 2020)*
+*Version 1.2.0.0000* **TBD**
 
 [This is the technical documentation for this repository](https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/)
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -396,7 +396,7 @@
 				};
 			};
 			buildConfigurationList = D4D411A323DDC5AD00D607F7 /* Build configuration list for PBXProject "RVS_Generic_Swift_Toolbox" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

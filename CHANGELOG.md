@@ -1,3 +1,6 @@
+*Version 1.2.0.0000* **TBD**
+- Adding support for SPM
+
 *Version 1.1.0.0000* **June 13, 2020**
 - Renamed the test directory.
 - Renamed the meta dir to match my regular naming.

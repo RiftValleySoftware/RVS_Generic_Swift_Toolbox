@@ -6,7 +6,9 @@ let package = Package(
     name: "RVS_Generic_Swift_Toolbox",
     platforms: [
         .macOS(.v10_14),
-        .iOS(.v11)
+        .iOS(.v12),
+        .watchOS(.v5),
+        .tvOS(.v12)
     ],
     products: [
         .library(
@@ -19,5 +21,6 @@ let package = Package(
             name: "RVS_Generic_Swift_Toolbox",
             path: "src"
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )

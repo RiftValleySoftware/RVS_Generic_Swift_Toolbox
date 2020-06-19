@@ -17,19 +17,19 @@ let package = Package(
     targets: [
         .target(
             name: "RVS_Generic_Swift_Toolbox_iOS",
-            path: "RVS_Generic_Swift_Toolbox_iOS"
+            path: "src"
         ),
         .target(
             name: "RVS_Generic_Swift_Toolbox_MacOS",
-            path: "RVS_Generic_Swift_Toolbox_MacOS"
+            path: "src"
         ),
         .target(
             name: "RVS_Generic_Swift_Toolbox_WatchOS",
-            path: "RVS_Generic_Swift_Toolbox_WatchOS"
+            path: "src"
         ),
         .target(
             name: "RVS_Generic_Swift_Toolbox_TVOS",
-            path: "RVS_Generic_Swift_Toolbox_TVOS"
+            path: "src"
         )
     ]
 )

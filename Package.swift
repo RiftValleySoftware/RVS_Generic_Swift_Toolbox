@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "RVSGenericSwiftToolbox",
+    name: "RVS_Generic_Swift_Toolbox",
     products: [
         .library(
             name: "RVSGenericSwiftToolbox",

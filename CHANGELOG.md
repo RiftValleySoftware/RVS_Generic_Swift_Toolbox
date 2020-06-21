@@ -1,4 +1,4 @@
-*Version 1.2.0.0000* **TBD**
+*Version 1.2.0.0000* **June 21, 2020**
 - Adding support for SPM
 
 *Version 1.1.0.0000* **June 13, 2020**

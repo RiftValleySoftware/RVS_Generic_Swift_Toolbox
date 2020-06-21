@@ -4,6 +4,12 @@ import PackageDescription
 
 let package = Package(
     name: "RVS_Generic_Swift_Toolbox",
+    platforms: [
+        .iOS(.v11),
+        .tvOS(.v11),
+        .macOS(.v10.14),
+        .watchOS(.v5)
+    ],
     products: [
         .library(
             name: "RVS-Generic-Swift-Toolbox",

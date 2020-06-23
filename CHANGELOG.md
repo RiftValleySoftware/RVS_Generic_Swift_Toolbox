@@ -1,3 +1,6 @@
+*Version 1.2.1.0000* **June 23, 2020**
+- Changing SPM Library Type to Dynamic
+
 *Version 1.2.0.0000* **June 21, 2020**
 - Adding support for SPM
 

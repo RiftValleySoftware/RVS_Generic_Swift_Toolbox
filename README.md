@@ -17,7 +17,7 @@ These tools will work for all of these platforms, and will, at most, rely only o
         This is a high-performance generic FIFO queue data structure. It's based on the work of [Ole Begemann](https://oleb.net), who used it as an example in his [Advanced Swift](https://oleb.net/advanced-swift/) book.
     - [**RVS_SequenceProtocol**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/src/Collection%20Tools/RVS_SequenceProtocol.swift)
     
-        This is a simple protocol that gives classes and structs that conform to it some basic [Sequence](https://developer.apple.com/documentation/swift/sequence) behavior.
+        This is a simple protocol that gives classes and structs that conform to it, some basic [Sequence](https://developer.apple.com/documentation/swift/sequence) behavior.
 
 - [**DEBUG TOOLS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/src/Debug%20Tools)
     - [**RVS_DebugTools**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/src/Debug%20Tools/RVS_DebugTools.swift)

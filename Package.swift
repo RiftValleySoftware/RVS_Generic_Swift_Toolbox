@@ -35,7 +35,6 @@ let package = Package(
     products: [
         .library(
             name: "RVS-Generic-Swift-Toolbox",
-            type: .dynamic,
             targets: ["RVS_Generic_Swift_Toolbox"])
     ],
     targets: [

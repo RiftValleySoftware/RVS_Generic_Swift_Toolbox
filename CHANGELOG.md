@@ -1,3 +1,6 @@
+*Version 1.3.0.0000* **July 5, 2020**
+- Nope. SPM library should be static.
+
 *Version 1.2.1.0000* **June 23, 2020**
 - Changing SPM Library Type to Dynamic
 

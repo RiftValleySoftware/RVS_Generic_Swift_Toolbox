@@ -1,3 +1,6 @@
+*Version 1.4.0.0000* **July 9, 2020**
+- Added the "setSplit()" methods.
+
 *Version 1.3.0.0000* **July 5, 2020**
 - Nope. SPM library should be static.
 

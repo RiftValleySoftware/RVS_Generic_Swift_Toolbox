@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.3.0
+Version: 1.4.0
 */
 
 import XCTest
@@ -469,5 +469,77 @@ class RVS_String_Extensions_Tests: XCTestCase {
         XCTAssertEqual(11, rangesOf3.count)
         XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: indexesOf3[0]))
         XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: indexesOf3[10]))
+    }
+    
+    /* ################################################################## */
+    /**
+     This tests the "set-based" split methods.
+     */
+    func testSetSplit() {
+        let splitCharacterSetAsAString = "\r\n\t "
+        let splitCharacterSetAsACharacterSet = CharacterSet(charactersIn: splitCharacterSetAsAString)
+        
+        let compArray1 = [String.SubSequence("Can"), String.SubSequence("You"), String.SubSequence("Believe"), String.SubSequence("it?")]
+
+        let testString1 = "Can\rYou\rBelieve\rit?"
+
+        XCTAssertEqual(testString1.setSplit(splitCharacterSetAsACharacterSet), compArray1)
+        XCTAssertEqual(testString1.setSplit(charactersIn: splitCharacterSetAsAString), compArray1)
+        
+        let testString2 = "Can\n\rYou\n\rBelieve\n\rit?"
+        
+        XCTAssertEqual(testString2.setSplit(splitCharacterSetAsACharacterSet), compArray1)
+        XCTAssertEqual(testString2.setSplit(charactersIn: splitCharacterSetAsAString), compArray1)
+        
+        let testString3 = "Can\n\r\n\rYou\rBelieve\nit?"
+        
+        XCTAssertEqual(testString3.setSplit(splitCharacterSetAsACharacterSet), compArray1)
+        XCTAssertEqual(testString3.setSplit(charactersIn: splitCharacterSetAsAString), compArray1)
+        
+        let testString4 = " The Quick\t\t\t\t\tBrown Fox\rJumps                 Over\r\t\n \n\t\rThe Lazy Dog\t. \t\n"
+        let compArray2 = [String.SubSequence("The"), String.SubSequence("Quick"), String.SubSequence("Brown"), String.SubSequence("Fox"), String.SubSequence("Jumps"), String.SubSequence("Over"), String.SubSequence("The"), String.SubSequence("Lazy"), String.SubSequence("Dog"), String.SubSequence(".")]
+        XCTAssertEqual(testString4.setSplit(splitCharacterSetAsACharacterSet), compArray2)
+        XCTAssertEqual(testString4.setSplit(charactersIn: splitCharacterSetAsAString), compArray2)
+
+        let blackJoker = "🃏"
+        let redJoker = "🃟"
+        let spadesFaceCards = "🃛🂮🂫🂭"
+        let heartsFaceCards = "🂻🂼🂽🂾"
+        let diamondsFaceCards = "🃋🃌🃍🃎"
+        let clubsFaceCards = "🃛🃜🃝🃞"
+        let spadesNumberCards = "🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪"
+        let heartsNumberCards = "🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺"
+        let diamondsNumberCards = "🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊"
+        let clubsNumberCards = "🃑🃒🃓🃔🃕🃖🃗🃘🃙🃚"
+        
+        let sortedDeck = blackJoker + spadesNumberCards + " " + spadesFaceCards + blackJoker + clubsNumberCards + " " + clubsFaceCards + blackJoker + redJoker + diamondsNumberCards + " " + diamondsFaceCards + redJoker + heartsNumberCards + " " + heartsFaceCards + redJoker
+        
+        let expectedResult = [String.SubSequence(spadesNumberCards + " " + spadesFaceCards), String.SubSequence(clubsNumberCards + " " + clubsFaceCards), String.SubSequence(diamondsNumberCards + " " + diamondsFaceCards), String.SubSequence(heartsNumberCards + " " + heartsFaceCards)]
+        
+        XCTAssertEqual(sortedDeck.setSplit(CharacterSet((blackJoker + redJoker).unicodeScalars)), expectedResult)
+        XCTAssertEqual(sortedDeck.setSplit(charactersIn: blackJoker + redJoker), expectedResult)
+
+        let expectedResult2 = [String.SubSequence(spadesNumberCards + " " + spadesFaceCards), String.SubSequence(clubsNumberCards + " " + clubsFaceCards), String.SubSequence(redJoker + diamondsNumberCards + " " + diamondsFaceCards + redJoker + heartsNumberCards + " " + heartsFaceCards + redJoker)]
+
+        XCTAssertEqual(sortedDeck.setSplit(CharacterSet(blackJoker.unicodeScalars)), expectedResult2)
+        XCTAssertEqual(sortedDeck.setSplit(charactersIn: blackJoker), expectedResult2)
+
+        let expectedResult3 = [String.SubSequence(blackJoker + spadesNumberCards + " " + spadesFaceCards + blackJoker + clubsNumberCards + " " + clubsFaceCards + blackJoker), String.SubSequence(diamondsNumberCards + " " + diamondsFaceCards), String.SubSequence(heartsNumberCards + " " + heartsFaceCards)]
+        
+        XCTAssertEqual(sortedDeck.setSplit(CharacterSet(redJoker.unicodeScalars)), expectedResult3)
+        XCTAssertEqual(sortedDeck.setSplit(charactersIn: redJoker), expectedResult3)
+        
+        let expectedResult4 = [blackJoker + spadesNumberCards, spadesFaceCards + blackJoker + clubsNumberCards, clubsFaceCards + blackJoker + redJoker + diamondsNumberCards, diamondsFaceCards + redJoker + heartsNumberCards, heartsFaceCards + redJoker]
+        
+        XCTAssertEqual(sortedDeck.setSplit(CharacterSet(" ".unicodeScalars)).map { String($0) }, expectedResult4)
+        XCTAssertEqual(sortedDeck.setSplit(charactersIn: " ").map { String($0) }, expectedResult4)
+        
+        let expectedResult5 = [String.SubSequence(blackJoker + spadesNumberCards), String.SubSequence(spadesFaceCards + blackJoker + clubsNumberCards), String.SubSequence(clubsFaceCards + blackJoker + redJoker + diamondsNumberCards), String.SubSequence(diamondsFaceCards + redJoker + heartsNumberCards), String.SubSequence(heartsFaceCards + redJoker)]
+        XCTAssertEqual(sortedDeck.setSplit(CharacterSet(" ".unicodeScalars)), expectedResult5)
+        XCTAssertEqual(sortedDeck.setSplit(charactersIn: " "), expectedResult5)
+        
+        let expectedResult6 = [String.SubSequence(spadesNumberCards), String.SubSequence(spadesFaceCards), String.SubSequence(clubsNumberCards), String.SubSequence(clubsFaceCards), String.SubSequence(diamondsNumberCards), String.SubSequence(diamondsFaceCards), String.SubSequence(heartsNumberCards), String.SubSequence(heartsFaceCards)]
+        XCTAssertEqual(sortedDeck.setSplit(CharacterSet((" " + blackJoker + redJoker).unicodeScalars)), expectedResult6)
+        XCTAssertEqual(sortedDeck.setSplit(charactersIn: " " + blackJoker + redJoker), expectedResult6)
     }
 }

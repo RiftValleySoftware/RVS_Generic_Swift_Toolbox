@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.3.0
+Version: 1.4.0
 */
 
 import Foundation   // Required for the NS stuff.
@@ -38,6 +38,69 @@ public extension StringProtocol {
      */
     var localizedVariant: String { return NSLocalizedString(String(self), comment: "") }
     
+    /* ################################################################## */
+    /**
+     This extension lets us uppercase only the first letter of the string (used for weekdays).
+     From here: https://stackoverflow.com/a/28288340/879365
+     
+     - returns: The string, with only the first letter uppercased.
+     */
+    var firstUppercased: String {
+        guard let first = self.first else { return "" }
+        
+        return String(first).uppercased() + self.dropFirst()
+    }
+    
+    /* ################################################################## */
+    /**
+     The following computed property comes from this: http://stackoverflow.com/a/27736118/879365
+     
+     This extension function cleans up a URI string.
+     
+     - returns: a string, cleaned for URI.
+     */
+    var urlEncodedString: String? {
+        guard let ret = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { return "" }
+       
+        return ret
+    }
+    
+    /* ################################################################## */
+    /**
+     The opposite of the above
+     
+     This extension function takes a URI-encoded String, and decodes it into a regular String.
+     
+     - returns: a string, restored from URI encoding.
+     */
+    var urlDecodedString: String? {
+        guard let ret = self.removingPercentEncoding else { return "" }
+        
+        return ret
+    }
+    
+    /* ################################################################## */
+    /**
+     This allows us to split a String, if one or more members of a CharacterSet are present.
+     
+     - parameter inCharacterset: A CharacterSet, containing all of the possible characters for a split.
+                                 NOTE: If you want to mix high Unicode characters with ASCII characters in the input set, use the <code>CharacterSet(String.unicodeScalars)</code> constructor. The <code>CharacterSet(charactersIn: String)</code> constructor is buggy.
+
+     - returns: An Array of Substrings. The result of the split.
+     */
+    func setSplit(_ inCharacterset: CharacterSet) -> [Self.SubSequence] { self.split { (char) -> Bool in char.unicodeScalars.contains { inCharacterset.contains($0) } } }
+    
+    /* ################################################################## */
+    /**
+     This allows us to split a String, if one or more character members of a String are present.
+     
+     - parameter charactersIn: A String, containing all of the possible characters for a split.
+     - returns: An Array of Substrings. The result of the split.
+     */
+    func setSplit(charactersIn inString: String) -> [Self.SubSequence] {
+        return self.setSplit(CharacterSet(inString.unicodeScalars))
+    }
+
     /* ################################################################## */
     /**
      This calculates an MD5 checksum of the String, and returns it as an uppercase hex String.
@@ -168,47 +231,6 @@ public extension StringProtocol {
         return hexString
     }
 
-    /* ################################################################## */
-    /**
-     This extension lets us uppercase only the first letter of the string (used for weekdays).
-     From here: https://stackoverflow.com/a/28288340/879365
-     
-     - returns: The string, with only the first letter uppercased.
-     */
-    var firstUppercased: String {
-        guard let first = self.first else { return "" }
-        
-        return String(first).uppercased() + self.dropFirst()
-    }
-    
-    /* ################################################################## */
-    /**
-     The following computed property comes from this: http://stackoverflow.com/a/27736118/879365
-     
-     This extension function cleans up a URI string.
-     
-     - returns: a string, cleaned for URI.
-     */
-    var urlEncodedString: String? {
-        guard let ret = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { return "" }
-       
-        return ret
-    }
-    
-    /* ################################################################## */
-    /**
-     The opposite of the above
-     
-     This extension function takes a URI-encoded String, and decodes it into a regular String.
-     
-     - returns: a string, restored from URI encoding.
-     */
-    var urlDecodedString: String? {
-        guard let ret = self.removingPercentEncoding else { return "" }
-        
-        return ret
-    }
-    
     /* ################################################################## */
     /**
      This simply strips out all non-binary characters in the string, leaving only valid binary digits.

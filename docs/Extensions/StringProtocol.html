@@ -151,6 +151,205 @@ NOTE: These extensions feature some use of <a href="https://developer.apple.com/
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE15firstUppercasedSSvp"></a>
+                    <a name="//apple_ref/swift/Property/firstUppercased" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE15firstUppercasedSSvp">firstUppercased</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This extension lets us uppercase only the first letter of the string (used for weekdays).
+From here: <a href="https://stackoverflow.com/a/28288340/879365">https://stackoverflow.com/a/28288340/879365</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">firstUppercased</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The string, with only the first letter uppercased.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE16urlEncodedStringSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/urlEncodedString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE16urlEncodedStringSSSgvp">urlEncodedString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The following computed property comes from this: <a href="http://stackoverflow.com/a/27736118/879365">http://stackoverflow.com/a/27736118/879365</a></p>
+
+<p>This extension function cleans up a URI string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">urlEncodedString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a string, cleaned for URI.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE16urlDecodedStringSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/urlDecodedString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE16urlDecodedStringSSSgvp">urlDecodedString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The opposite of the above</p>
+
+<p>This extension function takes a URI-encoded String, and decodes it into a regular String.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">urlDecodedString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a string, restored from URI encoding.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE8setSplitySay11SubSequenceQzG10Foundation12CharacterSetVF"></a>
+                    <a name="//apple_ref/swift/Method/setSplit(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE8setSplitySay11SubSequenceQzG10Foundation12CharacterSetVF">setSplit(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This allows us to split a String, if one or more members of a CharacterSet are present.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setSplit</span><span class="p">(</span><span class="n">_</span> <span class="nv">inCharacterset</span><span class="p">:</span> <span class="kt">CharacterSet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="k">Self</span><span class="o">.</span><span class="kt">SubSequence</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inCharacterset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A CharacterSet, containing all of the possible characters for a split.
+                        NOTE: If you want to mix high Unicode characters with ASCII characters in the input set, use the <code>CharacterSet(String.unicodeScalars)</code> constructor. The <code>CharacterSet(charactersIn: String)</code> constructor is buggy.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An Array of Substrings. The result of the split.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE8setSplit12charactersInSay11SubSequenceQzGSS_tF"></a>
+                    <a name="//apple_ref/swift/Method/setSplit(charactersIn:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE8setSplit12charactersInSay11SubSequenceQzGSS_tF">setSplit(charactersIn:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This allows us to split a String, if one or more character members of a String are present.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setSplit</span><span class="p">(</span><span class="n">charactersIn</span> <span class="nv">inString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="k">Self</span><span class="o">.</span><span class="kt">SubSequence</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>charactersIn</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String, containing all of the possible characters for a split.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An Array of Substrings. The result of the split.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:Sy25RVS_Generic_Swift_ToolboxE3md5SSvp"></a>
                     <a name="//apple_ref/swift/Property/md5" class="dashAnchor"></a>
                     <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE3md5SSvp">md5</a>
@@ -292,104 +491,6 @@ NOTE: These extensions feature some use of <a href="https://developer.apple.com/
                       <div>
                         <h4>Return Value</h4>
                         <p>The String, converted into an Array of uppercase 4-digit hex strings (leading 0s, 1 16-bit character per element). This actually takes the UTF16 value of each character.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE15firstUppercasedSSvp"></a>
-                    <a name="//apple_ref/swift/Property/firstUppercased" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE15firstUppercasedSSvp">firstUppercased</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This extension lets us uppercase only the first letter of the string (used for weekdays).
-From here: <a href="https://stackoverflow.com/a/28288340/879365">https://stackoverflow.com/a/28288340/879365</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">firstUppercased</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The string, with only the first letter uppercased.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE16urlEncodedStringSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/urlEncodedString" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE16urlEncodedStringSSSgvp">urlEncodedString</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The following computed property comes from this: <a href="http://stackoverflow.com/a/27736118/879365">http://stackoverflow.com/a/27736118/879365</a></p>
-
-<p>This extension function cleans up a URI string.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">urlEncodedString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>a string, cleaned for URI.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE16urlDecodedStringSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/urlDecodedString" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE16urlDecodedStringSSSgvp">urlDecodedString</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The opposite of the above</p>
-
-<p>This extension function takes a URI-encoded String, and decodes it into a regular String.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">urlDecodedString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>a string, restored from URI encoding.</p>
                       </div>
                     </section>
                   </div>

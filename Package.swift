@@ -40,6 +40,9 @@ let package = Package(
     targets: [
         .target(
             name: "RVS_Generic_Swift_Toolbox",
-            path: "./src")
+            path: "./src"),
+        .testTarget(
+            name: "RVS_Generic_Swift_ToolboxTest",
+            path: "./test")
     ]
 )

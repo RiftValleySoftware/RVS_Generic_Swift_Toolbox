@@ -23,7 +23,6 @@
 		D46D80A52496EC0C0087DD9B /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
 		D46D80A62496EC0C0087DD9B /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
 		D46D80A72496EC0C0087DD9B /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
-		D4907AC424956330007FAE32 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4907AC324956330007FAE32 /* Warnings.xcconfig */; };
 		D4907AC824956501007FAE32 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4907AC624956501007FAE32 /* Localizable.strings */; };
 		D4B4CF38249698E0003936DF /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
 		D4B4CF39249698E0003936DF /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
@@ -372,7 +371,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
 					D46D80762496EB610087DD9B = {
@@ -424,7 +423,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4907AC824956501007FAE32 /* Localizable.strings in Resources */,
-				D4907AC424956330007FAE32 /* Warnings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

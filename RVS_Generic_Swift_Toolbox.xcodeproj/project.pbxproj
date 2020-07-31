@@ -23,7 +23,6 @@
 		D46D80A52496EC0C0087DD9B /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
 		D46D80A62496EC0C0087DD9B /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
 		D46D80A72496EC0C0087DD9B /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
-		D4907AC824956501007FAE32 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4907AC624956501007FAE32 /* Localizable.strings */; };
 		D4B4CF38249698E0003936DF /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
 		D4B4CF39249698E0003936DF /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
 		D4B4CF3A249698E0003936DF /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
@@ -57,7 +56,6 @@
 		D46D809B2496EBD70087DD9B /* RVS_Generic_Swift_Toolbox_TVOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_TVOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46D809E2496EBD70087DD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4907AC324956330007FAE32 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
-		D4907AC724956501007FAE32 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D4B4CF3024969861003936DF /* RVS_Generic_Swift_Toolbox_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B4CF3324969861003936DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Extensions_Tests.swift; sourceTree = "<group>"; };
@@ -159,6 +157,23 @@
 			path = RVS_Generic_Swift_Toolbox_TVOS;
 			sourceTree = "<group>";
 		};
+		D49CCCAD24D479DF00047CAD /* RVS_Generic_Swift_ToolboxTest */ = {
+			isa = PBXGroup;
+			children = (
+				D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */,
+				D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */,
+			);
+			path = RVS_Generic_Swift_ToolboxTest;
+			sourceTree = "<group>";
+		};
+		D49CCCAE24D47A2B00047CAD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D4D03C2023DDE029005B54B5 /* RVS_Generic_Swift_Toolbox */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		D49DBEA723DDC79D004006AB /* meta */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,33 +194,31 @@
 			path = RVS_Generic_Swift_Toolbox_iOS;
 			sourceTree = "<group>";
 		};
-		D4D03C1923DDDE9D005B54B5 /* test */ = {
+		D4D03C1923DDDE9D005B54B5 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */,
-				D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */,
+				D49CCCAD24D479DF00047CAD /* RVS_Generic_Swift_ToolboxTest */,
 				D4D03C1C23DDDE9D005B54B5 /* Info.plist */,
-				D4907AC624956501007FAE32 /* Localizable.strings */,
 			);
-			path = test;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		D4D03C2023DDE029005B54B5 /* src */ = {
+		D4D03C2023DDE029005B54B5 /* RVS_Generic_Swift_Toolbox */ = {
 			isa = PBXGroup;
 			children = (
 				D427DB2823DDC66900849489 /* Collection Tools */,
 				D427DB2623DDC66900849489 /* Debug Tools */,
 				D427DB2D23DDC66900849489 /* Extensions */,
 			);
-			path = src;
+			path = RVS_Generic_Swift_Toolbox;
 			sourceTree = "<group>";
 		};
 		D4D4119F23DDC5AC00D607F7 = {
 			isa = PBXGroup;
 			children = (
 				D49DBEA723DDC79D004006AB /* meta */,
-				D4D03C1923DDDE9D005B54B5 /* test */,
-				D4D03C2023DDE029005B54B5 /* src */,
+				D49CCCAE24D47A2B00047CAD /* Sources */,
+				D4D03C1923DDDE9D005B54B5 /* Tests */,
 				D4B4CF3124969861003936DF /* RVS_Generic_Swift_Toolbox_iOS */,
 				D46D80782496EB610087DD9B /* RVS_Generic_Swift_Toolbox_MacOS */,
 				D46D808A2496EBAF0087DD9B /* RVS_Generic_Swift_Toolbox_WatchOS */,
@@ -422,7 +435,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4907AC824956501007FAE32 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,17 +566,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D4907AC624956501007FAE32 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4907AC724956501007FAE32 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D46D807C2496EB610087DD9B /* Debug */ = {
@@ -816,7 +817,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = test/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -835,7 +836,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = test/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -973,7 +974,7 @@
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/tests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-GenericSwift-Toolbox";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -989,7 +990,7 @@
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/tests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-GenericSwift-Toolbox";
 				PRODUCT_NAME = "$(TARGET_NAME)";

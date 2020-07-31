@@ -23,7 +23,7 @@ Version: 1.4.0
 */
 
 import XCTest
-import RVS_Generic_Swift_Toolbox
+@testable import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
 // MARK: - RVS_FIFOQueue_Tests -

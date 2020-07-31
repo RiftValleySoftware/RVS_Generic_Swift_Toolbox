@@ -23,7 +23,7 @@ Version: 1.4.0
 */
 
 import XCTest
-import RVS_Generic_Swift_Toolbox
+@testable import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
 // MARK: - RVS_Int_Extensions_Tests -
@@ -224,8 +224,13 @@ class RVS_Int_Extensions_Tests: XCTestCase {
  - returns: The localized String (if the key matches).
  */
 public func NSLocalizedString(_ inKey: String, comment: String) -> String {
-    let bundle = Bundle(for: RVS_String_Extensions_Tests.self)
-    return NSLocalizedString(inKey, tableName: nil, bundle: bundle, comment: "")
+    if "TEST-1-SLUG" == inKey {
+        return "Test String 1"
+    } else if "TEST-2-SLUG" == inKey {
+        return "Test String Two"
+    }
+    
+    return inKey
 }
 
 /* ###################################################################################################################################### */

@@ -39,10 +39,9 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "RVS_Generic_Swift_Toolbox",
-            path: "./src"),
+            name: "RVS_Generic_Swift_Toolbox"),
         .testTarget(
             name: "RVS_Generic_Swift_ToolboxTest",
-            path: "./test")
+            dependencies: ["RVS_Generic_Swift_Toolbox"])
     ]
 )

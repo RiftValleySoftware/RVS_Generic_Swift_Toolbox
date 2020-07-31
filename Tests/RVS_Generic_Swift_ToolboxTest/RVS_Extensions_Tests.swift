@@ -263,8 +263,12 @@ class RVS_String_Extensions_Tests: XCTestCase {
      Test our localizedVariant computed property.
      */
     func testLocalizedVariant() {
+        #if TESTING // This is only valid for the Xcode tests. It won't work for command-line tests.
         XCTAssertEqual("Test String 1", "TEST-1-SLUG".localizedVariant)
         XCTAssertEqual("Test String Two", "TEST-2-SLUG".localizedVariant)
+        #else
+            print("Cannot Test localizedVariant in command-line mode, because of bundle issues.")
+        #endif
     }
     
     /* ################################################################## */

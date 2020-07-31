@@ -1,3 +1,7 @@
+*Version 1.5.0.0000* **July 31, 2020**
+- Needed to rearrange the directory structure, because command-line Swift test requires the standard structure.
+- Added support for the GitHub action.
+
 *Version 1.4.0.0000* **July 9, 2020**
 - Added the "setSplit()" methods.
 

@@ -11,12 +11,14 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>RVS_Generic_Swift_Toolbox_Tests_Name</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string>1.2.3</string>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>4.5.6</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>RVS_Generic_Swift_Toolbox_Tests_Copyright</string>
 </dict>
 </plist>

@@ -21,21 +21,36 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
 Version: 1.5.2
 */
-
-import Foundation   // Required for the ProcessInfo stuff.
+import Foundation   // Required for Bundle
 
 /* ###################################################################################################################################### */
-// MARK: - Debug Tools Class -
+// MARK: - Bundle Extension -
 /* ###################################################################################################################################### */
 /**
- This class is a "junk drawer" of vrious debug/testing tools.
+ This extension adds a few simple accessors for some of the more common bundle items.
  */
-public class RVS_DebugTools {
+extension Bundle {
     /* ################################################################## */
     /**
-     This is used to see whether or not we are running under unit tests. It is optional, and isn't really supposed to be replaced.
-     
-     - returns: True, if we are currently in a unit test.
+     The app name, as a string. It is required, and "" is returned if it is not present.
      */
-    static public var isRunningUnitTests: Bool { nil != NSClassFromString("XCTest") }
+    var appDisplayName: String { (object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? object(forInfoDictionaryKey: "CFBundleName") as? String) ?? "" }
+
+    /* ################################################################## */
+    /**
+     The app version, as a string. It is required, and "" is returned if it is not present.
+     */
+    var appVersionString: String { object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "" }
+    
+    /* ################################################################## */
+    /**
+     The build version, as a string. It is required, and "" is returned if it is not present.
+     */
+    var appVersionBuildString: String { object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "" }
+    
+    /* ################################################################## */
+    /**
+     If there is a copyright string, it is returned here. It may be nil.
+     */
+    var copyrightString: String? { object(forInfoDictionaryKey: "NSHumanReadableCopyright") as? String }
 }

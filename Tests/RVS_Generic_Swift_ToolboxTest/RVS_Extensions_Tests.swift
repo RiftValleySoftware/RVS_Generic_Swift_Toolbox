@@ -553,3 +553,19 @@ class RVS_String_Extensions_Tests: XCTestCase {
         XCTAssertEqual(sortedDeck.setSplit(charactersIn: " " + blackJoker + redJoker), expectedResult6)
     }
 }
+
+/* ###################################################################################################################################### */
+// MARK: - RVS_String_Extensions_Tests -
+/* ###################################################################################################################################### */
+/**
+ These are specific unit tests for the Bundle extension.
+ */
+class RVS_Bundle_Extensions_Tests: XCTestCase {
+    func testSimpleBundleAccessors() {
+        let testBundle = Bundle(for: type(of: self))
+        XCTAssertEqual("RVS_Generic_Swift_Toolbox_Tests_Name", testBundle.appDisplayName)
+        XCTAssertEqual("1.2.3", testBundle.appVersionString)
+        XCTAssertEqual("4.5.6", testBundle.appVersionBuildString)
+        XCTAssertEqual("RVS_Generic_Swift_Toolbox_Tests_Copyright", testBundle.copyrightString)
+    }
+}

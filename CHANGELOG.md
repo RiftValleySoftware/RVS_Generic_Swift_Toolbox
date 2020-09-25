@@ -1,6 +1,7 @@
-*Version 1.5.2.0000* **September 9, 2020**
+*Version 1.5.2.0000* **September 25, 2020**
 - Removed the Foundation import from the OleB tool. No need for it.
 - Added a simple set of Bundle extensions.
+- Fixed some code comments.
 
 *Version 1.5.0.0000* **July 31, 2020**
 - Needed to rearrange the directory structure, because command-line Swift test requires the standard structure.

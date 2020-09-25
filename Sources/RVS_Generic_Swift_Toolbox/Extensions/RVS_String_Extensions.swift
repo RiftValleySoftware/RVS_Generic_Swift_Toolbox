@@ -118,14 +118,14 @@ public extension StringProtocol {
     var md5: String {
         // The reason we are declaring these here, is so we don't have to actally import the CC module. We will just grope around and find the entry point, ourselves.
         
-        /// This is a cast for [the MD5 function](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/CC_MD5.3cc.html#//apple_ref/doc/man/3cc/CC_MD5). The convention attribute just says that it's a "raw" C function.
+        /// This is a cast for [the MD5 function](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/CC_MD5.3cc.html#//apple_ref/doc/man/3cc/CC_MD5). [The convention attribute](https://docs.swift.org/swift-book/ReferenceManual/Attributes.html#ID600) just says that it's a "raw" C function.
         typealias CC_MD5_TYPE = @convention(c) (UnsafeRawPointer, UInt32, UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
         
         // This is a flag, telling the name lookup to happen in the global scope. No dlopen required.
         let RTLD_DEFAULT = UnsafeMutableRawPointer(bitPattern: -2)
         
         // This loads a function pointer with the CommonCrypto MD5 function.
-        // [dlsym](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/dlsym.3.html_ is a symbol lookup. It finds the symbol in our library, and returns a pointer to it.
+        // [dlsym](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/dlsym.3.html) is a symbol lookup. It finds the symbol in our library, and returns a pointer to it.
         let CC_MD5 = unsafeBitCast(dlsym(RTLD_DEFAULT, "CC_MD5")!, to: CC_MD5_TYPE.self)
         
         // This is the length of the hash
@@ -171,14 +171,14 @@ public extension StringProtocol {
     var sha256: String {
         // The reason we are declaring these here, is so we don't have to actally import the CC module. We will just grope around and find the entry point, ourselves.
         
-        /// This is a cast for [the SHA256 function](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/CC_SHA.3cc.html#//apple_ref/doc/man/3cc/CC_SHA). The convention attribute just says that it's a "raw" C function.
+        /// This is a cast for [the SHA256 function](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/CC_SHA.3cc.html#//apple_ref/doc/man/3cc/CC_SHA). [The convention attribute](https://docs.swift.org/swift-book/ReferenceManual/Attributes.html#ID600) just says that it's a "raw" C function.
         typealias CC_SHA256_TYPE = @convention(c) (UnsafeRawPointer, UInt32, UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
         
         // This is a flag, telling the name lookup to happen in the global scope. No dlopen required.
         let RTLD_DEFAULT = UnsafeMutableRawPointer(bitPattern: -2)
         
         // This loads a function pointer with the CommonCrypto MD5 function.
-        // [dlsym](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/dlsym.3.html_ is a symbol lookup. It finds the symbol in our library, and returns a pointer to it.
+        // [dlsym](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/dlsym.3.html) is a symbol lookup. It finds the symbol in our library, and returns a pointer to it.
         let CC_SHA256 = unsafeBitCast(dlsym(RTLD_DEFAULT, "CC_SHA256")!, to: CC_SHA256_TYPE.self)
         
         // This is the length of the hash

@@ -30,5 +30,47 @@ import Foundation
 /**
  This adds a data detctor to the basic String type.
  */
-public extension StringProtocol {
+public extension String {
+    /* ################################################################################################################################## */
+    // MARK: - Detected Data Wrapper Type -
+    /* ################################################################################################################################## */
+    /**
+     */
+    struct DetectedDataURL {
+        /* ################################################################## */
+        /**
+         */
+        public let detectedData: URL
+        
+        /* ################################################################## */
+        /**
+         */
+        public let range: Range<String.Index>
+        
+        /* ################################################################## */
+        /**
+         */
+        init(detectedData inDetectedData: URL, range inRange: Range<String.Index>) {
+            detectedData = inDetectedData
+            range = inRange
+        }
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    var detectedURIs: [DetectedDataURL] {
+        guard let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue + NSTextCheckingResult.CheckingType.phoneNumber.rawValue) else { return [] }
+
+        var ret = [DetectedDataURL]()
+        
+        detector.matches(in: self, options: [], range: NSRange(location: 0, length: utf16.count)).forEach {
+            if let range = Range($0.range, in: self),
+               let url = URL(string: String(self[range])) {
+                ret.append(DetectedDataURL(detectedData: url, range: range))
+            }
+        }
+        
+        return ret
+    }
 }

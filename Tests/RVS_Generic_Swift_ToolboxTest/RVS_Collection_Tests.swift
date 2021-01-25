@@ -178,7 +178,7 @@ class RVS_FIFOQueue_Tests: XCTestCase {
         XCTAssertEqual(0, testTargetInt.count)
         
         let initializerArray: [Int] = [Int](0..<(testCount * 10))
-        var expectation = XCTestExpectation()
+        let expectation = XCTestExpectation()
         
         func enqueuenext() {
             let ind = indexAdd

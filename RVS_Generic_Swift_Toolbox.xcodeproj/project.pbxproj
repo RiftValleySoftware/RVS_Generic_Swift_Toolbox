@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,12 @@
 		D46D80A52496EC0C0087DD9B /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
 		D46D80A62496EC0C0087DD9B /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
 		D46D80A72496EC0C0087DD9B /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
+		D49ECCDA25BF47970059062D /* RVS_String_DataDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49ECCD925BF47970059062D /* RVS_String_DataDetector.swift */; };
+		D49ECCDB25BF47970059062D /* RVS_String_DataDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49ECCD925BF47970059062D /* RVS_String_DataDetector.swift */; };
+		D49ECCDC25BF47970059062D /* RVS_String_DataDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49ECCD925BF47970059062D /* RVS_String_DataDetector.swift */; };
+		D49ECCDD25BF47970059062D /* RVS_String_DataDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49ECCD925BF47970059062D /* RVS_String_DataDetector.swift */; };
+		D49ECCDE25BF47970059062D /* RVS_String_DataDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49ECCD925BF47970059062D /* RVS_String_DataDetector.swift */; };
+		D49ECCDF25BF47970059062D /* RVS_String_DataDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49ECCD925BF47970059062D /* RVS_String_DataDetector.swift */; };
 		D4B4CF38249698E0003936DF /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
 		D4B4CF39249698E0003936DF /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
 		D4B4CF3A249698E0003936DF /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
@@ -63,6 +69,7 @@
 		D46D809B2496EBD70087DD9B /* RVS_Generic_Swift_Toolbox_TVOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_TVOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46D809E2496EBD70087DD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4907AC324956330007FAE32 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
+		D49ECCD925BF47970059062D /* RVS_String_DataDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_String_DataDetector.swift; sourceTree = "<group>"; };
 		D4B4CF3024969861003936DF /* RVS_Generic_Swift_Toolbox_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B4CF3324969861003936DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Extensions_Tests.swift; sourceTree = "<group>"; };
@@ -135,8 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */,
-				D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */,
 				D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */,
+				D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */,
+				D49ECCD925BF47970059062D /* RVS_String_DataDetector.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,7 +400,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
 					D46D80762496EB610087DD9B = {
@@ -416,7 +424,7 @@
 				};
 			};
 			buildConfigurationList = D4D411A323DDC5AD00D607F7 /* Build configuration list for PBXProject "RVS_Generic_Swift_Toolbox" */;
-			compatibilityVersion = "Xcode 11.4";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -504,6 +512,7 @@
 			files = (
 				D46D80802496EB890087DD9B /* RVS_SequenceProtocol.swift in Sources */,
 				D43FBD9725094E160024FE2D /* RVS_Bundle_Extensions.swift in Sources */,
+				D49ECCDD25BF47970059062D /* RVS_String_DataDetector.swift in Sources */,
 				D46D807F2496EB890087DD9B /* RVS_FIFOQueue.swift in Sources */,
 				D46D80812496EB890087DD9B /* RVS_DebugTools.swift in Sources */,
 				D46D80832496EB890087DD9B /* RVS_String_Extensions.swift in Sources */,
@@ -517,6 +526,7 @@
 			files = (
 				D46D80922496EBBA0087DD9B /* RVS_SequenceProtocol.swift in Sources */,
 				D43FBD9825094E160024FE2D /* RVS_Bundle_Extensions.swift in Sources */,
+				D49ECCDE25BF47970059062D /* RVS_String_DataDetector.swift in Sources */,
 				D46D80912496EBBA0087DD9B /* RVS_FIFOQueue.swift in Sources */,
 				D46D80932496EBBA0087DD9B /* RVS_DebugTools.swift in Sources */,
 				D46D80952496EBBA0087DD9B /* RVS_String_Extensions.swift in Sources */,
@@ -530,6 +540,7 @@
 			files = (
 				D46D80A42496EC0C0087DD9B /* RVS_SequenceProtocol.swift in Sources */,
 				D43FBD9925094E160024FE2D /* RVS_Bundle_Extensions.swift in Sources */,
+				D49ECCDF25BF47970059062D /* RVS_String_DataDetector.swift in Sources */,
 				D46D80A32496EC0C0087DD9B /* RVS_FIFOQueue.swift in Sources */,
 				D46D80A52496EC0C0087DD9B /* RVS_DebugTools.swift in Sources */,
 				D46D80A72496EC0C0087DD9B /* RVS_String_Extensions.swift in Sources */,
@@ -543,6 +554,7 @@
 			files = (
 				D4B4CF39249698E0003936DF /* RVS_SequenceProtocol.swift in Sources */,
 				D43FBD9625094E160024FE2D /* RVS_Bundle_Extensions.swift in Sources */,
+				D49ECCDC25BF47970059062D /* RVS_String_DataDetector.swift in Sources */,
 				D4B4CF38249698E0003936DF /* RVS_FIFOQueue.swift in Sources */,
 				D4B4CF3A249698E0003936DF /* RVS_DebugTools.swift in Sources */,
 				D4B4CF3C249698E0003936DF /* RVS_String_Extensions.swift in Sources */,
@@ -556,6 +568,7 @@
 			files = (
 				D4D03C2523DDE113005B54B5 /* RVS_String_Extensions.swift in Sources */,
 				D43FBD9A25094E1E0024FE2D /* RVS_Bundle_Extensions.swift in Sources */,
+				D49ECCDB25BF47970059062D /* RVS_String_DataDetector.swift in Sources */,
 				D4D03C1B23DDDE9D005B54B5 /* RVS_Collection_Tests.swift in Sources */,
 				D4D03C2323DDE113005B54B5 /* RVS_DebugTools.swift in Sources */,
 				D4D03C2123DDE104005B54B5 /* RVS_FIFOQueue.swift in Sources */,
@@ -573,6 +586,7 @@
 				D43FBD9525094E160024FE2D /* RVS_Bundle_Extensions.swift in Sources */,
 				D427DB3323DDC66900849489 /* main.swift in Sources */,
 				D4D03C2823DDE379005B54B5 /* RVS_DebugTools.swift in Sources */,
+				D49ECCDA25BF47970059062D /* RVS_String_DataDetector.swift in Sources */,
 				D4D03C2623DDE379005B54B5 /* RVS_FIFOQueue.swift in Sources */,
 				D4D03C2723DDE379005B54B5 /* RVS_SequenceProtocol.swift in Sources */,
 				D4D03C2923DDE379005B54B5 /* RVS_Int_Extensions.swift in Sources */,
@@ -601,7 +615,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-MacOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -630,7 +644,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-MacOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -658,7 +672,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-WatchOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
@@ -689,7 +703,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-WatchOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
@@ -720,14 +734,14 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-TVOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -750,14 +764,14 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-TVOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -776,13 +790,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RVS_Generic_Swift_Toolbox_iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -806,13 +820,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RVS_Generic_Swift_Toolbox_iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -896,6 +910,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -920,7 +935,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -958,6 +973,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -976,7 +992,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -996,7 +1012,7 @@
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-GenericSwift-Toolbox";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1012,7 +1028,7 @@
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-GenericSwift-Toolbox";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -19,38 +19,16 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.6.0
+Version: 1.6.0
 */
-import Foundation   // Required for Bundle
+
+import Foundation
 
 /* ###################################################################################################################################### */
-// MARK: - Bundle Extension -
+// MARK: - StringProtocol Extension for Data Detector -
 /* ###################################################################################################################################### */
 /**
- This extension adds a few simple accessors for some of the more common bundle items.
+ This adds a data detctor to the basic String type.
  */
-extension Bundle {
-    /* ################################################################## */
-    /**
-     The app name, as a string. It is required, and "" is returned if it is not present.
-     */
-    var appDisplayName: String { (object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? object(forInfoDictionaryKey: "CFBundleName") as? String) ?? "" }
-
-    /* ################################################################## */
-    /**
-     The app version, as a string. It is required, and "" is returned if it is not present.
-     */
-    var appVersionString: String { object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "" }
-    
-    /* ################################################################## */
-    /**
-     The build version, as a string. It is required, and "" is returned if it is not present.
-     */
-    var appVersionBuildString: String { object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "" }
-    
-    /* ################################################################## */
-    /**
-     If there is a copyright string, it is returned here. It may be nil.
-     */
-    var copyrightString: String? { object(forInfoDictionaryKey: "NSHumanReadableCopyright") as? String }
+public extension StringProtocol {
 }

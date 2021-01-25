@@ -1,3 +1,6 @@
+*Version 1.6.0.0000* **TBD**
+- Added a data detector String extension.
+
 *Version 1.5.2.0000* **September 25, 2020**
 - Removed the Foundation import from the OleB tool. No need for it.
 - Added a simple set of Bundle extensions.

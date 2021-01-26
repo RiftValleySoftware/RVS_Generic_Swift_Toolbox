@@ -25,6 +25,46 @@ Version: 1.6.0
 import Foundation
 
 /* ###################################################################################################################################### */
+// MARK: - Protocol for the URLs that we will produce. -
+/* ###################################################################################################################################### */
+/**
+ */
+public protocol RVS_String_DataDetectorURLProtocol {
+    /* ################################################################## */
+    /**
+     */
+    var url: URL? { get set }
+    
+    /* ################################################################## */
+    /**
+     */
+    init(_: URL)
+}
+
+/* ###################################################################################################################################### */
+// MARK: - Extension of the standard URL type, to conform to us. -
+/* ###################################################################################################################################### */
+/**
+ The reason that we do this, is so that we can use regular URLs for our listings, if we want.
+ */
+extension URL: RVS_String_DataDetectorURLProtocol {
+    /* ################################################################## */
+    /**
+     */
+    public init(_ inURL: URL) {
+        self = inURL
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    public var url: URL {
+        get { self }
+        set { self = newValue }
+    }
+}
+
+/* ###################################################################################################################################### */
 // MARK: - StringProtocol Extension for Data Detector -
 /* ###################################################################################################################################### */
 /**
@@ -36,26 +76,98 @@ public extension String {
     /* ################################################################################################################################## */
     /**
      */
-    struct DetectedDataURL {
-        /* ################################################################## */
+    struct DetectedDataURL: RVS_String_DataDetectorURLProtocol, Hashable {
+        /* ############################################################################################################################## */
+        // MARK: - Detected Data Type Enum -
+        /* ############################################################################################################################## */
         /**
          */
-        public let detectedData: URL
+        public enum DetectedURLType {
+            /// No URL. This is basically an error codition
+            case none
+            
+            /// HTTP or SSL URL
+            case http(_: URL)
+            
+            /// Phone Number URL
+            case phone(_: URL)
+            
+            /// All other types of URL
+            case app(_: URL)
+        }
+
+        /* ############################################################## */
+        /**
+         */
+        public var urlType: DetectedURLType = .none
         
-        /* ################################################################## */
+        /* ############################################################## */
         /**
          */
-        public let range: Range<String.Index>
-        
-        /* ################################################################## */
+        public let range: Range<String.Index>?
+
+        /* ############################################################## */
         /**
          */
-        init(detectedData inDetectedData: URL, range inRange: Range<String.Index>) {
-            detectedData = inDetectedData
+        public init(_ inDetectedDataAsString: String, range inRange: Range<String.Index>? = nil) {
+            url = URL(string: inDetectedDataAsString)
             range = inRange
         }
-    }
+
+        /* ############################################################## */
+        /**
+         */
+        public init(_ inDetectedData: URL, range inRange: Range<String.Index>? = nil) {
+            url = inDetectedData
+            range = inRange
+        }
+
+        /* ############################################################################################################################## */
+        // MARK: - RVS_String_DataDetectorURLProtocol Conformance -
+        /* ############################################################################################################################## */
+        /* ############################################################## */
+        /**
+         */
+        public var url: URL? {
+            didSet {
+                if let url = url {
+                    if url.scheme?.starts(with: "http") ?? false {
+                        urlType = .http(url)
+                    } else if "tel" == url.scheme {
+                        urlType = .phone(url)
+                    } else {
+                        urlType = .app(url)
+                    }
+                } else {
+                    urlType = .none
+                }
+            }
+        }
+        
+        /* ############################################################## */
+        /**
+         */
+        public init(_ inURL: URL) {
+            self.init(inURL, range: nil)
+        }
+        
+        /* ############################################################################################################################## */
+        // MARK: - Equatable Conformance -
+        /* ############################################################################################################################## */
+        /* ############################################################## */
+        /**
+         */
+        public static func == (lhs: DetectedDataURL, rhs: DetectedDataURL) -> Bool { lhs.url == rhs.url }
     
+        /* ############################################################################################################################## */
+        // MARK: - Hashable Conformance -
+        /* ############################################################################################################################## */
+        /* ############################################################## */
+        /**
+         */
+        public func hash(into hasher: inout Hasher) { hasher.combine(url) }
+    }
+
     /* ################################################################## */
     /**
      */
@@ -67,7 +179,7 @@ public extension String {
         detector.matches(in: self, options: [], range: NSRange(location: 0, length: utf16.count)).forEach {
             if let range = Range($0.range, in: self),
                let url = URL(string: String(self[range])) {
-                ret.append(DetectedDataURL(detectedData: url, range: range))
+                ret.append(DetectedDataURL(url, range: range))
             }
         }
         

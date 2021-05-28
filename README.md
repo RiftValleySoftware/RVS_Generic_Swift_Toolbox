@@ -11,25 +11,25 @@ This repository is an Xcode project with a set of ambidextrous (That's what I re
 
 These tools will work for all of these platforms, and will, at most, rely only on [the Foundation library](https://developer.apple.com/documentation/foundation).
 
-- [**COLLECTION TOOLS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/src/Collection%20Tools)
-    - [**RVS_FIFOQueue**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/src/Collection%20Tools/RVS_FIFOQueue.swift)
+- [**COLLECTION TOOLS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Collection%20Tools)
+    - [**RVS_FIFOQueue**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Collection%20Tools/RVS_FIFOQueue.swift)
 
         This is a high-performance generic FIFO queue data structure. It's based on the work of [Ole Begemann](https://oleb.net), who used it as an example in his [Advanced Swift](https://oleb.net/advanced-swift/) book.
-    - [**RVS_SequenceProtocol**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/src/Collection%20Tools/RVS_SequenceProtocol.swift)
+    - [**RVS_SequenceProtocol**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Collection%20Tools/RVS_SequenceProtocol.swift)
     
         This is a simple protocol that gives classes and structs that conform to it, some basic [Sequence](https://developer.apple.com/documentation/swift/sequence) behavior.
 
-- [**DEBUG TOOLS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/src/Debug%20Tools)
-    - [**RVS_DebugTools**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/src/Debug%20Tools/RVS_DebugTools.swift)
+- [**DEBUG TOOLS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Debug%20Tools)
+    - [**RVS_DebugTools**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Debug%20Tools/RVS_DebugTools.swift)
     
         This is a set of tools used to aid debugging and testing code.
 
-- [**EXTENSIONS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/src/Extensions)
-    - [**RVS_Int_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/src/Extensions/RVS_Int_Extensions.swift)
+- [**EXTENSIONS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Extensions)
+    - [**RVS_Int_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Int_Extensions.swift)
     
         Extensions to integer data types.
         
-    - [**RVS_String_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/src/Extensions/RVS_String_Extensions.swift)
+    - [**RVS_String_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_String_Extensions.swift)
     
         Extensions to the [StringProtocol protocol](https://developer.apple.com/documentation/swift/stringprotocol). This adds some significant capabilities, such as [MD5](https://en.wikipedia.org/wiki/MD5)/[SHA](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms)-hashing, substring searching, simple localization, and basic parsing.
 

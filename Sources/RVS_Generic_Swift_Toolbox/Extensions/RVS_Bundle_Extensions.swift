@@ -1,5 +1,5 @@
 /**
-© Copyright 2019-2020, The Great Rift Valley Software Company
+© Copyright 2019-2021, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -29,7 +29,7 @@ import Foundation   // Required for Bundle
 /**
  This extension adds a few simple accessors for some of the more common bundle items.
  */
-extension Bundle {
+public extension Bundle {
     /* ################################################################## */
     /**
      The app name, as a string. It is required, and "" is returned if it is not present.

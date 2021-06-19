@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.5.3
+Version: 1.6.0
 */
 
 import XCTest
@@ -551,6 +551,45 @@ class RVS_String_Extensions_Tests: XCTestCase {
         let expectedResult6 = [String.SubSequence(spadesNumberCards), String.SubSequence(spadesFaceCards), String.SubSequence(clubsNumberCards), String.SubSequence(clubsFaceCards), String.SubSequence(diamondsNumberCards), String.SubSequence(diamondsFaceCards), String.SubSequence(heartsNumberCards), String.SubSequence(heartsFaceCards)]
         XCTAssertEqual(sortedDeck.setSplit(CharacterSet((" " + blackJoker + redJoker).unicodeScalars)), expectedResult6)
         XCTAssertEqual(sortedDeck.setSplit(charactersIn: " " + blackJoker + redJoker), expectedResult6)
+    }
+    
+    /* ################################################################## */
+    /**
+     This tests the `isAValidEmailAddress` computed property.
+     */
+    func testValidEmailAddress() {
+        XCTAssertFalse("notAHotDog".isAValidEmailAddress)
+        XCTAssertFalse("notAHotD.og".isAValidEmailAddress)
+        XCTAssertTrue("not@AHotD.og".isAValidEmailAddress)
+        XCTAssertFalse("n0t@AH0tD.0g".isAValidEmailAddress)
+        XCTAssertFalse("n0t@AH0tD.O9".isAValidEmailAddress)
+        XCTAssertTrue("N@D.OG".isAValidEmailAddress)
+        XCTAssertFalse("N@D.OG5".isAValidEmailAddress)
+        XCTAssertTrue("N@D.OGS".isAValidEmailAddress)
+        XCTAssertFalse("@D.OGS".isAValidEmailAddress)
+        XCTAssertFalse("D.OGS".isAValidEmailAddress)
+        XCTAssertFalse("D@OGS".isAValidEmailAddress)
+        XCTAssertTrue("1@D.OGS".isAValidEmailAddress)
+        XCTAssertTrue("1@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue("N@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue("n@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue(".@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue("-@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue("_@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue("%@2.OGS".isAValidEmailAddress)
+        XCTAssertFalse(".@.OGS".isAValidEmailAddress)
+        XCTAssertTrue(".@..OGS".isAValidEmailAddress)
+        XCTAssertTrue(".@-.OGS".isAValidEmailAddress)
+        XCTAssertFalse(".@_.OGS".isAValidEmailAddress)
+        XCTAssertFalse(".@%.OGS".isAValidEmailAddress)
+        XCTAssertFalse(".@A.OG-S".isAValidEmailAddress)
+        XCTAssertFalse(".@A.OG.S".isAValidEmailAddress)
+        XCTAssertFalse(".@A.O.G.S".isAValidEmailAddress)
+        XCTAssertTrue(".@A.O.GS".isAValidEmailAddress)
+        XCTAssertTrue(".@A..OGS".isAValidEmailAddress)
+        XCTAssertTrue(".@A..O.GS".isAValidEmailAddress)
+        XCTAssertTrue(".@A.-O.GS".isAValidEmailAddress)
+        XCTAssertFalse(".@A.-O.-GS".isAValidEmailAddress)
     }
 }
 

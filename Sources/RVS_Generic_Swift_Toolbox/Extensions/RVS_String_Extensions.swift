@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.5.3
+Version: 1.6.0
 */
 
 import Foundation   // Required for the NS stuff.
@@ -378,6 +378,15 @@ public extension StringProtocol {
 
         return String(format: "%@-%@-%@-%@-%@", String(str[firstRange]), String(str[secondRange]), String(str[thirdRange]), String(str[fourthRange]), String(str[fifthRange]))
     }
+
+    /* ################################################################## */
+    /**
+     This comes directly from here: https://stackoverflow.com/a/25471164/879365
+     Evaluate a string for proper email address form.
+     
+     - returns: True, if the email address is in valid form.
+     */
+    var isAValidEmailAddress: Bool { NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}").evaluate(with: self) }
 }
 
 /* ###################################################################################################################################### */

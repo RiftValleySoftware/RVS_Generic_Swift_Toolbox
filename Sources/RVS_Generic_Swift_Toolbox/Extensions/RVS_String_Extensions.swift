@@ -25,7 +25,7 @@ Version: 1.6.0
 import Foundation   // Required for the NS stuff.
 
 /* ###################################################################################################################################### */
-// MARK: - StringProtocol Extension -
+// MARK: - StringProtocol Extension (Computed Properties) -
 /* ###################################################################################################################################### */
 /**
  These are a variety of cool String extensions that add some great extra cheese on the pizza.
@@ -77,28 +77,6 @@ public extension StringProtocol {
         guard let ret = self.removingPercentEncoding else { return "" }
         
         return ret
-    }
-    
-    /* ################################################################## */
-    /**
-     This allows us to split a String, if one or more members of a CharacterSet are present.
-     
-     - parameter inCharacterset: A CharacterSet, containing all of the possible characters for a split.
-                                 NOTE: If you want to mix high Unicode characters with ASCII characters in the input set, use the <code>CharacterSet(String.unicodeScalars)</code> constructor. The <code>CharacterSet(charactersIn: String)</code> constructor is buggy.
-
-     - returns: An Array of Substrings. The result of the split.
-     */
-    func setSplit(_ inCharacterset: CharacterSet) -> [Self.SubSequence] { self.split { (char) -> Bool in char.unicodeScalars.contains { inCharacterset.contains($0) } } }
-    
-    /* ################################################################## */
-    /**
-     This allows us to split a String, if one or more character members of a String are present.
-     
-     - parameter charactersIn: A String, containing all of the possible characters for a split.
-     - returns: An Array of Substrings. The result of the split.
-     */
-    func setSplit(charactersIn inString: String) -> [Self.SubSequence] {
-        return self.setSplit(CharacterSet(inString.unicodeScalars))
     }
 
     /* ################################################################## */
@@ -387,6 +365,36 @@ public extension StringProtocol {
      - returns: True, if the email address is in valid form.
      */
     var isAValidEmailAddress: Bool { NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}").evaluate(with: self) }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - StringProtocol Extension (Splitting Methods) -
+/* ###################################################################################################################################### */
+/**
+ These are methods that allow "smart" splitting.
+ */
+public extension StringProtocol {
+    /* ################################################################## */
+    /**
+     This allows us to split a String, if one or more members of a CharacterSet are present.
+     
+     - parameter inCharacterset: A CharacterSet, containing all of the possible characters for a split.
+                                 NOTE: If you want to mix high Unicode characters with ASCII characters in the input set, use the <code>CharacterSet(String.unicodeScalars)</code> constructor. The <code>CharacterSet(charactersIn: String)</code> constructor is buggy.
+
+     - returns: An Array of Substrings. The result of the split.
+     */
+    func setSplit(_ inCharacterset: CharacterSet) -> [Self.SubSequence] { self.split { (char) -> Bool in char.unicodeScalars.contains { inCharacterset.contains($0) } } }
+    
+    /* ################################################################## */
+    /**
+     This allows us to split a String, if one or more character members of a String are present.
+     
+     - parameter charactersIn: A String, containing all of the possible characters for a split.
+     - returns: An Array of Substrings. The result of the split.
+     */
+    func setSplit(charactersIn inString: String) -> [Self.SubSequence] {
+        return self.setSplit(CharacterSet(inString.unicodeScalars))
+    }
 }
 
 /* ###################################################################################################################################### */

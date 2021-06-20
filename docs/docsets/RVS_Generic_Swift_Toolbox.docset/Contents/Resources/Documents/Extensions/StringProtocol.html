@@ -62,6 +62,9 @@
             <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/Int.html">Int</a>
               </li>
               <li class="nav-group-task">
@@ -243,107 +246,6 @@ From here: <a href="https://stackoverflow.com/a/28288340/879365">https://stackov
                       <div>
                         <h4>Return Value</h4>
                         <p>a string, restored from URI encoding.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE8setSplitySay11SubSequenceQzG10Foundation12CharacterSetVF"></a>
-                    <a name="//apple_ref/swift/Method/setSplit(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE8setSplitySay11SubSequenceQzG10Foundation12CharacterSetVF">setSplit(_:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This allows us to split a String, if one or more members of a CharacterSet are present.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setSplit</span><span class="p">(</span><span class="n">_</span> <span class="nv">inCharacterset</span><span class="p">:</span> <span class="kt">CharacterSet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="k">Self</span><span class="o">.</span><span class="kt">SubSequence</span><span class="p">]</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>inCharacterset</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A CharacterSet, containing all of the possible characters for a split.
-                        NOTE: If you want to mix high Unicode characters with ASCII characters in the input set, use the <code>CharacterSet(String.unicodeScalars)</code> constructor. The <code>CharacterSet(charactersIn: String)</code> constructor is buggy.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>An Array of Substrings. The result of the split.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE8setSplit12charactersInSay11SubSequenceQzGSS_tF"></a>
-                    <a name="//apple_ref/swift/Method/setSplit(charactersIn:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE8setSplit12charactersInSay11SubSequenceQzGSS_tF">setSplit(charactersIn:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This allows us to split a String, if one or more character members of a String are present.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setSplit</span><span class="p">(</span><span class="n">charactersIn</span> <span class="nv">inString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="k">Self</span><span class="o">.</span><span class="kt">SubSequence</span><span class="p">]</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>charactersIn</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A String, containing all of the possible characters for a split.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>An Array of Substrings. The result of the split.</p>
                       </div>
                     </section>
                   </div>
@@ -696,6 +598,152 @@ For example, &ldquo;20&rdquo; would return 32, &ldquo;F100&rdquo; will return 61
                       <div>
                         <h4>Return Value</h4>
                         <p>A traditional UUID format (may be XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX, or only 4 hex characters), or nil.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE20isAValidEmailAddressSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isAValidEmailAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE20isAValidEmailAddressSbvp">isAValidEmailAddress</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This comes directly from here: <a href="https://stackoverflow.com/a/25471164/879365">https://stackoverflow.com/a/25471164/879365</a>
+Evaluate a string for proper email address form.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isAValidEmailAddress</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>True, if the email address is in valid form.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/StringProtocol%20Extension%20%28Splitting%20Methods%29"></a>
+                <a name="//apple_ref/swift/Section/StringProtocol Extension (Splitting Methods)" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/StringProtocol%20Extension%20%28Splitting%20Methods%29"></a>
+                  <h3 class="section-name"><p>StringProtocol Extension (Splitting Methods)</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE8setSplitySay11SubSequenceQzG10Foundation12CharacterSetVF"></a>
+                    <a name="//apple_ref/swift/Method/setSplit(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE8setSplitySay11SubSequenceQzG10Foundation12CharacterSetVF">setSplit(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This allows us to split a String, if one or more members of a CharacterSet are present.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setSplit</span><span class="p">(</span><span class="n">_</span> <span class="nv">inCharacterset</span><span class="p">:</span> <span class="kt">CharacterSet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="k">Self</span><span class="o">.</span><span class="kt">SubSequence</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inCharacterset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A CharacterSet, containing all of the possible characters for a split.
+                        NOTE: If you want to mix high Unicode characters with ASCII characters in the input set, use the <code>CharacterSet(String.unicodeScalars)</code> constructor. The <code>CharacterSet(charactersIn: String)</code> constructor is buggy.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An Array of Substrings. The result of the split.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE8setSplit12charactersInSay11SubSequenceQzGSS_tF"></a>
+                    <a name="//apple_ref/swift/Method/setSplit(charactersIn:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE8setSplit12charactersInSay11SubSequenceQzGSS_tF">setSplit(charactersIn:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This allows us to split a String, if one or more character members of a String are present.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setSplit</span><span class="p">(</span><span class="n">charactersIn</span> <span class="nv">inString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="k">Self</span><span class="o">.</span><span class="kt">SubSequence</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>charactersIn</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String, containing all of the possible characters for a split.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An Array of Substrings. The result of the split.</p>
                       </div>
                     </section>
                   </div>

@@ -231,5 +231,5 @@ public extension Int {
      NOTE: Values less than 1 are returned as "".
      This uses an absolute value, so all returns are positive.
      */
-    var romanNumeral: String { UInt64(self).romanNumeral }
+    var romanNumeral: String { UInt64(abs(self)).romanNumeral }
 }

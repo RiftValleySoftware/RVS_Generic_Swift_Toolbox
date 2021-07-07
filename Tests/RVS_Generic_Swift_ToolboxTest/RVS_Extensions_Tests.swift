@@ -1,5 +1,5 @@
 /**
-© Copyright 2019-2020, The Great Rift Valley Software Company
+© Copyright 2019-2021, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -212,10 +212,88 @@ class RVS_Int_Extensions_Tests: XCTestCase {
     
     /* ################################################################## */
     /**
-     Test the Roman numerals (all 3 sizes).
+     Test the Roman numerals.
      */
     func testRomanNumerals() {
+        let testArray: [(Int, String)] = [(0, ""),
+                                          (1, "I"),
+                                          (2, "II"),
+                                          (3, "III"),
+                                          (4, "IV"),
+                                          (5, "V"),
+                                          (6, "VI"),
+                                          (7, "VII"),
+                                          (8, "VIII"),
+                                          (9, "IX"),
+                                          (10, "X"),
+                                          (11, "XI"),
+                                          (12, "XII"),
+                                          (13, "XIII"),
+                                          (14, "XIV"),
+                                          (15, "XV"),
+                                          (16, "XVI"),
+                                          (17, "XVII"),
+                                          (18, "XVIII"),
+                                          (19, "XIX"),
+                                          (20, "XX"),
+                                          (30, "XXX"),
+                                          (40, "XL"),
+                                          (41, "XLI"),
+                                          (42, "XLII"),
+                                          (43, "XLIII"),
+                                          (44, "XLIV"),
+                                          (45, "XLV"),
+                                          (46, "XLVI"),
+                                          (47, "XLVII"),
+                                          (48, "XLVIII"),
+                                          (49, "XLIX"),
+                                          (50, "L"),
+                                          (51, "LI"),
+                                          (52, "LII"),
+                                          (53, "LIII"),
+                                          (54, "LIV"),
+                                          (55, "LV"),
+                                          (56, "LVI"),
+                                          (57, "LVII"),
+                                          (58, "LVIII"),
+                                          (59, "LIX"),
+                                          (60, "LX"),
+                                          (70, "LXX"),
+                                          (80, "LXXX"),
+                                          (90, "XC"),
+                                          (91, "XCI"),
+                                          (95, "XCV"),
+                                          (99, "XCIX"),
+                                          (100, "C"),
+                                          (200, "CC"),
+                                          (300, "CCC"),
+                                          (400, "CD"),
+                                          (401, "CDI"),
+                                          (409, "CDIX"),
+                                          (490, "CDXC"),
+                                          (499, "CDXCIX"),
+                                          (500, "D"),
+                                          (501, "DI"),
+                                          (509, "DIX"),
+                                          (590, "DXC"),
+                                          (800, "DCCC"),
+                                          (900, "CM"),
+                                          (950, "CML"),
+                                          (999, "CMXCIX"),
+                                          (1000, "M"),
+                                          (1900, "MCM"),
+                                          (1999, "MCMXCIX"),
+                                          (2000, "MM"),
+                                          (2049, "MMXLIX"),
+                                          (2050, "MML"),
+                                          (3888, "MMMDCCCLXXXVIII"),
+                                          (3999, "MMMCMXCIX"),
+                                          (4000, "MMMM"),
+                                          (4999, "MMMMCMXCIX"),
+                                          (5000, "")
+        ]
         
+        testArray.forEach { XCTAssertEqual($0.0.romanNumeral, $0.1) }
     }
 }
 

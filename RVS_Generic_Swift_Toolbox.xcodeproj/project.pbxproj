@@ -48,6 +48,37 @@
 		D4D03C2A23DDE379005B54B5 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D42491A12695ED9E0094C15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4D411A023DDC5AD00D607F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D46D80762496EB610087DD9B;
+			remoteInfo = RVS_Generic_Swift_Toolbox_MacOS;
+		};
+		D42491A32695ED9E0094C15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4D411A023DDC5AD00D607F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D46D809A2496EBD70087DD9B;
+			remoteInfo = RVS_Generic_Swift_Toolbox_TVOS;
+		};
+		D42491A72695ED9E0094C15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4D411A023DDC5AD00D607F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D46D80882496EBAF0087DD9B;
+			remoteInfo = RVS_Generic_Swift_Toolbox_WatchOS;
+		};
+		D42491A92695ED9E0094C15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4D411A023DDC5AD00D607F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4B4CF2F24969861003936DF;
+			remoteInfo = RVS_Generic_Swift_Toolbox_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D427DB2723DDC66900849489 /* RVS_DebugTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_DebugTools.swift; sourceTree = "<group>"; };
 		D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_FIFOQueue.swift; sourceTree = "<group>"; };
@@ -379,6 +410,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				D42491A22695ED9E0094C15F /* PBXTargetDependency */,
+				D42491A42695ED9E0094C15F /* PBXTargetDependency */,
+				D42491A82695ED9E0094C15F /* PBXTargetDependency */,
+				D42491AA2695ED9E0094C15F /* PBXTargetDependency */,
 			);
 			name = RVS_Generic_Swift_Toolbox;
 			productName = RVS_Generic_Swift_Toolbox;
@@ -581,6 +616,29 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D42491A22695ED9E0094C15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D46D80762496EB610087DD9B /* RVS_Generic_Swift_Toolbox_MacOS */;
+			targetProxy = D42491A12695ED9E0094C15F /* PBXContainerItemProxy */;
+		};
+		D42491A42695ED9E0094C15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D46D809A2496EBD70087DD9B /* RVS_Generic_Swift_Toolbox_TVOS */;
+			targetProxy = D42491A32695ED9E0094C15F /* PBXContainerItemProxy */;
+		};
+		D42491A82695ED9E0094C15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D46D80882496EBAF0087DD9B /* RVS_Generic_Swift_Toolbox_WatchOS */;
+			targetProxy = D42491A72695ED9E0094C15F /* PBXContainerItemProxy */;
+		};
+		D42491AA2695ED9E0094C15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4B4CF2F24969861003936DF /* RVS_Generic_Swift_Toolbox_iOS */;
+			targetProxy = D42491A92695ED9E0094C15F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		D46D807C2496EB610087DD9B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -601,7 +659,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-MacOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -630,7 +688,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-MacOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -658,7 +716,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-WatchOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
@@ -689,7 +747,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-WatchOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
@@ -720,7 +778,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-TVOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
@@ -750,7 +808,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-TVOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
@@ -782,7 +840,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -812,7 +870,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;

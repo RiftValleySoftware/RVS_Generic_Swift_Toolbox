@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.0
+Version: 1.6.1
 */
 
 import XCTest
@@ -208,6 +208,14 @@ class RVS_Int_Extensions_Tests: XCTestCase {
             XCTAssertEqual(testVal >> indent, testVal.maskedValue(firstPlace: 0, runLength: UInt(maxSize - indent)))
             XCTAssertEqual(1, testVal.maskedValue(firstPlace: UInt(indent), runLength: 1))
         }
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the Roman numerals (all 3 sizes).
+     */
+    func testRomanNumerals() {
+        
     }
 }
 

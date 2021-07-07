@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.6.0
+ Version: 1.6.1
 */
 
 /* ###################################################################################################################################### */
@@ -88,6 +88,26 @@ public extension UInt64 {
         // By masking out anything not in the run length, we return a value.
         return shifted & UInt64(mask)
     }
+    
+    /* ################################################################## */
+    /**
+     This returns the Int as a Roman numeral.
+     NOTE: Values less than 1 are returned as "".
+     
+     From here: https://stackoverflow.com/a/36068105/879365
+     */
+    var romanNumeral: String {
+        var integerValue = self
+        var numeralString = ""
+        let mappingList: [(UInt64, String)] = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
+        for i in mappingList {
+            while (integerValue >= i.0) {
+                integerValue -= i.0
+                numeralString += i.1
+            }
+        }
+        return numeralString
+    }
 }
 
 /* ###################################################################################################################################### */
@@ -139,6 +159,13 @@ public extension UInt {
      - returns: An Int, with the masked value.
      */
     func maskedValue(firstPlace inFirstPlace: UInt, runLength inRunLength: UInt) -> UInt { UInt(UInt64(self).maskedValue(firstPlace: inFirstPlace, runLength: inRunLength)) }
+    
+    /* ################################################################## */
+    /**
+     This returns the Int as a Roman numeral.
+     NOTE: Values less than 1 are returned as "".
+     */
+    var romanNumeral: String { UInt64(self).romanNumeral }
 }
 
 /* ###################################################################################################################################### */
@@ -197,4 +224,12 @@ public extension Int {
         precondition(0 <= inRunLength, "Run length cannot be negative")
         return Int(UInt64(self).maskedValue(firstPlace: UInt(inFirstPlace), runLength: UInt(inRunLength)))
     }
+    
+    /* ################################################################## */
+    /**
+     This returns the Int as a Roman numeral.
+     NOTE: Values less than 1 are returned as "".
+     This uses an absolute value, so all returns are positive.
+     */
+    var romanNumeral: String { UInt64(self).romanNumeral }
 }

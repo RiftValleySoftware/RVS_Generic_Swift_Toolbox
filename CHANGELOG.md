@@ -1,3 +1,6 @@
+*Version 1.6.1.0000* **July 7, 2021**
+- Added the Roman Numerals extension to the Int extension.
+
 *Version 1.6.0.0000* **June 19, 2021**
 - Added the `isAValidEmailAddress` computed property.
 

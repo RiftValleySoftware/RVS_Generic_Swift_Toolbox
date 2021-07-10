@@ -1,3 +1,8 @@
+*Version 1.6.2.0000* **July 10, 2021**
+- Enabled code coverage for tests.
+- Fixed a couple of bugs, exposed by increased code coverage. Code coverage is *gooood*.
+- Upped the min versions a bit.
+
 *Version 1.6.1.0000* **July 7, 2021**
 - Added the Roman Numeral calculator to the Int extension.
 

@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.6.1
+ Version: 1.6.2
 */
 
 /* ###################################################################################################################################### */
@@ -79,8 +79,8 @@ public extension UInt64 {
      */
     func maskedValue(firstPlace inFirstPlace: UInt, runLength inRunLength: UInt) -> UInt64 {
         let maxRunLength = UInt(64)
-        precondition((inFirstPlace + inRunLength) <= maxRunLength, "Requested Mask is Out of Bounds")
-        guard 0 < inRunLength else { return 0 }   // Shortcut, if they aren't looking for anything.
+        guard (inFirstPlace + inRunLength) <= maxRunLength,
+              0 < inRunLength else { return 0 }   // Shortcut, if they aren't looking for anything.
         // The first thing we do, is shift the main value down to the start of our mask.
         let shifted = UInt64(self >> inFirstPlace)
         // We make a mask quite simply. We just shift down a "full house."
@@ -192,9 +192,9 @@ public extension Int {
      - returns: An Int, with the masked value.
      */
     func maskedValue(firstPlace inFirstPlace: Int, runLength inRunLength: Int) -> Int {
-        precondition(0 <= self, "Value cannot be negative")
-        precondition(0 <= inFirstPlace, "First position cannot be negative")
-        precondition(0 <= inRunLength, "Run length cannot be negative")
+        guard 0 <= self,
+              0 <= inFirstPlace,
+              0 <= inRunLength else { return 0 }
         return Int(UInt64(self).maskedValue(firstPlace: UInt(inFirstPlace), runLength: UInt(inRunLength)))
     }
     

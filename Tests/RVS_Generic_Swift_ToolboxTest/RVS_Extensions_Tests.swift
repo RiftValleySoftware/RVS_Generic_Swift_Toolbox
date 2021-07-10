@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.1
+Version: 1.6.2
 */
 
 import XCTest
@@ -39,6 +39,14 @@ class RVS_Int_Extensions_Tests: XCTestCase {
     func testMaskInt() {
         // 0xF30 (Value, in hex) 111100110000 (Value, in binary)
         let targetTest = 3888
+
+        // Failure condition tests (out of bounds).
+        XCTAssertEqual(0, targetTest.maskedValue(firstPlace: 0, runLength: -2))
+        XCTAssertEqual(0, targetTest.maskedValue(firstPlace: 2, runLength: -2))
+        XCTAssertEqual(0, targetTest.maskedValue(firstPlace: -2, runLength: 0))
+        XCTAssertEqual(0, targetTest.maskedValue(firstPlace: -2, runLength: 1000))
+        XCTAssertEqual(0, targetTest.maskedValue(firstPlace: 2, runLength: 0))
+
         // 111111111111 (Mask, in binary)
         XCTAssertEqual(3888, targetTest.maskedValue(firstPlace: 0, runLength: 12))
         // 111111110000
@@ -157,8 +165,10 @@ class RVS_Int_Extensions_Tests: XCTestCase {
      This is the maskedValue() extension function test (Unsigned Int 64).
      */
     func testMaskUInt64() {
+        
         // 0xF30 (Value, in hex) 111100110000 (Value, in binary)
         let targetTest = UInt64(3888)
+
         // 111111111111 (Mask, in binary)
         XCTAssertEqual(3888, targetTest.maskedValue(firstPlace: 0, runLength: 12))
         // 111111110000
@@ -445,11 +455,11 @@ class RVS_String_Extensions_Tests: XCTestCase {
      Test the various "XXOnly" computed properties.
      */
     func testBinaryOctalHexOnly() {
-        let testTarget = "1 Is Too Many, A Thousand Never Enough, Unless you have 2, 7, 8, or 9 more than 0."
-        XCTAssertEqual("10", testTarget.binaryOnly)
-        XCTAssertEqual("1270", testTarget.octalOnly)
-        XCTAssertEqual("127890", testTarget.decimalOnly)
-        XCTAssertEqual("1AAADEEEEAE2789EA0", testTarget.hexOnly)
+        let testTarget = "1 Is Too Many, A Thousand Never Enough, Unless you have 2, 7, 8, or 9 more than 0, or 1."
+        XCTAssertEqual("101", testTarget.binaryOnly)
+        XCTAssertEqual("12701", testTarget.octalOnly)
+        XCTAssertEqual("1278901", testTarget.decimalOnly)
+        XCTAssertEqual("1AAADEEEEAE2789EA01", testTarget.hexOnly)
     }
     
     /* ################################################################## */
@@ -493,6 +503,10 @@ class RVS_String_Extensions_Tests: XCTestCase {
             XCTFail("Invalid Substring Response")
         }
         
+        XCTAssertNil(testString.index(of: "Foor"), "Invalid Substring Response")
+        XCTAssertTrue(testString.indexes(of: "Foor").isEmpty, "Invalid Substring Response")
+        XCTAssertTrue(testString.ranges(of: "Foor").isEmpty, "Invalid Substring Response")
+
         if let substringIndex = testString.index(of: "score") {
             XCTAssertEqual(5, testString.distance(from: testString.startIndex, to: substringIndex))
         } else {
@@ -692,5 +706,10 @@ class RVS_Bundle_Extensions_Tests: XCTestCase {
         XCTAssertEqual("1.2.3", testBundle.appVersionString)
         XCTAssertEqual("4.5.6", testBundle.appVersionBuildString)
         XCTAssertEqual("RVS_Generic_Swift_Toolbox_Tests_Copyright", testBundle.copyrightString)
+        let testBundle2 = Bundle()
+        XCTAssertEqual("", testBundle2.appDisplayName)
+        XCTAssertEqual("", testBundle2.appVersionString)
+        XCTAssertEqual("", testBundle2.appVersionBuildString)
+        XCTAssertNil(testBundle2.copyrightString)
     }
 }

@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.1
+Version: 1.6.2
 */
 
 import Foundation   // Required for the NS stuff.
@@ -214,14 +214,12 @@ public extension StringProtocol {
      This simply strips out all non-binary characters in the string, leaving only valid binary digits.
      */
     var binaryOnly: String {
-        let hexDigits = CharacterSet(charactersIn: "01")
+        let binaryDigits = CharacterSet(charactersIn: "01")
         return String(self).filter {
             // The higher-order function stuff will convert each character into an aggregate integer, which then becomes a Unicode scalar. Very primitive, but shouldn't be a problem for us, as we only need a very limited ASCII set.
-            if let cha = UnicodeScalar($0.unicodeScalars.map { $0.value }.reduce(0, +)) {
-                return hexDigits.contains(cha)
-            }
+            guard let cha = UnicodeScalar($0.unicodeScalars.map { $0.value }.reduce(0, +)) else { return false }
             
-            return false
+            return binaryDigits.contains(cha)
         }
     }
     
@@ -230,14 +228,12 @@ public extension StringProtocol {
      This simply strips out all non-octal characters in the string, leaving only valid octal digits.
      */
     var octalOnly: String {
-        let hexDigits = CharacterSet(charactersIn: "01234567")
+        let octalDigits = CharacterSet(charactersIn: "01234567")
         return String(self).filter {
             // The higher-order function stuff will convert each character into an aggregate integer, which then becomes a Unicode scalar. Very primitive, but shouldn't be a problem for us, as we only need a very limited ASCII set.
-            if let cha = UnicodeScalar($0.unicodeScalars.map { $0.value }.reduce(0, +)) {
-                return hexDigits.contains(cha)
-            }
+            guard let cha = UnicodeScalar($0.unicodeScalars.map { $0.value }.reduce(0, +)) else { return false }
             
-            return false
+            return octalDigits.contains(cha)
         }
     }
 
@@ -246,14 +242,12 @@ public extension StringProtocol {
      This simply strips out all non-decimal characters in the string, leaving only valid decimal digits.
      */
     var decimalOnly: String {
-        let hexDigits = CharacterSet(charactersIn: "0123456789")
+        let decimalDigits = CharacterSet(charactersIn: "0123456789")
         return String(self).filter {
             // The higher-order function stuff will convert each character into an aggregate integer, which then becomes a Unicode scalar. Very primitive, but shouldn't be a problem for us, as we only need a very limited ASCII set.
-            if let cha = UnicodeScalar($0.unicodeScalars.map { $0.value }.reduce(0, +)) {
-                return hexDigits.contains(cha)
-            }
+            guard let cha = UnicodeScalar($0.unicodeScalars.map { $0.value }.reduce(0, +)) else { return false }
             
-            return false
+            return decimalDigits.contains(cha)
         }
     }
 
@@ -266,11 +260,9 @@ public extension StringProtocol {
         // The uppercased() will convert us to a String. No need for a cast.
         return self.uppercased().filter {
             // The higher-order function stuff will convert each character into an aggregate integer, which then becomes a Unicode scalar. Very primitive, but shouldn't be a problem for us, as we only need a very limited ASCII set.
-            if let cha = UnicodeScalar($0.unicodeScalars.map { $0.value }.reduce(0, +)) {
-                return hexDigits.contains(cha)
-            }
+            guard let cha = UnicodeScalar($0.unicodeScalars.map { $0.value }.reduce(0, +)) else { return false }
             
-            return false
+            return hexDigits.contains(cha)
         }
     }
 
@@ -293,9 +285,7 @@ public extension StringProtocol {
                 let nsRange = NSRange(asString.startIndex..<asString.endIndex, in: asString)    // The search range will be the entire String.
                 // We walk through the found matches (if any)
                 regex.enumerateMatches(in: asString, options: [], range: nsRange) { (match, _, _) in
-                    guard let match = match else {
-                        return  // We doan' need no STEENKIN' MATCHES!
-                    }
+                    guard let match = match else { return } // We doan' need no STEENKIN' MATCHES!
                     
                     // If we got here, we have at least one match (group of 2 digits). Walk through them by extracting the range (in the main String) of each match.
                     for rangeIndex in 0..<match.numberOfRanges {
@@ -439,9 +429,10 @@ public extension StringProtocol where Index == String.Index {
         var result: [Index] = []
         var start = startIndex
         
-        while start < endIndex, let range = self[start..<endIndex].range(of: inString, options: inOptions) {
+        while start < endIndex,
+              let range = self[start..<endIndex].range(of: inString, options: inOptions) {
             result.append(range.lowerBound)
-            start = range.lowerBound < range.upperBound ? range.upperBound: index(range.lowerBound, offsetBy: 1, limitedBy: endIndex) ?? endIndex
+            start = range.upperBound
         }
         
         return result
@@ -460,10 +451,9 @@ public extension StringProtocol where Index == String.Index {
         var result: [Range<Index>] = []
         var start = startIndex
         while start < endIndex,
-            let range = self[start..<endIndex].range(of: inString, options: inOptions) {
+              let range = self[start..<endIndex].range(of: inString, options: inOptions) {
                 result.append(range)
-                start = range.lowerBound < range.upperBound ? range.upperBound :
-                    index(range.lowerBound, offsetBy: 1, limitedBy: endIndex) ?? endIndex
+                start = range.upperBound
         }
         return result
     }

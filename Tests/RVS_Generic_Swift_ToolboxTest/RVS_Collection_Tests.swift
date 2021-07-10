@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.1
+Version: 1.6.2
 */
 
 import XCTest
@@ -132,6 +132,9 @@ class RVS_FIFOQueue_Tests: XCTestCase {
         } else {
             XCTFail("This should not be empty.")
         }
+        
+        testTarget.cutTheLine("Forty-Two")
+        XCTAssertEqual("Forty-Two", testTarget.dequeue() as? String)
     }
     
     /* ################################################################## */
@@ -163,6 +166,9 @@ class RVS_FIFOQueue_Tests: XCTestCase {
             XCTAssertEqual(testTargetInt.count, initializerArray.count - lastValue)
             XCTAssertEqual(lastValue - 1, value)
         }
+        
+        testTargetInt.cutTheLine(42)
+        XCTAssertEqual(42, testTargetInt.dequeue())
     }
     
     /* ################################################################## */
@@ -227,6 +233,42 @@ class RVS_FIFOQueue_Tests: XCTestCase {
         }
         
         wait(for: [expectation], timeout: 1)
+        
+        testTargetInt.cutTheLine(42)
+        XCTAssertEqual(42, testTargetInt.dequeue())
+    }
+    
+    /* ################################################################## */
+    /**
+     This tests setting and getting, via subscripts.
+     */
+    func testSubscripts() {
+        let testCount = 20
+        var testTargetInt = RVS_FIFOQueue<Int>(arrayLiteral: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
+        XCTAssertEqual(testCount, testTargetInt.count)
+
+        for setter in 0..<testCount {
+            testTargetInt[setter] += testCount
+        }
+
+        for getter in 0..<testCount {
+            XCTAssertEqual(testTargetInt[getter], getter + testCount)
+        }
+        
+        let firstValue = testTargetInt.dequeue()
+        
+        XCTAssertEqual(testCount, firstValue)
+
+        for setter in 0..<(testCount - 1) {
+            XCTAssertEqual(testTargetInt[setter], setter + testCount + 1)
+            testTargetInt[setter] = 1
+            XCTAssertEqual(testTargetInt[setter], 1)
+        }
+        
+        testTargetInt.enqueue(42)
+        XCTAssertEqual(testTargetInt[testCount], 42)
+        testTargetInt[testCount] += 1
+        XCTAssertEqual(testTargetInt[testCount], 43)
     }
 }
 

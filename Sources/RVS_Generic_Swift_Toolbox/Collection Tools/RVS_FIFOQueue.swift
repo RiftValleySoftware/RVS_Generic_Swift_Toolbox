@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.1
+Version: 1.6.2
 */
 
 /* ###################################################################################################################################### */
@@ -209,7 +209,7 @@ extension RVS_FIFOQueue: MutableCollection {
      - returns: The input plus one (Can't get simpler than that). It can return the endIndex, which is past the last element.
      */
     public func index(after inIndex: Int) -> Int {
-        precondition((0..<endIndex).contains(inIndex), "Index out of bounds")
+        guard (0..<endIndex).contains(inIndex) else { return endIndex }
         return inIndex + 1
     }
     
@@ -221,22 +221,20 @@ extension RVS_FIFOQueue: MutableCollection {
      */
     public subscript(_ inPosition: Int) -> Element {
         get {
-            precondition((0..<endIndex).contains(inPosition), "Index out of bounds")
             // See which queue the element is in.
             if inPosition < _leftQueue.endIndex {
                 return _leftQueue[_leftQueue.count - inPosition - 1]
-            } else {
-                return _rightQueue[inPosition - _leftQueue.count]
             }
+            
+            return _rightQueue[inPosition - _leftQueue.count - (0 < _leftQueue.count ? 1 : 0)]
         }
         
         set {
-            precondition((0..<endIndex).contains(inPosition), "Index out of bounds")
             if inPosition < _leftQueue.endIndex {
                 return _leftQueue[_leftQueue.count - inPosition - 1] = newValue
-            } else {
-                return _rightQueue[inPosition - _leftQueue.count] = newValue
             }
+            
+            return _rightQueue[inPosition - _leftQueue.count - (0 < _leftQueue.count ? 1 : 0)] = newValue
         }
     }
 }

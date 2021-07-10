@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.1
+Version: 1.6.2
 */
 
 /* ###################################################################################################################################### */
@@ -99,8 +99,6 @@ extension RVS_SequenceProtocol {
      - parameter inIndex: The 0-based integer index. Must be less than the total count of elements.
      */
     public subscript(_ inIndex: Int) -> Element {
-        precondition((0..<count).contains(inIndex), "Index out of range.")   // Standard precondition. Index needs to be 0 or greater, and less than the count.
-        
         return sequence_contents[inIndex]
     }
 }

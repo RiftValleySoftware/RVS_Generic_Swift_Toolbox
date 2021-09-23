@@ -23,7 +23,6 @@ Version: 1.6.2
 */
 
 import XCTest
-@testable import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
 // MARK: - RVS_Int_Extensions_Tests -

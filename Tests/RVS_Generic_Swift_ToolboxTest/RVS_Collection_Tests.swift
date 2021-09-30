@@ -138,7 +138,7 @@ class RVS_FIFOQueue_Tests: XCTestCase {
     
     /* ################################################################## */
     /**
-     This simply jamss a whole bunch of values into a queue, and then makes sure that it iterates and dequeues properly.
+     This simply jams a whole bunch of values into a queue, and then makes sure that it iterates and dequeues properly.
      */
     func testABigBunchOfIntValues() {
         let testCount = 5000

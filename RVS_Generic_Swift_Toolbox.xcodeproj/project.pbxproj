@@ -80,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D41B468727A422DE00B95E61 /* RVS_Generic_Swift_Toolbox.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; name = RVS_Generic_Swift_Toolbox.docc; path = Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox.docc; sourceTree = SOURCE_ROOT; };
 		D427DB2723DDC66900849489 /* RVS_DebugTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_DebugTools.swift; sourceTree = "<group>"; };
 		D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_FIFOQueue.swift; sourceTree = "<group>"; };
 		D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_SequenceProtocol.swift; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 			children = (
 				D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */,
 				D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */,
+				D41B468727A422DE00B95E61 /* RVS_Generic_Swift_Toolbox.docc */,
 			);
 			path = "Collection Tools";
 			sourceTree = "<group>";
@@ -416,6 +418,9 @@
 				D42491AA2695ED9E0094C15F /* PBXTargetDependency */,
 			);
 			name = RVS_Generic_Swift_Toolbox;
+			packageProductDependencies = (
+				D4A6CE2727A426390065D122 /* RVS-Generic-Swift-Toolbox */,
+			);
 			productName = RVS_Generic_Swift_Toolbox;
 			productReference = D4D411A823DDC5AD00D607F7 /* RVS_Generic_Swift_Toolbox */;
 			productType = "com.apple.product-type.tool";
@@ -459,6 +464,9 @@
 				Base,
 			);
 			mainGroup = D4D4119F23DDC5AC00D607F7;
+			packageReferences = (
+				D4A6CE2627A426390065D122 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
+			);
 			productRefGroup = D4D411A923DDC5AD00D607F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -659,7 +667,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-MacOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -688,7 +696,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-MacOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -717,7 +725,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-WatchOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
@@ -749,7 +757,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-WatchOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
@@ -781,7 +789,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-TVOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
@@ -812,7 +820,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-TVOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
@@ -845,7 +853,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -877,7 +885,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -1072,6 +1080,7 @@
 				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-GenericSwift-Toolbox";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1089,6 +1098,7 @@
 				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-GenericSwift-Toolbox";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1160,6 +1170,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D4A6CE2627A426390065D122 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4A6CE2727A426390065D122 /* RVS-Generic-Swift-Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4A6CE2627A426390065D122 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = "RVS-Generic-Swift-Toolbox";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D4D411A023DDC5AD00D607F7 /* Project object */;
 }

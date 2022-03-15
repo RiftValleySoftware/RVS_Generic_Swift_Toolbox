@@ -1,3 +1,6 @@
+*Version 1.6.6* **March 15, 2022**
+- Updated the tool. No functional or API changes.
+
 *Version 1.6.5* **January 28, 2022**
 - Added DocC support. No functional or API changes.
 

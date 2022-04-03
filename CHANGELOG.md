@@ -1,3 +1,6 @@
+*Version 1.6.7* **April 2, 2022**
+- No change, but I had to update the version number to stop my project from complaining.
+
 *Version 1.6.6* **March 15, 2022**
 - Updated the tool. No functional or API changes.
 

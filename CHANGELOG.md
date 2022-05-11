@@ -1,3 +1,9 @@
+*Version 1.7.0* **May 11, 2022**
+- Added the `accessibilityLocalizedVariant` computed property to the `StringProtocol` extension.
+- Cleaned up the testing. It's an old project, and the testing was kind of a mess. The command-line testing (`swift test`) is still having issues, but the main testing (Xcode) is working fine.
+- I removed the localized string tests, because I had to do too much weird stuff, to test. It's a very simple feature, however, and it will be immediately obvious, if there's an issue.
+- Bumped the minimum MacOS version to 11 (This one goes to 11).
+
 *Version 1.6.7* **April 2, 2022**
 - No change, but I had to update the version number to stop my project from complaining.
 

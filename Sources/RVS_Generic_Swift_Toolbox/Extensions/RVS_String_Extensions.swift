@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.7
+Version: 1.7.0
 */
 
 import Foundation   // Required for the NS stuff.
@@ -34,9 +34,19 @@ import Foundation   // Required for the NS stuff.
 public extension StringProtocol {
     /* ################################################################## */
     /**
-     - returns: the localized string (main bundle) for this string.
+     NOTE: Because of issues with bundles and resources, and whatnot, this will not be tested with the unit tests.
+
+     - returns: the localized string (main bundle) for this string, from the default `Localizable.strings` file.
      */
-    var localizedVariant: String { return NSLocalizedString(String(self), comment: "") }
+    var localizedVariant: String { NSLocalizedString(String(self), comment: "") }
+    
+    /* ################################################################## */
+    /**
+     NOTE: Because of issues with bundles and resources, and whatnot, this will not be tested with the unit tests.
+
+     - returns: the localized string (main bundle) for this string, from an `Accessibility.strings` file.
+     */
+    var accessibilityLocalizedVariant: String { NSLocalizedString(String(self), tableName: "Accessibility", comment: "")  }
     
     /* ################################################################## */
     /**
@@ -59,11 +69,7 @@ public extension StringProtocol {
      
      - returns: a string, cleaned for URI.
      */
-    var urlEncodedString: String? {
-        guard let ret = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { return "" }
-       
-        return ret
-    }
+    var urlEncodedString: String? { addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) }
     
     /* ################################################################## */
     /**
@@ -73,11 +79,7 @@ public extension StringProtocol {
      
      - returns: a string, restored from URI encoding.
      */
-    var urlDecodedString: String? {
-        guard let ret = self.removingPercentEncoding else { return "" }
-        
-        return ret
-    }
+    var urlDecodedString: String? { removingPercentEncoding }
 
     /* ################################################################## */
     /**
@@ -310,7 +312,7 @@ public extension StringProtocol {
      For example, "20" would return 32, "F100" will return 61696, and "3" will return 3. "G" would return nil, but "George" would return 238 ("EE").
      */
     var hex2Int: Int! {
-        let workingString = self.hexOnly.reversed()    // Make sure that we are a "pure" hex string, and we'll reverse it, as we will be crawling through the string as powers of 16
+        let workingString = hexOnly.reversed()    // Make sure that we are a "pure" hex string, and we'll reverse it, as we will be crawling through the string as powers of 16
         var ret: Int! = nil
         var shift = 0
         // We crawl through, one character at a time, and use a radix of 16 (hex).
@@ -373,7 +375,7 @@ public extension StringProtocol {
 
      - returns: An Array of Substrings. The result of the split.
      */
-    func setSplit(_ inCharacterset: CharacterSet) -> [Self.SubSequence] { self.split { (char) -> Bool in char.unicodeScalars.contains { inCharacterset.contains($0) } } }
+    func setSplit(_ inCharacterset: CharacterSet) -> [Self.SubSequence] { split { (char) -> Bool in char.unicodeScalars.contains { inCharacterset.contains($0) } } }
     
     /* ################################################################## */
     /**
@@ -382,9 +384,7 @@ public extension StringProtocol {
      - parameter charactersIn: A String, containing all of the possible characters for a split.
      - returns: An Array of Substrings. The result of the split.
      */
-    func setSplit(charactersIn inString: String) -> [Self.SubSequence] {
-        return self.setSplit(CharacterSet(inString.unicodeScalars))
-    }
+    func setSplit(charactersIn inString: String) -> [Self.SubSequence] { setSplit(CharacterSet(inString.unicodeScalars)) }
 }
 
 /* ###################################################################################################################################### */

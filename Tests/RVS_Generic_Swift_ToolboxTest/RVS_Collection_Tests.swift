@@ -19,16 +19,17 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.7
+Version: 1.7.0
 */
 
 import XCTest
+@testable import RVS_Generic_swift_Toolbox
 
 /* ###################################################################################################################################### */
 // MARK: - RVS_FIFOQueue_Tests -
 /* ###################################################################################################################################### */
 /**
- These are specific unit tests for the RVS_FIFOQueue struct.
+ These are specific unit tests for the `RVS_FIFOQueue` struct.
  */
 class RVS_FIFOQueue_Tests: XCTestCase {
     /* ################################################################## */

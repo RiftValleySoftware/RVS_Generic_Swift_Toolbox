@@ -29,7 +29,7 @@ let package = Package(
     platforms: [
         .iOS(.v11),
         .tvOS(.v11),
-        .macOS(.v10_14),
+        .macOS(.v11),
         .watchOS(.v5)
     ],
     products: [
@@ -41,8 +41,7 @@ let package = Package(
         .target(
             name: "RVS_Generic_Swift_Toolbox"),
         .testTarget(
-            name: "RVS-Generic-Swift-ToolboxTest",
-            dependencies: ["RVS_Generic_Swift_Toolbox"],
-            path: "Tests/RVS_Generic_Swift_ToolboxTest")
+            name: "RVS_Generic_Swift_ToolboxTest",
+            dependencies: ["RVS_Generic_Swift_Toolbox"])
     ]
 )

@@ -7,16 +7,30 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "YES"
             buildForProfiling = "YES"
             buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D46D80762496EB610087DD9B"
-               BuildableName = "RVS_Generic_Swift_Toolbox_MacOS.framework"
-               BlueprintName = "RVS_Generic_Swift_Toolbox_MacOS"
+               BlueprintIdentifier = "D451C73C282BD713000F8A2D"
+               BuildableName = "libRVS_Generic_swift_Toolbox.a"
+               BlueprintName = "RVS_Generic_swift_Toolbox"
+               ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D4D03C1723DDDE9D005B54B5"
+               BuildableName = "RVS_Generic_Swift_Toolbox_Tests.xctest"
+               BlueprintName = "RVS_Generic_Swift_Toolbox_Tests"
                ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,6 +42,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D4D03C1723DDDE9D005B54B5"
+               BuildableName = "RVS_Generic_Swift_Toolbox_Tests.xctest"
+               BlueprintName = "RVS_Generic_Swift_Toolbox_Tests"
+               ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -50,9 +74,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D46D80762496EB610087DD9B"
-            BuildableName = "RVS_Generic_Swift_Toolbox_MacOS.framework"
-            BlueprintName = "RVS_Generic_Swift_Toolbox_MacOS"
+            BlueprintIdentifier = "D451C73C282BD713000F8A2D"
+            BuildableName = "libRVS_Generic_swift_Toolbox.a"
+            BlueprintName = "RVS_Generic_swift_Toolbox"
             ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

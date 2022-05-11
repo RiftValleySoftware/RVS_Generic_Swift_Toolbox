@@ -19,10 +19,11 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.7
+Version: 1.7.0
 */
 
 import XCTest
+@testable import RVS_Generic_swift_Toolbox
 
 /* ###################################################################################################################################### */
 // MARK: - RVS_Int_Extensions_Tests -
@@ -307,28 +308,6 @@ class RVS_Int_Extensions_Tests: XCTestCase {
 }
 
 /* ###################################################################################################################################### */
-// MARK: - NSLocalizedString Override -
-/* ###################################################################################################################################### */
-/**
- We override this, because we are running a test, so the bundle is in the XCTest bundle. We override this to intercept the standard call, and reference the testing bundle.
- 
- - parameters:
-    - inKey: The String we are using to key the token.
-    - comment: Ignored
- 
- - returns: The localized String (if the key matches).
- */
-public func NSLocalizedString(_ inKey: String, comment: String) -> String {
-    if "TEST-1-SLUG" == inKey {
-        return "Test String 1"
-    } else if "TEST-2-SLUG" == inKey {
-        return "Test String Two"
-    }
-    
-    return inKey
-}
-
-/* ###################################################################################################################################### */
 // MARK: - Debug Tools Tests -
 /* ###################################################################################################################################### */
 /**
@@ -353,19 +332,6 @@ class RVS_DebugTools_Tests: XCTestCase {
  These are specific unit tests for the StringProtocol extension.
  */
 class RVS_String_Extensions_Tests: XCTestCase {
-    /* ################################################################## */
-    /**
-     Test our localizedVariant computed property.
-     */
-    func testLocalizedVariant() {
-        #if TESTING // This is only valid for the Xcode tests. It won't work for command-line tests.
-        XCTAssertEqual("Test String 1", "TEST-1-SLUG".localizedVariant)
-        XCTAssertEqual("Test String Two", "TEST-2-SLUG".localizedVariant)
-        #else
-            print("Cannot Test localizedVariant in command-line mode, because of bundle issues.")
-        #endif
-    }
-    
     /* ################################################################## */
     /**
      Test our md5 computed property.

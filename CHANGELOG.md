@@ -1,3 +1,7 @@
+*Version 1.7.1* **May 11, 2022**
+- Got the tests working (case-sensitivity issue).
+- The DocC is still having issues. It is only documenting the first source directory.
+
 *Version 1.7.0* **May 11, 2022**
 - Added the `accessibilityLocalizedVariant` computed property to the `StringProtocol` extension.
 - Cleaned up the testing. It's an old project, and the testing was kind of a mess. The command-line testing (`swift test`) is still having issues, but the main testing (Xcode) is working fine.

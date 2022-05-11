@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D451C73C282BD713000F8A2D"
-               BuildableName = "libRVS_Generic_swift_Toolbox.a"
-               BlueprintName = "RVS_Generic_swift_Toolbox"
+               BuildableName = "RVS_Generic_swift_Toolbox.a"
+               BlueprintName = "RVS_Generic_Swift_Toolbox"
                ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D451C73C282BD713000F8A2D"
-            BuildableName = "libRVS_Generic_swift_Toolbox.a"
-            BlueprintName = "RVS_Generic_swift_Toolbox"
+            BuildableName = "RVS_Generic_swift_Toolbox.a"
+            BlueprintName = "RVS_Generic_Swift_Toolbox"
             ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

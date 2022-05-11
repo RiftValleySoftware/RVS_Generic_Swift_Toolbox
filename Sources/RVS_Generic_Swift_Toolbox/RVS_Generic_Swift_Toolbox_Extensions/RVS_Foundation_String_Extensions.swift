@@ -19,16 +19,15 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.7.0
+Version: 1.7.1
 */
 
 import Foundation   // Required for the NS stuff.
 
 /* ###################################################################################################################################### */
-// MARK: - StringProtocol Extension (Computed Properties) -
+// MARK: - StringProtocol Extension (Foundation-Required Computed Properties) -
 /* ###################################################################################################################################### */
 /**
- These are a variety of cool String extensions that add some great extra cheese on the pizza.
  NOTE: These extensions feature some use of [Apple's built-in CommonCrypto utility](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/Common%20Crypto.3cc.html).
  */
 public extension StringProtocol {
@@ -47,20 +46,7 @@ public extension StringProtocol {
      - returns: the localized string (main bundle) for this string, from an `Accessibility.strings` file.
      */
     var accessibilityLocalizedVariant: String { NSLocalizedString(String(self), tableName: "Accessibility", comment: "")  }
-    
-    /* ################################################################## */
-    /**
-     This extension lets us uppercase only the first letter of the string (used for weekdays).
-     From here: https://stackoverflow.com/a/28288340/879365
-     
-     - returns: The string, with only the first letter uppercased.
-     */
-    var firstUppercased: String {
-        guard let first = self.first else { return "" }
-        
-        return String(first).uppercased() + self.dropFirst()
-    }
-    
+
     /* ################################################################## */
     /**
      The following computed property comes from this: http://stackoverflow.com/a/27736118/879365
@@ -70,16 +56,15 @@ public extension StringProtocol {
      - returns: a string, cleaned for URI.
      */
     var urlEncodedString: String? { addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) }
-    
+
     /* ################################################################## */
     /**
-     The opposite of the above
+     This comes directly from here: https://stackoverflow.com/a/25471164/879365
+     Evaluate a string for proper email address form.
      
-     This extension function takes a URI-encoded String, and decodes it into a regular String.
-     
-     - returns: a string, restored from URI encoding.
+     - returns: True, if the email address is in valid form.
      */
-    var urlDecodedString: String? { removingPercentEncoding }
+    var isAValidEmailAddress: Bool { NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}").evaluate(with: self) }
 
     /* ################################################################## */
     /**
@@ -189,30 +174,6 @@ public extension StringProtocol {
 
     /* ################################################################## */
     /**
-     - returns: The String, converted into an Array of uppercase 2-digit hex strings (leading 0s, 1 8-bit character per element). This actually takes the UTF8 value of each character.
-     */
-    var hexDump8: [String] {
-        var hexString = [String]()
-        
-        forEach { $0.utf8.forEach { (ch) in hexString.append(String(format: "%02X", ch)) } }
-        
-        return hexString
-    }
-    
-    /* ################################################################## */
-    /**
-     - returns: The String, converted into an Array of uppercase 4-digit hex strings (leading 0s, 1 16-bit character per element). This actually takes the UTF16 value of each character.
-     */
-    var hexDump16: [String] {
-        var hexString = [String]()
-        
-        forEach { $0.utf16.forEach { (ch) in hexString.append(String(format: "%04X", ch)) } }
-        
-        return hexString
-    }
-
-    /* ################################################################## */
-    /**
      This simply strips out all non-binary characters in the string, leaving only valid binary digits.
      */
     var binaryOnly: String {
@@ -303,67 +264,13 @@ public extension StringProtocol {
         
         return ret
     }
-    
-    /* ################################################################## */
-    /**
-     Another fairly brute-force simple parser.
-     This computed property will return an Int, extracted from the String, if the String is a Hex number.
-     It will return nil, if the number cannot be extracted.
-     For example, "20" would return 32, "F100" will return 61696, and "3" will return 3. "G" would return nil, but "George" would return 238 ("EE").
-     */
-    var hex2Int: Int! {
-        let workingString = hexOnly.reversed()    // Make sure that we are a "pure" hex string, and we'll reverse it, as we will be crawling through the string as powers of 16
-        var ret: Int! = nil
-        var shift = 0
-        // We crawl through, one character at a time, and use a radix of 16 (hex).
-        for char in workingString {
-            // The character needs to be cast into a String.
-            if let val = Int(String(char), radix: 16) {
-                ret = (ret ?? 0) + (val << shift)
-                shift += 4
-            }
-        }
-        return ret
-    }
-    
-    /* ################################################################## */
-    /**
-     This "scrubs" a String, returning it as a proper UUID format (either 4 hex characters, or a split 32-hex-character String, in 8-4-4-4-12 format.
-     
-     - returns: A traditional UUID format (may be XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX, or only 4 hex characters), or nil.
-     */
-    var uuidFormat: String? {
-        let str = hexOnly
-        
-        // If we are only 4 characters, we just return them. Anything other than 32 or 4 hex characters results in a nil return.
-        guard 32 == str.count else { return 4 == str.count ? str : nil }
-
-        // 32-digit strings need to be split up into the standard pattern, separated by dashes, or the CBUUID constructor will puke.
-        // This is the traditional UUID pattern (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX).
-        let firstRange = str.startIndex..<str.index(str.startIndex, offsetBy: 8)
-        let secondRange = firstRange.upperBound..<str.index(firstRange.upperBound, offsetBy: 4)
-        let thirdRange = secondRange.upperBound..<str.index(secondRange.upperBound, offsetBy: 4)
-        let fourthRange = thirdRange.upperBound..<str.index(thirdRange.upperBound, offsetBy: 4)
-        let fifthRange = fourthRange.upperBound..<str.index(fourthRange.upperBound, offsetBy: 12)
-
-        return String(format: "%@-%@-%@-%@-%@", String(str[firstRange]), String(str[secondRange]), String(str[thirdRange]), String(str[fourthRange]), String(str[fifthRange]))
-    }
-
-    /* ################################################################## */
-    /**
-     This comes directly from here: https://stackoverflow.com/a/25471164/879365
-     Evaluate a string for proper email address form.
-     
-     - returns: True, if the email address is in valid form.
-     */
-    var isAValidEmailAddress: Bool { NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}").evaluate(with: self) }
 }
 
 /* ###################################################################################################################################### */
-// MARK: - StringProtocol Extension (Splitting Methods) -
+// MARK: - StringProtocol Extension (Foundation-Required Functions) -
 /* ###################################################################################################################################### */
 /**
- These are methods that allow "smart" splitting.
+ These are a couple of fancy splitting methods.
  */
 public extension StringProtocol {
     /* ################################################################## */
@@ -385,76 +292,4 @@ public extension StringProtocol {
      - returns: An Array of Substrings. The result of the split.
      */
     func setSplit(charactersIn inString: String) -> [Self.SubSequence] { setSplit(CharacterSet(inString.unicodeScalars)) }
-}
-
-/* ###################################################################################################################################### */
-// MARK: - StringProtocol Extension For Strings -
-/* ###################################################################################################################################### */
-/**
- This extension will allow searching and indexing substrings. It comes straight from here: https://stackoverflow.com/a/32306142/879365
- */
-public extension StringProtocol where Index == String.Index {
-    /* ################################################################## */
-    /**
-     This allows us to find the first index of a substring.
-     
-     - parameter of: The substring we're looking for.
-     - parameter options: The String options for the search.
-     
-     - returns: The index of the first occurrence. Nil, if does not occur.
-     */
-    func index(of inString: Self, options inOptions: String.CompareOptions = []) -> Index? { range(of: inString, options: inOptions)?.lowerBound }
-
-    /* ################################################################## */
-    /**
-     This allows us to find the last index of a substring.
-     
-     - parameter of: The substring we're looking for.
-     - parameter options: The String options for the search.
-     
-     - returns: The index of the last occurrence. Nil, if does not occur.
-     */
-    func endIndex(of inString: Self, options inOptions: String.CompareOptions = []) -> Index? { range(of: inString, options: inOptions)?.upperBound }
-    
-    /* ################################################################## */
-    /**
-     This returns an Array of indexes that map all the occurrences of a given substring.
-     
-     - parameter of: The substring we're looking for.
-     - parameter options: The String options for the search.
-     
-     - returns: an Array, containing the indexes of each occurrence. Empty Array, if does not occur.
-     */
-    func indexes(of inString: Self, options inOptions: String.CompareOptions = []) -> [Index] {
-        var result: [Index] = []
-        var start = startIndex
-        
-        while start < endIndex,
-              let range = self[start..<endIndex].range(of: inString, options: inOptions) {
-            result.append(range.lowerBound)
-            start = range.upperBound
-        }
-        
-        return result
-    }
-    
-    /* ################################################################## */
-    /**
-     This returns an Array of Index Ranges that map all the occurrences of a given substring.
-     
-     - parameter of: The substring we're looking for.
-     - parameter options: The String options for the search.
-     
-     - returns: an Array, containing the Ranges that map each occurrence. Empty Array, if does not occur.
-     */
-    func ranges(of inString: Self, options inOptions: String.CompareOptions = []) -> [Range<Index>] {
-        var result: [Range<Index>] = []
-        var start = startIndex
-        while start < endIndex,
-              let range = self[start..<endIndex].range(of: inString, options: inOptions) {
-                result.append(range)
-                start = range.upperBound
-        }
-        return result
-    }
 }

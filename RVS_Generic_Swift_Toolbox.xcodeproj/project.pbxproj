@@ -13,9 +13,10 @@
 		D451C749282BD73C000F8A2D /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
 		D451C74A282BD73C000F8A2D /* RVS_Bundle_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */; };
 		D451C74B282BD73C000F8A2D /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
-		D451C750282BD8C6000F8A2D /* libRVS_Generic_swift_Toolbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D451C73D282BD713000F8A2D /* libRVS_Generic_swift_Toolbox.a */; };
 		D4CE2A7823DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */; };
 		D4D03C1B23DDDE9D005B54B5 /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
+		D4FCFD2A282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift */; };
+		D4FCFD2D282BF7B100EDD66C /* RVS_Generic_Swift_Toolbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D451C73D282BD713000F8A2D /* RVS_Generic_Swift_Toolbox.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,14 +38,15 @@
 		D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Int_Extensions.swift; sourceTree = "<group>"; };
 		D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_String_Extensions.swift; sourceTree = "<group>"; };
 		D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Bundle_Extensions.swift; sourceTree = "<group>"; };
-		D451C73D282BD713000F8A2D /* libRVS_Generic_swift_Toolbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRVS_Generic_swift_Toolbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D451C73D282BD713000F8A2D /* RVS_Generic_Swift_Toolbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4907AC324956330007FAE32 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Extensions_Tests.swift; sourceTree = "<group>"; };
-		D4D03C1823DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4D03C1823DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = RVS_Generic_Swift_Toolbox_Tests.xctest; path = /Users/chrismarshall/Development/RiftValley/RVS_Generic_Swift_Toolbox/build/Debug/RVS_Generic_Swift_Toolbox_Tests.xctest; sourceTree = "<absolute>"; };
 		D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Collection_Tests.swift; sourceTree = "<group>"; };
 		D4D03C1C23DDDE9D005B54B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4D5954323DDC92E00473A49 /* .jazzy.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .jazzy.yaml; sourceTree = "<group>"; };
 		D4D5954423DDC92F00473A49 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D4FCFD29282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Foundation_String_Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,28 +54,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D451C750282BD8C6000F8A2D /* libRVS_Generic_swift_Toolbox.a in Frameworks */,
+				D4FCFD2D282BF7B100EDD66C /* RVS_Generic_Swift_Toolbox.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D427DB2623DDC66900849489 /* Debug Tools */ = {
+		D427DB2623DDC66900849489 /* RVS_Generic_Swift_Toolbox_DebugTools */ = {
 			isa = PBXGroup;
 			children = (
 				D427DB2723DDC66900849489 /* RVS_DebugTools.swift */,
 			);
-			path = "Debug Tools";
+			path = RVS_Generic_Swift_Toolbox_DebugTools;
 			sourceTree = "<group>";
 		};
-		D427DB2823DDC66900849489 /* Collection Tools */ = {
+		D427DB2823DDC66900849489 /* RVS_Generic_Swift_Toolbox_CollectionTools */ = {
 			isa = PBXGroup;
 			children = (
 				D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */,
 				D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */,
 			);
-			path = "Collection Tools";
+			path = RVS_Generic_Swift_Toolbox_CollectionTools;
 			sourceTree = "<group>";
 		};
 		D427DB2B23DDC66900849489 /* Main */ = {
@@ -84,14 +86,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		D427DB2D23DDC66900849489 /* Extensions */ = {
+		D427DB2D23DDC66900849489 /* RVS_Generic_Swift_Toolbox_Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */,
 				D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */,
 				D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */,
+				D4FCFD29282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift */,
 			);
-			path = Extensions;
+			path = RVS_Generic_Swift_Toolbox_Extensions;
 			sourceTree = "<group>";
 		};
 		D49CCCAD24D479DF00047CAD /* RVS_Generic_Swift_ToolboxTest */ = {
@@ -135,10 +138,10 @@
 		D4D03C2023DDE029005B54B5 /* RVS_Generic_Swift_Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				D427DB2823DDC66900849489 /* RVS_Generic_Swift_Toolbox_CollectionTools */,
+				D427DB2623DDC66900849489 /* RVS_Generic_Swift_Toolbox_DebugTools */,
+				D427DB2D23DDC66900849489 /* RVS_Generic_Swift_Toolbox_Extensions */,
 				D41B468727A422DE00B95E61 /* RVS_Generic_Swift_Toolbox.docc */,
-				D427DB2823DDC66900849489 /* Collection Tools */,
-				D427DB2623DDC66900849489 /* Debug Tools */,
-				D427DB2D23DDC66900849489 /* Extensions */,
 			);
 			path = RVS_Generic_Swift_Toolbox;
 			sourceTree = "<group>";
@@ -149,24 +152,31 @@
 				D49DBEA723DDC79D004006AB /* meta */,
 				D49CCCAE24D47A2B00047CAD /* Sources */,
 				D4D03C1923DDDE9D005B54B5 /* Tests */,
+				D4FCFD2C282BF7B100EDD66C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		D4D411A923DDC5AD00D607F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4D03C1823DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests.xctest */,
-				D451C73D282BD713000F8A2D /* libRVS_Generic_swift_Toolbox.a */,
+				D451C73D282BD713000F8A2D /* RVS_Generic_Swift_Toolbox.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D4FCFD2C282BF7B100EDD66C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D451C73C282BD713000F8A2D /* RVS_Generic_swift_Toolbox */ = {
+		D451C73C282BD713000F8A2D /* RVS_Generic_Swift_Toolbox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D451C743282BD713000F8A2D /* Build configuration list for PBXNativeTarget "RVS_Generic_swift_Toolbox" */;
+			buildConfigurationList = D451C743282BD713000F8A2D /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox" */;
 			buildPhases = (
 				D451C73A282BD713000F8A2D /* Sources */,
 			);
@@ -174,9 +184,9 @@
 			);
 			dependencies = (
 			);
-			name = RVS_Generic_swift_Toolbox;
+			name = RVS_Generic_Swift_Toolbox;
 			productName = RVS_Generic_swift_Toolbox;
-			productReference = D451C73D282BD713000F8A2D /* libRVS_Generic_swift_Toolbox.a */;
+			productReference = D451C73D282BD713000F8A2D /* RVS_Generic_Swift_Toolbox.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		D4D03C1723DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests */ = {
@@ -229,7 +239,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D451C73C282BD713000F8A2D /* RVS_Generic_swift_Toolbox */,
+				D451C73C282BD713000F8A2D /* RVS_Generic_Swift_Toolbox */,
 				D4D03C1723DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests */,
 			);
 		};
@@ -246,6 +256,7 @@
 				D451C748282BD73C000F8A2D /* RVS_Int_Extensions.swift in Sources */,
 				D451C749282BD73C000F8A2D /* RVS_String_Extensions.swift in Sources */,
 				D451C747282BD73C000F8A2D /* RVS_DebugTools.swift in Sources */,
+				D4FCFD2A282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +274,7 @@
 /* Begin PBXTargetDependency section */
 		D451C74D282BD8B0000F8A2D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D451C73C282BD713000F8A2D /* RVS_Generic_swift_Toolbox */;
+			target = D451C73C282BD713000F8A2D /* RVS_Generic_Swift_Toolbox */;
 			targetProxy = D451C74C282BD8B0000F8A2D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -275,7 +286,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_PREFIX = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -288,7 +299,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_PREFIX = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -466,7 +477,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D451C743282BD713000F8A2D /* Build configuration list for PBXNativeTarget "RVS_Generic_swift_Toolbox" */ = {
+		D451C743282BD713000F8A2D /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D451C744282BD713000F8A2D /* Debug */,

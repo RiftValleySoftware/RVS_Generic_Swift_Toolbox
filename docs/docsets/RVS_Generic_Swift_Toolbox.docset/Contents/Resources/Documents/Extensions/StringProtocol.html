@@ -112,8 +112,7 @@
 
                 </div>
               </div>
-            <p>These are a variety of cool String extensions that add some great extra cheese on the pizza.
-NOTE: These extensions feature some use of <a href="https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/Common%20Crypto.3cc.html">Apple&rsquo;s built-in CommonCrypto utility</a>.</p>
+            <p>NOTE: These extensions feature some use of <a href="https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/Common%20Crypto.3cc.html">Apple&rsquo;s built-in CommonCrypto utility</a>.</p>
 
           </div>
         </section>
@@ -135,7 +134,8 @@ NOTE: These extensions feature some use of <a href="https://developer.apple.com/
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>NOTE: Because of issues with bundles and resources, and whatnot, this will not be tested with the unit tests.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -147,7 +147,7 @@ NOTE: These extensions feature some use of <a href="https://developer.apple.com/
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>the localized string (main bundle) for this string.</p>
+                        <p>the localized string (main bundle) for this string, from the default <code>Localizable.strings</code> file.</p>
                       </div>
                     </section>
                   </div>
@@ -155,9 +155,9 @@ NOTE: These extensions feature some use of <a href="https://developer.apple.com/
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE15firstUppercasedSSvp"></a>
-                    <a name="//apple_ref/swift/Property/firstUppercased" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE15firstUppercasedSSvp">firstUppercased</a>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE29accessibilityLocalizedVariantSSvp"></a>
+                    <a name="//apple_ref/swift/Property/accessibilityLocalizedVariant" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE29accessibilityLocalizedVariantSSvp">accessibilityLocalizedVariant</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -165,21 +165,20 @@ NOTE: These extensions feature some use of <a href="https://developer.apple.com/
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This extension lets us uppercase only the first letter of the string (used for weekdays).
-From here: <a href="https://stackoverflow.com/a/28288340/879365">https://stackoverflow.com/a/28288340/879365</a></p>
+                        <p>NOTE: Because of issues with bundles and resources, and whatnot, this will not be tested with the unit tests.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">firstUppercased</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">accessibilityLocalizedVariant</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The string, with only the first letter uppercased.</p>
+                        <p>the localized string (main bundle) for this string, from an <code>Accessibility.strings</code> file.</p>
                       </div>
                     </section>
                   </div>
@@ -220,9 +219,9 @@ From here: <a href="https://stackoverflow.com/a/28288340/879365">https://stackov
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE16urlDecodedStringSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/urlDecodedString" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE16urlDecodedStringSSSgvp">urlDecodedString</a>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE20isAValidEmailAddressSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isAValidEmailAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE20isAValidEmailAddressSbvp">isAValidEmailAddress</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -230,22 +229,21 @@ From here: <a href="https://stackoverflow.com/a/28288340/879365">https://stackov
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The opposite of the above</p>
-
-<p>This extension function takes a URI-encoded String, and decodes it into a regular String.</p>
+                        <p>This comes directly from here: <a href="https://stackoverflow.com/a/25471164/879365">https://stackoverflow.com/a/25471164/879365</a>
+Evaluate a string for proper email address form.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">urlDecodedString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isAValidEmailAddress</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>a string, restored from URI encoding.</p>
+                        <p>True, if the email address is in valid form.</p>
                       </div>
                     </section>
                   </div>
@@ -334,66 +332,6 @@ From here: <a href="https://stackoverflow.com/a/28288340/879365">https://stackov
                       <div>
                         <h4>Return Value</h4>
                         <p>a SHA256 hash of the String, as an uppercase hex String.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE8hexDump8SaySSGvp"></a>
-                    <a name="//apple_ref/swift/Property/hexDump8" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE8hexDump8SaySSGvp">hexDump8</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hexDump8</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The String, converted into an Array of uppercase 2-digit hex strings (leading 0s, 1 8-bit character per element). This actually takes the UTF8 value of each character.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE9hexDump16SaySSGvp"></a>
-                    <a name="//apple_ref/swift/Property/hexDump16" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE9hexDump16SaySSGvp">hexDump16</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hexDump16</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The String, converted into an Array of uppercase 4-digit hex strings (leading 0s, 1 16-bit character per element). This actually takes the UTF16 value of each character.</p>
                       </div>
                     </section>
                   </div>
@@ -541,108 +479,15 @@ From here: <a href="https://stackoverflow.com/a/28288340/879365">https://stackov
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE7hex2IntSiSgvp"></a>
-                    <a name="//apple_ref/swift/Property/hex2Int" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE7hex2IntSiSgvp">hex2Int</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Another fairly brute-force simple parser.
-This computed property will return an Int, extracted from the String, if the String is a Hex number.
-It will return nil, if the number cannot be extracted.
-For example, &ldquo;20&rdquo; would return 32, &ldquo;F100&rdquo; will return 61696, and &ldquo;3&rdquo; will return 3. &ldquo;G&rdquo; would return nil, but &ldquo;George&rdquo; would return 238 (&ldquo;EE&rdquo;).</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hex2Int</span><span class="p">:</span> <span class="kt">Int</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE10uuidFormatSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/uuidFormat" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE10uuidFormatSSSgvp">uuidFormat</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This &ldquo;scrubs&rdquo; a String, returning it as a proper UUID format (either 4 hex characters, or a split 32-hex-character String, in 8-4-4-4-12 format.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">uuidFormat</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A traditional UUID format (may be XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX, or only 4 hex characters), or nil.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE20isAValidEmailAddressSbvp"></a>
-                    <a name="//apple_ref/swift/Property/isAValidEmailAddress" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE20isAValidEmailAddressSbvp">isAValidEmailAddress</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This comes directly from here: <a href="https://stackoverflow.com/a/25471164/879365">https://stackoverflow.com/a/25471164/879365</a>
-Evaluate a string for proper email address form.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isAValidEmailAddress</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>True, if the email address is in valid form.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/StringProtocol%20Extension%20%28Splitting%20Methods%29"></a>
-                <a name="//apple_ref/swift/Section/StringProtocol Extension (Splitting Methods)" class="dashAnchor"></a>
+                <a name="/StringProtocol%20Extension%20%28Foundation-Required%20Functions%29"></a>
+                <a name="//apple_ref/swift/Section/StringProtocol Extension (Foundation-Required Functions)" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/StringProtocol%20Extension%20%28Splitting%20Methods%29"></a>
-                  <h3 class="section-name"><span>StringProtocol Extension (Splitting Methods)</span>
+                  <a class="section-name-link" href="#/StringProtocol%20Extension%20%28Foundation-Required%20Functions%29"></a>
+                  <h3 class="section-name"><span>StringProtocol Extension (Foundation-Required Functions)</span>
 </h3>
                 </div>
               </div>
@@ -744,6 +589,205 @@ Evaluate a string for proper email address form.</p>
                       <div>
                         <h4>Return Value</h4>
                         <p>An Array of Substrings. The result of the split.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/StringProtocol%20Extension%20%28Computed%20Properties%29"></a>
+                <a name="//apple_ref/swift/Section/StringProtocol Extension (Computed Properties)" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/StringProtocol%20Extension%20%28Computed%20Properties%29"></a>
+                  <h3 class="section-name"><span>StringProtocol Extension (Computed Properties)</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE15firstUppercasedSSvp"></a>
+                    <a name="//apple_ref/swift/Property/firstUppercased" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE15firstUppercasedSSvp">firstUppercased</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This extension lets us uppercase only the first letter of the string (used for weekdays).
+From here: <a href="https://stackoverflow.com/a/28288340/879365">https://stackoverflow.com/a/28288340/879365</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">firstUppercased</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The string, with only the first letter uppercased.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE16urlDecodedStringSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/urlDecodedString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE16urlDecodedStringSSSgvp">urlDecodedString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The opposite of the above</p>
+
+<p>This extension function takes a URI-encoded String, and decodes it into a regular String.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">urlDecodedString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a string, restored from URI encoding.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE8hexDump8SaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/hexDump8" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE8hexDump8SaySSGvp">hexDump8</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hexDump8</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The String, converted into an Array of uppercase 2-digit hex strings (leading 0s, 1 8-bit character per element). This actually takes the UTF8 value of each character.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE9hexDump16SaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/hexDump16" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE9hexDump16SaySSGvp">hexDump16</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hexDump16</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The String, converted into an Array of uppercase 4-digit hex strings (leading 0s, 1 16-bit character per element). This actually takes the UTF16 value of each character.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE7hex2IntSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/hex2Int" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE7hex2IntSiSgvp">hex2Int</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Another fairly brute-force simple parser.
+This computed property will return an Int, extracted from the String, if the String is a Hex number.
+It will return nil, if the number cannot be extracted.
+For example, &ldquo;20&rdquo; would return 32, &ldquo;F100&rdquo; will return 61696, and &ldquo;3&rdquo; will return 3. &ldquo;G&rdquo; would return nil, but &ldquo;George&rdquo; would return 238 (&ldquo;EE&rdquo;).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hex2Int</span><span class="p">:</span> <span class="kt">Int</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE10uuidFormatSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/uuidFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE10uuidFormatSSSgvp">uuidFormat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This &ldquo;scrubs&rdquo; a String, returning it as a proper UUID format (either 4 hex characters, or a split 32-hex-character String, in 8-4-4-4-12 format.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">uuidFormat</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A traditional UUID format (may be XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX, or only 4 hex characters), or nil.</p>
                       </div>
                     </section>
                   </div>
@@ -1018,7 +1062,7 @@ Evaluate a string for proper email address form.</p>
     </div>
     <section class="footer">
       <p><a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">©2019 The Great Rift Valley Software Company</a></p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

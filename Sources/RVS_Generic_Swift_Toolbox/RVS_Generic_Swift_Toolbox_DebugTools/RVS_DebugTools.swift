@@ -1,5 +1,5 @@
 /**
-© Copyright 2019-2021, The Great Rift Valley Software Company
+© Copyright 2019-2022, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.7.1
+Version: 1.7.2
 */
 
 import Foundation   // Required for the ProcessInfo stuff.
@@ -28,7 +28,7 @@ import Foundation   // Required for the ProcessInfo stuff.
 // MARK: - Debug Tools Class -
 /* ###################################################################################################################################### */
 /**
- This class is a "junk drawer" of vrious debug/testing tools.
+ This class is a "junk drawer" of various debug/testing tools.
  */
 public class RVS_DebugTools {
     /* ################################################################## */

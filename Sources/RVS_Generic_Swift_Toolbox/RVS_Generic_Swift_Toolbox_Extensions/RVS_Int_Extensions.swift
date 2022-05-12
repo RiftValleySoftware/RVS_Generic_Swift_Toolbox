@@ -1,5 +1,5 @@
 /**
-© Copyright 2019-2021, The Great Rift Valley Software Company
+© Copyright 2019-2022, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.7.1
+ Version: 1.7.2
 */
 
 /* ###################################################################################################################################### */
@@ -211,7 +211,7 @@ public extension Int {
         var numeralString = ""
         let mappingList: [(UInt16, String)] = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
         mappingList.forEach {
-            while (integerValue >= $0.0) {
+            while integerValue >= $0.0 {
                 integerValue -= $0.0
                 numeralString += $0.1
             }

@@ -1,5 +1,5 @@
 /**
-© Copyright 2019-2021, The Great Rift Valley Software Company
+© Copyright 2019-2022, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.7.1
+Version: 1.7.2
 */
 
 /* ###################################################################################################################################### */
@@ -37,7 +37,7 @@ Version: 1.7.1
 public protocol RVS_SequenceProtocol: Sequence {
     /* ################################################################## */
     /**
-     :nodoc: The implementor is required to have an Array of Element (required by Sequence).
+     The implementor is required to have an Array of Element (required by Sequence).
      */
     var sequence_contents: Array<Element> { get set }
     
@@ -68,7 +68,7 @@ public protocol RVS_SequenceProtocol: Sequence {
 extension RVS_SequenceProtocol {
     /* ################################################################## */
     /**
-     :nodoc: We just pass the iterator through to the Array.
+     We just pass the iterator through to the Array.
      
      - returns: The Array iterator for our elements.
      */

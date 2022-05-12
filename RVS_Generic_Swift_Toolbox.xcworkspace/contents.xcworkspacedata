@@ -14,6 +14,12 @@
       location = "group:jazzy.command">
    </FileRef>
    <FileRef
+      location = "group:.jazzy.yaml">
+   </FileRef>
+   <FileRef
+      location = "group:.swiftlint.yml">
+   </FileRef>
+   <FileRef
       location = "group:Package.swift">
    </FileRef>
    <FileRef

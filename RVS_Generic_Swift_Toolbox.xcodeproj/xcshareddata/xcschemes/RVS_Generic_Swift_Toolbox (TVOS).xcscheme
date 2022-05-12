@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D451C73C282BD713000F8A2D"
-               BuildableName = "RVS_Generic_swift_Toolbox.a"
-               BlueprintName = "RVS_Generic_Swift_Toolbox"
+               BlueprintIdentifier = "D4E19E13282D71BB00C0D755"
+               BuildableName = "RVS_Generic_Swift_Toolbox_TVOS.a"
+               BlueprintName = "RVS_Generic_Swift_Toolbox (TVOS)"
                ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4D03C1723DDDE9D005B54B5"
-               BuildableName = "RVS_Generic_Swift_Toolbox_Tests.xctest"
-               BlueprintName = "RVS_Generic_Swift_Toolbox_Tests"
+               BlueprintIdentifier = "D4E19E25282D729D00C0D755"
+               BuildableName = "RVS_Generic_Swift_Toolbox_Tests_Name.xctest"
+               BlueprintName = "RVS_Generic_Swift_Toolbox_Tests (TVOS)"
                ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4D03C1723DDDE9D005B54B5"
-               BuildableName = "RVS_Generic_Swift_Toolbox_Tests.xctest"
-               BlueprintName = "RVS_Generic_Swift_Toolbox_Tests"
+               BlueprintIdentifier = "D4E19E25282D729D00C0D755"
+               BuildableName = "RVS_Generic_Swift_Toolbox_Tests_Name.xctest"
+               BlueprintName = "RVS_Generic_Swift_Toolbox_Tests (TVOS)"
                ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -74,9 +74,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D451C73C282BD713000F8A2D"
-            BuildableName = "RVS_Generic_swift_Toolbox.a"
-            BlueprintName = "RVS_Generic_Swift_Toolbox"
+            BlueprintIdentifier = "D4E19E13282D71BB00C0D755"
+            BuildableName = "RVS_Generic_Swift_Toolbox_TVOS.a"
+            BlueprintName = "RVS_Generic_Swift_Toolbox (TVOS)"
             ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

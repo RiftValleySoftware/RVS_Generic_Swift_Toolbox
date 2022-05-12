@@ -1,3 +1,7 @@
+*Version 1.7.2* **May 12, 2022**
+- Some efforts to improve the DocC support (not much luck, so far. It seems that DocC doesn't like standard type extensions).
+- Efforts to improve the Swift Package Index support (adding targets for all operating systems).
+
 *Version 1.7.1* **May 11, 2022**
 - Got the tests working (case-sensitivity issue).
 - The DocC is still having issues. It is only documenting the first source directory.

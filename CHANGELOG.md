@@ -1,3 +1,6 @@
+*Version 1.7.3* **May 31, 2022**
+- Updated to the latest tool versions.
+
 *Version 1.7.2* **May 12, 2022**
 - Some efforts to improve the DocC support (not much luck, so far. It seems that DocC doesn't like standard type extensions).
 - Efforts to improve the Swift Package Index support (adding targets for all operating systems).

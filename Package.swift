@@ -34,7 +34,7 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "RVS-Generic-Swift-Toolbox",
+            name: "RVS_Generic_Swift_Toolbox",
             targets: ["RVS_Generic_Swift_Toolbox"])
     ],
     targets: [

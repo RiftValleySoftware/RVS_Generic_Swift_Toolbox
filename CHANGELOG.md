@@ -1,3 +1,6 @@
+*Version 1.8.0* **May 31, 2022**
+- Renamed, so the vestigial "dash" notation has been replaced (vestigial from when it was a dylib).
+
 *Version 1.7.3* **May 31, 2022**
 - Updated to the latest tool versions.
 

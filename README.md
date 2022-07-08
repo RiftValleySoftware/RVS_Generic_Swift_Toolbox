@@ -65,7 +65,7 @@ Once you have done this, navigate the Terminal to the directory containing the C
     `carthage update`
 
 This will result in a directory, at the same level as the Cartfile, called `Carthage`. Inside of that directory, will be another directory, called `Checkouts`. Inside of that directory, will be a directory called `RVS_Generic_Swift_Toolbox`.
-The files that you are looking for will be in the `src` directory. They are arranged in the grouping they are documented, above.
+The files that you are looking for will be in the `Sources/RVS_Generic_Swift_Toolbox` directory. They are arranged in the grouping they are documented, above.
 
 Just drag those files into your Xcode project, and add them to the appropriate targets.
 
@@ -73,7 +73,7 @@ If you choose to use the build products, be aware that Carthage builds may not a
     
 - **[Git Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)**
 
-You could also directly include the project as a Git Submodule.  Submodules can be annoying to work with, but are a good way to maintain ironclad version integrity.
+You could also directly include the project as a Git Submodule. Submodules can be annoying to work with, but are a good way to maintain ironclad version integrity.
 If you do this, then you should do the same as above, but instead of a Carthage directory, you will have whatever directory you choose to use to place the submodule.
 
 REQUIREMENTS

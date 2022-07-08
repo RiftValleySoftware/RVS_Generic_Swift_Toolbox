@@ -305,6 +305,19 @@ class RVS_Int_Extensions_Tests: XCTestCase {
         
         testArray.forEach { XCTAssertEqual($0.0.romanNumeral, $0.1) }
     }
+    
+    /* ################################################################## */
+    /**
+     This tests the basic scaler degree/radian conversions.
+     */
+    func testDegreeRadianConversion() {
+        XCTAssertEqual(180, Double.pi.degrees)
+        XCTAssertEqual(Double.pi, 180.0.radians)
+        XCTAssertEqual(Float(180), Float(Double.pi.degrees))
+        XCTAssertEqual(Float(Double.pi), Float(180).radians)
+        XCTAssertEqual(33.2.radians.degrees, 33.2)
+        XCTAssertEqual(1.23456.degrees.radians, 1.23456)
+    }
 }
 
 /* ###################################################################################################################################### */
@@ -334,22 +347,6 @@ class RVS_DebugTools_Tests: XCTestCase {
 class RVS_String_Extensions_Tests: XCTestCase {
     /* ################################################################## */
     /**
-     Test our md5 computed property.
-     */
-    func testMD5() {
-        XCTAssertEqual("860820C8ABCB42F9C831CB5CA982A06D", "How now, brown cow?".md5)
-        XCTAssertEqual("DC8BD40E7C60AA1D8EA9E450DAE4DDFB", "The Foxy Cabbage Absconds With the Sleepy Canine.".md5)
-        XCTAssertEqual("A0FF1D5CC6CFC4A81C91EFDA93C77187", "All Your Bases Belongs To Us!".md5)
-        
-        let testString1 = "Luke, I Am Your Farter!"
-        XCTAssertEqual("97EA9B296503B4A173C182829BDD5E49", testString1.md5)
-        
-        let testString2 = ""
-        XCTAssertEqual("D41D8CD98F00B204E9800998ECF8427E", testString2.md5)
-    }
-    
-    /* ################################################################## */
-    /**
      Test our UUID scrubber computed property.
      */
     func testUUIDParser() {
@@ -371,22 +368,6 @@ class RVS_String_Extensions_Tests: XCTestCase {
     
     /* ################################################################## */
     /**
-     Test our md5 computed property.
-     */
-    func testSHA256() {
-        XCTAssertEqual("B21E0C613CEEC9A65AFB9FD0E25E58BE7BA5CAB933F40A89AE45BB52A92116D7", "How now, brown cow?".sha256)
-        XCTAssertEqual("902F24E682A0F016F64D8C16DA76897AD0726B44A07FCC412D98D48D52B37F0B", "The Foxy Cabbage Absconds With the Sleepy Canine.".sha256)
-        XCTAssertEqual("1E2847A4A9E34B70C3B196241BFE0CA2B4D4FEBA8E39DDE200C6081EE1792AD9", "All Your Bases Belongs To Us!".sha256)
-        
-        let testString1 = "Luke, I Am Your Farter!"
-        XCTAssertEqual("1FC51E504917018E57B6D52371552339CEF83BEEE0D4BA1360F54CBCACDF3387", testString1.sha256)
-        
-        let testString2 = ""
-        XCTAssertEqual("E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855", testString2.sha256)
-    }
-    
-    /* ################################################################## */
-    /**
      Test the two hexDump8/16 computed properties.
      */
     func testHexDumps() {
@@ -402,44 +383,6 @@ class RVS_String_Extensions_Tests: XCTestCase {
     func testFirstUppercased() {
         let testTarget = "john jacob jingleheimerschmidt"
         XCTAssertEqual("John jacob jingleheimerschmidt", testTarget.firstUppercased)
-    }
-    
-    /* ################################################################## */
-    /**
-     Test the URL encoding/decoding computed properties.
-     */
-    func testURLEncoding() {
-        let testTarget = "Sticks & Stones-May/Break+My%Bones"
-        let urlencoded = testTarget.urlEncodedString
-        XCTAssertEqual("Sticks%20&%20Stones-May/Break+My%25Bones", urlencoded)
-        XCTAssertEqual("Sticks & Stones-May/Break+My%Bones", urlencoded?.urlDecodedString)
-    }
-    
-    /* ################################################################## */
-    /**
-     Test the various "XXOnly" computed properties.
-     */
-    func testBinaryOctalHexOnly() {
-        let testTarget = "1 Is Too Many, A Thousand Never Enough, Unless you have 2, 7, 8, or 9 more than 0, or 1."
-        XCTAssertEqual("101", testTarget.binaryOnly)
-        XCTAssertEqual("12701", testTarget.octalOnly)
-        XCTAssertEqual("1278901", testTarget.decimalOnly)
-        XCTAssertEqual("1AAADEEEEAE2789EA01", testTarget.hexOnly)
-    }
-    
-    /* ################################################################## */
-    /**
-     Test the UTF8 converter computed property.
-     */
-    func testHex2UTF8() {
-        var testTarget = "30 35 46 45 36 34 31 30 41 43 44 36"
-        XCTAssertEqual("05FE6410ACD6", testTarget.hex2UTF8)
-        testTarget = "30354645 36 34 31 304143 44 36"
-        XCTAssertEqual("05FE6410ACD6", testTarget.hex2UTF8)
-        testTarget = "30354645D36 34 31 304143 44 36"
-        XCTAssertEqual("05FEÓ410ACD6", testTarget.hex2UTF8)
-        testTarget = "30354645 D 36 34 31 304143 44 36"
-        XCTAssertEqual("05FE6410ACD6", testTarget.hex2UTF8)
     }
     
     /* ################################################################## */
@@ -545,6 +488,205 @@ class RVS_String_Extensions_Tests: XCTestCase {
         XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: indexesOf3[0]))
         XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: indexesOf3[10]))
     }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - RVS_Bundle_Extensions_Tests -
+/* ###################################################################################################################################### */
+/**
+ These are specific unit tests for the Bundle extension.
+ */
+class RVS_Bundle_Extensions_Tests: XCTestCase {
+    func testSimpleBundleAccessors() {
+        let testBundle = Bundle(for: type(of: self))
+        XCTAssertEqual("RVS_Generic_Swift_Toolbox_Tests_Name", testBundle.appDisplayName)
+        XCTAssertEqual("1.2.3", testBundle.appVersionString)
+        XCTAssertEqual("4.5.6", testBundle.appVersionBuildString)
+        XCTAssertEqual("RVS_Generic_Swift_Toolbox_Tests_Copyright", testBundle.copyrightString)
+        let testBundle2 = Bundle()
+        XCTAssertEqual("", testBundle2.appDisplayName)
+        XCTAssertEqual("", testBundle2.appVersionString)
+        XCTAssertEqual("", testBundle2.appVersionBuildString)
+        XCTAssertNil(testBundle2.copyrightString)
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - RVS_Foundation_Extensions_Tests -
+/* ###################################################################################################################################### */
+/**
+ These are specific unit tests for the Foundation extension.
+ */
+class RVS_Foundation_Extensions_Tests: XCTestCase {
+    /* ################################################################## */
+    /**
+     */
+    static func makeDate(year inYear: Int, month inMonth: Int, day inDay: Int, calendar inCalendar: Calendar? = nil) -> Date { (nil == inCalendar ? Calendar(identifier: .gregorian) : inCalendar!).date(from: DateComponents(year: inYear, month: inMonth, day: inDay)) ?? Date() }
+
+    /* ################################################################## */
+    /**
+     Test the strideable dates.
+     */
+    func testTheseBootsAreMadeForWalkin() {
+        let oneHour = TimeInterval(60 * 60)
+        let oneDay = oneHour * 24
+        let oneWeek = oneDay * 7
+        let startDate = Self.makeDate(year: 2000, month: 1, day: 1)
+        let endDate = Self.makeDate(year: 2000, month: 12, day: 31)
+        let backDate = Self.makeDate(year: 1999, month: 1, day: 1)
+        let weekWalker = stride(from: startDate, to: endDate, by: oneWeek)
+        let dayWalker = stride(from: startDate, to: endDate, by: oneDay)
+        let hourWalker = stride(from: startDate, to: endDate, by: oneHour)
+        let backTracker = stride(from: startDate, to: backDate, by: -oneDay)
+
+        var compInterval = TimeInterval(0)
+        for date in weekWalker {
+            let compDate = startDate.addingTimeInterval(compInterval)
+            compInterval += oneWeek
+            XCTAssertEqual(date, compDate)
+        }
+        
+        compInterval = 0
+        for date in dayWalker {
+            let compDate = startDate.addingTimeInterval(compInterval)
+            compInterval += oneDay
+            XCTAssertEqual(date, compDate)
+        }
+        
+        compInterval = 0
+        for date in hourWalker {
+            let compDate = startDate.addingTimeInterval(compInterval)
+            compInterval += oneHour
+            XCTAssertEqual(date, compDate)
+        }
+
+        compInterval = 0
+        for date in backTracker {
+            let compDate = startDate.addingTimeInterval(compInterval)
+            compInterval -= oneDay
+            XCTAssertEqual(date, compDate)
+        }
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the CGFloat versions of the decimal/radian conversion.
+     */
+    func testDegreeRadianConversion() {
+        XCTAssertEqual(CGFloat(180), CGFloat(Double.pi).degrees)
+        XCTAssertEqual(CGFloat(Double.pi), CGFloat(180).radians)
+        XCTAssertEqual(CGFloat(33.2).radians.degrees, CGFloat(33.2))
+        XCTAssertEqual(CGFloat(1.23456).degrees.radians, CGFloat(1.23456))
+    }
+    
+    /* ################################################################## */
+    /**
+     Test our MD5 computed property.
+     */
+    func testMD5() {
+        XCTAssertEqual("860820C8ABCB42F9C831CB5CA982A06D", "How now, brown cow?".md5)
+        XCTAssertEqual("DC8BD40E7C60AA1D8EA9E450DAE4DDFB", "The Foxy Cabbage Absconds With the Sleepy Canine.".md5)
+        XCTAssertEqual("A0FF1D5CC6CFC4A81C91EFDA93C77187", "All Your Bases Belongs To Us!".md5)
+        
+        let testString1 = "Luke, I Am Your Farter!"
+        XCTAssertEqual("97EA9B296503B4A173C182829BDD5E49", testString1.md5)
+        
+        let testString2 = ""
+        XCTAssertEqual("D41D8CD98F00B204E9800998ECF8427E", testString2.md5)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test our SHA256 computed property.
+     */
+    func testSHA256() {
+        XCTAssertEqual("B21E0C613CEEC9A65AFB9FD0E25E58BE7BA5CAB933F40A89AE45BB52A92116D7", "How now, brown cow?".sha256)
+        XCTAssertEqual("902F24E682A0F016F64D8C16DA76897AD0726B44A07FCC412D98D48D52B37F0B", "The Foxy Cabbage Absconds With the Sleepy Canine.".sha256)
+        XCTAssertEqual("1E2847A4A9E34B70C3B196241BFE0CA2B4D4FEBA8E39DDE200C6081EE1792AD9", "All Your Bases Belongs To Us!".sha256)
+        
+        let testString1 = "Luke, I Am Your Farter!"
+        XCTAssertEqual("1FC51E504917018E57B6D52371552339CEF83BEEE0D4BA1360F54CBCACDF3387", testString1.sha256)
+        
+        let testString2 = ""
+        XCTAssertEqual("E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855", testString2.sha256)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the URL encoding/decoding computed properties.
+     */
+    func testURLEncoding() {
+        let testTarget = "Sticks & Stones-May/Break+My%Bones"
+        let urlencoded = testTarget.urlEncodedString
+        XCTAssertEqual("Sticks%20&%20Stones-May/Break+My%25Bones", urlencoded)
+        XCTAssertEqual("Sticks & Stones-May/Break+My%Bones", urlencoded?.urlDecodedString)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the various "XXOnly" computed properties.
+     */
+    func testBinaryOctalHexOnly() {
+        let testTarget = "1 Is Too Many, A Thousand Never Enough, Unless you have 2, 7, 8, or 9 more than 0, or 1."
+        XCTAssertEqual("101", testTarget.binaryOnly)
+        XCTAssertEqual("12701", testTarget.octalOnly)
+        XCTAssertEqual("1278901", testTarget.decimalOnly)
+        XCTAssertEqual("1AAADEEEEAE2789EA01", testTarget.hexOnly)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the UTF8 converter computed property.
+     */
+    func testHex2UTF8() {
+        var testTarget = "30 35 46 45 36 34 31 30 41 43 44 36"
+        XCTAssertEqual("05FE6410ACD6", testTarget.hex2UTF8)
+        testTarget = "30354645 36 34 31 304143 44 36"
+        XCTAssertEqual("05FE6410ACD6", testTarget.hex2UTF8)
+        testTarget = "30354645D36 34 31 304143 44 36"
+        XCTAssertEqual("05FEÓ410ACD6", testTarget.hex2UTF8)
+        testTarget = "30354645 D 36 34 31 304143 44 36"
+        XCTAssertEqual("05FE6410ACD6", testTarget.hex2UTF8)
+    }
+    
+    /* ################################################################## */
+    /**
+     This tests the `isAValidEmailAddress` computed property.
+     */
+    func testValidEmailAddress() {
+        XCTAssertFalse("notAHotDog".isAValidEmailAddress)
+        XCTAssertFalse("notAHotD.og".isAValidEmailAddress)
+        XCTAssertTrue("not@AHotD.og".isAValidEmailAddress)
+        XCTAssertFalse("n0t@AH0tD.0g".isAValidEmailAddress)
+        XCTAssertFalse("n0t@AH0tD.O9".isAValidEmailAddress)
+        XCTAssertTrue("N@D.OG".isAValidEmailAddress)
+        XCTAssertFalse("N@D.OG5".isAValidEmailAddress)
+        XCTAssertTrue("N@D.OGS".isAValidEmailAddress)
+        XCTAssertFalse("@D.OGS".isAValidEmailAddress)
+        XCTAssertFalse("D.OGS".isAValidEmailAddress)
+        XCTAssertFalse("D@OGS".isAValidEmailAddress)
+        XCTAssertTrue("1@D.OGS".isAValidEmailAddress)
+        XCTAssertTrue("1@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue("N@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue("n@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue(".@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue("-@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue("_@2.OGS".isAValidEmailAddress)
+        XCTAssertTrue("%@2.OGS".isAValidEmailAddress)
+        XCTAssertFalse(".@.OGS".isAValidEmailAddress)
+        XCTAssertTrue(".@..OGS".isAValidEmailAddress)
+        XCTAssertTrue(".@-.OGS".isAValidEmailAddress)
+        XCTAssertFalse(".@_.OGS".isAValidEmailAddress)
+        XCTAssertFalse(".@%.OGS".isAValidEmailAddress)
+        XCTAssertFalse(".@A.OG-S".isAValidEmailAddress)
+        XCTAssertFalse(".@A.OG.S".isAValidEmailAddress)
+        XCTAssertFalse(".@A.O.G.S".isAValidEmailAddress)
+        XCTAssertTrue(".@A.O.GS".isAValidEmailAddress)
+        XCTAssertTrue(".@A..OGS".isAValidEmailAddress)
+        XCTAssertTrue(".@A..O.GS".isAValidEmailAddress)
+        XCTAssertTrue(".@A.-O.GS".isAValidEmailAddress)
+        XCTAssertFalse(".@A.-O.-GS".isAValidEmailAddress)
+    }
     
     /* ################################################################## */
     /**
@@ -616,65 +758,5 @@ class RVS_String_Extensions_Tests: XCTestCase {
         let expectedResult6 = [String.SubSequence(spadesNumberCards), String.SubSequence(spadesFaceCards), String.SubSequence(clubsNumberCards), String.SubSequence(clubsFaceCards), String.SubSequence(diamondsNumberCards), String.SubSequence(diamondsFaceCards), String.SubSequence(heartsNumberCards), String.SubSequence(heartsFaceCards)]
         XCTAssertEqual(sortedDeck.setSplit(CharacterSet((" " + blackJoker + redJoker).unicodeScalars)), expectedResult6)
         XCTAssertEqual(sortedDeck.setSplit(charactersIn: " " + blackJoker + redJoker), expectedResult6)
-    }
-    
-    /* ################################################################## */
-    /**
-     This tests the `isAValidEmailAddress` computed property.
-     */
-    func testValidEmailAddress() {
-        XCTAssertFalse("notAHotDog".isAValidEmailAddress)
-        XCTAssertFalse("notAHotD.og".isAValidEmailAddress)
-        XCTAssertTrue("not@AHotD.og".isAValidEmailAddress)
-        XCTAssertFalse("n0t@AH0tD.0g".isAValidEmailAddress)
-        XCTAssertFalse("n0t@AH0tD.O9".isAValidEmailAddress)
-        XCTAssertTrue("N@D.OG".isAValidEmailAddress)
-        XCTAssertFalse("N@D.OG5".isAValidEmailAddress)
-        XCTAssertTrue("N@D.OGS".isAValidEmailAddress)
-        XCTAssertFalse("@D.OGS".isAValidEmailAddress)
-        XCTAssertFalse("D.OGS".isAValidEmailAddress)
-        XCTAssertFalse("D@OGS".isAValidEmailAddress)
-        XCTAssertTrue("1@D.OGS".isAValidEmailAddress)
-        XCTAssertTrue("1@2.OGS".isAValidEmailAddress)
-        XCTAssertTrue("N@2.OGS".isAValidEmailAddress)
-        XCTAssertTrue("n@2.OGS".isAValidEmailAddress)
-        XCTAssertTrue(".@2.OGS".isAValidEmailAddress)
-        XCTAssertTrue("-@2.OGS".isAValidEmailAddress)
-        XCTAssertTrue("_@2.OGS".isAValidEmailAddress)
-        XCTAssertTrue("%@2.OGS".isAValidEmailAddress)
-        XCTAssertFalse(".@.OGS".isAValidEmailAddress)
-        XCTAssertTrue(".@..OGS".isAValidEmailAddress)
-        XCTAssertTrue(".@-.OGS".isAValidEmailAddress)
-        XCTAssertFalse(".@_.OGS".isAValidEmailAddress)
-        XCTAssertFalse(".@%.OGS".isAValidEmailAddress)
-        XCTAssertFalse(".@A.OG-S".isAValidEmailAddress)
-        XCTAssertFalse(".@A.OG.S".isAValidEmailAddress)
-        XCTAssertFalse(".@A.O.G.S".isAValidEmailAddress)
-        XCTAssertTrue(".@A.O.GS".isAValidEmailAddress)
-        XCTAssertTrue(".@A..OGS".isAValidEmailAddress)
-        XCTAssertTrue(".@A..O.GS".isAValidEmailAddress)
-        XCTAssertTrue(".@A.-O.GS".isAValidEmailAddress)
-        XCTAssertFalse(".@A.-O.-GS".isAValidEmailAddress)
-    }
-}
-
-/* ###################################################################################################################################### */
-// MARK: - RVS_String_Extensions_Tests -
-/* ###################################################################################################################################### */
-/**
- These are specific unit tests for the Bundle extension.
- */
-class RVS_Bundle_Extensions_Tests: XCTestCase {
-    func testSimpleBundleAccessors() {
-        let testBundle = Bundle(for: type(of: self))
-        XCTAssertEqual("RVS_Generic_Swift_Toolbox_Tests_Name", testBundle.appDisplayName)
-        XCTAssertEqual("1.2.3", testBundle.appVersionString)
-        XCTAssertEqual("4.5.6", testBundle.appVersionBuildString)
-        XCTAssertEqual("RVS_Generic_Swift_Toolbox_Tests_Copyright", testBundle.copyrightString)
-        let testBundle2 = Bundle()
-        XCTAssertEqual("", testBundle2.appDisplayName)
-        XCTAssertEqual("", testBundle2.appVersionString)
-        XCTAssertEqual("", testBundle2.appVersionBuildString)
-        XCTAssertNil(testBundle2.copyrightString)
     }
 }

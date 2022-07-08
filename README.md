@@ -27,11 +27,19 @@ These tools will work for all of these platforms, and will, at most, rely only o
 - [**EXTENSIONS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Extensions)
     - [**RVS_Int_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Int_Extensions.swift)
     
-        Extensions to integer data types.
+        Extensions to integer data types, as well as some degree/radian conversion for floats and doubles.
         
     - [**RVS_String_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_String_Extensions.swift)
     
+        Extensions to the [StringProtocol protocol](https://developer.apple.com/documentation/swift/stringprotocol). These are mostly parsing, filtering, and conversion capabilities.
+        
+    - [**RVS_Foundation_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Foundation_Extensions.swift)
+    
         Extensions to the [StringProtocol protocol](https://developer.apple.com/documentation/swift/stringprotocol). This adds some significant capabilities, such as [MD5](https://en.wikipedia.org/wiki/MD5)/[SHA](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms)-hashing, substring searching, simple localization, and basic parsing.
+        
+        Extensions to the [Date Struct](https://developer.apple.com/documentation/foundation/date/). This makes Dates [strideable](https://developer.apple.com/documentation/swift/strideable/).
+        
+        Adds degree/radian conversion to [CGFloat](https://developer.apple.com/documentation/corefoundation/cgfloat/).
 
 USAGE
 -

@@ -169,13 +169,6 @@
 			path = RVS_Generic_Swift_Toolbox_Extensions;
 			sourceTree = "<group>";
 		};
-		D42A9D11282D7E9900DE798F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D49CCCAD24D479DF00047CAD /* RVS_Generic_Swift_ToolboxTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +230,6 @@
 				D42A9D0E282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (WatchOS).xctest */,
 				D42A9D0F282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_TVOS.a */,
 				D42A9D10282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests_Name.xctest */,
-				D42A9D11282D7E9900DE798F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

@@ -1,4 +1,4 @@
-*Version 1.9.0* **TBD**
+*Version 1.9.0* **July 8, 2022**
 - Added some more "Foundation" stuff -Strideable Date, and Some degree/Radian conversions.
 
 *Version 1.8.1* **May 31, 2022**

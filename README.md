@@ -78,11 +78,11 @@ If you do this, then you should do the same as above, but instead of a Carthage 
 
 REQUIREMENTS
 -
-These utilities require [the Swift programming language](https://developer.apple.com/swift/), and are not designed to be abstracted via a framework or bundle. They should be directly added to the source of your intended application.
+These utilities require [the Swift programming language](https://developer.apple.com/swift/), along with [the Foundation Library](https://developer.apple.com/documentation/foundation) it also uses [the Core Graphics Library](https://developer.apple.com/documentation/coregraphics/).
 
 LICENSE
 -
-© Copyright 2019, [The Great Rift Valley Software Company](https://riftvalleysoftware.com)
+© Copyright 2019-2022, [The Great Rift Valley Software Company](https://riftvalleysoftware.com)
 
 [MIT License](https://opensource.org/licenses/MIT)
 

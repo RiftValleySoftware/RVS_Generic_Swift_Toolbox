@@ -19,10 +19,11 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.9.0
+Version: 1.9.1
 */
 
 import Foundation   // Required for the NS, CG, and Date stuff.
+import CoreGraphics // For whatever reason, iOS requires a separate import of CG.
 
 /* ###################################################################################################################################### */
 // MARK: CGFloat Extension

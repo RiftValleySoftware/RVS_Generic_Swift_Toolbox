@@ -1,3 +1,6 @@
+*Version 1.9.1* **July 8, 2022**
+- iOS requires a separate import of CG (It is not included in iOS Foundation, apparently).
+
 *Version 1.9.0* **July 8, 2022**
 - Added some more "Foundation" stuff -Strideable Date, and Some degree/Radian conversions.
 

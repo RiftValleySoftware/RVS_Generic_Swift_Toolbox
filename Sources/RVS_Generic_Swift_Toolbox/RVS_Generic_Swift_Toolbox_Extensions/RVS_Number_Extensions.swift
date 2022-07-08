@@ -19,8 +19,48 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.8.1
+ Version: 1.9.0
 */
+
+/* ###################################################################################################################################### */
+// MARK: Double Extension
+/* ###################################################################################################################################### */
+/**
+ This makes it easier to convert between Degrees and Radians.
+ */
+public extension Double {
+    /* ################################################################## */
+    /**
+     - returns: a float (in degrees), as Radians
+     */
+    var radians: Double { Double.pi * (self / 180) }
+    
+    /* ################################################################## */
+    /**
+     - returns: a float (in Radians), as degrees
+     */
+    var degrees: Double { 180 * (self / Double.pi) }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Float Extension
+/* ###################################################################################################################################### */
+/**
+ This makes it easier to convert between Degrees and Radians.
+ */
+public extension Float {
+    /* ################################################################## */
+    /**
+     - returns: a float (in degrees), as Radians
+     */
+    var radians: Float { Float(Double(self).radians) }
+    
+    /* ################################################################## */
+    /**
+     - returns: a float (in Radians), as degrees
+     */
+    var degrees: Float { Float(Double(self).degrees) }
+}
 
 /* ###################################################################################################################################### */
 // MARK: - UInt64 Extension -

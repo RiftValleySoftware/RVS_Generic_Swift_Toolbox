@@ -1,3 +1,6 @@
+*Version 1.9.0* **TBD**
+- Added some more "Foundation" stuff -Strideable Date, and Some degree/Radian conversions.
+
 *Version 1.8.1* **May 31, 2022**
 - Dropped the min Mac version to 10.14
 

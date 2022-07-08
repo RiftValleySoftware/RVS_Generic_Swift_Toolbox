@@ -19,10 +19,51 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.8.1
+Version: 1.9.0
 */
 
-import Foundation   // Required for the NS stuff.
+import Foundation   // Required for the NS, CG, and Date stuff.
+
+/* ###################################################################################################################################### */
+// MARK: CGFloat Extension
+/* ###################################################################################################################################### */
+/**
+ This makes it easier to convert between Degrees and Radians.
+ */
+public extension CGFloat {
+    /* ################################################################## */
+    /**
+     - returns: a float (in degrees), as Radians
+     */
+    var radians: CGFloat { Double(self).radians }
+    
+    /* ################################################################## */
+    /**
+     - returns: a float (in Radians), as degrees
+     */
+    var degrees: CGFloat { Double(self).degrees }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - Date Extension, To Allow Striding -
+/* ###################################################################################################################################### */
+extension Date: Strideable {
+    /* ################################################################## */
+    /**
+     The distance of a stride.
+     - parameter to: The other date instance we are measuring.
+     - returns: The number of seconds that separate the two dates.
+     */
+    public func distance(to inOther: Date) -> TimeInterval { inOther.timeIntervalSinceReferenceDate - timeIntervalSinceReferenceDate }
+
+    /* ################################################################## */
+    /**
+     This advances the stride by the iteration amount given.
+     - parameter by: The iteration amount (in seconds).
+     - returns: The new date instance.
+     */
+    public func advanced(by inInterval: TimeInterval) -> Date { self + inInterval }
+}
 
 /* ###################################################################################################################################### */
 // MARK: - StringProtocol Extension (Foundation-Required Computed Properties) -

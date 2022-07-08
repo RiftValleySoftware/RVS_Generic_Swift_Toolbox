@@ -13,7 +13,7 @@
 		D42A9D18282D7F0400DE798F /* RVS_Generic_Swift_Toolbox_TVOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A9D0F282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_TVOS.a */; };
 		D451C746282BD73C000F8A2D /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
 		D451C747282BD73C000F8A2D /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
-		D451C748282BD73C000F8A2D /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
+		D451C748282BD73C000F8A2D /* RVS_Number_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */; };
 		D451C749282BD73C000F8A2D /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
 		D451C74A282BD73C000F8A2D /* RVS_Bundle_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */; };
 		D451C74B282BD73C000F8A2D /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
@@ -21,32 +21,32 @@
 		D465C642282D5CC6007F9904 /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
 		D465C643282D5CC6007F9904 /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
 		D465C644282D5CC6007F9904 /* RVS_Bundle_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */; };
-		D465C645282D5CC6007F9904 /* RVS_Foundation_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift */; };
+		D465C645282D5CC6007F9904 /* RVS_Foundation_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */; };
 		D465C646282D5CC6007F9904 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
-		D465C647282D5CC6007F9904 /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
+		D465C647282D5CC6007F9904 /* RVS_Number_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */; };
 		D465C64C282D5DAE007F9904 /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
 		D465C64D282D5DAE007F9904 /* RVS_Extensions_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */; };
 		D46FC3B0282D60970018FF9F /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
-		D46FC3B1282D60970018FF9F /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
+		D46FC3B1282D60970018FF9F /* RVS_Number_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */; };
 		D46FC3B2282D60970018FF9F /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
 		D46FC3B3282D60970018FF9F /* RVS_Bundle_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */; };
 		D46FC3B4282D60970018FF9F /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
 		D46FC3B5282D60970018FF9F /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
-		D46FC3B6282D60970018FF9F /* RVS_Foundation_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift */; };
+		D46FC3B6282D60970018FF9F /* RVS_Foundation_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */; };
 		D46FC3C1282D60C60018FF9F /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
 		D46FC3C2282D60C60018FF9F /* RVS_Extensions_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */; };
 		D4CE2A7823DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */; };
 		D4D03C1B23DDDE9D005B54B5 /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
 		D4E19E1B282D722C00C0D755 /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
-		D4E19E1C282D722C00C0D755 /* RVS_Foundation_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift */; };
+		D4E19E1C282D722C00C0D755 /* RVS_Foundation_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */; };
 		D4E19E1D282D722C00C0D755 /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
-		D4E19E1E282D722C00C0D755 /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */; };
+		D4E19E1E282D722C00C0D755 /* RVS_Number_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */; };
 		D4E19E1F282D722C00C0D755 /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
 		D4E19E20282D722C00C0D755 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
 		D4E19E21282D722C00C0D755 /* RVS_Bundle_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */; };
 		D4E19E30282D737900C0D755 /* RVS_Extensions_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */; };
 		D4E19E31282D737900C0D755 /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
-		D4FCFD2A282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift */; };
+		D4FCFD2A282BEE9500EDD66C /* RVS_Foundation_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,7 @@
 		D427DB2723DDC66900849489 /* RVS_DebugTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_DebugTools.swift; sourceTree = "<group>"; };
 		D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_FIFOQueue.swift; sourceTree = "<group>"; };
 		D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_SequenceProtocol.swift; sourceTree = "<group>"; };
-		D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Int_Extensions.swift; sourceTree = "<group>"; };
+		D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Number_Extensions.swift; sourceTree = "<group>"; };
 		D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_String_Extensions.swift; sourceTree = "<group>"; };
 		D42A9D09282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_MacOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42A9D0A282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (MacOS).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RVS_Generic_Swift_Toolbox_Tests (MacOS).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +102,7 @@
 		D4907AC324956330007FAE32 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Extensions_Tests.swift; sourceTree = "<group>"; };
 		D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Collection_Tests.swift; sourceTree = "<group>"; };
-		D4FCFD29282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Foundation_String_Extensions.swift; sourceTree = "<group>"; };
+		D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Foundation_Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,10 +161,10 @@
 		D427DB2D23DDC66900849489 /* RVS_Generic_Swift_Toolbox_Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D427DB2E23DDC66900849489 /* RVS_Int_Extensions.swift */,
+				D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */,
 				D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */,
 				D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */,
-				D4FCFD29282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift */,
+				D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */,
 			);
 			path = RVS_Generic_Swift_Toolbox_Extensions;
 			sourceTree = "<group>";
@@ -513,10 +513,10 @@
 				D451C74A282BD73C000F8A2D /* RVS_Bundle_Extensions.swift in Sources */,
 				D451C746282BD73C000F8A2D /* RVS_FIFOQueue.swift in Sources */,
 				D451C74B282BD73C000F8A2D /* RVS_SequenceProtocol.swift in Sources */,
-				D451C748282BD73C000F8A2D /* RVS_Int_Extensions.swift in Sources */,
+				D451C748282BD73C000F8A2D /* RVS_Number_Extensions.swift in Sources */,
 				D451C749282BD73C000F8A2D /* RVS_String_Extensions.swift in Sources */,
 				D451C747282BD73C000F8A2D /* RVS_DebugTools.swift in Sources */,
-				D4FCFD2A282BEE9500EDD66C /* RVS_Foundation_String_Extensions.swift in Sources */,
+				D4FCFD2A282BEE9500EDD66C /* RVS_Foundation_Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,12 +525,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D465C646282D5CC6007F9904 /* RVS_String_Extensions.swift in Sources */,
-				D465C647282D5CC6007F9904 /* RVS_Int_Extensions.swift in Sources */,
+				D465C647282D5CC6007F9904 /* RVS_Number_Extensions.swift in Sources */,
 				D465C643282D5CC6007F9904 /* RVS_FIFOQueue.swift in Sources */,
 				D465C644282D5CC6007F9904 /* RVS_Bundle_Extensions.swift in Sources */,
 				D465C641282D5CC6007F9904 /* RVS_SequenceProtocol.swift in Sources */,
 				D465C642282D5CC6007F9904 /* RVS_DebugTools.swift in Sources */,
-				D465C645282D5CC6007F9904 /* RVS_Foundation_String_Extensions.swift in Sources */,
+				D465C645282D5CC6007F9904 /* RVS_Foundation_Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,12 +548,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D46FC3B0282D60970018FF9F /* RVS_String_Extensions.swift in Sources */,
-				D46FC3B1282D60970018FF9F /* RVS_Int_Extensions.swift in Sources */,
+				D46FC3B1282D60970018FF9F /* RVS_Number_Extensions.swift in Sources */,
 				D46FC3B2282D60970018FF9F /* RVS_FIFOQueue.swift in Sources */,
 				D46FC3B3282D60970018FF9F /* RVS_Bundle_Extensions.swift in Sources */,
 				D46FC3B4282D60970018FF9F /* RVS_SequenceProtocol.swift in Sources */,
 				D46FC3B5282D60970018FF9F /* RVS_DebugTools.swift in Sources */,
-				D46FC3B6282D60970018FF9F /* RVS_Foundation_String_Extensions.swift in Sources */,
+				D46FC3B6282D60970018FF9F /* RVS_Foundation_Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,10 +582,10 @@
 				D4E19E20282D722C00C0D755 /* RVS_String_Extensions.swift in Sources */,
 				D4E19E21282D722C00C0D755 /* RVS_Bundle_Extensions.swift in Sources */,
 				D4E19E1B282D722C00C0D755 /* RVS_FIFOQueue.swift in Sources */,
-				D4E19E1C282D722C00C0D755 /* RVS_Foundation_String_Extensions.swift in Sources */,
+				D4E19E1C282D722C00C0D755 /* RVS_Foundation_Extensions.swift in Sources */,
 				D4E19E1F282D722C00C0D755 /* RVS_SequenceProtocol.swift in Sources */,
 				D4E19E1D282D722C00C0D755 /* RVS_DebugTools.swift in Sources */,
-				D4E19E1E282D722C00C0D755 /* RVS_Int_Extensions.swift in Sources */,
+				D4E19E1E282D722C00C0D755 /* RVS_Number_Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

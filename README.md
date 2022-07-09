@@ -45,7 +45,7 @@ These tools will work for all of these platforms, and will, at most, rely only o
         
         Adds rotation support to [CGPoint](https://developer.apple.com/documentation/corefoundation/cgpoint/).
 
-# Usage
+## Usage
 
 ### [**Swift Package Manager (SPM)**](https://swift.org/package-manager/)
 

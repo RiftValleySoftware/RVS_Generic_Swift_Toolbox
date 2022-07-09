@@ -69,9 +69,12 @@ public extension CGPoint {
      
      - parameter around: Another point, that is the "fulcrum" of the rotation.
      - parameter byDegrees: The rotation angle, in degrees. 0 is no change. - is counter-clockwise, + is clockwise.
+     - parameter precisionInDecimalPlaces: The precision, in decimal places to the right of the decimal. This is optional, and, if omitted, uses full precision.
      - returns: The transformed point.
      */
-    func rotated(around inCenter: CGPoint, byDegrees inDegrees: CGFloat) -> CGPoint { rotated(around: inCenter, byRadians: (inDegrees * .pi) / 180) }
+    func rotated(around inCenter: CGPoint, byDegrees inDegrees: CGFloat, precisionInDecimalPlaces inPrecision: UInt8? = nil) -> CGPoint { rotated(around: inCenter,
+                                                                                                                                                  byRadians: (inDegrees * .pi) / 180,
+                                                                                                                                                  precisionInDecimalPlaces: inPrecision) }
     
     /* ################################################################## */
     /**
@@ -80,17 +83,29 @@ public extension CGPoint {
      
      - parameter around: Another point, that is the "fulcrum" of the rotation.
      - parameter byRadians: The rotation angle, in radians. 0 is no change. - is counter-clockwise, + is clockwise.
+     - parameter precisionInDecimalPlaces: The precision, in decimal places to the right of the decimal. This is optional, and, if omitted, uses full precision. The range is 0...14.
      - returns: The transformed point.
      */
-    func rotated(around inCenter: CGPoint, byRadians inRadians: CGFloat) -> CGPoint {
+    func rotated(around inCenter: CGPoint, byRadians inRadians: CGFloat, precisionInDecimalPlaces inPrecision: UInt8? = nil) -> CGPoint {
         let dx = x - inCenter.x
         let dy = y - inCenter.y
         let radius = sqrt(dx * dx + dy * dy)
         let azimuth = atan2(dy, dx)
         let newAzimuth = azimuth + inRadians
-        let x = inCenter.x + radius * cos(newAzimuth)
-        let y = inCenter.y + radius * sin(newAzimuth)
-        return CGPoint(x: x, y: y)
+        var x2: Double = inCenter.x + radius * cos(newAzimuth)
+        var y2: Double = inCenter.y + radius * sin(newAzimuth)
+        
+        if let precision = inPrecision,
+           (1..<15).contains(precision) {
+            let poweredUp = pow(Double(10), Double(precision))
+            x2 = round((Double(x2) * poweredUp)) / poweredUp
+            y2 = round((Double(y2) * poweredUp)) / poweredUp
+        } else if 0 == inPrecision {
+            x2 = round(x2)
+            y2 = round(y2)
+        }
+        
+        return CGPoint(x: x2, y: y2)
     }
 }
 

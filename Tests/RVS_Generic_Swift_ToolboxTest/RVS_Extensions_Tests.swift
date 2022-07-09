@@ -793,6 +793,24 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
         XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byDegrees: 180), CGPoint(x: 100, y: 49.999999999999986))
         XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byRadians: CGFloat.pi), CGPoint(x: 100, y: 49.999999999999986))
         XCTAssertEqual(CGPoint(x: 50, y: 50).rotated(around: fulcrumPoint, byDegrees: 90), CGPoint(x: 50.0, y: 50.0))
+
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byRadians: CGFloat.pi / 2, precisionInDecimalPlaces: 0), CGPoint(x: 50, y: 0))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byDegrees: 90, precisionInDecimalPlaces: 0), CGPoint(x: 50, y: 0))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byDegrees: 180, precisionInDecimalPlaces: 0), CGPoint(x: 100, y: 50))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byRadians: CGFloat.pi, precisionInDecimalPlaces: 0), CGPoint(x: 100, y: 50))
+        XCTAssertEqual(CGPoint(x: 50, y: 50).rotated(around: fulcrumPoint, byDegrees: 90, precisionInDecimalPlaces: 0), CGPoint(x: 50, y: 50))
+
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byRadians: CGFloat.pi / 2, precisionInDecimalPlaces: 2), CGPoint(x: 50, y: 0))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byDegrees: 90, precisionInDecimalPlaces: 2), CGPoint(x: 50, y: 0))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byDegrees: 180, precisionInDecimalPlaces: 2), CGPoint(x: 100, y: 50))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byRadians: CGFloat.pi, precisionInDecimalPlaces: 2), CGPoint(x: 100, y: 50))
+        XCTAssertEqual(CGPoint(x: 50, y: 50).rotated(around: fulcrumPoint, byDegrees: 90, precisionInDecimalPlaces: 2), CGPoint(x: 50, y: 50))
+
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byRadians: CGFloat.pi / 2, precisionInDecimalPlaces: 14), CGPoint(x: 49.99999999999999, y: 0))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byDegrees: 90, precisionInDecimalPlaces: 14), CGPoint(x: 49.99999999999999, y: 0))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byDegrees: 180, precisionInDecimalPlaces: 14), CGPoint(x: 100, y: 49.99999999999999))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byRadians: CGFloat.pi, precisionInDecimalPlaces: 14), CGPoint(x: 100, y: 49.99999999999999))
+        XCTAssertEqual(CGPoint(x: 50, y: 50).rotated(around: fulcrumPoint, byDegrees: 90, precisionInDecimalPlaces: 14), CGPoint(x: 50, y: 50))
     }
     
     /* ################################################################## */

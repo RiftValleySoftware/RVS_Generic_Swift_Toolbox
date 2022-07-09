@@ -68,6 +68,12 @@
                 <a class="nav-group-task-link" href="../Extensions/CGFloat.html">CGFloat</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CGSize.html">CGSize</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/Date.html">Date</a>
               </li>
               <li class="nav-group-task">
@@ -119,7 +125,8 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Date</span><span class="p">:</span> <span class="kt">Strideable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Date</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Date</span><span class="p">:</span> <span class="kt">Strideable</span></code></pre>
 
                 </div>
               </div>
@@ -130,6 +137,205 @@
         <section class="section">
           <div class="section-content">
             <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE14isOnADayBefore_8calendarSbAC_AA8CalendarVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/isOnADayBefore(_:calendar:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE14isOnADayBefore_8calendarSbAC_AA8CalendarVSgtF">isOnADayBefore(_:<wbr>calendar:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compares another date to this one, with a day (24 hours) granularity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isOnADayBefore</span><span class="p">(</span><span class="n">_</span> <span class="nv">inDay</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="n">calendar</span> <span class="nv">inCalendar</span><span class="p">:</span> <span class="kt">Calendar</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inDay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The date against which we are comparing ourselves.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>calendar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional (default is the current calendar) calendar instance, to use for the calculation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>True, if this date is on a day prior to the one provided.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE13isOnADayAfter_8calendarSbAC_AA8CalendarVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/isOnADayAfter(_:calendar:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE13isOnADayAfter_8calendarSbAC_AA8CalendarVSgtF">isOnADayAfter(_:<wbr>calendar:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compares another date to this one, with a day (24 hours) granularity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isOnADayAfter</span><span class="p">(</span><span class="n">_</span> <span class="nv">inDay</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="n">calendar</span> <span class="nv">inCalendar</span><span class="p">:</span> <span class="kt">Calendar</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inDay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The date against which we are comparing ourselves.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>calendar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional (default is the current calendar) calendar instance, to use for the calculation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>True, if this date is on a day after the one provided.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE16isOnTheSameDayAs_8calendarSbAC_AA8CalendarVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/isOnTheSameDayAs(_:calendar:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE16isOnTheSameDayAs_8calendarSbAC_AA8CalendarVSgtF">isOnTheSameDayAs(_:<wbr>calendar:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compares another date to this one, with a day (24 hours) granularity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isOnTheSameDayAs</span><span class="p">(</span><span class="n">_</span> <span class="nv">inDay</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="n">calendar</span> <span class="nv">inCalendar</span><span class="p">:</span> <span class="kt">Calendar</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inDay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The date against which we are comparing ourselves.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>calendar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional (default is the current calendar) calendar instance, to use for the calculation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>True, if this date is the same day as the one provided.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Date%20Extension%2C%20To%20Allow%20Striding"></a>
+                <a name="//apple_ref/swift/Section/Date Extension, To Allow Striding" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Date%20Extension%2C%20To%20Allow%20Striding"></a>
+                  <h3 class="section-name"><span>Date Extension, To Allow Striding</span>
+</h3>
+                </div>
+              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>

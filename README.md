@@ -1,15 +1,17 @@
 ![Icon](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/raw/master/icon.png)
 
-RVS_Generic_Swift_Toolbox
-=
+# ``RVS_Generic_Swift_Toolbox``
 
-[Here is the technical documentation for this repository](https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/)
+A Set of utilities to ease basic and repetitive tasks, in Swift.
 
-DESCRIPTION
--
+## Overview
+
 This repository is an Xcode project with a set of ambidextrous (That's what I really mean by "generic"; not just using generics) tools that can be applied to Swift projects deployed for [iOS](https://apple.com/ios), [iPadOS](https://apple.com/ipados), [MacOS](https://apple.com/macos), [WatchOS](https://apple.com/watchos) and [TVOS](https://apple.com/tvos).
 
-These tools will work for all of these platforms, and will, at most, rely only on [the Foundation library](https://developer.apple.com/documentation/foundation).
+These tools will work for all of these platforms, and will, at most, rely only on [the Foundation library](https://developer.apple.com/documentation/foundation), and [the Core Graphics types (in the Core Foundation Library)](https://developer.apple.com/documentation/corefoundation).
+
+- [Here is the technical documentation for this repository](https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/)
+- [Here is the repository on GitHub](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox)
 
 - [**COLLECTION TOOLS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Collection%20Tools)
     - [**RVS_FIFOQueue**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Collection%20Tools/RVS_FIFOQueue.swift)
@@ -37,13 +39,15 @@ These tools will work for all of these platforms, and will, at most, rely only o
     
         Extensions to the [StringProtocol protocol](https://developer.apple.com/documentation/swift/stringprotocol). This adds some significant capabilities, such as [MD5](https://en.wikipedia.org/wiki/MD5)/[SHA](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms)-hashing, substring searching, simple localization, and basic parsing.
         
-        Extensions to the [Date Struct](https://developer.apple.com/documentation/foundation/date/). This makes Dates [strideable](https://developer.apple.com/documentation/swift/strideable/).
+        Extensions to the [Date Struct](https://developer.apple.com/documentation/foundation/date/). This makes Dates [strideable](https://developer.apple.com/documentation/swift/strideable/). It also allows "coarse" date comparisons, using a "granularity" of 24 hours (one day).
         
         Adds degree/radian conversion to [CGFloat](https://developer.apple.com/documentation/corefoundation/cgfloat/).
+        
+        Adds rotation support to [CGPoint](https://developer.apple.com/documentation/corefoundation/cgpoint/).
 
-USAGE
--
-- [**Swift Package Manager (SPM)**](https://swift.org/package-manager/)
+# Usage
+
+### [**Swift Package Manager (SPM)**](https://swift.org/package-manager/)
 
 You can use SPM to load the project as a dependency, by referencing its [GitHub Repo](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/) URI (SSH: [git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git](git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git), or HTTPS: [https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox.git](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox.git)).
 
@@ -53,7 +57,7 @@ Once you have the dependency attached, you reference it by adding an import to t
     
 All of the extensions and utilities will be available.
 
-- [**Carthage**](https://github.com/Carthage/Carthage)
+### [**Carthage**](https://github.com/Carthage/Carthage)
 
 Carthage is probably the "lowest-overhead" way to use these tools. It's extremely simple to use, and squeaky clean. You will only need to include references to the files into your project.
 You implement it by adding the following line in your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md):
@@ -71,16 +75,16 @@ Just drag those files into your Xcode project, and add them to the appropriate t
 
 If you choose to use the build products, be aware that Carthage builds may not always sign the modules, so you could have issues submitting to the app store.
     
-- **[Git Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)**
+### **[Git Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)**
 
 You could also directly include the project as a Git Submodule. Submodules can be annoying to work with, but are a good way to maintain ironclad version integrity.
 If you do this, then you should do the same as above, but instead of a Carthage directory, you will have whatever directory you choose to use to place the submodule.
 
-REQUIREMENTS
+## Requirements
 -
-These utilities require [the Swift programming language](https://developer.apple.com/swift/), along with [the Foundation Library](https://developer.apple.com/documentation/foundation) it also uses [the Core Graphics Library](https://developer.apple.com/documentation/coregraphics/).
+These utilities require [the Swift programming language](https://developer.apple.com/swift/), along with [the Foundation Library](https://developer.apple.com/documentation/foundation) it also uses [the Core Foundation Library)](https://developer.apple.com/documentation/corefoundation).
 
-LICENSE
+## License
 -
 © Copyright 2019-2022, [The Great Rift Valley Software Company](https://riftvalleysoftware.com)
 

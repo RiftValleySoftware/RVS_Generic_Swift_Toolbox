@@ -67,6 +67,12 @@
                 <a class="nav-group-task-link" href="Extensions/CGFloat.html">CGFloat</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/CGSize.html">CGSize</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/Date.html">Date</a>
               </li>
               <li class="nav-group-task">
@@ -116,16 +122,18 @@
           <div class="section-content top-matter">
             
             <p><img src="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/raw/master/icon.png" alt="Icon"></p>
-<h1 id='rvs_generic_swift_toolbox' class='heading'>RVS_Generic_Swift_Toolbox</h1>
+<h1 id='code-rvs_generic_swift_toolbox-code' class='heading'><code>RVS_Generic_Swift_Toolbox</code></h1>
 
-<p><a href="https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/">Here is the technical documentation for this repository</a></p>
-<h2 id='description' class='heading'>DESCRIPTION</h2>
+<p>A Set of utilities to ease basic and repetitive tasks, in Swift.</p>
+<h2 id='overview' class='heading'>Overview</h2>
 
 <p>This repository is an Xcode project with a set of ambidextrous (That&rsquo;s what I really mean by &ldquo;generic&rdquo;; not just using generics) tools that can be applied to Swift projects deployed for <a href="https://apple.com/ios">iOS</a>, <a href="https://apple.com/ipados">iPadOS</a>, <a href="https://apple.com/macos">MacOS</a>, <a href="https://apple.com/watchos">WatchOS</a> and <a href="https://apple.com/tvos">TVOS</a>.</p>
 
-<p>These tools will work for all of these platforms, and will, at most, rely only on <a href="https://developer.apple.com/documentation/foundation">the Foundation library</a>.</p>
+<p>These tools will work for all of these platforms, and will, at most, rely only on <a href="https://developer.apple.com/documentation/foundation">the Foundation library</a>, and <a href="https://developer.apple.com/documentation/corefoundation">the Core Graphics types (in the Core Foundation Library)</a>.</p>
 
 <ul>
+<li><a href="https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/">Here is the technical documentation for this repository</a></li>
+<li><p><a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox">Here is the repository on GitHub</a></p></li>
 <li><p><a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Collection%20Tools"><strong>COLLECTION TOOLS</strong></a></p>
 
 <ul>
@@ -156,16 +164,15 @@
 
 <p>Extensions to the <a href="https://developer.apple.com/documentation/swift/stringprotocol">StringProtocol protocol</a>. This adds some significant capabilities, such as <a href="https://en.wikipedia.org/wiki/MD5">MD5</a>/<a href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithms">SHA</a>-hashing, substring searching, simple localization, and basic parsing.</p>
 
-<p>Extensions to the <a href="https://developer.apple.com/documentation/foundation/date/">Date Struct</a>. This makes Dates <a href="https://developer.apple.com/documentation/swift/strideable/">strideable</a>.</p>
+<p>Extensions to the <a href="https://developer.apple.com/documentation/foundation/date/">Date Struct</a>. This makes Dates <a href="https://developer.apple.com/documentation/swift/strideable/">strideable</a>. It also allows &ldquo;coarse&rdquo; date comparisons, using a &ldquo;granularity&rdquo; of 24 hours (one day).</p>
 
-<p>Adds degree/radian conversion to <a href="https://developer.apple.com/documentation/corefoundation/cgfloat/">CGFloat</a>.</p></li>
+<p>Adds degree/radian conversion to <a href="https://developer.apple.com/documentation/corefoundation/cgfloat/">CGFloat</a>.</p>
+
+<p>Adds rotation support to <a href="https://developer.apple.com/documentation/corefoundation/cgpoint/">CGPoint</a>.</p></li>
 </ul></li>
 </ul>
-<h2 id='usage' class='heading'>USAGE</h2>
-
-<ul>
-<li><a href="https://swift.org/package-manager/"><strong>Swift Package Manager (SPM)</strong></a></li>
-</ul>
+<h1 id='usage' class='heading'>Usage</h1>
+<h3 id='a-href-https-swift-org-package-manager-strong-swift-package-manager-spm-strong-a' class='heading'><a href="https://swift.org/package-manager/"><strong>Swift Package Manager (SPM)</strong></a></h3>
 
 <p>You can use SPM to load the project as a dependency, by referencing its <a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/">GitHub Repo</a> URI (SSH: <a href="git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git">git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git</a>, or HTTPS: <a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox.git">https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox.git</a>).</p>
 
@@ -174,10 +181,7 @@
 </code></pre>
 
 <p>All of the extensions and utilities will be available.</p>
-
-<ul>
-<li><a href="https://github.com/Carthage/Carthage"><strong>Carthage</strong></a></li>
-</ul>
+<h3 id='a-href-https-github-com-carthage-carthage-strong-carthage-strong-a' class='heading'><a href="https://github.com/Carthage/Carthage"><strong>Carthage</strong></a></h3>
 
 <p>Carthage is probably the &ldquo;lowest-overhead&rdquo; way to use these tools. It&rsquo;s extremely simple to use, and squeaky clean. You will only need to include references to the files into your project.
 You implement it by adding the following line in your <a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md">Cartfile</a>:</p>
@@ -194,19 +198,18 @@ The files that you are looking for will be in the <code>Sources/RVS_Generic_Swif
 <p>Just drag those files into your Xcode project, and add them to the appropriate targets.</p>
 
 <p>If you choose to use the build products, be aware that Carthage builds may not always sign the modules, so you could have issues submitting to the app store.</p>
-
-<ul>
-<li><strong><a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git Submodule</a></strong></li>
-</ul>
+<h3 id='strong-a-href-https-git-scm-com-book-en-v2-git-tools-submodules-git-submodule-a-strong' class='heading'><strong><a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git Submodule</a></strong></h3>
 
 <p>You could also directly include the project as a Git Submodule. Submodules can be annoying to work with, but are a good way to maintain ironclad version integrity.
 If you do this, then you should do the same as above, but instead of a Carthage directory, you will have whatever directory you choose to use to place the submodule.</p>
-<h2 id='requirements' class='heading'>REQUIREMENTS</h2>
+<h2 id='requirements' class='heading'>Requirements</h2>
 
-<p>These utilities require <a href="https://developer.apple.com/swift/">the Swift programming language</a>, along with <a href="https://developer.apple.com/documentation/foundation">the Foundation Library</a> it also uses <a href="https://developer.apple.com/documentation/coregraphics/">the Core Graphics Library</a>.</p>
-<h2 id='license' class='heading'>LICENSE</h2>
+<p>-
+These utilities require <a href="https://developer.apple.com/swift/">the Swift programming language</a>, along with <a href="https://developer.apple.com/documentation/foundation">the Foundation Library</a> it also uses <a href="https://developer.apple.com/documentation/corefoundation">the Core Foundation Library)</a>.</p>
+<h2 id='license' class='heading'>License</h2>
 
-<p>© Copyright 2019-2022, <a href="https://riftvalleysoftware.com">The Great Rift Valley Software Company</a></p>
+<p>-
+© Copyright 2019-2022, <a href="https://riftvalleysoftware.com">The Great Rift Valley Software Company</a></p>
 
 <p><a href="https://opensource.org/licenses/MIT">MIT License</a></p>
 

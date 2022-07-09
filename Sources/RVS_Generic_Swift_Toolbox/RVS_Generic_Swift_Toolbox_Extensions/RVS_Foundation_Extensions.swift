@@ -51,7 +51,7 @@ public extension CGFloat {
 /**
  Adds calculations to the CGSize struct.
  */
-extension CGSize {
+public extension CGSize {
     /* ################################################################## */
     /**
      Returns the diagonal size of a rectangular size.
@@ -62,7 +62,7 @@ extension CGSize {
 /* ###################################################################################################################################### */
 // MARK: - CGPoint Extension -
 /* ###################################################################################################################################### */
-extension CGPoint {
+public extension CGPoint {
     /* ################################################################## */
     /**
      Rotate this point around a given point, by an angle given in degrees.

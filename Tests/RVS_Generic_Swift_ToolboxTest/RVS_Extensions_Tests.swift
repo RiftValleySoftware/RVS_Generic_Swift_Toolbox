@@ -772,6 +772,31 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
     
     /* ################################################################## */
     /**
+     Test the CGSize Diagonal Computed Property
+     */
+    func testCGSizeDiagonal() {
+        XCTAssertEqual(CGSize(width: 100, height: 100).diagonal, 141.4213562373095)
+        XCTAssertEqual(CGSize(width: 100, height: 50).diagonal, 111.80339887498948)
+        XCTAssertEqual(CGSize(width: 50, height: 100).diagonal, 111.80339887498948)
+    }
+    
+    /* ################################################################## */
+    /**
+     Test the CGSize Diagonal Computed Property
+     NB: There are precision issues with the calculation, that we account for, here.
+     */
+    func testCGPoint() {
+        let fulcrumPoint = CGPoint(x: 50, y: 50)
+        
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byRadians: CGFloat.pi / 2), CGPoint(x: 49.99999999999999, y: 0))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byDegrees: 90), CGPoint(x: 49.99999999999999, y: 0))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byDegrees: 180), CGPoint(x: 100, y: 49.999999999999986))
+        XCTAssertEqual(CGPoint(x: 0, y: 50).rotated(around: fulcrumPoint, byRadians: CGFloat.pi), CGPoint(x: 100, y: 49.999999999999986))
+        XCTAssertEqual(CGPoint(x: 50, y: 50).rotated(around: fulcrumPoint, byDegrees: 90), CGPoint(x: 50.0, y: 50.0))
+    }
+    
+    /* ################################################################## */
+    /**
      Test the CGFloat versions of the decimal/radian conversion.
      */
     func testDegreeRadianConversion() {

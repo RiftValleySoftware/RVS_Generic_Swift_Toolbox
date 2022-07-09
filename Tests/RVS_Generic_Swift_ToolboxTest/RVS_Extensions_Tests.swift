@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.9.1
+Version: 1.10.0
 */
 
 import XCTest
@@ -527,7 +527,7 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
     /**
      Test the strideable dates.
      */
-    func testTheseBootsAreMadeForWalkin() {
+    func testStrideableDate() {
         let oneHour = TimeInterval(60 * 60)
         let oneDay = oneHour * 24
         let oneWeek = oneDay * 7
@@ -566,6 +566,208 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
             compInterval -= oneDay
             XCTAssertEqual(date, compDate)
         }
+    }
+
+    /* ################################################################## */
+    /**
+     Test the day-granularity comparisons.
+     */
+    func testDayDateComparisons() {
+        let thisMorning = Calendar.current.startOfDay(for: Date())
+        let yesterdayMorning = Calendar.current.startOfDay(for: Date()).addingTimeInterval(-60 * 60 * 24)
+        let tomorrowMorning = Calendar.current.startOfDay(for: Date()).addingTimeInterval(60 * 60 * 24)
+        let thisNoon = thisMorning.addingTimeInterval(60 * 60 * 12)
+        let thisAfteroon = thisMorning.addingTimeInterval((60 * 60 * 15) + 43)
+        let thisEvening = thisMorning.addingTimeInterval((60 * 60 * 20) + 17)
+        let thisNearlyMidnight = tomorrowMorning.addingTimeInterval(-1)
+        let yesterdayNoon = yesterdayMorning.addingTimeInterval(60 * 60 * 12)
+        let yesterdayAfteroon = yesterdayMorning.addingTimeInterval((60 * 60 * 15) + 43)
+        let yesterdayEvening = yesterdayMorning.addingTimeInterval((60 * 60 * 20) + 17)
+        let yesterdayNearlyMidnight = thisMorning.addingTimeInterval(-1)
+        let tomorrowNoon = tomorrowMorning.addingTimeInterval(60 * 60 * 12)
+        let tomorrowAfteroon = tomorrowMorning.addingTimeInterval((60 * 60 * 15) + 43)
+        let tomorrowEvening = tomorrowMorning.addingTimeInterval((60 * 60 * 20) + 17)
+        let tomorrowNearlyMidnight = tomorrowMorning.addingTimeInterval((60 * 60 * 23) + (60 * 59) + 59)
+
+        XCTAssertTrue(yesterdayMorning.isOnTheSameDayAs(yesterdayMorning))
+        XCTAssertTrue(yesterdayMorning.isOnTheSameDayAs(yesterdayNoon))
+        XCTAssertTrue(yesterdayMorning.isOnTheSameDayAs(yesterdayAfteroon))
+        XCTAssertTrue(yesterdayMorning.isOnTheSameDayAs(yesterdayEvening))
+        XCTAssertTrue(yesterdayMorning.isOnTheSameDayAs(yesterdayNearlyMidnight))
+
+        XCTAssertTrue(yesterdayNoon.isOnTheSameDayAs(yesterdayMorning))
+        XCTAssertTrue(yesterdayNoon.isOnTheSameDayAs(yesterdayNoon))
+        XCTAssertTrue(yesterdayNoon.isOnTheSameDayAs(yesterdayAfteroon))
+        XCTAssertTrue(yesterdayNoon.isOnTheSameDayAs(yesterdayEvening))
+        XCTAssertTrue(yesterdayNoon.isOnTheSameDayAs(yesterdayNearlyMidnight))
+
+        XCTAssertTrue(yesterdayAfteroon.isOnTheSameDayAs(yesterdayMorning))
+        XCTAssertTrue(yesterdayAfteroon.isOnTheSameDayAs(yesterdayNoon))
+        XCTAssertTrue(yesterdayAfteroon.isOnTheSameDayAs(yesterdayAfteroon))
+        XCTAssertTrue(yesterdayAfteroon.isOnTheSameDayAs(yesterdayEvening))
+        XCTAssertTrue(yesterdayAfteroon.isOnTheSameDayAs(yesterdayNearlyMidnight))
+
+        XCTAssertTrue(yesterdayEvening.isOnTheSameDayAs(yesterdayMorning))
+        XCTAssertTrue(yesterdayEvening.isOnTheSameDayAs(yesterdayNoon))
+        XCTAssertTrue(yesterdayEvening.isOnTheSameDayAs(yesterdayAfteroon))
+        XCTAssertTrue(yesterdayEvening.isOnTheSameDayAs(yesterdayEvening))
+        XCTAssertTrue(yesterdayEvening.isOnTheSameDayAs(yesterdayNearlyMidnight))
+
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnTheSameDayAs(yesterdayMorning))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnTheSameDayAs(yesterdayNoon))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnTheSameDayAs(yesterdayAfteroon))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnTheSameDayAs(yesterdayEvening))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnTheSameDayAs(yesterdayNearlyMidnight))
+
+        XCTAssertTrue(thisMorning.isOnTheSameDayAs(thisMorning))
+        XCTAssertTrue(thisMorning.isOnTheSameDayAs(thisNoon))
+        XCTAssertTrue(thisMorning.isOnTheSameDayAs(thisAfteroon))
+        XCTAssertTrue(thisMorning.isOnTheSameDayAs(thisEvening))
+        XCTAssertTrue(thisMorning.isOnTheSameDayAs(thisNearlyMidnight))
+
+        XCTAssertTrue(thisNoon.isOnTheSameDayAs(thisMorning))
+        XCTAssertTrue(thisNoon.isOnTheSameDayAs(thisNoon))
+        XCTAssertTrue(thisNoon.isOnTheSameDayAs(thisAfteroon))
+        XCTAssertTrue(thisNoon.isOnTheSameDayAs(thisEvening))
+        XCTAssertTrue(thisNoon.isOnTheSameDayAs(thisNearlyMidnight))
+
+        XCTAssertTrue(thisAfteroon.isOnTheSameDayAs(thisMorning))
+        XCTAssertTrue(thisAfteroon.isOnTheSameDayAs(thisNoon))
+        XCTAssertTrue(thisAfteroon.isOnTheSameDayAs(thisAfteroon))
+        XCTAssertTrue(thisAfteroon.isOnTheSameDayAs(thisEvening))
+        XCTAssertTrue(thisAfteroon.isOnTheSameDayAs(thisNearlyMidnight))
+
+        XCTAssertTrue(thisEvening.isOnTheSameDayAs(thisMorning))
+        XCTAssertTrue(thisEvening.isOnTheSameDayAs(thisNoon))
+        XCTAssertTrue(thisEvening.isOnTheSameDayAs(thisAfteroon))
+        XCTAssertTrue(thisEvening.isOnTheSameDayAs(thisEvening))
+        XCTAssertTrue(thisEvening.isOnTheSameDayAs(thisNearlyMidnight))
+
+        XCTAssertTrue(thisNearlyMidnight.isOnTheSameDayAs(thisMorning))
+        XCTAssertTrue(thisNearlyMidnight.isOnTheSameDayAs(thisNoon))
+        XCTAssertTrue(thisNearlyMidnight.isOnTheSameDayAs(thisAfteroon))
+        XCTAssertTrue(thisNearlyMidnight.isOnTheSameDayAs(thisEvening))
+        XCTAssertTrue(thisNearlyMidnight.isOnTheSameDayAs(thisNearlyMidnight))
+
+        XCTAssertTrue(tomorrowMorning.isOnTheSameDayAs(tomorrowMorning))
+        XCTAssertTrue(tomorrowMorning.isOnTheSameDayAs(tomorrowNoon))
+        XCTAssertTrue(tomorrowMorning.isOnTheSameDayAs(tomorrowAfteroon))
+        XCTAssertTrue(tomorrowMorning.isOnTheSameDayAs(tomorrowEvening))
+        XCTAssertTrue(tomorrowMorning.isOnTheSameDayAs(tomorrowNearlyMidnight))
+
+        XCTAssertTrue(tomorrowNoon.isOnTheSameDayAs(tomorrowMorning))
+        XCTAssertTrue(tomorrowNoon.isOnTheSameDayAs(tomorrowNoon))
+        XCTAssertTrue(tomorrowNoon.isOnTheSameDayAs(tomorrowAfteroon))
+        XCTAssertTrue(tomorrowNoon.isOnTheSameDayAs(tomorrowEvening))
+        XCTAssertTrue(tomorrowNoon.isOnTheSameDayAs(tomorrowNearlyMidnight))
+
+        XCTAssertTrue(tomorrowAfteroon.isOnTheSameDayAs(tomorrowMorning))
+        XCTAssertTrue(tomorrowAfteroon.isOnTheSameDayAs(tomorrowNoon))
+        XCTAssertTrue(tomorrowAfteroon.isOnTheSameDayAs(tomorrowAfteroon))
+        XCTAssertTrue(tomorrowAfteroon.isOnTheSameDayAs(tomorrowEvening))
+        XCTAssertTrue(tomorrowAfteroon.isOnTheSameDayAs(tomorrowNearlyMidnight))
+
+        XCTAssertTrue(tomorrowEvening.isOnTheSameDayAs(tomorrowMorning))
+        XCTAssertTrue(tomorrowEvening.isOnTheSameDayAs(tomorrowNoon))
+        XCTAssertTrue(tomorrowEvening.isOnTheSameDayAs(tomorrowAfteroon))
+        XCTAssertTrue(tomorrowEvening.isOnTheSameDayAs(tomorrowEvening))
+        XCTAssertTrue(tomorrowEvening.isOnTheSameDayAs(tomorrowNearlyMidnight))
+
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnTheSameDayAs(tomorrowMorning))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnTheSameDayAs(tomorrowNoon))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnTheSameDayAs(tomorrowAfteroon))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnTheSameDayAs(tomorrowEvening))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnTheSameDayAs(tomorrowNearlyMidnight))
+
+        XCTAssertTrue(yesterdayMorning.isOnADayBefore(thisMorning))
+        XCTAssertTrue(yesterdayMorning.isOnADayBefore(thisAfteroon))
+        XCTAssertTrue(yesterdayMorning.isOnADayBefore(thisEvening))
+        XCTAssertTrue(yesterdayMorning.isOnADayBefore(thisNearlyMidnight))
+        XCTAssertTrue(yesterdayMorning.isOnADayBefore(tomorrowMorning))
+        XCTAssertTrue(yesterdayMorning.isOnADayBefore(tomorrowAfteroon))
+        XCTAssertTrue(yesterdayMorning.isOnADayBefore(tomorrowEvening))
+        XCTAssertTrue(yesterdayMorning.isOnADayBefore(tomorrowNearlyMidnight))
+
+        XCTAssertTrue(yesterdayNoon.isOnADayBefore(thisMorning))
+        XCTAssertTrue(yesterdayNoon.isOnADayBefore(thisAfteroon))
+        XCTAssertTrue(yesterdayNoon.isOnADayBefore(thisEvening))
+        XCTAssertTrue(yesterdayNoon.isOnADayBefore(thisNearlyMidnight))
+        XCTAssertTrue(yesterdayNoon.isOnADayBefore(tomorrowMorning))
+        XCTAssertTrue(yesterdayNoon.isOnADayBefore(tomorrowAfteroon))
+        XCTAssertTrue(yesterdayNoon.isOnADayBefore(tomorrowEvening))
+        XCTAssertTrue(yesterdayNoon.isOnADayBefore(tomorrowNearlyMidnight))
+
+        XCTAssertTrue(yesterdayAfteroon.isOnADayBefore(thisMorning))
+        XCTAssertTrue(yesterdayAfteroon.isOnADayBefore(thisAfteroon))
+        XCTAssertTrue(yesterdayAfteroon.isOnADayBefore(thisEvening))
+        XCTAssertTrue(yesterdayAfteroon.isOnADayBefore(thisNearlyMidnight))
+        XCTAssertTrue(yesterdayAfteroon.isOnADayBefore(tomorrowMorning))
+        XCTAssertTrue(yesterdayAfteroon.isOnADayBefore(tomorrowAfteroon))
+        XCTAssertTrue(yesterdayAfteroon.isOnADayBefore(tomorrowEvening))
+        XCTAssertTrue(yesterdayAfteroon.isOnADayBefore(tomorrowNearlyMidnight))
+
+        XCTAssertTrue(yesterdayEvening.isOnADayBefore(thisMorning))
+        XCTAssertTrue(yesterdayEvening.isOnADayBefore(thisAfteroon))
+        XCTAssertTrue(yesterdayEvening.isOnADayBefore(thisEvening))
+        XCTAssertTrue(yesterdayEvening.isOnADayBefore(thisNearlyMidnight))
+        XCTAssertTrue(yesterdayEvening.isOnADayBefore(tomorrowMorning))
+        XCTAssertTrue(yesterdayEvening.isOnADayBefore(tomorrowAfteroon))
+        XCTAssertTrue(yesterdayEvening.isOnADayBefore(tomorrowEvening))
+        XCTAssertTrue(yesterdayEvening.isOnADayBefore(tomorrowNearlyMidnight))
+
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnADayBefore(thisMorning))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnADayBefore(thisAfteroon))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnADayBefore(thisEvening))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnADayBefore(thisNearlyMidnight))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnADayBefore(tomorrowMorning))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnADayBefore(tomorrowAfteroon))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnADayBefore(tomorrowEvening))
+        XCTAssertTrue(yesterdayNearlyMidnight.isOnADayBefore(tomorrowNearlyMidnight))
+
+        XCTAssertTrue(tomorrowMorning.isOnADayAfter(thisMorning))
+        XCTAssertTrue(tomorrowMorning.isOnADayAfter(thisAfteroon))
+        XCTAssertTrue(tomorrowMorning.isOnADayAfter(thisEvening))
+        XCTAssertTrue(tomorrowMorning.isOnADayAfter(thisNearlyMidnight))
+        XCTAssertTrue(tomorrowMorning.isOnADayAfter(yesterdayMorning))
+        XCTAssertTrue(tomorrowMorning.isOnADayAfter(yesterdayAfteroon))
+        XCTAssertTrue(tomorrowMorning.isOnADayAfter(yesterdayEvening))
+        XCTAssertTrue(tomorrowMorning.isOnADayAfter(yesterdayNearlyMidnight))
+
+        XCTAssertTrue(tomorrowNoon.isOnADayAfter(thisMorning))
+        XCTAssertTrue(tomorrowNoon.isOnADayAfter(thisAfteroon))
+        XCTAssertTrue(tomorrowNoon.isOnADayAfter(thisEvening))
+        XCTAssertTrue(tomorrowNoon.isOnADayAfter(thisNearlyMidnight))
+        XCTAssertTrue(tomorrowNoon.isOnADayAfter(yesterdayMorning))
+        XCTAssertTrue(tomorrowNoon.isOnADayAfter(yesterdayAfteroon))
+        XCTAssertTrue(tomorrowNoon.isOnADayAfter(yesterdayEvening))
+        XCTAssertTrue(tomorrowNoon.isOnADayAfter(yesterdayNearlyMidnight))
+
+        XCTAssertTrue(tomorrowAfteroon.isOnADayAfter(thisMorning))
+        XCTAssertTrue(tomorrowAfteroon.isOnADayAfter(thisAfteroon))
+        XCTAssertTrue(tomorrowAfteroon.isOnADayAfter(thisEvening))
+        XCTAssertTrue(tomorrowAfteroon.isOnADayAfter(thisNearlyMidnight))
+        XCTAssertTrue(tomorrowAfteroon.isOnADayAfter(yesterdayMorning))
+        XCTAssertTrue(tomorrowAfteroon.isOnADayAfter(yesterdayAfteroon))
+        XCTAssertTrue(tomorrowAfteroon.isOnADayAfter(yesterdayEvening))
+        XCTAssertTrue(tomorrowAfteroon.isOnADayAfter(yesterdayNearlyMidnight))
+
+        XCTAssertTrue(tomorrowEvening.isOnADayAfter(thisMorning))
+        XCTAssertTrue(tomorrowEvening.isOnADayAfter(thisAfteroon))
+        XCTAssertTrue(tomorrowEvening.isOnADayAfter(thisEvening))
+        XCTAssertTrue(tomorrowEvening.isOnADayAfter(thisNearlyMidnight))
+        XCTAssertTrue(tomorrowEvening.isOnADayAfter(yesterdayMorning))
+        XCTAssertTrue(tomorrowEvening.isOnADayAfter(yesterdayAfteroon))
+        XCTAssertTrue(tomorrowEvening.isOnADayAfter(yesterdayEvening))
+        XCTAssertTrue(tomorrowEvening.isOnADayAfter(yesterdayNearlyMidnight))
+
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnADayAfter(thisMorning))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnADayAfter(thisAfteroon))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnADayAfter(thisEvening))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnADayAfter(thisNearlyMidnight))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnADayAfter(yesterdayMorning))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnADayAfter(yesterdayAfteroon))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnADayAfter(yesterdayEvening))
+        XCTAssertTrue(tomorrowNearlyMidnight.isOnADayAfter(yesterdayNearlyMidnight))
     }
     
     /* ################################################################## */

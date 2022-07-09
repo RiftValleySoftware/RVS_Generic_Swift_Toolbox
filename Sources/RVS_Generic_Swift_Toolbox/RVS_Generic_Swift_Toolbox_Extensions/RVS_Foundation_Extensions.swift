@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.9.1
+Version: 1.10.0
 */
 
 import Foundation   // Required for the NS, CG, and Date stuff.
@@ -43,6 +43,93 @@ public extension CGFloat {
      - returns: a float (in Radians), as degrees
      */
     var degrees: CGFloat { Double(self).degrees }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - CGSize Extension -
+/* ###################################################################################################################################### */
+/**
+ Adds calculations to the CGSize struct.
+ */
+extension CGSize {
+    /* ################################################################## */
+    /**
+     Returns the diagonal size of a rectangular size.
+     */
+    var diagonal: CGFloat { sqrt((width * width) + (height * height)) }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - CGPoint Extension -
+/* ###################################################################################################################################### */
+extension CGPoint {
+    /* ################################################################## */
+    /**
+     Rotate this point around a given point, by an angle given in degrees.
+     
+     - parameter around: Another point, that is the "fulcrum" of the rotation.
+     - parameter byDegrees: The rotation angle, in degrees. 0 is no change. - is counter-clockwise, + is clockwise.
+     - returns: The transformed point.
+     */
+    func rotated(around inCenter: CGPoint, byDegrees inDegrees: CGFloat) -> CGPoint { rotated(around: inCenter, byRadians: (inDegrees * .pi) / 180) }
+    
+    /* ################################################################## */
+    /**
+     This was inspired by [this SO answer](https://stackoverflow.com/a/35683523/879365).
+     Rotate this point around a given point, by an angle given in radians.
+     
+     - parameter around: Another point, that is the "fulcrum" of the rotation.
+     - parameter byRadians: The rotation angle, in radians. 0 is no change. - is counter-clockwise, + is clockwise.
+     - returns: The transformed point.
+     */
+    func rotated(around inCenter: CGPoint, byRadians inRadians: CGFloat) -> CGPoint {
+        let dx = x - inCenter.x
+        let dy = y - inCenter.y
+        let radius = sqrt(dx * dx + dy * dy)
+        let azimuth = atan2(dy, dx)
+        let newAzimuth = azimuth + inRadians
+        let x = inCenter.x + radius * cos(newAzimuth)
+        let y = inCenter.y + radius * sin(newAzimuth)
+        return CGPoint(x: x, y: y)
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - Date Extension, To Compare With a 24-Hour "Granularity." -
+/* ###################################################################################################################################### */
+public extension Date {
+    /* ################################################################## */
+    /**
+     Compares another date to this one, with a day (24 hours) granularity.
+     
+     - parameter inDay: The date against which we are comparing ourselves.
+     - parameter calendar: An optional (default is the current calendar) calendar instance, to use for the calculation.
+     
+     - returns: True, if this date is on a day prior to the one provided.
+     */
+    func isOnADayBefore(_ inDay: Date, calendar inCalendar: Calendar? = nil) -> Bool { .orderedAscending == (inCalendar ?? Calendar.current).compare(self, to: inDay, toGranularity: .day) }
+    
+    /* ################################################################## */
+    /**
+     Compares another date to this one, with a day (24 hours) granularity.
+     
+     - parameter inDay: The date against which we are comparing ourselves.
+     - parameter calendar: An optional (default is the current calendar) calendar instance, to use for the calculation.
+     
+     - returns: True, if this date is on a day after the one provided.
+     */
+    func isOnADayAfter(_ inDay: Date, calendar inCalendar: Calendar? = nil) -> Bool { .orderedDescending == (inCalendar ?? Calendar.current).compare(self, to: inDay, toGranularity: .day) }
+    
+    /* ################################################################## */
+    /**
+     Compares another date to this one, with a day (24 hours) granularity.
+     
+     - parameter inDay: The date against which we are comparing ourselves.
+     - parameter calendar: An optional (default is the current calendar) calendar instance, to use for the calculation.
+     
+     - returns: True, if this date is the same day as the one provided.
+     */
+    func isOnTheSameDayAs(_ inDay: Date, calendar inCalendar: Calendar? = nil) -> Bool { .orderedSame == (inCalendar ?? Calendar.current).compare(self, to: inDay, toGranularity: .day) }
 }
 
 /* ###################################################################################################################################### */

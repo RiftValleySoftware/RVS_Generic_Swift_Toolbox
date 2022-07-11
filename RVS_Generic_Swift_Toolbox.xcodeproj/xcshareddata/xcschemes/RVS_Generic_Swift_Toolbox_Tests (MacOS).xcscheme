@@ -17,9 +17,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4E19E25282D729D00C0D755"
-               BuildableName = "RVS_Generic_Swift_Toolbox_Tests_Name.xctest"
-               BlueprintName = "RVS_Generic_Swift_Toolbox_Tests (TVOS)"
+               BlueprintIdentifier = "D4D03C1723DDDE9D005B54B5"
+               BuildableName = "RVS_Generic_Swift_Toolbox_Tests (MacOS).xctest"
+               BlueprintName = "RVS_Generic_Swift_Toolbox_Tests (MacOS)"
                ReferencedContainer = "container:RVS_Generic_Swift_Toolbox.xcodeproj">
             </BuildableReference>
          </TestableReference>

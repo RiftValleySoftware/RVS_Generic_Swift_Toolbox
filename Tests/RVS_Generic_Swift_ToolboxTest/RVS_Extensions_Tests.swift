@@ -566,6 +566,8 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
             compInterval -= oneDay
             XCTAssertEqual(date, compDate)
         }
+        
+        XCTAssertEqual(startDate.distance(to: endDate), oneDay * 365)
     }
 
     /* ################################################################## */

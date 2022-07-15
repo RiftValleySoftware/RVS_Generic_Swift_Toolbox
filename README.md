@@ -81,11 +81,13 @@ You could also directly include the project as a Git Submodule. Submodules can b
 If you do this, then you should do the same as above, but instead of a Carthage directory, you will have whatever directory you choose to use to place the submodule.
 
 ## Requirements
--
+
 These utilities require [the Swift programming language](https://developer.apple.com/swift/), along with [the Foundation Library](https://developer.apple.com/documentation/foundation) it also uses [the Core Foundation Library)](https://developer.apple.com/documentation/corefoundation).
 
+> **_NOTE:_**  Because of the intricacies of accessing [the main bundle](https://developer.apple.com/documentation/foundation/bundle/1410786-main), in [`XCTest`](https://developer.apple.com/documentation/xctest), the [`localizedVariant`](https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/Extensions/StringProtocol.html#/s:Sy25RVS_Generic_Swift_ToolboxE16localizedVariantSSvp) and [`accessibilityLocalizedVariant`](https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/Extensions/StringProtocol.html#/s:Sy25RVS_Generic_Swift_ToolboxE29accessibilityLocalizedVariantSSvp) computed properties are not covered in the auto-test. This is OK, as they are used by every project I write, so they receive a _lot_ of testing.
+
 ## License
--
+
 © Copyright 2019-2022, [The Great Rift Valley Software Company](https://riftvalleysoftware.com)
 
 [MIT License](https://opensource.org/licenses/MIT)

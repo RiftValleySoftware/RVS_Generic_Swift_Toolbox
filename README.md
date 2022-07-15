@@ -82,7 +82,7 @@ If you do this, then you should do the same as above, but instead of a Carthage 
 
 ## Requirements
 
-These utilities require [the Swift programming language](https://developer.apple.com/swift/), along with [the Foundation Library](https://developer.apple.com/documentation/foundation) it also uses [the Core Foundation Library)](https://developer.apple.com/documentation/corefoundation).
+These utilities require [the Swift programming language](https://developer.apple.com/swift/), along with [the Foundation Library](https://developer.apple.com/documentation/foundation) (it also uses [the Core Foundation Library](https://developer.apple.com/documentation/corefoundation), which, for some reason, is treated separately, in iOS).
 
 > **_NOTE:_**  Because of the intricacies of accessing [the main bundle](https://developer.apple.com/documentation/foundation/bundle/1410786-main), in [`XCTest`](https://developer.apple.com/documentation/xctest), the [`localizedVariant`](https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/Extensions/StringProtocol.html#/s:Sy25RVS_Generic_Swift_ToolboxE16localizedVariantSSvp) and [`accessibilityLocalizedVariant`](https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/Extensions/StringProtocol.html#/s:Sy25RVS_Generic_Swift_ToolboxE29accessibilityLocalizedVariantSSvp) computed properties are not covered in the auto-test. This is OK, as they are used by every project I write, so they receive a _lot_ of testing.
 

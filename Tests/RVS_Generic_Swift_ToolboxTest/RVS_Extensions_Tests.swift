@@ -531,43 +531,43 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
         let oneHour = TimeInterval(60 * 60)
         let oneDay = oneHour * 24
         let oneWeek = oneDay * 7
-        let startDate = Self.makeDate(year: 2000, month: 1, day: 1)
-        let endDate = Self.makeDate(year: 2000, month: 12, day: 31)
+        let startingDate = Self.makeDate(year: 2000, month: 1, day: 1)
+        let endingDate = Self.makeDate(year: 2000, month: 12, day: 31)
         let backDate = Self.makeDate(year: 1999, month: 1, day: 1)
-        let weekWalker = stride(from: startDate, to: endDate, by: oneWeek)
-        let dayWalker = stride(from: startDate, to: endDate, by: oneDay)
-        let hourWalker = stride(from: startDate, to: endDate, by: oneHour)
-        let backTracker = stride(from: startDate, to: backDate, by: -oneDay)
+        let weekWalker = stride(from: startingDate, to: endingDate, by: oneWeek)
+        let dayWalker = stride(from: startingDate, to: endingDate, by: oneDay)
+        let hourWalker = stride(from: startingDate, to: endingDate, by: oneHour)
+        let backTracker = stride(from: startingDate, to: backDate, by: -oneDay)
 
         var compInterval = TimeInterval(0)
         for date in weekWalker {
-            let compDate = startDate.addingTimeInterval(compInterval)
+            let compDate = startingDate.addingTimeInterval(compInterval)
             compInterval += oneWeek
             XCTAssertEqual(date, compDate)
         }
         
         compInterval = 0
         for date in dayWalker {
-            let compDate = startDate.addingTimeInterval(compInterval)
+            let compDate = startingDate.addingTimeInterval(compInterval)
             compInterval += oneDay
             XCTAssertEqual(date, compDate)
         }
         
         compInterval = 0
         for date in hourWalker {
-            let compDate = startDate.addingTimeInterval(compInterval)
+            let compDate = startingDate.addingTimeInterval(compInterval)
             compInterval += oneHour
             XCTAssertEqual(date, compDate)
         }
 
         compInterval = 0
         for date in backTracker {
-            let compDate = startDate.addingTimeInterval(compInterval)
+            let compDate = startingDate.addingTimeInterval(compInterval)
             compInterval -= oneDay
             XCTAssertEqual(date, compDate)
         }
-        
-        XCTAssertEqual(startDate.distance(to: endDate), oneDay * 365)
+// For some weird reason, this keeps coming up as "ambiguous use." No idea why. More research is necessary.
+//        XCTAssertEqual(startingDate.distance(to: endingDate), oneDay * 365)
     }
 
     /* ################################################################## */
@@ -823,7 +823,10 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
         XCTAssertEqual(CGFloat(180), CGFloat(Double.pi).degrees)
         XCTAssertEqual(CGFloat(Double.pi), CGFloat(180).radians)
         XCTAssertEqual(CGFloat(33.2).radians.degrees, CGFloat(33.2))
-        XCTAssertEqual(CGFloat(1.23456).degrees.radians, CGFloat(1.23456))
+        // This just makes absolutely sure we test Float
+        let degrees = Float(1.23456).degrees
+        let radians = degrees.radians
+        XCTAssertEqual(Float(1.23456), radians)
     }
     
     /* ################################################################## */

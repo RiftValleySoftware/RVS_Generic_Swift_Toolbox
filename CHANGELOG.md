@@ -1,3 +1,6 @@
+*Version 1.10.2* **September 16, 2022**
+- Updated to latest tools. No API changes.
+
 *Version 1.10.1* **July 9, 2022**
 - Added some more Date and CG extensions.
 

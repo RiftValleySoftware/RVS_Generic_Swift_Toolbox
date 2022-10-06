@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.10.2
+Version: 1.11.0
 */
 
 import Foundation   // Required for the NS, CG, and Date stuff.
@@ -190,6 +190,14 @@ public extension StringProtocol {
      - returns: the localized string (main bundle) for this string, from an `Accessibility.strings` file.
      */
     var accessibilityLocalizedVariant: String { NSLocalizedString(String(self), tableName: "Accessibility", comment: "")  }
+
+    /* ################################################################## */
+    /**
+     NOTE: Because of issues with bundles and resources, and whatnot, this will not be tested with the unit tests.
+
+     - returns: the localized string (main bundle) for this string, from an `Errors.strings` file.
+     */
+    var errorsLocalizedVariant: String { NSLocalizedString(String(self), tableName: "Errors", comment: "")  }
 
     /* ################################################################## */
     /**

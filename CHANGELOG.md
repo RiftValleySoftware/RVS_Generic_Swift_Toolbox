@@ -1,3 +1,7 @@
+*Version 1.11.0* **October 6, 2022**
+- Added the `errorsLocalizedVariant` StringProtocol extension computed property. No other API changes.
+- Changed the testing to "Any Platform," and removed the various platform-specific variants.
+
 *Version 1.10.2* **September 16, 2022**
 - Updated to latest tools. No API changes.
 

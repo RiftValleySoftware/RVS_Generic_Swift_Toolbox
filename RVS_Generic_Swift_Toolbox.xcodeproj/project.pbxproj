@@ -8,69 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		D42A9D12282D7E9900DE798F /* RVS_Generic_Swift_Toolbox_MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A9D09282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_MacOS.a */; };
-		D42A9D13282D7EA200DE798F /* RVS_Generic_Swift_Toolbox_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A9D0B282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_iOS.a */; };
-		D42A9D14282D7EA700DE798F /* RVS_Generic_Swift_Toolbox_WatchOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A9D0D282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_WatchOS.a */; };
-		D42A9D18282D7F0400DE798F /* RVS_Generic_Swift_Toolbox_TVOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A9D0F282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_TVOS.a */; };
 		D451C746282BD73C000F8A2D /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
 		D451C747282BD73C000F8A2D /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
 		D451C748282BD73C000F8A2D /* RVS_Number_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */; };
 		D451C749282BD73C000F8A2D /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
 		D451C74A282BD73C000F8A2D /* RVS_Bundle_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */; };
 		D451C74B282BD73C000F8A2D /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
-		D465C641282D5CC6007F9904 /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
-		D465C642282D5CC6007F9904 /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
-		D465C643282D5CC6007F9904 /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
-		D465C644282D5CC6007F9904 /* RVS_Bundle_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */; };
-		D465C645282D5CC6007F9904 /* RVS_Foundation_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */; };
-		D465C646282D5CC6007F9904 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
-		D465C647282D5CC6007F9904 /* RVS_Number_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */; };
-		D465C64C282D5DAE007F9904 /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
-		D465C64D282D5DAE007F9904 /* RVS_Extensions_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */; };
-		D46FC3B0282D60970018FF9F /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
-		D46FC3B1282D60970018FF9F /* RVS_Number_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */; };
-		D46FC3B2282D60970018FF9F /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
-		D46FC3B3282D60970018FF9F /* RVS_Bundle_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */; };
-		D46FC3B4282D60970018FF9F /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
-		D46FC3B5282D60970018FF9F /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
-		D46FC3B6282D60970018FF9F /* RVS_Foundation_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */; };
-		D46FC3C1282D60C60018FF9F /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
-		D46FC3C2282D60C60018FF9F /* RVS_Extensions_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */; };
 		D4CE2A7823DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */; };
 		D4D03C1B23DDDE9D005B54B5 /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
-		D4E19E1B282D722C00C0D755 /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
-		D4E19E1C282D722C00C0D755 /* RVS_Foundation_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */; };
-		D4E19E1D282D722C00C0D755 /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
-		D4E19E1E282D722C00C0D755 /* RVS_Number_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */; };
-		D4E19E1F282D722C00C0D755 /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */; };
-		D4E19E20282D722C00C0D755 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */; };
-		D4E19E21282D722C00C0D755 /* RVS_Bundle_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */; };
-		D4E19E30282D737900C0D755 /* RVS_Extensions_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */; };
-		D4E19E31282D737900C0D755 /* RVS_Collection_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */; };
 		D4FCFD2A282BEE9500EDD66C /* RVS_Foundation_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D42A9D16282D7EFE00DE798F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D4D411A023DDC5AD00D607F7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D4E19E13282D71BB00C0D755;
-			remoteInfo = "RVS_Generic_Swift_Toolbox (TVOS)";
-		};
-		D45CA6BE282D5F190002E5B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D4D411A023DDC5AD00D607F7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D465C638282D5C62007F9904;
-			remoteInfo = "RVS_Generic_Swift_Toolbox (iOS)";
-		};
-		D46FC3CC282D614C0018FF9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D4D411A023DDC5AD00D607F7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D46FC3AE282D60970018FF9F;
-			remoteInfo = "RVS_Generic_Swift_Toolbox (WatchOS)";
-		};
 		D4E19E5E282D7E2F00C0D755 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D4D411A023DDC5AD00D607F7 /* Project object */;
@@ -88,13 +37,7 @@
 		D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Number_Extensions.swift; sourceTree = "<group>"; };
 		D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_String_Extensions.swift; sourceTree = "<group>"; };
 		D42A9D09282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_MacOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D42A9D0A282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (MacOS).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RVS_Generic_Swift_Toolbox_Tests (MacOS).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D42A9D0B282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D42A9D0C282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (iOS).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RVS_Generic_Swift_Toolbox_Tests (iOS).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D42A9D0D282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_WatchOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_WatchOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D42A9D0E282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (WatchOS).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RVS_Generic_Swift_Toolbox_Tests (WatchOS).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D42A9D0F282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_TVOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_TVOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D42A9D10282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests_Name.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_Tests_Name.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42A9D0A282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Bundle_Extensions.swift; sourceTree = "<group>"; };
 		D45CA6BC282D5DFD0002E5B4 /* Info-MacOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-MacOS.plist"; sourceTree = "<group>"; };
 		D45CA6BD282D5E250002E5B4 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -111,30 +54,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D42A9D12282D7E9900DE798F /* RVS_Generic_Swift_Toolbox_MacOS.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D4E19E42282D77C600C0D755 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D42A9D13282D7EA200DE798F /* RVS_Generic_Swift_Toolbox_iOS.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D4E19E47282D790C00C0D755 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D42A9D14282D7EA700DE798F /* RVS_Generic_Swift_Toolbox_WatchOS.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D4E19E49282D795400C0D755 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D42A9D18282D7F0400DE798F /* RVS_Generic_Swift_Toolbox_TVOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,22 +142,16 @@
 				D49CCCAE24D47A2B00047CAD /* Sources */,
 				D4D03C1923DDDE9D005B54B5 /* Tests */,
 				D42A9D09282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_MacOS.a */,
-				D42A9D0A282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (MacOS).xctest */,
-				D42A9D0B282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_iOS.a */,
-				D42A9D0C282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (iOS).xctest */,
-				D42A9D0D282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_WatchOS.a */,
-				D42A9D0E282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (WatchOS).xctest */,
-				D42A9D0F282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_TVOS.a */,
-				D42A9D10282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests_Name.xctest */,
+				D42A9D0A282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D451C73C282BD713000F8A2D /* RVS_Generic_Swift_Toolbox (MacOS) */ = {
+		D451C73C282BD713000F8A2D /* RVS_Generic_Swift_Toolbox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D451C743282BD713000F8A2D /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox (MacOS)" */;
+			buildConfigurationList = D451C743282BD713000F8A2D /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox" */;
 			buildPhases = (
 				D4E19E3B282D75DF00C0D755 /* SwiftLint */,
 				D451C73A282BD713000F8A2D /* Sources */,
@@ -247,80 +160,14 @@
 			);
 			dependencies = (
 			);
-			name = "RVS_Generic_Swift_Toolbox (MacOS)";
+			name = RVS_Generic_Swift_Toolbox;
 			productName = RVS_Generic_swift_Toolbox;
 			productReference = D42A9D09282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_MacOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		D465C638282D5C62007F9904 /* RVS_Generic_Swift_Toolbox (iOS) */ = {
+		D4D03C1723DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D465C63D282D5C62007F9904 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox (iOS)" */;
-			buildPhases = (
-				D4E19E3C282D75F300C0D755 /* SwiftLint */,
-				D465C635282D5C62007F9904 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "RVS_Generic_Swift_Toolbox (iOS)";
-			productName = "RVS_Generic_Swift_Toolbox (iOS)";
-			productReference = D42A9D0B282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_iOS.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		D465C648282D5DAE007F9904 /* RVS_Generic_Swift_Toolbox_Tests (iOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D465C64F282D5DAE007F9904 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests (iOS)" */;
-			buildPhases = (
-				D465C64B282D5DAE007F9904 /* Sources */,
-				D4E19E42282D77C600C0D755 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D45CA6BF282D5F190002E5B4 /* PBXTargetDependency */,
-			);
-			name = "RVS_Generic_Swift_Toolbox_Tests (iOS)";
-			productName = RVS_Generic_Swift_Toolbox_Tests;
-			productReference = D42A9D0C282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (iOS).xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D46FC3AE282D60970018FF9F /* RVS_Generic_Swift_Toolbox (WatchOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D46FC3B9282D60970018FF9F /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox (WatchOS)" */;
-			buildPhases = (
-				D4E19E3D282D760400C0D755 /* SwiftLint */,
-				D46FC3AF282D60970018FF9F /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "RVS_Generic_Swift_Toolbox (WatchOS)";
-			productName = "RVS_Generic_Swift_Toolbox (iOS)";
-			productReference = D42A9D0D282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_WatchOS.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		D46FC3BD282D60C60018FF9F /* RVS_Generic_Swift_Toolbox_Tests (WatchOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D46FC3C5282D60C60018FF9F /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests (WatchOS)" */;
-			buildPhases = (
-				D46FC3C0282D60C60018FF9F /* Sources */,
-				D4E19E47282D790C00C0D755 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D46FC3CD282D614C0018FF9F /* PBXTargetDependency */,
-			);
-			name = "RVS_Generic_Swift_Toolbox_Tests (WatchOS)";
-			productName = RVS_Generic_Swift_Toolbox_Tests;
-			productReference = D42A9D0E282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (WatchOS).xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D4D03C1723DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests (MacOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D4D03C1D23DDDE9D005B54B5 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests (MacOS)" */;
+			buildConfigurationList = D4D03C1D23DDDE9D005B54B5 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests" */;
 			buildPhases = (
 				D4D03C1423DDDE9D005B54B5 /* Sources */,
 				D4E19E3F282D777F00C0D755 /* Frameworks */,
@@ -330,42 +177,9 @@
 			dependencies = (
 				D4E19E5F282D7E2F00C0D755 /* PBXTargetDependency */,
 			);
-			name = "RVS_Generic_Swift_Toolbox_Tests (MacOS)";
+			name = RVS_Generic_Swift_Toolbox_Tests;
 			productName = RVS_Generic_Swift_Toolbox_Tests;
-			productReference = D42A9D0A282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests (MacOS).xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D4E19E13282D71BB00C0D755 /* RVS_Generic_Swift_Toolbox (TVOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D4E19E18282D71BB00C0D755 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox (TVOS)" */;
-			buildPhases = (
-				D4E19E3E282D761800C0D755 /* SwiftLint */,
-				D4E19E10282D71BB00C0D755 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "RVS_Generic_Swift_Toolbox (TVOS)";
-			productName = "RVS_Generic_Swift_Toolbox (TVOS)";
-			productReference = D42A9D0F282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_TVOS.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		D4E19E25282D729D00C0D755 /* RVS_Generic_Swift_Toolbox_Tests (TVOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D4E19E2C282D729D00C0D755 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests (TVOS)" */;
-			buildPhases = (
-				D4E19E22282D729D00C0D755 /* Sources */,
-				D4E19E49282D795400C0D755 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D42A9D17282D7EFE00DE798F /* PBXTargetDependency */,
-			);
-			name = "RVS_Generic_Swift_Toolbox_Tests (TVOS)";
-			productName = "RVS_GenericSwift_Toolbox_Tests (TVOS)";
-			productReference = D42A9D10282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests_Name.xctest */;
+			productReference = D42A9D0A282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -381,17 +195,8 @@
 					D451C73C282BD713000F8A2D = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
-					D465C638282D5C62007F9904 = {
-						CreatedOnToolsVersion = 13.3.1;
-					};
 					D4D03C1723DDDE9D005B54B5 = {
 						CreatedOnToolsVersion = 11.3.1;
-					};
-					D4E19E13282D71BB00C0D755 = {
-						CreatedOnToolsVersion = 13.3.1;
-					};
-					D4E19E25282D729D00C0D755 = {
-						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
 			};
@@ -410,77 +215,14 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D451C73C282BD713000F8A2D /* RVS_Generic_Swift_Toolbox (MacOS) */,
-				D4D03C1723DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests (MacOS) */,
-				D465C638282D5C62007F9904 /* RVS_Generic_Swift_Toolbox (iOS) */,
-				D465C648282D5DAE007F9904 /* RVS_Generic_Swift_Toolbox_Tests (iOS) */,
-				D46FC3AE282D60970018FF9F /* RVS_Generic_Swift_Toolbox (WatchOS) */,
-				D46FC3BD282D60C60018FF9F /* RVS_Generic_Swift_Toolbox_Tests (WatchOS) */,
-				D4E19E13282D71BB00C0D755 /* RVS_Generic_Swift_Toolbox (TVOS) */,
-				D4E19E25282D729D00C0D755 /* RVS_Generic_Swift_Toolbox_Tests (TVOS) */,
+				D451C73C282BD713000F8A2D /* RVS_Generic_Swift_Toolbox */,
+				D4D03C1723DDDE9D005B54B5 /* RVS_Generic_Swift_Toolbox_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		D4E19E3B282D75DF00C0D755 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
-		};
-		D4E19E3C282D75F300C0D755 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
-		};
-		D4E19E3D282D760400C0D755 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
-		};
-		D4E19E3E282D761800C0D755 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -516,52 +258,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D465C635282D5C62007F9904 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D465C646282D5CC6007F9904 /* RVS_String_Extensions.swift in Sources */,
-				D465C647282D5CC6007F9904 /* RVS_Number_Extensions.swift in Sources */,
-				D465C643282D5CC6007F9904 /* RVS_FIFOQueue.swift in Sources */,
-				D465C644282D5CC6007F9904 /* RVS_Bundle_Extensions.swift in Sources */,
-				D465C641282D5CC6007F9904 /* RVS_SequenceProtocol.swift in Sources */,
-				D465C642282D5CC6007F9904 /* RVS_DebugTools.swift in Sources */,
-				D465C645282D5CC6007F9904 /* RVS_Foundation_Extensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D465C64B282D5DAE007F9904 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D465C64C282D5DAE007F9904 /* RVS_Collection_Tests.swift in Sources */,
-				D465C64D282D5DAE007F9904 /* RVS_Extensions_Tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D46FC3AF282D60970018FF9F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D46FC3B0282D60970018FF9F /* RVS_String_Extensions.swift in Sources */,
-				D46FC3B1282D60970018FF9F /* RVS_Number_Extensions.swift in Sources */,
-				D46FC3B2282D60970018FF9F /* RVS_FIFOQueue.swift in Sources */,
-				D46FC3B3282D60970018FF9F /* RVS_Bundle_Extensions.swift in Sources */,
-				D46FC3B4282D60970018FF9F /* RVS_SequenceProtocol.swift in Sources */,
-				D46FC3B5282D60970018FF9F /* RVS_DebugTools.swift in Sources */,
-				D46FC3B6282D60970018FF9F /* RVS_Foundation_Extensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D46FC3C0282D60C60018FF9F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D46FC3C1282D60C60018FF9F /* RVS_Collection_Tests.swift in Sources */,
-				D46FC3C2282D60C60018FF9F /* RVS_Extensions_Tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D4D03C1423DDDE9D005B54B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -571,50 +267,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4E19E10282D71BB00C0D755 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D4E19E20282D722C00C0D755 /* RVS_String_Extensions.swift in Sources */,
-				D4E19E21282D722C00C0D755 /* RVS_Bundle_Extensions.swift in Sources */,
-				D4E19E1B282D722C00C0D755 /* RVS_FIFOQueue.swift in Sources */,
-				D4E19E1C282D722C00C0D755 /* RVS_Foundation_Extensions.swift in Sources */,
-				D4E19E1F282D722C00C0D755 /* RVS_SequenceProtocol.swift in Sources */,
-				D4E19E1D282D722C00C0D755 /* RVS_DebugTools.swift in Sources */,
-				D4E19E1E282D722C00C0D755 /* RVS_Number_Extensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D4E19E22282D729D00C0D755 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D4E19E30282D737900C0D755 /* RVS_Extensions_Tests.swift in Sources */,
-				D4E19E31282D737900C0D755 /* RVS_Collection_Tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D42A9D17282D7EFE00DE798F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D4E19E13282D71BB00C0D755 /* RVS_Generic_Swift_Toolbox (TVOS) */;
-			targetProxy = D42A9D16282D7EFE00DE798F /* PBXContainerItemProxy */;
-		};
-		D45CA6BF282D5F190002E5B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D465C638282D5C62007F9904 /* RVS_Generic_Swift_Toolbox (iOS) */;
-			targetProxy = D45CA6BE282D5F190002E5B4 /* PBXContainerItemProxy */;
-		};
-		D46FC3CD282D614C0018FF9F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D46FC3AE282D60970018FF9F /* RVS_Generic_Swift_Toolbox (WatchOS) */;
-			targetProxy = D46FC3CC282D614C0018FF9F /* PBXContainerItemProxy */;
-		};
 		D4E19E5F282D7E2F00C0D755 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D451C73C282BD713000F8A2D /* RVS_Generic_Swift_Toolbox (MacOS) */;
+			target = D451C73C282BD713000F8A2D /* RVS_Generic_Swift_Toolbox */;
 			targetProxy = D4E19E5E282D7E2F00C0D755 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -623,6 +281,7 @@
 		D451C744282BD713000F8A2D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
@@ -634,6 +293,8 @@
 				PRODUCT_NAME = RVS_Generic_Swift_Toolbox_MacOS;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
@@ -642,6 +303,7 @@
 		D451C745282BD713000F8A2D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
@@ -653,198 +315,8 @@
 				PRODUCT_NAME = RVS_Generic_Swift_Toolbox_MacOS;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Release;
-		};
-		D465C63E282D5C62007F9904 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				EXECUTABLE_PREFIX = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_MODULE_NAME = RVS_Generic_Swift_Toolbox;
-				PRODUCT_NAME = RVS_Generic_Swift_Toolbox_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Debug;
-		};
-		D465C63F282D5C62007F9904 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				EXECUTABLE_PREFIX = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_MODULE_NAME = RVS_Generic_Swift_Toolbox;
-				PRODUCT_NAME = RVS_Generic_Swift_Toolbox_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Release;
-		};
-		D465C650282D5DAE007F9904 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"TESTING=1",
-				);
-				INFOPLIST_FILE = "Tests/Info-iOS.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TESTING";
-				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Debug;
-		};
-		D465C651282D5DAE007F9904 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				GCC_PREPROCESSOR_DEFINITIONS = "TESTING=1";
-				INFOPLIST_FILE = "Tests/Info-iOS.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TESTING;
-				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Release;
-		};
-		D46FC3BA282D60970018FF9F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				EXECUTABLE_PREFIX = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_MODULE_NAME = RVS_Generic_Swift_Toolbox;
-				PRODUCT_NAME = RVS_Generic_Swift_Toolbox_WatchOS;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Debug;
-		};
-		D46FC3BB282D60970018FF9F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				EXECUTABLE_PREFIX = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_MODULE_NAME = RVS_Generic_Swift_Toolbox;
-				PRODUCT_NAME = RVS_Generic_Swift_Toolbox_WatchOS;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Release;
-		};
-		D46FC3C6282D60C60018FF9F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"TESTING=1",
-				);
-				INFOPLIST_FILE = "Tests/Info-WatchOS.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TESTING";
-				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Debug;
-		};
-		D46FC3C7282D60C60018FF9F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				GCC_PREPROCESSOR_DEFINITIONS = "TESTING=1";
-				INFOPLIST_FILE = "Tests/Info-WatchOS.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TESTING;
-				SWIFT_VERSION = 5.0;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
@@ -853,6 +325,7 @@
 		D4D03C1E23DDDE9D005B54B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -871,6 +344,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TESTING";
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
@@ -881,6 +356,7 @@
 		D4D03C1F23DDDE9D005B54B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -896,6 +372,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Generic-Swift-Toolbox-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TESTING;
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
@@ -1028,110 +506,10 @@
 			};
 			name = Release;
 		};
-		D4E19E19282D71BB00C0D755 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				EXECUTABLE_PREFIX = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_MODULE_NAME = RVS_Generic_Swift_Toolbox;
-				PRODUCT_NAME = RVS_Generic_Swift_Toolbox_TVOS;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Debug;
-		};
-		D4E19E1A282D71BB00C0D755 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				EXECUTABLE_PREFIX = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_MODULE_NAME = RVS_Generic_Swift_Toolbox;
-				PRODUCT_NAME = RVS_Generic_Swift_Toolbox_TVOS;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Release;
-		};
-		D4E19E2D282D729D00C0D755 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.5.6;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
-				INFOPLIST_KEY_NSHumanReadableCopyright = RVS_Generic_Swift_Toolbox_Tests_Copyright;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/usr/lib/swift",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-GenericSwift-Toolbox-Tests--TVOS-";
-				PRODUCT_NAME = RVS_Generic_Swift_Toolbox_Tests_Name;
-				SDKROOT = appletvos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Debug;
-		};
-		D4E19E2E282D729D00C0D755 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.5.6;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
-				INFOPLIST_KEY_NSHumanReadableCopyright = RVS_Generic_Swift_Toolbox_Tests_Copyright;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/usr/lib/swift",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-GenericSwift-Toolbox-Tests--TVOS-";
-				PRODUCT_NAME = RVS_Generic_Swift_Toolbox_Tests_Name;
-				SDKROOT = appletvos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D451C743282BD713000F8A2D /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox (MacOS)" */ = {
+		D451C743282BD713000F8A2D /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D451C744282BD713000F8A2D /* Debug */,
@@ -1140,43 +518,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D465C63D282D5C62007F9904 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox (iOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D465C63E282D5C62007F9904 /* Debug */,
-				D465C63F282D5C62007F9904 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D465C64F282D5DAE007F9904 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests (iOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D465C650282D5DAE007F9904 /* Debug */,
-				D465C651282D5DAE007F9904 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D46FC3B9282D60970018FF9F /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox (WatchOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D46FC3BA282D60970018FF9F /* Debug */,
-				D46FC3BB282D60970018FF9F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D46FC3C5282D60C60018FF9F /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests (WatchOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D46FC3C6282D60C60018FF9F /* Debug */,
-				D46FC3C7282D60C60018FF9F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D4D03C1D23DDDE9D005B54B5 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests (MacOS)" */ = {
+		D4D03C1D23DDDE9D005B54B5 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4D03C1E23DDDE9D005B54B5 /* Debug */,
@@ -1190,24 +532,6 @@
 			buildConfigurations = (
 				D4D411AD23DDC5AD00D607F7 /* Debug */,
 				D4D411AE23DDC5AD00D607F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D4E19E18282D71BB00C0D755 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox (TVOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D4E19E19282D71BB00C0D755 /* Debug */,
-				D4E19E1A282D71BB00C0D755 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D4E19E2C282D729D00C0D755 /* Build configuration list for PBXNativeTarget "RVS_Generic_Swift_Toolbox_Tests (TVOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D4E19E2D282D729D00C0D755 /* Debug */,
-				D4E19E2E282D729D00C0D755 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

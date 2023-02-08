@@ -11,36 +11,40 @@ These tools will work for all of these platforms, and will, at most, rely only o
 - [Here is the technical documentation for this repository](https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/)
 - [Here is the repository on GitHub](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox)
 
-- [**COLLECTION TOOLS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Collection%20Tools)
-    - [**RVS_FIFOQueue**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Collection%20Tools/RVS_FIFOQueue.swift)
+- [**COLLECTION TOOLS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_CollectionTools)
+    - [**RVS_FIFOQueue**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_CollectionTools/RVS_FIFOQueue.swift)
 
         This is a high-performance generic FIFO queue data structure. It's based on the work of [Ole Begemann](https://oleb.net), who used it as an example in his [Advanced Swift](https://oleb.net/advanced-swift/) book.
-    - [**RVS_SequenceProtocol**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Collection%20Tools/RVS_SequenceProtocol.swift)
+    - [**RVS_SequenceProtocol**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_CollectionTools/RVS_SequenceProtocol.swift)
     
         This is a simple protocol that gives classes and structs that conform to it, some basic [Sequence](https://developer.apple.com/documentation/swift/sequence) behavior.
 
-- [**DEBUG TOOLS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Debug%20Tools)
-    - [**RVS_DebugTools**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Debug%20Tools/RVS_DebugTools.swift)
+- [**DEBUG TOOLS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_DebugTools)
+    - [**RVS_DebugTools**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_DebugTools/RVS_DebugTools.swift)
     
         This is a set of tools used to aid debugging and testing code.
 
-- [**EXTENSIONS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Extensions)
-    - [**RVS_Int_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Int_Extensions.swift)
+- [**EXTENSIONS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_Extensions)
+    - [**RVS_Number_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_Extensions/RVS_Number_Extensions.swift)
     
         Extensions to integer data types, as well as some degree/radian conversion for floats and doubles.
         
-    - [**RVS_String_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_String_Extensions.swift)
+    - [**RVS_Bundle_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_Extensions/RVS_Bundle_Extensions.swift)
+    
+        Extensions to the [Foundation Bundle](https://developer.apple.com/documentation/foundation/bundle/).
+        
+    - [**RVS_String_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_Extensions/RVS_String_Extensions.swift)
     
         Extensions to the [StringProtocol protocol](https://developer.apple.com/documentation/swift/stringprotocol). These are mostly parsing, filtering, and conversion capabilities.
         
-    - [**RVS_Foundation_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Foundation_Extensions.swift)
-    
+    - [**RVS_Foundation_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_Extensions/RVS_Foundation_Extensions.swift)
+
         Extensions to the [StringProtocol protocol](https://developer.apple.com/documentation/swift/stringprotocol). This adds some significant capabilities, such as [MD5](https://en.wikipedia.org/wiki/MD5)/[SHA](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms)-hashing, substring searching, simple localization, and basic parsing.
-        
+    
         Extensions to the [Date Struct](https://developer.apple.com/documentation/foundation/date/). This makes Dates [strideable](https://developer.apple.com/documentation/swift/strideable/). It also allows "coarse" date comparisons, using a "granularity" of 24 hours (one day).
-        
+    
         Adds degree/radian conversion to [CGFloat](https://developer.apple.com/documentation/corefoundation/cgfloat/).
-        
+    
         Adds rotation support to [CGPoint](https://developer.apple.com/documentation/corefoundation/cgpoint/).
 
 ## Usage

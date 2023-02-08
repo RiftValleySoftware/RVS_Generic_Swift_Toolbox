@@ -1,3 +1,6 @@
+*Version 1.12.2* **February 8, 2023**
+- Documentation fixes. No API changes.
+
 *Version 1.12.1* **February 8, 2023**
 - Tweaked the style a bit on the new property.
 - Updated the README.

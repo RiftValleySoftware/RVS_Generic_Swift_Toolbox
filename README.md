@@ -27,19 +27,19 @@ These tools will work for all of these platforms, and will, at most, rely only o
         This is a set of tools used to aid debugging and testing code.
 
 - [**EXTENSIONS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Extensions)
-    - [**RVS_Number_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Number_Extensions.swift)
+    - [**RVS_Number_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_Extensions/RVS_Number_Extensions.swift)
     
         Extensions to integer data types, as well as some degree/radian conversion for floats and doubles.
         
-    - [**RVS_Bundle_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Bundle_Extensions.swift)
+    - [**RVS_Bundle_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_Extensions/RVS_Bundle_Extensions.swift)
     
         Extensions to the [Foundation Bundle](https://developer.apple.com/documentation/foundation/bundle/).
         
-    - [**RVS_String_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_String_Extensions.swift)
+    - [**RVS_String_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_Extensions/RVS_String_Extensions.swift)
     
         Extensions to the [StringProtocol protocol](https://developer.apple.com/documentation/swift/stringprotocol). These are mostly parsing, filtering, and conversion capabilities.
         
-    - [**RVS_Foundation_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Foundation_Extensions.swift)
+    - [**RVS_Foundation_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_Extensions/RVS_Foundation_Extensions.swift)
     
         Extensions to the [StringProtocol protocol](https://developer.apple.com/documentation/swift/stringprotocol). This adds some significant capabilities, such as [MD5](https://en.wikipedia.org/wiki/MD5)/[SHA](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms)-hashing, substring searching, simple localization, and basic parsing.
         

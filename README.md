@@ -27,9 +27,13 @@ These tools will work for all of these platforms, and will, at most, rely only o
         This is a set of tools used to aid debugging and testing code.
 
 - [**EXTENSIONS**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/Extensions)
-    - [**RVS_Int_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Int_Extensions.swift)
+    - [**RVS_Number_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Number_Extensions.swift)
     
         Extensions to integer data types, as well as some degree/radian conversion for floats and doubles.
+        
+    - [**RVS_Bundle_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_Bundle_Extensions.swift)
+    
+        Extensions to the [Foundation Bundle](https://developer.apple.com/documentation/foundation/bundle/).
         
     - [**RVS_String_Extensions**](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_String_Extensions.swift)
     

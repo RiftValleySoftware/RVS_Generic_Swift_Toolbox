@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.12.0
+ Version: 1.12.1
 */
 import Foundation   // Required for Bundle
 
@@ -60,5 +60,5 @@ public extension Bundle {
      
      NOTE: This can't easily be tested by the auto tests. Easy enough to test in deployment, though.
      */
-    var primaryURLScheme: String { ((infoDictionary?["CFBundleURLTypes"] as? [[String: Any]])?.first?["CFBundleURLSchemes"] as? [String])?.first ?? "" }
+    var primaryURLScheme: String { ((object(forInfoDictionaryKey: "CFBundleURLTypes") as? [[String: Any]])?.first?["CFBundleURLSchemes"] as? [String])?.first ?? "" }
 }

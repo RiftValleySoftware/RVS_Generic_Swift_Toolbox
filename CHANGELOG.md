@@ -1,3 +1,7 @@
+*Version 1.12.1* **February 8, 2023**
+- Tweaked the style a bit on the new property.
+- Updated the README.
+
 *Version 1.12.0* **February 8, 2023**
 - Added the `primaryURLScheme` computed bundle property.
 

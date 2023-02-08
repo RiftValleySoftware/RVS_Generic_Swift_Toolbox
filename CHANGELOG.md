@@ -1,3 +1,6 @@
+*Version 1.12.0* **February 8, 2023**
+- Added the `primaryURLScheme` computed bundle property.
+
 *Version 1.11.0* **October 6, 2022**
 - Added the `errorsLocalizedVariant` StringProtocol extension computed property. No other API changes.
 - Changed the testing to "Any Platform," and removed the various platform-specific variants.

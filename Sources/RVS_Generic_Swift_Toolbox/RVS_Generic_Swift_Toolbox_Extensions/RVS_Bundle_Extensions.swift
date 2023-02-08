@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.11.0
+ Version: 1.12.0
 */
 import Foundation   // Required for Bundle
 
@@ -35,7 +35,7 @@ public extension Bundle {
      The app name, as a string. It is required, and "" is returned if it is not present.
      */
     var appDisplayName: String { (object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? object(forInfoDictionaryKey: "CFBundleName") as? String) ?? "" }
-
+    
     /* ################################################################## */
     /**
      The app version, as a string. It is required, and "" is returned if it is not present.
@@ -53,4 +53,12 @@ public extension Bundle {
      If there is a copyright string, it is returned here. It may be nil.
      */
     var copyrightString: String? { object(forInfoDictionaryKey: "NSHumanReadableCopyright") as? String }
+    
+    /* ################################################################## */
+    /**
+     This fetches the first URL scheme from the bundle, renders it as a String, and returns it.
+     
+     NOTE: This can't easily be tested by the auto tests. Easy enough to test in deployment, though.
+     */
+    var primaryURLScheme: String { ((infoDictionary?["CFBundleURLTypes"] as? [[String: Any]])?.first?["CFBundleURLSchemes"] as? [String])?.first ?? "" }
 }

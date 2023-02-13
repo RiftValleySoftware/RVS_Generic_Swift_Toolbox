@@ -20,5 +20,20 @@
 	<string>4.5.6</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>RVS_Generic_Swift_Toolbox_Tests_Copyright</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string></string>
+			<key>CFBundleURLName</key>
+			<string>com.riftvalleysoftware.test</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>rvsgct</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

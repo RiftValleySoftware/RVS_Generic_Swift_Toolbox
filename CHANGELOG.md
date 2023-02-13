@@ -1,3 +1,6 @@
+*Version 1.12.3* **February 13, 2023**
+- Added a test for the new primary URL scheme bundle accessor.
+
 *Version 1.12.2* **February 8, 2023**
 - Documentation fixes. No API changes.
 

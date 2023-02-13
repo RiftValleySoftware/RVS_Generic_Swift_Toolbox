@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.12.2
+Version: 1.12.3
 */
 
 import XCTest
@@ -503,10 +503,12 @@ class RVS_Bundle_Extensions_Tests: XCTestCase {
         XCTAssertEqual("1.2.3", testBundle.appVersionString)
         XCTAssertEqual("4.5.6", testBundle.appVersionBuildString)
         XCTAssertEqual("RVS_Generic_Swift_Toolbox_Tests_Copyright", testBundle.copyrightString)
+        XCTAssertEqual("rvsgct", testBundle.primaryURLScheme)
         let testBundle2 = Bundle()
         XCTAssertEqual("", testBundle2.appDisplayName)
         XCTAssertEqual("", testBundle2.appVersionString)
         XCTAssertEqual("", testBundle2.appVersionBuildString)
+        XCTAssertEqual("", testBundle2.primaryURLScheme)
         XCTAssertNil(testBundle2.copyrightString)
     }
 }

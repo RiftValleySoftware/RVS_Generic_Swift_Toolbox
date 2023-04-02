@@ -1,3 +1,6 @@
+*Version 1.12.4* **April 2, 2023**
+- Moved some of the string stuff into the Foundation file.
+
 *Version 1.12.3* **February 13, 2023**
 - Added a test for the new primary URL scheme bundle accessor.
 

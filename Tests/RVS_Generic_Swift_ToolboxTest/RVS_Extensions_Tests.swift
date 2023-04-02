@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.12.3
+Version: 1.12.4
 */
 
 import XCTest
@@ -396,97 +396,6 @@ class RVS_String_Extensions_Tests: XCTestCase {
         XCTAssertEqual(3, "3".hex2Int)
         XCTAssertNil("G".hex2Int)
         XCTAssertEqual(238, "George".hex2Int)
-    }
-    
-    /* ################################################################## */
-    /**
-     This tests the various substring methods of the extension.
-     */
-    func testSubstringFinder() {
-        let testString = "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\nBut, in a larger sense, we can not dedicate—we can not consecrate—we can not hallow—this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth."
-        
-        if let substringIndex = testString.index(of: "Four") {
-            XCTAssertEqual(0, testString.distance(from: testString.startIndex, to: substringIndex))
-        } else {
-            XCTFail("Invalid Substring Response")
-        }
-        
-        XCTAssertNil(testString.index(of: "Foor"), "Invalid Substring Response")
-        XCTAssertTrue(testString.indexes(of: "Foor").isEmpty, "Invalid Substring Response")
-        XCTAssertTrue(testString.ranges(of: "Foor").isEmpty, "Invalid Substring Response")
-
-        if let substringIndex = testString.index(of: "score") {
-            XCTAssertEqual(5, testString.distance(from: testString.startIndex, to: substringIndex))
-        } else {
-            XCTFail("Invalid Substring Response")
-        }
-
-        if let substringIndex = testString.endIndex(of: "score") {
-            XCTAssertEqual(10, testString.distance(from: testString.startIndex, to: substringIndex))
-        } else {
-            XCTFail("Invalid Substring Response")
-        }
-        
-        if let substringIndex = testString.index(of: "seven") {
-            XCTAssertEqual(15, testString.distance(from: testString.startIndex, to: substringIndex))
-        } else {
-            XCTFail("Invalid Substring Response")
-        }
-        
-        if let substringIndex = testString.endIndex(of: "seven") {
-            XCTAssertEqual(20, testString.distance(from: testString.startIndex, to: substringIndex))
-        } else {
-            XCTFail("Invalid Substring Response")
-        }
-
-        if let substringIndex = testString.index(of: "we here highly resolve") {
-            XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: substringIndex))
-        } else {
-            XCTFail("Invalid Substring Response")
-        }
-        
-        let rangesOf1 = testString.ranges(of: "We")
-        XCTAssertEqual(2, rangesOf1.count)
-        XCTAssertEqual(309, testString.distance(from: testString.startIndex, to: rangesOf1[0].lowerBound))
-        XCTAssertEqual(311, testString.distance(from: testString.startIndex, to: rangesOf1[0].upperBound))
-        XCTAssertEqual(357, testString.distance(from: testString.startIndex, to: rangesOf1[1].lowerBound))
-        XCTAssertEqual(359, testString.distance(from: testString.startIndex, to: rangesOf1[1].upperBound))
-
-        let rangesOf2 = testString.ranges(of: "we")
-        XCTAssertEqual(9, rangesOf2.count)
-        XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: rangesOf2[0].lowerBound))
-        XCTAssertEqual(183, testString.distance(from: testString.startIndex, to: rangesOf2[0].upperBound))
-        XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: rangesOf2[8].lowerBound))
-        XCTAssertEqual(1226, testString.distance(from: testString.startIndex, to: rangesOf2[8].upperBound))
-        
-        let rangesOf3 = testString.ranges(of: "WE", options: [.caseInsensitive])
-        XCTAssertEqual(11, rangesOf3.count)
-        XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: rangesOf3[0].lowerBound))
-        XCTAssertEqual(183, testString.distance(from: testString.startIndex, to: rangesOf3[0].upperBound))
-        XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: rangesOf3[10].lowerBound))
-        XCTAssertEqual(1226, testString.distance(from: testString.startIndex, to: rangesOf3[10].upperBound))
-
-        let rangesOf4 = testString.ranges(of: "w")
-        XCTAssertEqual(26, rangesOf4.count)
-        XCTAssertEqual(80, testString.distance(from: testString.startIndex, to: rangesOf4[0].lowerBound))
-        XCTAssertEqual(81, testString.distance(from: testString.startIndex, to: rangesOf4[0].upperBound))
-        XCTAssertEqual(1335, testString.distance(from: testString.startIndex, to: rangesOf4[25].lowerBound))
-        XCTAssertEqual(1336, testString.distance(from: testString.startIndex, to: rangesOf4[25].upperBound))
-        
-        let indexesOf1 = testString.indexes(of: "We")
-        XCTAssertEqual(2, indexesOf1.count)
-        XCTAssertEqual(309, testString.distance(from: testString.startIndex, to: indexesOf1[0]))
-        XCTAssertEqual(357, testString.distance(from: testString.startIndex, to: indexesOf1[1]))
-        
-        let indexesOf2 = testString.indexes(of: "we")
-        XCTAssertEqual(9, indexesOf2.count)
-        XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: indexesOf2[0]))
-        XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: indexesOf2[8]))
-        
-        let indexesOf3 = testString.indexes(of: "WE", options: [.caseInsensitive])
-        XCTAssertEqual(11, rangesOf3.count)
-        XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: indexesOf3[0]))
-        XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: indexesOf3[10]))
     }
 }
 
@@ -1010,5 +919,96 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
         let expectedResult6 = [String.SubSequence(spadesNumberCards), String.SubSequence(spadesFaceCards), String.SubSequence(clubsNumberCards), String.SubSequence(clubsFaceCards), String.SubSequence(diamondsNumberCards), String.SubSequence(diamondsFaceCards), String.SubSequence(heartsNumberCards), String.SubSequence(heartsFaceCards)]
         XCTAssertEqual(sortedDeck.setSplit(CharacterSet((" " + blackJoker + redJoker).unicodeScalars)), expectedResult6)
         XCTAssertEqual(sortedDeck.setSplit(charactersIn: " " + blackJoker + redJoker), expectedResult6)
+    }
+    
+    /* ################################################################## */
+    /**
+     This tests the various substring methods of the extension.
+     */
+    func testSubstringFinder() {
+        let testString = "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\nBut, in a larger sense, we can not dedicate—we can not consecrate—we can not hallow—this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth."
+        
+        if let substringIndex = testString.index(of: "Four") {
+            XCTAssertEqual(0, testString.distance(from: testString.startIndex, to: substringIndex))
+        } else {
+            XCTFail("Invalid Substring Response")
+        }
+        
+        XCTAssertNil(testString.index(of: "Foor"), "Invalid Substring Response")
+        XCTAssertTrue(testString.indexes(of: "Foor").isEmpty, "Invalid Substring Response")
+        XCTAssertTrue(testString.ranges(of: "Foor").isEmpty, "Invalid Substring Response")
+
+        if let substringIndex = testString.index(of: "score") {
+            XCTAssertEqual(5, testString.distance(from: testString.startIndex, to: substringIndex))
+        } else {
+            XCTFail("Invalid Substring Response")
+        }
+
+        if let substringIndex = testString.endIndex(of: "score") {
+            XCTAssertEqual(10, testString.distance(from: testString.startIndex, to: substringIndex))
+        } else {
+            XCTFail("Invalid Substring Response")
+        }
+        
+        if let substringIndex = testString.index(of: "seven") {
+            XCTAssertEqual(15, testString.distance(from: testString.startIndex, to: substringIndex))
+        } else {
+            XCTFail("Invalid Substring Response")
+        }
+        
+        if let substringIndex = testString.endIndex(of: "seven") {
+            XCTAssertEqual(20, testString.distance(from: testString.startIndex, to: substringIndex))
+        } else {
+            XCTFail("Invalid Substring Response")
+        }
+
+        if let substringIndex = testString.index(of: "we here highly resolve") {
+            XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: substringIndex))
+        } else {
+            XCTFail("Invalid Substring Response")
+        }
+        
+        let rangesOf1 = testString.ranges(of: "We")
+        XCTAssertEqual(2, rangesOf1.count)
+        XCTAssertEqual(309, testString.distance(from: testString.startIndex, to: rangesOf1[0].lowerBound))
+        XCTAssertEqual(311, testString.distance(from: testString.startIndex, to: rangesOf1[0].upperBound))
+        XCTAssertEqual(357, testString.distance(from: testString.startIndex, to: rangesOf1[1].lowerBound))
+        XCTAssertEqual(359, testString.distance(from: testString.startIndex, to: rangesOf1[1].upperBound))
+
+        let rangesOf2 = testString.ranges(of: "we")
+        XCTAssertEqual(9, rangesOf2.count)
+        XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: rangesOf2[0].lowerBound))
+        XCTAssertEqual(183, testString.distance(from: testString.startIndex, to: rangesOf2[0].upperBound))
+        XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: rangesOf2[8].lowerBound))
+        XCTAssertEqual(1226, testString.distance(from: testString.startIndex, to: rangesOf2[8].upperBound))
+        
+        let rangesOf3 = testString.ranges(of: "WE", options: [.caseInsensitive])
+        XCTAssertEqual(11, rangesOf3.count)
+        XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: rangesOf3[0].lowerBound))
+        XCTAssertEqual(183, testString.distance(from: testString.startIndex, to: rangesOf3[0].upperBound))
+        XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: rangesOf3[10].lowerBound))
+        XCTAssertEqual(1226, testString.distance(from: testString.startIndex, to: rangesOf3[10].upperBound))
+
+        let rangesOf4 = testString.ranges(of: "w")
+        XCTAssertEqual(26, rangesOf4.count)
+        XCTAssertEqual(80, testString.distance(from: testString.startIndex, to: rangesOf4[0].lowerBound))
+        XCTAssertEqual(81, testString.distance(from: testString.startIndex, to: rangesOf4[0].upperBound))
+        XCTAssertEqual(1335, testString.distance(from: testString.startIndex, to: rangesOf4[25].lowerBound))
+        XCTAssertEqual(1336, testString.distance(from: testString.startIndex, to: rangesOf4[25].upperBound))
+        
+        let indexesOf1 = testString.indexes(of: "We")
+        XCTAssertEqual(2, indexesOf1.count)
+        XCTAssertEqual(309, testString.distance(from: testString.startIndex, to: indexesOf1[0]))
+        XCTAssertEqual(357, testString.distance(from: testString.startIndex, to: indexesOf1[1]))
+        
+        let indexesOf2 = testString.indexes(of: "we")
+        XCTAssertEqual(9, indexesOf2.count)
+        XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: indexesOf2[0]))
+        XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: indexesOf2[8]))
+        
+        let indexesOf3 = testString.indexes(of: "WE", options: [.caseInsensitive])
+        XCTAssertEqual(11, rangesOf3.count)
+        XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: indexesOf3[0]))
+        XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: indexesOf3[10]))
     }
 }

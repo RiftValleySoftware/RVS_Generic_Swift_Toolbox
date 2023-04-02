@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.12.3
+Version: 1.12.4
 */
 
 import Foundation   // Required for the NS, CG, and Date stuff.
@@ -415,6 +415,70 @@ public extension StringProtocol {
         }
         
         return ret
+    }
+
+    /* ################################################################## */
+    /**
+     This allows us to find the first index of a substring.
+     
+     - parameter of: The substring we're looking for.
+     - parameter options: The String options for the search.
+     
+     - returns: The index of the first occurrence. Nil, if does not occur.
+     */
+    func index(of inString: Self, options inOptions: String.CompareOptions = []) -> Index? { range(of: inString, options: inOptions)?.lowerBound }
+
+    /* ################################################################## */
+    /**
+     This allows us to find the last index of a substring.
+     
+     - parameter of: The substring we're looking for.
+     - parameter options: The String options for the search.
+     
+     - returns: The index of the last occurrence. Nil, if does not occur.
+     */
+    func endIndex(of inString: Self, options inOptions: String.CompareOptions = []) -> Index? { range(of: inString, options: inOptions)?.upperBound }
+    
+    /* ################################################################## */
+    /**
+     This returns an Array of indexes that map all the occurrences of a given substring.
+     
+     - parameter of: The substring we're looking for.
+     - parameter options: The String options for the search.
+     
+     - returns: an Array, containing the indexes of each occurrence. Empty Array, if does not occur.
+     */
+    func indexes(of inString: Self, options inOptions: String.CompareOptions = []) -> [Index] {
+        var result: [Index] = []
+        var start = startIndex
+        
+        while start < endIndex,
+              let range = self[start..<endIndex].range(of: inString, options: inOptions) {
+            result.append(range.lowerBound)
+            start = range.upperBound
+        }
+        
+        return result
+    }
+    
+    /* ################################################################## */
+    /**
+     This returns an Array of Index Ranges that map all the occurrences of a given substring.
+     
+     - parameter of: The substring we're looking for.
+     - parameter options: The String options for the search.
+     
+     - returns: an Array, containing the Ranges that map each occurrence. Empty Array, if does not occur.
+     */
+    func ranges(of inString: Self, options inOptions: String.CompareOptions = []) -> [Range<Index>] {
+        var result: [Range<Index>] = []
+        var start = startIndex
+        while start < endIndex,
+              let range = self[start..<endIndex].range(of: inString, options: inOptions) {
+                result.append(range)
+                start = range.upperBound
+        }
+        return result
     }
 }
 

@@ -1,3 +1,6 @@
+*Version 1.13.0* **November 28, 2023**
+- Added a ContiguousBytes extension, to help cast Data into Arrays.
+
 *Version 1.12.4* **April 2, 2023**
 - Moved some of the string stuff into the Foundation file.
 

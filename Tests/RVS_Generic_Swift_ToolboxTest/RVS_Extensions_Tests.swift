@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.12.4
+Version: 1.13.0
 */
 
 import XCTest
@@ -477,8 +477,8 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
             compInterval -= oneDay
             XCTAssertEqual(date, compDate)
         }
-// For some weird reason, this keeps coming up as "ambiguous use." No idea why. More research is necessary.
-//        XCTAssertEqual(startingDate.distance(to: endingDate), oneDay * 365)
+
+        XCTAssertEqual(startingDate.distance(to: endingDate), oneDay * 365)
     }
 
     /* ################################################################## */
@@ -1010,5 +1010,95 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
         XCTAssertEqual(11, rangesOf3.count)
         XCTAssertEqual(181, testString.distance(from: testString.startIndex, to: indexesOf3[0]))
         XCTAssertEqual(1224, testString.distance(from: testString.startIndex, to: indexesOf3[10]))
+    }
+    
+    /* ################################################################## */
+    /**
+     This tests the ContiguousBytes extension.
+     */
+    func testContiguousBytes() {
+        let originalIntArray = [Int8](arrayLiteral: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23)
+        let data: Data = originalIntArray.withUnsafeBytes { .init($0) }
+
+        XCTAssertEqual(originalIntArray.count / MemoryLayout<Int>.size, data.asIntArray.count)
+        XCTAssertEqual(originalIntArray.count, data.asUInt8Array.count)
+        XCTAssertEqual(originalIntArray.count / MemoryLayout<UInt16>.size, data.asUInt16Array.count)
+        XCTAssertEqual(originalIntArray.count / MemoryLayout<UInt32>.size, data.asUInt32Array.count)
+        XCTAssertEqual(originalIntArray.count / MemoryLayout<UInt64>.size, data.asUInt64Array.count)
+
+        for index in (0..<originalIntArray.count) {
+            XCTAssertEqual(UInt8(originalIntArray[index]), data.asUInt8Array[index])
+        }
+
+        XCTAssertEqual(0x0706050403020100, data.asIntArray[0])
+        XCTAssertEqual(0x0F0E0D0C0B0A0908, data.asIntArray[1])
+        XCTAssertEqual(0x1716151413121110, data.asIntArray[2])
+
+        XCTAssertEqual(0x0100, data.asUInt16Array[0])
+        XCTAssertEqual(0x0302, data.asUInt16Array[1])
+        XCTAssertEqual(0x0504, data.asUInt16Array[2])
+        XCTAssertEqual(0x0706, data.asUInt16Array[3])
+        XCTAssertEqual(0x0908, data.asUInt16Array[4])
+        XCTAssertEqual(0x0B0A, data.asUInt16Array[5])
+        XCTAssertEqual(0x0D0C, data.asUInt16Array[6])
+        XCTAssertEqual(0x0F0E, data.asUInt16Array[7])
+        XCTAssertEqual(0x1110, data.asUInt16Array[8])
+        XCTAssertEqual(0x1312, data.asUInt16Array[9])
+        XCTAssertEqual(0x1514, data.asUInt16Array[10])
+        XCTAssertEqual(0x1716, data.asUInt16Array[11])
+
+        XCTAssertEqual(0x03020100, data.asUInt32Array[0])
+        XCTAssertEqual(0x07060504, data.asUInt32Array[1])
+        XCTAssertEqual(0x0B0A0908, data.asUInt32Array[2])
+        XCTAssertEqual(0x0F0E0D0C, data.asUInt32Array[3])
+        XCTAssertEqual(0x13121110, data.asUInt32Array[4])
+        XCTAssertEqual(0x17161514, data.asUInt32Array[5])
+
+        XCTAssertEqual(0x0706050403020100, data.asUInt64Array[0])
+        XCTAssertEqual(0x0F0E0D0C0B0A0908, data.asUInt64Array[1])
+        XCTAssertEqual(0x1716151413121110, data.asUInt64Array[2])
+    }
+    
+    /* ################################################################## */
+    /**
+     This tests the ContiguousBytes extension, but with an odd number of elements, so the arrays are smaller.
+     */
+    func testContiguousBytesUnaligned() {
+        let originalIntArray = [Int8](arrayLiteral: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22)
+        let data: Data = originalIntArray.withUnsafeBytes { .init($0) }
+
+        XCTAssertEqual(originalIntArray.count / MemoryLayout<Int>.size, data.asIntArray.count)
+        XCTAssertEqual(originalIntArray.count, data.asUInt8Array.count)
+        XCTAssertEqual(originalIntArray.count / MemoryLayout<UInt16>.size, data.asUInt16Array.count)
+        XCTAssertEqual(originalIntArray.count / MemoryLayout<UInt32>.size, data.asUInt32Array.count)
+        XCTAssertEqual(originalIntArray.count / MemoryLayout<UInt64>.size, data.asUInt64Array.count)
+
+        for index in (0..<originalIntArray.count) {
+            XCTAssertEqual(UInt8(originalIntArray[index]), data.asUInt8Array[index])
+        }
+
+        XCTAssertEqual(0x0706050403020100, data.asIntArray[0])
+        XCTAssertEqual(0x0F0E0D0C0B0A0908, data.asIntArray[1])
+
+        XCTAssertEqual(0x0100, data.asUInt16Array[0])
+        XCTAssertEqual(0x0302, data.asUInt16Array[1])
+        XCTAssertEqual(0x0504, data.asUInt16Array[2])
+        XCTAssertEqual(0x0706, data.asUInt16Array[3])
+        XCTAssertEqual(0x0908, data.asUInt16Array[4])
+        XCTAssertEqual(0x0B0A, data.asUInt16Array[5])
+        XCTAssertEqual(0x0D0C, data.asUInt16Array[6])
+        XCTAssertEqual(0x0F0E, data.asUInt16Array[7])
+        XCTAssertEqual(0x1110, data.asUInt16Array[8])
+        XCTAssertEqual(0x1312, data.asUInt16Array[9])
+        XCTAssertEqual(0x1514, data.asUInt16Array[10])
+
+        XCTAssertEqual(0x03020100, data.asUInt32Array[0])
+        XCTAssertEqual(0x07060504, data.asUInt32Array[1])
+        XCTAssertEqual(0x0B0A0908, data.asUInt32Array[2])
+        XCTAssertEqual(0x0F0E0D0C, data.asUInt32Array[3])
+        XCTAssertEqual(0x13121110, data.asUInt32Array[4])
+
+        XCTAssertEqual(0x0706050403020100, data.asUInt64Array[0])
+        XCTAssertEqual(0x0F0E0D0C0B0A0908, data.asUInt64Array[1])
     }
 }

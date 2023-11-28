@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.12.4
+Version: 1.13.0
 */
 
 import Foundation   // Required for the NS, CG, and Date stuff.
@@ -508,4 +508,58 @@ public extension StringProtocol {
      - returns: An Array of Substrings. The result of the split.
      */
     func setSplit(charactersIn inString: String) -> [Self.SubSequence] { setSplit(CharacterSet(inString.unicodeScalars)) }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - ContiguousBytes Extension (Foundation-Required Functions) -
+/* ###################################################################################################################################### */
+/**
+ This was inspired by [this SO answer](https://stackoverflow.com/a/71365362/879365)
+ 
+ These casts are relatively safe, as the returned Arrays will not include any of the remainder memory, in unaligned streams.
+ 
+ This means that the last memory may not be included in casts.
+ */
+public extension ContiguousBytes {
+    /* ################################################################## */
+    /**
+     This is a somewhat dangerous mapping method. It coerces the data contents into the given unsigned Integer Array type.
+     
+     This is a straight-up cast, so the bytes are stuffed in, exactly as they appear in memory.
+     
+     NB: Bad things can happen, if the data isn't aligned and/or padded.
+     
+     - returns: The memory, mapped into an Array, as requested in FOOT.
+     */
+    private func _cindysShoe<FOOT>() -> [FOOT] { withUnsafeBytes { [FOOT]($0.bindMemory(to: FOOT.self)) } }
+
+    /* ################################################################## */
+    /**
+     The stream, as an Array of standard Int
+     */
+    var asIntArray: [Int] { _cindysShoe() }
+
+    /* ################################################################## */
+    /**
+     The stream, as an Array of unsigned byte
+     */
+    var asUInt8Array: [UInt8] { _cindysShoe() }
+
+    /* ################################################################## */
+    /**
+     The stream, as an Array of unsigned word
+     */
+    var asUInt16Array: [UInt16] { _cindysShoe() }
+
+    /* ################################################################## */
+    /**
+     The stream, as an Array of unsigned long word
+     */
+    var asUInt32Array: [UInt32] { _cindysShoe() }
+
+    /* ################################################################## */
+    /**
+     The stream, as an Array of unsigned long long word
+     */
+    var asUInt64Array: [UInt64] { _cindysShoe() }
 }

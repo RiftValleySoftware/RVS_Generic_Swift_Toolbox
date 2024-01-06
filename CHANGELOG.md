@@ -1,3 +1,7 @@
+*Version 1.13.1* **January 6, 2024**
+- Added privacy declarations.
+- Had to remove SwiftLint, as it no longer works. :(
+
 *Version 1.13.0* **November 28, 2023**
 - Added a ContiguousBytes extension, to help cast Data into Arrays.
 

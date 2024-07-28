@@ -74,6 +74,9 @@
                 <a class="nav-group-task-link" href="../Extensions/CGSize.html">CGSize</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ContiguousBytes.html">ContiguousBytes</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/Date.html">Date</a>
               </li>
               <li class="nav-group-task">
@@ -126,7 +129,6 @@
                 <div class="language">
                   
                   <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">StringProtocol</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">StringProtocol</span> <span class="k">where</span> <span class="kt">Index</span> <span class="o">==</span> <span class="kt">String</span><span class="o">.</span><span class="kt">Index</span></code></pre>
 
                 </div>
               </div>
@@ -528,6 +530,254 @@ Evaluate a string for proper email address form.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE5index2of7optionsSS5IndexVSgx_So22NSStringCompareOptionsVtF"></a>
+                    <a name="//apple_ref/swift/Method/index(of:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE5index2of7optionsSS5IndexVSgx_So22NSStringCompareOptionsVtF">index(of:<wbr>options:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This allows us to find the first index of a substring.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">index</span><span class="p">(</span><span class="n">of</span> <span class="nv">inString</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="n">options</span> <span class="nv">inOptions</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="kt">CompareOptions</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="kt">Index</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>of</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The substring we&rsquo;re looking for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The String options for the search.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The index of the first occurrence. Nil, if does not occur.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE8endIndex2of7optionsSS0F0VSgx_So22NSStringCompareOptionsVtF"></a>
+                    <a name="//apple_ref/swift/Method/endIndex(of:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE8endIndex2of7optionsSS0F0VSgx_So22NSStringCompareOptionsVtF">endIndex(of:<wbr>options:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This allows us to find the last index of a substring.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">endIndex</span><span class="p">(</span><span class="n">of</span> <span class="nv">inString</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="n">options</span> <span class="nv">inOptions</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="kt">CompareOptions</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="kt">Index</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>of</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The substring we&rsquo;re looking for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The String options for the search.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The index of the last occurrence. Nil, if does not occur.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE7indexes2of7optionsSaySS5IndexVGx_So22NSStringCompareOptionsVtF"></a>
+                    <a name="//apple_ref/swift/Method/indexes(of:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE7indexes2of7optionsSaySS5IndexVGx_So22NSStringCompareOptionsVtF">indexes(of:<wbr>options:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns an Array of indexes that map all the occurrences of a given substring.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">indexes</span><span class="p">(</span><span class="n">of</span> <span class="nv">inString</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="n">options</span> <span class="nv">inOptions</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="kt">CompareOptions</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Index</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>of</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The substring we&rsquo;re looking for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The String options for the search.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an Array, containing the indexes of each occurrence. Empty Array, if does not occur.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE6ranges2of7optionsSaySnySS5IndexVGGx_So22NSStringCompareOptionsVtF"></a>
+                    <a name="//apple_ref/swift/Method/ranges(of:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE6ranges2of7optionsSaySnySS5IndexVGGx_So22NSStringCompareOptionsVtF">ranges(of:<wbr>options:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns an Array of Index Ranges that map all the occurrences of a given substring.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">ranges</span><span class="p">(</span><span class="n">of</span> <span class="nv">inString</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="n">options</span> <span class="nv">inOptions</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="kt">CompareOptions</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Range</span><span class="o">&lt;</span><span class="kt">Index</span><span class="o">&gt;</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>of</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The substring we&rsquo;re looking for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The String options for the search.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an Array, containing the Ranges that map each occurrence. Empty Array, if does not occur.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -843,267 +1093,6 @@ For example, &ldquo;20&rdquo; would return 32, &ldquo;F100&rdquo; will return 61
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Available%20where%20%60Index%60%20%3D%3D%20%60String.Index%60"></a>
-                <a name="//apple_ref/swift/Section/Available where `Index` == `String.Index`" class="dashAnchor"></a>
-                <div class="section-name-container">
-                  <a class="section-name-link" href="#/Available%20where%20%60Index%60%20%3D%3D%20%60String.Index%60"></a>
-                  <h3 class="section-name"><span>Available where <code>Index</code> == <code>String.Index</code></span>
-</h3>
-                </div>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE5index2of7optionsSS5IndexVSgx_So22NSStringCompareOptionsVtF"></a>
-                    <a name="//apple_ref/swift/Method/index(of:options:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE5index2of7optionsSS5IndexVSgx_So22NSStringCompareOptionsVtF">index(of:<wbr>options:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This allows us to find the first index of a substring.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">index</span><span class="p">(</span><span class="n">of</span> <span class="nv">inString</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="n">options</span> <span class="nv">inOptions</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="kt">CompareOptions</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="kt">Index</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>of</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The substring we&rsquo;re looking for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>options</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The String options for the search.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The index of the first occurrence. Nil, if does not occur.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE8endIndex2of7optionsSS0F0VSgx_So22NSStringCompareOptionsVtF"></a>
-                    <a name="//apple_ref/swift/Method/endIndex(of:options:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE8endIndex2of7optionsSS0F0VSgx_So22NSStringCompareOptionsVtF">endIndex(of:<wbr>options:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This allows us to find the last index of a substring.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">endIndex</span><span class="p">(</span><span class="n">of</span> <span class="nv">inString</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="n">options</span> <span class="nv">inOptions</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="kt">CompareOptions</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="kt">Index</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>of</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The substring we&rsquo;re looking for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>options</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The String options for the search.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The index of the last occurrence. Nil, if does not occur.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE7indexes2of7optionsSaySS5IndexVGx_So22NSStringCompareOptionsVtF"></a>
-                    <a name="//apple_ref/swift/Method/indexes(of:options:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE7indexes2of7optionsSaySS5IndexVGx_So22NSStringCompareOptionsVtF">indexes(of:<wbr>options:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This returns an Array of indexes that map all the occurrences of a given substring.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">indexes</span><span class="p">(</span><span class="n">of</span> <span class="nv">inString</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="n">options</span> <span class="nv">inOptions</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="kt">CompareOptions</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Index</span><span class="p">]</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>of</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The substring we&rsquo;re looking for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>options</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The String options for the search.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>an Array, containing the indexes of each occurrence. Empty Array, if does not occur.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sy25RVS_Generic_Swift_ToolboxE6ranges2of7optionsSaySnySS5IndexVGGx_So22NSStringCompareOptionsVtF"></a>
-                    <a name="//apple_ref/swift/Method/ranges(of:options:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy25RVS_Generic_Swift_ToolboxE6ranges2of7optionsSaySnySS5IndexVGGx_So22NSStringCompareOptionsVtF">ranges(of:<wbr>options:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This returns an Array of Index Ranges that map all the occurrences of a given substring.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">ranges</span><span class="p">(</span><span class="n">of</span> <span class="nv">inString</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="n">options</span> <span class="nv">inOptions</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="kt">CompareOptions</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Range</span><span class="o">&lt;</span><span class="kt">Index</span><span class="o">&gt;</span><span class="p">]</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>of</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The substring we&rsquo;re looking for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>options</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The String options for the search.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>an Array, containing the Ranges that map each occurrence. Empty Array, if does not occur.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </div>
         </section>
 
@@ -1111,7 +1100,7 @@ For example, &ldquo;20&rdquo; would return 32, &ldquo;F100&rdquo; will return 61
     </div>
     <section class="footer">
       <p><a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">©2019 The Great Rift Valley Software Company</a></p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

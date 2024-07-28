@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bundle Extension Reference</title>
+    <title>ContiguousBytes Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Extension/Bundle" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Extension/ContiguousBytes" class="dashAnchor"></a>
 
-    <a title="Bundle Extension Reference"></a>
+    <a title="ContiguousBytes Extension Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">RVS_Generic_Swift_Toolbox Reference</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      Bundle Extension Reference
+      ContiguousBytes Extension Reference
     </p>
 
     <div class="content-wrapper">
@@ -124,15 +124,19 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>Bundle</h1>
+            <h1>ContiguousBytes</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Bundle</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">ContiguousBytes</span></code></pre>
 
                 </div>
               </div>
-            <p>This extension adds a few simple accessors for some of the more common bundle items.</p>
+            <p>This was inspired by <a href="https://stackoverflow.com/a/71365362/879365">this SO answer</a></p>
+
+<p>These casts are relatively safe, as the returned Arrays will not include any of the remainder memory, in unaligned streams.</p>
+
+<p>This means that the last memory may not be included in casts.</p>
 
           </div>
         </section>
@@ -144,9 +148,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So8NSBundleC25RVS_Generic_Swift_ToolboxE14appDisplayNameSSvp"></a>
-                    <a name="//apple_ref/swift/Property/appDisplayName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So8NSBundleC25RVS_Generic_Swift_ToolboxE14appDisplayNameSSvp">appDisplayName</a>
+                    <a name="/s:10Foundation15ContiguousBytesP25RVS_Generic_Swift_ToolboxE10asIntArraySaySiGvp"></a>
+                    <a name="//apple_ref/swift/Property/asIntArray" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation15ContiguousBytesP25RVS_Generic_Swift_ToolboxE10asIntArraySaySiGvp">asIntArray</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -154,14 +158,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The app name, as a string. It is required, and &ldquo;&rdquo; is returned if it is not present.</p>
+                        <p>The stream, as an Array of standard Int</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">appDisplayName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">asIntArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -171,9 +175,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So8NSBundleC25RVS_Generic_Swift_ToolboxE16appVersionStringSSvp"></a>
-                    <a name="//apple_ref/swift/Property/appVersionString" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So8NSBundleC25RVS_Generic_Swift_ToolboxE16appVersionStringSSvp">appVersionString</a>
+                    <a name="/s:10Foundation15ContiguousBytesP25RVS_Generic_Swift_ToolboxE12asUInt8ArraySays0I0VGvp"></a>
+                    <a name="//apple_ref/swift/Property/asUInt8Array" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation15ContiguousBytesP25RVS_Generic_Swift_ToolboxE12asUInt8ArraySays0I0VGvp">asUInt8Array</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -181,14 +185,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The app version, as a string. It is required, and &ldquo;&rdquo; is returned if it is not present.</p>
+                        <p>The stream, as an Array of unsigned byte</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">appVersionString</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">asUInt8Array</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -198,9 +202,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So8NSBundleC25RVS_Generic_Swift_ToolboxE21appVersionBuildStringSSvp"></a>
-                    <a name="//apple_ref/swift/Property/appVersionBuildString" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So8NSBundleC25RVS_Generic_Swift_ToolboxE21appVersionBuildStringSSvp">appVersionBuildString</a>
+                    <a name="/s:10Foundation15ContiguousBytesP25RVS_Generic_Swift_ToolboxE13asUInt16ArraySays0I0VGvp"></a>
+                    <a name="//apple_ref/swift/Property/asUInt16Array" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation15ContiguousBytesP25RVS_Generic_Swift_ToolboxE13asUInt16ArraySays0I0VGvp">asUInt16Array</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -208,14 +212,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The build version, as a string. It is required, and &ldquo;&rdquo; is returned if it is not present.</p>
+                        <p>The stream, as an Array of unsigned word</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">appVersionBuildString</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">asUInt16Array</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt16</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -225,9 +229,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So8NSBundleC25RVS_Generic_Swift_ToolboxE15copyrightStringSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/copyrightString" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So8NSBundleC25RVS_Generic_Swift_ToolboxE15copyrightStringSSSgvp">copyrightString</a>
+                    <a name="/s:10Foundation15ContiguousBytesP25RVS_Generic_Swift_ToolboxE13asUInt32ArraySays0I0VGvp"></a>
+                    <a name="//apple_ref/swift/Property/asUInt32Array" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation15ContiguousBytesP25RVS_Generic_Swift_ToolboxE13asUInt32ArraySays0I0VGvp">asUInt32Array</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -235,14 +239,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>If there is a copyright string, it is returned here. It may be nil.</p>
+                        <p>The stream, as an Array of unsigned long word</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">copyrightString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">asUInt32Array</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt32</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -252,9 +256,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So8NSBundleC25RVS_Generic_Swift_ToolboxE16primaryURLSchemeSSvp"></a>
-                    <a name="//apple_ref/swift/Property/primaryURLScheme" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So8NSBundleC25RVS_Generic_Swift_ToolboxE16primaryURLSchemeSSvp">primaryURLScheme</a>
+                    <a name="/s:10Foundation15ContiguousBytesP25RVS_Generic_Swift_ToolboxE13asUInt64ArraySays0I0VGvp"></a>
+                    <a name="//apple_ref/swift/Property/asUInt64Array" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation15ContiguousBytesP25RVS_Generic_Swift_ToolboxE13asUInt64ArraySays0I0VGvp">asUInt64Array</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -262,14 +266,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This fetches the first URL scheme from the bundle, renders it as a String, and returns it.</p>
+                        <p>The stream, as an Array of unsigned long long word</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">primaryURLScheme</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">asUInt64Array</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt64</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

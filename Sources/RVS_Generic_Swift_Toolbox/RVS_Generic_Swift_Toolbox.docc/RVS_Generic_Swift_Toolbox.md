@@ -4,6 +4,8 @@ A Set of utilities to ease basic and repetitive tasks, in Swift.
 
 ## Overview
 
+![Icon](icon.png)
+
 This repository is an Xcode project with a set of ambidextrous (That's what I really mean by "generic"; not just using generics) tools that can be applied to Swift projects deployed for [iOS](https://apple.com/ios), [iPadOS](https://apple.com/ipados), [MacOS](https://apple.com/macos), [WatchOS](https://apple.com/watchos) and [TVOS](https://apple.com/tvos).
 
 These tools will work for all of these platforms, and will, at most, rely only on [the Foundation library](https://developer.apple.com/documentation/foundation), and [the Core Graphics types (in the Core Foundation Library)](https://developer.apple.com/documentation/corefoundation).
@@ -83,11 +85,11 @@ You could also directly include the project as a Git Submodule. Submodules can b
 If you do this, then you should do the same as above, but instead of a Carthage directory, you will have whatever directory you choose to use to place the submodule.
 
 ## Requirements
--
-These utilities require [the Swift programming language](https://developer.apple.com/swift/), along with [the Foundation Library](https://developer.apple.com/documentation/foundation) it also uses [the Core Foundation Library)](https://developer.apple.com/documentation/corefoundation).
+
+These utilities require [the Swift programming language](https://developer.apple.com/swift/), along with [the Foundation Library](https://developer.apple.com/documentation/foundation) it also uses [the Core Foundation Library](https://developer.apple.com/documentation/corefoundation).
 
 ## License
--
+
 © Copyright 2019-2022, [The Great Rift Valley Software Company](https://riftvalleysoftware.com)
 
 [MIT License](https://opensource.org/licenses/MIT)

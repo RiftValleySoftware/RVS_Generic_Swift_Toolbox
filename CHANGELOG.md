@@ -1,3 +1,7 @@
+*Version 1.13.2* **July 28, 2024**
+- Updated to latest tools.
+- Upped the minimum supported OS versions (slightly).
+
 *Version 1.13.1* **January 6, 2024**
 - Added privacy declarations.
 - Had to remove SwiftLint, as it no longer works. :(

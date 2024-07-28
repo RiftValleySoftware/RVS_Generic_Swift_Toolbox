@@ -27,10 +27,10 @@ import PackageDescription
 let package = Package(
     name: "RVS_Generic_Swift_Toolbox",
     platforms: [
-        .iOS(.v11),
-        .tvOS(.v11),
-        .macOS(.v10_14),
-        .watchOS(.v5)
+        .iOS(.v12),
+        .tvOS(.v12),
+        .macOS(.v11),
+        .watchOS(.v6)
     ],
     products: [
         .library(

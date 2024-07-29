@@ -1,3 +1,6 @@
+*Version 1.13.3* **July 29, 2024**
+- Adjusted the build to use the platform-independent methodology for testing.
+
 *Version 1.13.2* **July 28, 2024**
 - Updated to latest tools.
 - Upped the minimum supported OS versions (slightly).

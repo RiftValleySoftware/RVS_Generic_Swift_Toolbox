@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D42A9D12282D7E9900DE798F /* RVS_Generic_Swift_Toolbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A9D09282D7E8800DE798F /* RVS_Generic_Swift_Toolbox.a */; platformFilters = (ios, macos, tvos, watchos, ); };
 		D451C746282BD73C000F8A2D /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
 		D451C747282BD73C000F8A2D /* RVS_DebugTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2723DDC66900849489 /* RVS_DebugTools.swift */; };
 		D451C748282BD73C000F8A2D /* RVS_Number_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */; };
@@ -36,8 +35,8 @@
 		D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_SequenceProtocol.swift; sourceTree = "<group>"; };
 		D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Number_Extensions.swift; sourceTree = "<group>"; };
 		D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_String_Extensions.swift; sourceTree = "<group>"; };
-		D42A9D09282D7E8800DE798F /* RVS_Generic_Swift_Toolbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D42A9D0A282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42A9D09282D7E8800DE798F /* RVS_Generic_Swift_Toolbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RVS_Generic_Swift_Toolbox.a; path = /Users/chrismarshall/Developer/RiftValley/RVS_Generic_Swift_Toolbox/build/Debug/RVS_Generic_Swift_Toolbox.a; sourceTree = "<absolute>"; };
+		D42A9D0A282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = RVS_Generic_Swift_Toolbox_Tests.xctest; path = /Users/chrismarshall/Developer/RiftValley/RVS_Generic_Swift_Toolbox/build/Debug/RVS_Generic_Swift_Toolbox_Tests.xctest; sourceTree = "<absolute>"; };
 		D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Bundle_Extensions.swift; sourceTree = "<group>"; };
 		D4907AC324956330007FAE32 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Extensions_Tests.swift; sourceTree = "<group>"; };
@@ -50,7 +49,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D42A9D12282D7E9900DE798F /* RVS_Generic_Swift_Toolbox.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +133,6 @@
 				D49DBEA723DDC79D004006AB /* meta */,
 				D49CCCAE24D47A2B00047CAD /* Sources */,
 				D4D03C1923DDDE9D005B54B5 /* Tests */,
-				D42A9D09282D7E8800DE798F /* RVS_Generic_Swift_Toolbox.a */,
-				D42A9D0A282D7E8800DE798F /* RVS_Generic_Swift_Toolbox_Tests.xctest */,
 			);
 			sourceTree = "<group>";
 		};

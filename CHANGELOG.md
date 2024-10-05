@@ -1,3 +1,6 @@
+*Version 1.14.0* **October 5, 2024**
+- Made the "localizedVariant" the only one necessary, as it tries the other two specialised ones.
+
 *Version 1.13.3* **July 29, 2024**
 - Adjusted the build to use the platform-independent methodology for testing.
 

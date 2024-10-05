@@ -1,5 +1,5 @@
 /**
-© Copyright 2019-2022, The Great Rift Valley Software Company
+© Copyright 2019-2024, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.13.3
+Version: 1.14.0
 */
 
 import Foundation   // Required for the NS, CG, and Date stuff.
@@ -150,7 +150,7 @@ public extension Date {
 /* ###################################################################################################################################### */
 // MARK: - Date Extension, To Allow Striding -
 /* ###################################################################################################################################### */
-extension Date: Strideable {
+extension Date: @retroactive Strideable {
     /* ################################################################## */
     /**
      The distance of a stride.
@@ -179,10 +179,15 @@ public extension StringProtocol {
     /**
      NOTE: Because of issues with bundles and resources, and whatnot, this will not be tested with the unit tests.
 
-     - returns: the localized string (main bundle) for this string, from the default `Localizable.strings` file.
+     - returns: the localized string (main bundle) for this string, trying each of the specialized localizations.
      */
-    var localizedVariant: String { NSLocalizedString(String(self), comment: "") }
-    
+    var localizedVariant: String {
+        let comp = self as? String ?? ""
+        guard accessibilityLocalizedVariant == comp else { return accessibilityLocalizedVariant }
+        guard errorsLocalizedVariant == comp else { return errorsLocalizedVariant }
+        return NSLocalizedString(comp, comment: "")
+    }
+
     /* ################################################################## */
     /**
      NOTE: Because of issues with bundles and resources, and whatnot, this will not be tested with the unit tests.

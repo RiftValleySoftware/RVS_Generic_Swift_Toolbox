@@ -92,7 +92,7 @@ These utilities require [the Swift programming language](https://developer.apple
 
 ## License
 
-© Copyright 2019-2022, [The Great Rift Valley Software Company](https://riftvalleysoftware.com)
+© Copyright 2019-2024, [The Great Rift Valley Software Company](https://riftvalleysoftware.com)
 
 [MIT License](https://opensource.org/licenses/MIT)
 

@@ -5,6 +5,6 @@ sdk: macosx
 github_url: https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox
 title: Rift Valley Software Generic Swift Toolbox
 module: RVS_Generic_Swift_Toolbox
-copyright: '© 2019-2022 [The Great Rift Valley Software Company](https://riftvalleysoftware.com) under [open source license](https://github.com/RiftValleySoftware/RVS_GTDriver/blob/master/LICENSE).'
+copyright: '© 2019-2024 [The Great Rift Valley Software Company](https://riftvalleysoftware.com) under [open source license](https://github.com/RiftValleySoftware/RVS_GTDriver/blob/master/LICENSE).'
 
 theme: fullwidth

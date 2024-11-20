@@ -559,4 +559,39 @@ class RVS_WeakObjectReference_Tests: XCTestCase {
         strongArray = []
         weakSet.forEach { XCTAssertNil($0.value) }
     }
+    
+    /* ################################################################## */
+    /**
+     This just tests the various equatable types.
+     */
+    func testEquatable() {
+        var objectOne: A! = A("One")
+        let objectTwo = A("Two")
+        let weakRefOne = RVS_WeakObjectReference(objectOne)
+        let weakRefTwo = RVS_WeakObjectReference(objectTwo)
+        let weakRefThree = RVS_WeakObjectReference(objectOne)
+        let weakRefFour = RVS_WeakObjectReference(objectTwo)
+
+        XCTAssertFalse(weakRefOne == weakRefTwo)
+        XCTAssertTrue(weakRefOne == weakRefThree)
+        XCTAssertTrue(weakRefTwo == weakRefFour)
+        XCTAssertFalse(weakRefThree == weakRefFour)
+        XCTAssertTrue(weakRefOne.value === weakRefThree.value)
+        XCTAssertTrue(weakRefTwo.value === weakRefFour.value)
+        XCTAssertNotNil(weakRefOne.value)
+        XCTAssertNotNil(weakRefThree.value)
+        XCTAssertNotNil(weakRefFour.value)
+
+        objectOne = nil
+        
+        XCTAssertFalse(weakRefOne == weakRefTwo)
+        XCTAssertTrue(weakRefOne == weakRefThree)
+        XCTAssertTrue(weakRefTwo == weakRefFour)
+        XCTAssertFalse(weakRefThree == weakRefFour)
+        XCTAssertTrue(weakRefOne.value === weakRefThree.value)
+        XCTAssertTrue(weakRefTwo.value === weakRefFour.value)
+        XCTAssertNil(weakRefOne.value)
+        XCTAssertNil(weakRefThree.value)
+        XCTAssertNotNil(weakRefFour.value)
+    }
 }

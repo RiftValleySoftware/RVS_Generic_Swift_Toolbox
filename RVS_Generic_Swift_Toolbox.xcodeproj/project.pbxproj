@@ -70,9 +70,9 @@
 		D427DB2823DDC66900849489 /* RVS_Generic_Swift_Toolbox_CollectionTools */ = {
 			isa = PBXGroup;
 			children = (
-				D4512E172CEE671300EAA5D4 /* RVS_WeakObjectReference.swift */,
 				D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */,
 				D427DB2A23DDC66900849489 /* RVS_SequenceProtocol.swift */,
+				D4512E172CEE671300EAA5D4 /* RVS_WeakObjectReference.swift */,
 			);
 			path = RVS_Generic_Swift_Toolbox_CollectionTools;
 			sourceTree = "<group>";

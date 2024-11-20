@@ -38,7 +38,7 @@ Version: 1.15.0
 
  [Inspired by this SO answer](https://stackoverflow.com/a/32938615/879365)
  */
-public struct RVS_WeakObjectReference<T: AnyObject>: Equatable, Hashable, CustomStringConvertible {
+public struct RVS_WeakObjectReference<T: AnyObject>: Equatable, Hashable {
     /* ################################################################## */
     /**
      The stored (weak) value. May be nil.
@@ -84,12 +84,6 @@ public struct RVS_WeakObjectReference<T: AnyObject>: Equatable, Hashable, Custom
      A read-only public accessor of the stored hash value. This will always be available.
      */
     public var hashValue: Int { _originalHashValue }
-
-    /* ################################################################## */
-    /**
-     CustomStringConvertible Conformance
-     */
-    public var description: String { "\(String(describing: Self.self))(value: \"\(String(describing: _value))\")" }
 
     /* ################################################################## */
     /**

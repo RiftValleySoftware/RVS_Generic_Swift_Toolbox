@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Date Extension Reference</title>
+    <title>RVS_WeakObjectReference Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Extension/Date" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/RVS_WeakObjectReference" class="dashAnchor"></a>
 
-    <a title="Date Extension Reference"></a>
+    <a title="RVS_WeakObjectReference Structure Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,9 +44,9 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">RVS_Generic_Swift_Toolbox</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      <a class="breadcrumb" href="../Extensions.html">Extensions</a>
+      <a class="breadcrumb" href="../Structs.html">Structures</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      Foundation.Date Extension Reference
+      RVS_WeakObjectReference Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -137,16 +137,29 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>Date</h1>
+            <h1>RVS_WeakObjectReference</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Date</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Date</span><span class="p">:</span> <span class="kd">@retroactive</span> <span class="kt">Strideable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RVS_WeakObjectReference</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                 </div>
               </div>
-            
+            <p>This allows us to maintain collections of weak references.</p>
+
+<p><strong>USAGE:</strong></p>
+
+<p>Create instances of <code>RVS_WeakObjectReference</code>, with the values being the objects that you want to aggregate weakly. Aggregate these instances.</p>
+
+<p>Each instance keeps a hash of the original object, even if that object is released, so we can use these as hashable keys or set members.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Remember to access the <code><a href="../Structs/RVS_WeakObjectReference.html#/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV5valuexSgvp">RVS_WeakObjectReference.value</a></code> property of each instance, instead of the instance, itself. The value will always be an optional, and may be nil.</p>
+
+</div>
+
+<p><a href="https://stackoverflow.com/a/32938615/879365">Inspired by this SO answer</a></p>
+
           </div>
         </section>
 
@@ -157,9 +170,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE14isOnADayBefore_8calendarSbAC_AA8CalendarVSgtF"></a>
-                    <a name="//apple_ref/swift/Method/isOnADayBefore(_:calendar:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE14isOnADayBefore_8calendarSbAC_AA8CalendarVSgtF">isOnADayBefore(_:<wbr>calendar:<wbr>)</a>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV5valueACyxGx_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV5valueACyxGx_tcfc">init(value:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -167,14 +180,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Compares another date to this one, with a day (24 hours) granularity.</p>
+                        <p>Main Initializer</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isOnADayBefore</span><span class="p">(</span><span class="n">_</span> <span class="nv">inDay</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="n">calendar</span> <span class="nv">inCalendar</span><span class="p">:</span> <span class="kt">Calendar</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n"><a href="../Structs/RVS_WeakObjectReference.html#/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV5valuexSgvp">value</a></span> <span class="nv">inValue</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -185,33 +198,17 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>inDay</em>
+                                <em>value</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The date against which we are comparing ourselves.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>calendar</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An optional (default is the current calendar) calendar instance, to use for the calculation.</p>
+                                  <p>The object reference.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>True, if this date is on a day prior to the one provided.</p>
                       </div>
                     </section>
                   </div>
@@ -219,9 +216,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE13isOnADayAfter_8calendarSbAC_AA8CalendarVSgtF"></a>
-                    <a name="//apple_ref/swift/Method/isOnADayAfter(_:calendar:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE13isOnADayAfter_8calendarSbAC_AA8CalendarVSgtF">isOnADayAfter(_:<wbr>calendar:<wbr>)</a>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceVyACyxGxcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceVyACyxGxcfc">init(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -229,14 +226,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Compares another date to this one, with a day (24 hours) granularity.</p>
+                        <p>Initializer (No parameter name).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isOnADayAfter</span><span class="p">(</span><span class="n">_</span> <span class="nv">inDay</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="n">calendar</span> <span class="nv">inCalendar</span><span class="p">:</span> <span class="kt">Calendar</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">inValue</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -247,33 +244,17 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>inDay</em>
+                                <em>inValue</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The date against which we are comparing ourselves.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>calendar</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An optional (default is the current calendar) calendar instance, to use for the calculation.</p>
+                                  <p>The object reference.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>True, if this date is on a day after the one provided.</p>
                       </div>
                     </section>
                   </div>
@@ -281,9 +262,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE16isOnTheSameDayAs_8calendarSbAC_AA8CalendarVSgtF"></a>
-                    <a name="//apple_ref/swift/Method/isOnTheSameDayAs(_:calendar:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE16isOnTheSameDayAs_8calendarSbAC_AA8CalendarVSgtF">isOnTheSameDayAs(_:<wbr>calendar:<wbr>)</a>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV5valuexSgvp"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV5valuexSgvp">value</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -291,114 +272,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Compares another date to this one, with a day (24 hours) granularity.</p>
+                        <p>A read-only public accessor of the stored value (may be nil, if the object was deallocated).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isOnTheSameDayAs</span><span class="p">(</span><span class="n">_</span> <span class="nv">inDay</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="n">calendar</span> <span class="nv">inCalendar</span><span class="p">:</span> <span class="kt">Calendar</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>inDay</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The date against which we are comparing ourselves.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>calendar</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An optional (default is the current calendar) calendar instance, to use for the calculation.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>True, if this date is the same day as the one provided.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Date%20Extension%2C%20To%20Allow%20Striding"></a>
-                <a name="//apple_ref/swift/Section/Date Extension, To Allow Striding" class="dashAnchor"></a>
-                <div class="section-name-container">
-                  <a class="section-name-link" href="#/Date%20Extension%2C%20To%20Allow%20Striding"></a>
-                  <h3 class="section-name"><span>Date Extension, To Allow Striding</span>
-</h3>
-                </div>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE8distance2toSdAC_tF"></a>
-                    <a name="//apple_ref/swift/Method/distance(to:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE8distance2toSdAC_tF">distance(to:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The distance of a stride.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">distance</span><span class="p">(</span><span class="n">to</span> <span class="nv">inOther</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">TimeInterval</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>to</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The other date instance we are measuring.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The number of seconds that separate the two dates.</p>
                       </div>
                     </section>
                   </div>
@@ -406,9 +289,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE8advanced2byACSd_tF"></a>
-                    <a name="//apple_ref/swift/Method/advanced(by:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV25RVS_Generic_Swift_ToolboxE8advanced2byACSd_tF">advanced(by:<wbr>)</a>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV9hashValueSivp"></a>
+                    <a name="//apple_ref/swift/Property/hashValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV9hashValueSivp">hashValue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -416,14 +299,68 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This advances the stride by the iteration amount given.</p>
+                        <p>A read-only public accessor of the stored hash value. This will always be available.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">advanced</span><span class="p">(</span><span class="n">by</span> <span class="nv">inInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Date</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hashValue</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV11descriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV11descriptionSSvp">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>CustomStringConvertible Conformance</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV4hash4intoys6HasherVz_tF"></a>
+                    <a name="//apple_ref/swift/Method/hash(into:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV4hash4intoys6HasherVz_tF">hash(into:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hashable Conformance</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">hash</span><span class="p">(</span><span class="n">into</span> <span class="nv">inoutHasher</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Hasher</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -434,21 +371,17 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>by</em>
+                                <em>into</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The iteration amount (in seconds).</p>
+                                  <p>The hasher to receive the hashed key.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The new date instance.</p>
                       </div>
                     </section>
                   </div>

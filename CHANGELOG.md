@@ -1,3 +1,8 @@
+*Version 1.15.0* **November 20, 2024**
+- Added the `RVS_WeakObjectReference` struct.
+- Tweaked the tests to work properly on all platforms.
+- Updated to latest tools.
+
 *Version 1.14.0* **October 5, 2024**
 - Made the "localizedVariant" the only one necessary, as it tries the other two specialised ones.
 

@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.14.0
+Version: 1.15.0
 */
 
 /* ###################################################################################################################################### */
@@ -45,7 +45,7 @@ public protocol RVS_SequenceProtocol: Sequence {
     /**
      Subscript access is get-only (for safety).
      
-     - parameter index: The 0-based index to subscript. Must be less than count.
+     - parameter inIndex: The 0-based index to subscript. Must be less than count.
      */
     subscript(_ inIndex: Int) -> Element { get }
     

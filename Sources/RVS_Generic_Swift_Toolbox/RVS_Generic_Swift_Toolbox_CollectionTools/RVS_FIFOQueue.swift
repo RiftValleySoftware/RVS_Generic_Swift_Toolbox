@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.14.0
+Version: 1.15.0
 */
 
 /* ###################################################################################################################################### */
@@ -208,9 +208,9 @@ extension RVS_FIFOQueue: MutableCollection {
      
      - returns: The input plus one (Can't get simpler than that). It can return the endIndex, which is past the last element.
      */
-    public func index(after inIndex: Int) -> Int {
-        guard (0..<endIndex).contains(inIndex) else { return endIndex }
-        return inIndex + 1
+    public func index(after inAfter: Int) -> Int {
+        guard (0..<endIndex).contains(inAfter) else { return endIndex }
+        return inAfter + 1
     }
     
     /* ################################################################## */

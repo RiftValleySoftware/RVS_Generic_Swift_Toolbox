@@ -41,9 +41,7 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="index.html">RVS_Generic_Swift_Toolbox Reference</a>
-      <img class="carat" src="img/carat.png" alt=""/>
-      RVS_Generic_Swift_Toolbox  Reference
+      <a class="breadcrumb" href="index.html">RVS_Generic_Swift_Toolbox</a>
     </p>
 
     <div class="content-wrapper">
@@ -99,6 +97,14 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:25RVS_Generic_Swift_Toolbox2eeoiySbAA0A20_WeakObjectReferenceVyxG_AEtRlzClF">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -114,6 +120,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/RVS_FIFOQueue.html">RVS_FIFOQueue</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/RVS_WeakObjectReference.html">RVS_WeakObjectReference</a>
               </li>
             </ul>
           </li>
@@ -137,15 +146,17 @@
 <ul>
 <li><a href="https://riftvalleysoftware.github.io/RVS_Generic_Swift_Toolbox/">Here is the technical documentation for this repository</a></li>
 <li><p><a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox">Here is the repository on GitHub</a></p></li>
-<li><p><a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_CollectionTools"><strong>COLLECTION TOOLS</strong></a></p>
+<li><p><a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_CollectionTools"><strong>COLLECTION TOOLS</strong></a>
+    This is a high-performance generic FIFO queue data structure. It&rsquo;s based on the work of <a href="https://oleb.net">Ole Begemann</a>, who used it as an example in his <a href="https://oleb.net/advanced-swift/">Advanced Swift</a> book.</p>
 
 <ul>
 <li><p><a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_CollectionTools/RVS_FIFOQueue.swift"><strong>RVS_FIFOQueue</strong></a></p>
 
-<p>This is a high-performance generic FIFO queue data structure. It&rsquo;s based on the work of <a href="https://oleb.net">Ole Begemann</a>, who used it as an example in his <a href="https://oleb.net/advanced-swift/">Advanced Swift</a> book.</p></li>
+<p>This is a simple protocol that gives classes and structs that conform to it, some basic <a href="https://developer.apple.com/documentation/swift/sequence">Sequence</a> behavior.</p></li>
 <li><p><a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_CollectionTools/RVS_SequenceProtocol.swift"><strong>RVS_SequenceProtocol</strong></a></p>
 
-<p>This is a simple protocol that gives classes and structs that conform to it, some basic <a href="https://developer.apple.com/documentation/swift/sequence">Sequence</a> behavior.</p></li>
+<p>This is a simple weak reference hashable container, which allows us to have collections of weak references (normally, membership in a collection creates a strong link).</p></li>
+<li><p><a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_CollectionTools/RVS_WeakObjectReference.swift"><strong>RVS_WeakObjectReference</strong></a></p></li>
 </ul></li>
 <li><p><a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/RVS_Generic_Swift_Toolbox_DebugTools"><strong>DEBUG TOOLS</strong></a></p>
 
@@ -217,7 +228,7 @@ If you do this, then you should do the same as above, but instead of a Carthage 
 </blockquote>
 <h2 id='license' class='heading'>License</h2>
 
-<p>© Copyright 2019-2022, <a href="https://riftvalleysoftware.com">The Great Rift Valley Software Company</a></p>
+<p>© Copyright 2019-2024, <a href="https://riftvalleysoftware.com">The Great Rift Valley Software Company</a></p>
 
 <p><a href="https://opensource.org/licenses/MIT">MIT License</a></p>
 
@@ -241,7 +252,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
     </div>
     <section class="footer">
       <p><a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">©2019 The Great Rift Valley Software Company</a></p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

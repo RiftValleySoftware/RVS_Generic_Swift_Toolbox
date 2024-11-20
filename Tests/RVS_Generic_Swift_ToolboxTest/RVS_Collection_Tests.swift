@@ -19,14 +19,14 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.14.0
+Version: 1.15.0
 */
 
 import XCTest
 import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
-// MARK: - RVS_FIFOQueue_Tests -
+// MARK: - RVS_FIFOQueue Tests -
 /* ###################################################################################################################################### */
 /**
  These are specific unit tests for the `RVS_FIFOQueue` struct.
@@ -273,10 +273,10 @@ class RVS_FIFOQueue_Tests: XCTestCase {
 }
 
 /* ###################################################################################################################################### */
-// MARK: - RVS_SequenceProtocol_Tests -
+// MARK: - RVS_SequenceProtocol Tests -
 /* ###################################################################################################################################### */
 /**
- These are specific unit tests for the RVS_SequenceProtocol protocol.
+ These are specific unit tests for the `RVS_SequenceProtocol` protocol.
  */
 class RVS_SequenceProtocol_Tests: XCTestCase {
     /* ################################################################################################################################## */
@@ -412,5 +412,151 @@ class RVS_SequenceProtocol_Tests: XCTestCase {
         testTargetTupleClass.removeAll()
         XCTAssertTrue(testTargetTupleClass.isEmpty)
         XCTAssertEqual(0, testTargetTupleClass.count)
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - RVS_WeakObjectReference Tests -
+/* ###################################################################################################################################### */
+/**
+ These are specific unit tests for the `RVS_WeakObjectReference` struct.
+ */
+class RVS_WeakObjectReference_Tests: XCTestCase {
+    /* ################################################################################################################################## */
+    // MARK: Simple Test Class
+    /* ################################################################################################################################## */
+    /**
+     This is a very basic class that we use to test allocation/deallocation.
+     */
+    class A: CustomStringConvertible {
+        /* ############################################################## */
+        /**
+         We just store a string.
+         */
+        let string: String
+
+        /* ############################################################## */
+        /**
+         Simple initializer
+         
+         - parameter inString: The string we'll store.
+         */
+        init(_ inString: String) {
+            string = inString
+        }
+        
+        /* ############################################################## */
+        /**
+         CustomStringConvertible Conformance
+         */
+        var description: String {
+            "\(String(describing: Self.self))(\"\(string)\")"
+        }
+    }
+    
+    /* ################################################################## */
+    /**
+     This is how many instance we'll be testing.
+     */
+    let numberOfInstances: Int = 10
+
+    /* ################################################################## */
+    /**
+     We allocate a strong array, reference it via our weak references,
+     then deallocate every other one, and make sure that everything works the way that it should.
+     The references at the same index in the weak array should be nil.
+     */
+    func testAsArray() {
+        var strongArray: [A?] = []
+        var weakArray: [RVS_WeakObjectReference<A>] = []
+
+        for index in 0..<numberOfInstances {
+            let aInstance = A("Instance \(index + 1)")
+            strongArray.append(aInstance)
+            weakArray.append(RVS_WeakObjectReference(aInstance))
+        }
+        
+        for index in 0..<numberOfInstances {
+            XCTAssertTrue(strongArray[index] === weakArray[index].value)
+        }
+        
+        for index in stride(from: 0, to: numberOfInstances, by: 2) {
+            strongArray[index] = nil
+        }
+        
+        for index in 0..<numberOfInstances {
+            XCTAssertTrue(strongArray[index] === weakArray[index].value)
+        }
+        
+        strongArray = []
+        
+        weakArray.forEach { XCTAssertNil($0.value) }
+    }
+    
+    /* ################################################################## */
+    /**
+     We allocate a strong array, then reference its contents as keys in a dictionary (remember that the type is hashable).
+     We then deallocate every other strong reference, and make sure they get nilled in the weak dictionary.
+     */
+    func testAsDictionary() {
+        var strongArray: [A?] = []
+        var hashArray: [Int] = []
+        var weakDictionary: [RVS_WeakObjectReference<A>: Int] = [:]
+
+        for index in 0..<numberOfInstances {
+            let aInstance = A("Instance \(index + 1)")
+            strongArray.append(aInstance)
+            let hashValue = ObjectIdentifier(aInstance).hashValue
+            hashArray.append(hashValue)
+            weakDictionary[RVS_WeakObjectReference(aInstance)] = hashValue  // Makes it easy to match with the instance in the strong array.
+        }
+        
+        for index in stride(from: 0, to: numberOfInstances, by: 2) {
+            strongArray[index] = nil
+        }
+        
+        weakDictionary.forEach {
+            if let strongIndex = hashArray.firstIndex(of: $0.value) {
+                XCTAssertTrue(strongArray[strongIndex] === $0.key.value)
+            } else {
+                XCTFail("The hash \($0.value) is not in the hash array!")
+            }
+        }
+        
+        strongArray = []
+        weakDictionary.forEach { XCTAssertNil($0.key.value) }
+    }
+    
+    /* ################################################################## */
+    /**
+     We allocate a strong array, then reference its contents as members of a set (remember that the type is hashable).
+     We then deallocate every other strong reference, and make sure they get nilled in the weak set.
+     */
+    func testAsSet() {
+        var strongArray: [A?] = []
+        var hashArray: [Int] = []
+        var weakSet: Set<RVS_WeakObjectReference<A>> = []
+
+        for index in 0..<numberOfInstances {
+            let aInstance = A("Instance \(index + 1)")
+            strongArray.append(aInstance)
+            hashArray.append(ObjectIdentifier(aInstance).hashValue)
+            weakSet.insert(RVS_WeakObjectReference(aInstance))
+        }
+        
+        for index in stride(from: 0, to: numberOfInstances, by: 2) {
+            strongArray[index] = nil
+        }
+        
+        weakSet.forEach {
+            if let strongIndex = hashArray.firstIndex(of: $0.hashValue) {
+                XCTAssertTrue(strongArray[strongIndex] === $0.value)
+            } else {
+                XCTFail("The hash \($0.hashValue) is not in the hash array!")
+            }
+        }
+
+        strongArray = []
+        weakSet.forEach { XCTAssertNil($0.value) }
     }
 }

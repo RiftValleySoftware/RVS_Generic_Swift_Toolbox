@@ -148,27 +148,6 @@ public extension Date {
 }
 
 /* ###################################################################################################################################### */
-// MARK: - Date Extension, To Allow Striding -
-/* ###################################################################################################################################### */
-extension Date: @retroactive Strideable {
-    /* ################################################################## */
-    /**
-     The distance of a stride.
-     - parameter to: The other date instance we are measuring.
-     - returns: The number of seconds that separate the two dates.
-     */
-    public func distance(to inOther: Date) -> TimeInterval { inOther.timeIntervalSinceReferenceDate - timeIntervalSinceReferenceDate }
-
-    /* ################################################################## */
-    /**
-     This advances the stride by the iteration amount given.
-     - parameter by: The iteration amount (in seconds).
-     - returns: The new date instance.
-     */
-    public func advanced(by inInterval: TimeInterval) -> Date { self + inInterval }
-}
-
-/* ###################################################################################################################################### */
 // MARK: - StringProtocol Extension (Foundation-Required Computed Properties) -
 /* ###################################################################################################################################### */
 /**

@@ -434,53 +434,8 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
     /* ################################################################## */
     /**
      */
-    static func makeDate(year inYear: Int, month inMonth: Int, day inDay: Int, calendar inCalendar: Calendar? = nil) -> Date { (nil == inCalendar ? Calendar(identifier: .gregorian) : inCalendar!).date(from: DateComponents(year: inYear, month: inMonth, day: inDay)) ?? Date() }
-
-    /* ################################################################## */
-    /**
-     Test the strideable dates.
-     */
-    func testStrideableDate() {
-        let oneHour = TimeInterval(60 * 60)
-        let oneDay = oneHour * 24
-        let oneWeek = oneDay * 7
-        let startingDate = Self.makeDate(year: 2000, month: 1, day: 1)
-        let endingDate = Self.makeDate(year: 2000, month: 12, day: 31)
-        let backDate = Self.makeDate(year: 1999, month: 1, day: 1)
-        let weekWalker = stride(from: startingDate, to: endingDate, by: oneWeek)
-        let dayWalker = stride(from: startingDate, to: endingDate, by: oneDay)
-        let hourWalker = stride(from: startingDate, to: endingDate, by: oneHour)
-        let backTracker = stride(from: startingDate, to: backDate, by: -oneDay)
-
-        var compInterval = TimeInterval(0)
-        for date in weekWalker {
-            let compDate = startingDate.addingTimeInterval(compInterval)
-            compInterval += oneWeek
-            XCTAssertEqual(date, compDate)
-        }
-        
-        compInterval = 0
-        for date in dayWalker {
-            let compDate = startingDate.addingTimeInterval(compInterval)
-            compInterval += oneDay
-            XCTAssertEqual(date, compDate)
-        }
-        
-        compInterval = 0
-        for date in hourWalker {
-            let compDate = startingDate.addingTimeInterval(compInterval)
-            compInterval += oneHour
-            XCTAssertEqual(date, compDate)
-        }
-
-        compInterval = 0
-        for date in backTracker {
-            let compDate = startingDate.addingTimeInterval(compInterval)
-            compInterval -= oneDay
-            XCTAssertEqual(date, compDate)
-        }
-
-//        XCTAssertEqual(startingDate.distance(to: endingDate), oneDay * 365)
+    static func makeDate(year inYear: Int, month inMonth: Int, day inDay: Int, calendar inCalendar: Calendar? = nil) -> Date {
+        (nil == inCalendar ? Calendar(identifier: .gregorian) : inCalendar!).date(from: DateComponents(year: inYear, month: inMonth, day: inDay)) ?? Date()
     }
 
     /* ################################################################## */
@@ -819,6 +774,7 @@ class RVS_Foundation_Extensions_Tests: XCTestCase {
     func testValidEmailAddress() {
         XCTAssertFalse("notAHotDog".isAValidEmailAddress)
         XCTAssertFalse("notAHotD.og".isAValidEmailAddress)
+        XCTAssertFalse("not@AHotDo.g".isAValidEmailAddress)
         XCTAssertTrue("not@AHotD.og".isAValidEmailAddress)
         XCTAssertFalse("n0t@AH0tD.0g".isAValidEmailAddress)
         XCTAssertFalse("n0t@AH0tD.O9".isAValidEmailAddress)

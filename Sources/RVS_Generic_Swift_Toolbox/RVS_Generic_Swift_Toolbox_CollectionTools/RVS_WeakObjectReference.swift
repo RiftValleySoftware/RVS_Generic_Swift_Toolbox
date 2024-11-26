@@ -110,3 +110,26 @@ public func ==<T>(lhs: RVS_WeakObjectReference<T>, rhs: RVS_WeakObjectReference<
         : nil == lhs.value || nil == rhs.value ? false
             : lhs.value! === rhs.value!
 }
+
+/* ###################################################################################################################################### */
+// MARK: Array Casting Operator
+/* ###################################################################################################################################### */
+/**
+ This allows us to declare an array of weak references to be an array of their contents.
+ 
+ > NOTE: Only currently allocated references will be included, and this establishes a strong reference.
+ */
+public extension Array where Element: AnyObject {
+    /* ################################################################## */
+    /**
+     Casting Initializer.
+     
+     This creates an Array of **strong** references to the weak references in the array of weak ref instances.
+     Only the currently viable instances will be included, and the hash keys are excluded.
+     
+     - parameter inRefs: An array of ``RVS_WeakObjectReference`` instances.
+     */
+    init(_ inRefs: [RVS_WeakObjectReference<Element>]) {
+        self = inRefs.compactMap(\.value)
+    }
+}

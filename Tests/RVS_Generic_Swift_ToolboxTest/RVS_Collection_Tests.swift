@@ -594,4 +594,34 @@ class RVS_WeakObjectReference_Tests: XCTestCase {
         XCTAssertNil(weakRefThree.value)
         XCTAssertNotNil(weakRefFour.value)
     }
+    
+    /* ################################################################## */
+    /**
+     This tests the array casting extension.
+     */
+    func testCasting() {
+        var strongArray: [A?] = []
+        var weakArray: [RVS_WeakObjectReference<A>] = []
+
+        for index in 0..<numberOfInstances {
+            let aInstance = A("Instance \(index + 1)")
+            strongArray.append(aInstance)
+            weakArray.append(RVS_WeakObjectReference(aInstance))
+        }
+        
+        var testArrayStrong = [A](weakArray)
+        
+        for index in 0..<numberOfInstances {
+            XCTAssertTrue(testArrayStrong[index] === strongArray[index])
+            XCTAssertTrue(testArrayStrong[index] === weakArray[index].value)
+        }
+        
+        strongArray = []
+        
+        weakArray.forEach { XCTAssertNotNil($0.value) }
+
+        testArrayStrong = []
+        
+        weakArray.forEach { XCTAssertNil($0.value) }
+    }
 }

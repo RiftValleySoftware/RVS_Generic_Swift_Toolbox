@@ -1,3 +1,6 @@
+*Version 1.15.4* **January 15, 2025**
+- Did some internal optimizations and fixes.
+
 *Version 1.15.3* **January 15, 2025**
 - Added the `isEven` computed property, and moved the `maskedValue` function to an overall type extension; making it all much simpler.
 

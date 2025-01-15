@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.15.3
+ Version: 1.15.4
 */
 
 /* ###################################################################################################################################### */
@@ -37,7 +37,8 @@ public extension FixedWidthInteger {
     
     /* ################################################################## */
     /**
-     This returns the number as a Roman numeral.
+     - returns: the number as a Roman numeral (in a String).
+     
      NOTE: The maximum value is 4999. The minimum value is 1. Out of range values are returned as "".
 
      Inspired by the SO answer here: https://stackoverflow.com/a/36068105/879365
@@ -110,13 +111,13 @@ public extension FixedWidthInteger {
         let runLength = Int(inRunLength)
 
         guard (firstPlace + runLength) <= maxRunLength,
-              0 < inRunLength
+              0 < runLength
         else { return 0 }   // Shortcut, if they aren't looking for anything.
         
         // The first thing we do, is shift the main value down to the start of our mask.
-        let shifted = UInt64(UInt64(self) >> inFirstPlace)
+        let shifted = UInt64(UInt64(self) >> firstPlace)
         // We make a mask quite simply. We just shift down a "full house."
-        let mask = UInt64(0xFFFFFFFFFFFFFFFF) >> (maxRunLength - runLength)
+        let mask = UInt64.max >> (maxRunLength - runLength)
         // By masking out anything not in the run length, we return a value.
         return Self(shifted) & Self(mask)
     }

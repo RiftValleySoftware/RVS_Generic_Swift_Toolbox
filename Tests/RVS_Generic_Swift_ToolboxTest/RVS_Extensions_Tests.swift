@@ -222,6 +222,74 @@ class RVS_Int_Extensions_Tests: XCTestCase {
     
     /* ################################################################## */
     /**
+     This is the isEven extension computed property test
+     */
+    func testIsEven() {
+        XCTAssertTrue(0.isEven)
+        XCTAssertFalse(1.isEven)
+        XCTAssertTrue(2.isEven)
+        XCTAssertFalse((-1).isEven)
+        XCTAssertTrue((-2).isEven)
+        XCTAssertTrue(Int8(0).isEven)
+        XCTAssertFalse(Int8(1).isEven)
+        XCTAssertTrue(Int8(2).isEven)
+        XCTAssertFalse(Int8(-1).isEven)
+        XCTAssertTrue(Int8(-2).isEven)
+        XCTAssertTrue(UInt8(0).isEven)
+        XCTAssertFalse(UInt8(1).isEven)
+        XCTAssertTrue(UInt8(2).isEven)
+        XCTAssertTrue(Int16(0).isEven)
+        XCTAssertFalse(Int16(1).isEven)
+        XCTAssertTrue(Int16(2).isEven)
+        XCTAssertFalse(Int16(-1).isEven)
+        XCTAssertTrue(Int16(-2).isEven)
+        XCTAssertTrue(UInt16(0).isEven)
+        XCTAssertFalse(UInt16(1).isEven)
+        XCTAssertTrue(UInt16(2).isEven)
+        XCTAssertTrue(Int32(0).isEven)
+        XCTAssertFalse(Int32(1).isEven)
+        XCTAssertTrue(Int32(2).isEven)
+        XCTAssertFalse(Int32(-1).isEven)
+        XCTAssertTrue(Int32(-2).isEven)
+        XCTAssertTrue(UInt32(0).isEven)
+        XCTAssertFalse(UInt32(1).isEven)
+        XCTAssertTrue(UInt32(2).isEven)
+        XCTAssertTrue(Int64(0).isEven)
+        XCTAssertFalse(Int64(1).isEven)
+        XCTAssertTrue(Int64(2).isEven)
+        XCTAssertFalse(Int64(-1).isEven)
+        XCTAssertTrue(Int64(-2).isEven)
+        XCTAssertFalse(UInt64(1).isEven)
+        XCTAssertTrue(UInt64(2).isEven)
+        
+        XCTAssertFalse(Int8(127).isEven)
+        XCTAssertTrue(Int8(126).isEven)
+        XCTAssertFalse(Int8(-127).isEven)
+        XCTAssertTrue(Int8(-128).isEven)
+        XCTAssertFalse(UInt8(255).isEven)
+        XCTAssertTrue(UInt8(254).isEven)
+        XCTAssertFalse(Int16(32767).isEven)
+        XCTAssertTrue(Int16(32766).isEven)
+        XCTAssertFalse(Int16(-32767).isEven)
+        XCTAssertTrue(Int16(-32768).isEven)
+        XCTAssertFalse(UInt16(65535).isEven)
+        XCTAssertTrue(UInt16(65534).isEven)
+        XCTAssertFalse(Int32(2147483647).isEven)
+        XCTAssertTrue(Int32(2147483646).isEven)
+        XCTAssertFalse(Int32(-2147483647).isEven)
+        XCTAssertTrue(Int32(-2147483648).isEven)
+        XCTAssertFalse(UInt32(4294967295).isEven)
+        XCTAssertTrue(UInt32(4294967294).isEven)
+        XCTAssertFalse(Int64(9223372036854775807).isEven)
+        XCTAssertTrue(Int64(9223372036854775806).isEven)
+        XCTAssertFalse(Int64(-9223372036854775807).isEven)
+        XCTAssertTrue(Int64(-9223372036854775808).isEven)
+        XCTAssertFalse(UInt64(18446744073709551615).isEven)
+        XCTAssertTrue(UInt64(18446744073709551614).isEven)
+    }
+
+    /* ################################################################## */
+    /**
      Test the Roman numerals.
      */
     func testRomanNumerals() {

@@ -23,52 +23,39 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 */
 
 /* ###################################################################################################################################### */
-// MARK: Double Extension
+// MARK: FixedWidthInteger Extension
 /* ###################################################################################################################################### */
 /**
- This makes it easier to convert between Degrees and Radians.
+ These can be applied to any fixed-width integer (signed or unsigned).
  */
-public extension Double {
+public extension FixedWidthInteger {
     /* ################################################################## */
     /**
-     - returns: a float (in degrees), as Radians
+     - returns: True, if the integer is even (divisible by 2).
      */
-    var radians: Double { Double.pi * (self / 180) }
+    var isEven: Bool { 0 == 1 & self }
     
     /* ################################################################## */
     /**
-     - returns: a float (in Radians), as degrees
-     */
-    var degrees: Double { 180 * (self / Double.pi) }
-}
+     This returns the number as a Roman numeral.
+     NOTE: The maximum value is 4999. The minimum value is 1. Out of range values are returned as "".
 
-/* ###################################################################################################################################### */
-// MARK: Float Extension
-/* ###################################################################################################################################### */
-/**
- This makes it easier to convert between Degrees and Radians.
- */
-public extension Float {
-    /* ################################################################## */
-    /**
-     - returns: a float (in degrees), as Radians
+     Inspired by the SO answer here: https://stackoverflow.com/a/36068105/879365
      */
-    var radians: Float { Float(Double(self).radians) }
+    var romanNumeral: String {
+        guard (1..<5000).contains(self) else { return "" }
+        var integerValue = UInt16(self)
+        var numeralString = ""
+        let mappingList: [(UInt16, String)] = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
+        mappingList.forEach {
+            while integerValue >= $0.0 {
+                integerValue -= $0.0
+                numeralString += $0.1
+            }
+        }
+        return numeralString
+    }
     
-    /* ################################################################## */
-    /**
-     - returns: a float (in Radians), as degrees
-     */
-    var degrees: Float { Float(Double(self).degrees) }
-}
-
-/* ###################################################################################################################################### */
-// MARK: - UInt64 Extension -
-/* ###################################################################################################################################### */
-/**
- This extension will add a new set of capabilities to the native UInt64 data type.
- */
-public extension UInt64 {
     /* ################################################################## */
     /**
      This method allows us to mask a discrete bit range within the number, and return its value as a 64-bit unsigned Int.
@@ -117,145 +104,60 @@ public extension UInt64 {
      
      - returns: An Unsigned Int, with the masked value.
      */
-    func maskedValue(firstPlace inFirstPlace: UInt, runLength inRunLength: UInt) -> UInt64 {
-        let maxRunLength = UInt(64)
-        guard (inFirstPlace + inRunLength) <= maxRunLength,
-              0 < inRunLength else { return 0 }   // Shortcut, if they aren't looking for anything.
+    func maskedValue(firstPlace inFirstPlace: any FixedWidthInteger, runLength inRunLength: any FixedWidthInteger) -> Self {
+        let maxRunLength = Int(MemoryLayout<Self>.size * 8)
+        let firstPlace = Int(inFirstPlace)
+        let runLength = Int(inRunLength)
+
+        guard (firstPlace + runLength) <= maxRunLength,
+              0 < inRunLength
+        else { return 0 }   // Shortcut, if they aren't looking for anything.
+        
         // The first thing we do, is shift the main value down to the start of our mask.
-        let shifted = UInt64(self >> inFirstPlace)
+        let shifted = UInt64(UInt64(self) >> inFirstPlace)
         // We make a mask quite simply. We just shift down a "full house."
-        let mask = UInt64(0xFFFFFFFFFFFFFFFF) >> (maxRunLength - inRunLength)
+        let mask = UInt64(0xFFFFFFFFFFFFFFFF) >> (maxRunLength - runLength)
         // By masking out anything not in the run length, we return a value.
-        return shifted & UInt64(mask)
+        return Self(shifted) & Self(mask)
     }
 }
 
 /* ###################################################################################################################################### */
-// MARK: - UInt Extension -
+// MARK: Double Extension
 /* ###################################################################################################################################### */
 /**
- This extension will add a new set of capabilities to the native UInt data type.
+ This makes it easier to convert between Degrees and Radians.
  */
-public extension UInt {
+public extension Double {
     /* ################################################################## */
     /**
-     This method allows us to mask a discrete bit range within the number, and return its value as a basic unsigned Int.
-     
-     For example, if we have the hex number 0xF30 (3888 decimal, or 111100110000 binary), we can mask parts of it to get masked values, like so:
-     ```
-        // 111100110000 (Value, in binary)
-     
-        // 111111111111 (Mask, in binary)
-        let wholeValue = 3888.maskedValue(firstPlace: 0, runLength: 12)     // Returns 3888
-        // 111111110000
-        let lastByte = 3888.maskedValue(firstPlace: 4, runLength: 8)        // Returns 243
-        // 000000000011
-        let lowestTwoBits = 3888.maskedValue(firstPlace: 0, runLength: 2)   // Returns 0
-        // 000000111100
-        let middleTwelve = 3888.maskedValue(firstPlace: 2, runLength: 4)    // Returns 12
-        // 000111100000
-        let middleNine = 3888.maskedValue(firstPlace: 5, runLength: 4)      // Returns 9
-        // 011111111111
-        let theFirstElevenBits = 3888.maskedValue(firstPlace: 0, runLength: 11) // Returns 1840
-        // 111111111110
-        let theLastElevenBits = 3888.maskedValue(firstPlace: 1, runLength: 11)  // Returns 1944
-        // 000000110000
-        let lowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 4, runLength: 2)          // Returns 3
-        // 000001100000
-        let secondToLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 5, runLength: 2)  // Returns 1
-        // 000011000000
-        let thirdFromLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 6, runLength: 2) // Returns 0
-     ```
-     This is BIT-based, not BYTE-based, and assumes the number is in a linear (bigendian) format, in which the least significant bit is the rightmost one (position one).
-     In reality, this doesn't matter, as the language takes care of transposing byte order.
-     
-     - prerequisites:
-        - The sum of `firstPlace` and `runLength` cannot exceed the maximum size of a UInt64.
-     
-     - parameters:
-        - firstPlace: The 1-based (1 is the first bit) starting position for the mask.
-        - runLength: The inclusive (includes the starting place) number of bits to mask. If 0, then the return will always be 0.
-     
-     - returns: An Int, with the masked value.
+     - returns: a float (in degrees), as Radians
      */
-    func maskedValue(firstPlace inFirstPlace: UInt, runLength inRunLength: UInt) -> UInt { UInt(UInt64(self).maskedValue(firstPlace: inFirstPlace, runLength: inRunLength)) }
-}
-
-/* ###################################################################################################################################### */
-// MARK: - Int Extension -
-/* ###################################################################################################################################### */
-/**
- This extension will add a new set of capabilities to the native Int data type.
- */
-public extension Int {
-    /* ################################################################## */
-    /**
-     This method allows us to mask a discrete bit range within the number, and return its value as a basic Int.
-     
-     For example, if we have the hex number 0xF30 (3888 decimal, or 111100110000 binary), we can mask parts of it to get masked values, like so:
-     ```
-        // 111100110000 (Value, in binary)
-     
-        // 111111111111 (Mask, in binary)
-        let wholeValue = 3888.maskedValue(firstPlace: 0, runLength: 12)     // Returns 3888
-        // 111111110000
-        let lastByte = 3888.maskedValue(firstPlace: 4, runLength: 8)        // Returns 243
-        // 000000000011
-        let lowestTwoBits = 3888.maskedValue(firstPlace: 0, runLength: 2)   // Returns 0
-        // 000000111100
-        let middleTwelve = 3888.maskedValue(firstPlace: 2, runLength: 4)    // Returns 12
-        // 000111100000
-        let middleNine = 3888.maskedValue(firstPlace: 5, runLength: 4)      // Returns 9
-        // 011111111111
-        let theFirstElevenBits = 3888.maskedValue(firstPlace: 0, runLength: 11) // Returns 1840
-        // 111111111110
-        let theLastElevenBits = 3888.maskedValue(firstPlace: 1, runLength: 11)  // Returns 1944
-        // 000000110000
-        let lowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 4, runLength: 2)          // Returns 3
-        // 000001100000
-        let secondToLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 5, runLength: 2)  // Returns 1
-        // 000011000000
-        let thirdFromLowestTwoBitsOfTheSecondHalfOfTheFirstByte = 3888.maskedValue(firstPlace: 6, runLength: 2) // Returns 0
-     ```
-     This is BIT-based, not BYTE-based, and assumes the number is in a linear (bigendian) format, in which the least significant bit is the rightmost one (position one).
-     In reality, this doesn't matter, as the language takes care of transposing byte order.
-     
-     - prerequisites:
-        - The sum of `firstPlace` and `runLength` cannot exceed the maximum size of a UInt64.
-        - The value of the Int must be positive.
-        - The parameters must be positive.
-     
-     - parameters:
-        - firstPlace: The 1-based (1 is the first bit) starting position for the mask. Must be a positive integer.
-        - runLength: The inclusive (includes the starting place) number of bits to mask. Must be a positive integer. If 0, then the return will always be 0.
-     
-     - returns: An Int, with the masked value.
-     */
-    func maskedValue(firstPlace inFirstPlace: Int, runLength inRunLength: Int) -> Int {
-        guard 0 <= self,
-              0 <= inFirstPlace,
-              0 <= inRunLength else { return 0 }
-        return Int(UInt64(self).maskedValue(firstPlace: UInt(inFirstPlace), runLength: UInt(inRunLength)))
-    }
+    var radians: Double { Double.pi * (self / 180) }
     
     /* ################################################################## */
     /**
-     This returns the Int as a Roman numeral.
-     NOTE: The maximum value is 4999. The minimum value is 1. Out of range values are returned as "".
-
-     Inspired by the SO answer here: https://stackoverflow.com/a/36068105/879365
+     - returns: a float (in Radians), as degrees
      */
-    var romanNumeral: String {
-        guard (1..<5000).contains(self) else { return "" }
-        var integerValue = UInt16(self)
-        var numeralString = ""
-        let mappingList: [(UInt16, String)] = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
-        mappingList.forEach {
-            while integerValue >= $0.0 {
-                integerValue -= $0.0
-                numeralString += $0.1
-            }
-        }
-        return numeralString
-    }
+    var degrees: Double { 180 * (self / Double.pi) }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Float Extension
+/* ###################################################################################################################################### */
+/**
+ This makes it easier to convert between Degrees and Radians.
+ */
+public extension Float {
+    /* ################################################################## */
+    /**
+     - returns: a float (in degrees), as Radians
+     */
+    var radians: Float { Float(Double(self).radians) }
+    
+    /* ################################################################## */
+    /**
+     - returns: a float (in Radians), as degrees
+     */
+    var degrees: Float { Float(Double(self).degrees) }
 }

@@ -1,3 +1,6 @@
+*Version 1.15.3* **January 15, 2025**
+- Added the `isEven` computed property, and moved the `maskedValue` function to an overall type extension; making it all much simpler.
+
 *Version 1.15.2* **November 26, 2024**
 - Added an array casting extension, allowing easy casting of an array of weak references to an array of the referenced objects.
 

@@ -468,31 +468,6 @@ class RVS_String_Extensions_Tests: XCTestCase {
 }
 
 /* ###################################################################################################################################### */
-// MARK: - RVS_Bundle_Extensions_Tests -
-/* ###################################################################################################################################### */
-/**
- These are specific unit tests for the Bundle extension.
- 
- > NOTE: Due to the complications around auto-generated plist files, I can no longer test these.
- */
-//class RVS_Bundle_Extensions_Tests: XCTestCase {
-//    func testSimpleBundleAccessors() {
-//        let testBundle = Bundle(for: type(of: self))
-//        XCTAssertEqual("RVS_Generic_Swift_Toolbox_Tests_Name", testBundle.appDisplayName)
-//        XCTAssertEqual("1.2.3", testBundle.appVersionString)
-//        XCTAssertEqual("4.5.6", testBundle.appVersionBuildString)
-//        XCTAssertEqual("RVS_Generic_Swift_Toolbox_Tests_Copyright", testBundle.copyrightString)
-//        XCTAssertEqual("rvsgct", testBundle.primaryURLScheme)
-//        let testBundle2 = Bundle()
-//        XCTAssertEqual("", testBundle2.appDisplayName)
-//        XCTAssertEqual("", testBundle2.appVersionString)
-//        XCTAssertEqual("", testBundle2.appVersionBuildString)
-//        XCTAssertEqual("", testBundle2.primaryURLScheme)
-//        XCTAssertNil(testBundle2.copyrightString)
-//    }
-//}
-
-/* ###################################################################################################################################### */
 // MARK: - RVS_Foundation_Extensions_Tests -
 /* ###################################################################################################################################### */
 /**

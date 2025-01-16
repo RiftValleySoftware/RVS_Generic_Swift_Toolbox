@@ -1,4 +1,4 @@
-/**
+/*
 © Copyright 2019-2024, The Great Rift Valley Software Company
 
 LICENSE:
@@ -45,19 +45,19 @@ public protocol OLEB_Queue {
     /**
      This will push the single element into the 0th (first) place.
      */
-    mutating func cutTheLine(_ : Element)
+    mutating func cutTheLine(_: Element)
     
     /* ################################################################## */
     /**
      Adds a new Element to the end (back) of the queue
      */
-    mutating func enqueue(_ : Element)
+    mutating func enqueue(_: Element)
 
     /* ################################################################## */
     /**
      Adds a new Array of Element to the end (back) of the queue
      */
-    mutating func enqueue(_ : [Element])
+    mutating func enqueue(_: [Element])
 
     /* ################################################################## */
     /**
@@ -226,7 +226,7 @@ extension RVS_FIFOQueue: MutableCollection {
                 return _leftQueue[_leftQueue.count - inPosition - 1]
             }
             
-            return _rightQueue[inPosition - _leftQueue.count - (0 < _leftQueue.count ? 1 : 0)]
+            return _rightQueue[inPosition - _leftQueue.count - (!_leftQueue.isEmpty ? 1 : 0)]
         }
         
         set {
@@ -234,7 +234,7 @@ extension RVS_FIFOQueue: MutableCollection {
                 return _leftQueue[_leftQueue.count - inPosition - 1] = newValue
             }
             
-            return _rightQueue[inPosition - _leftQueue.count - (0 < _leftQueue.count ? 1 : 0)] = newValue
+            return _rightQueue[inPosition - _leftQueue.count - (!_leftQueue.isEmpty ? 1 : 0)] = newValue
         }
     }
 }

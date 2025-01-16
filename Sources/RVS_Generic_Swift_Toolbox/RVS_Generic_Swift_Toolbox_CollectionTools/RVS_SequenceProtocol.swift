@@ -1,4 +1,4 @@
-/**
+/*
 © Copyright 2019-2024, The Great Rift Valley Software Company
 
 LICENSE:

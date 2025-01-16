@@ -10,6 +10,7 @@ disabled_rules:
 - implicit_getter
 - non_optional_string_data_conversion
 - private_over_fileprivate
+- legacy_hashing
 
 opt_in_rules:
 - control_statement
@@ -42,3 +43,4 @@ excluded:
 - Pods
 - Carthage
 - .build
+- Tests

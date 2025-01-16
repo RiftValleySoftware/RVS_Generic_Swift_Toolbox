@@ -1,4 +1,4 @@
-/**
+/*
 © Copyright 2019-2024, The Great Rift Valley Software Company
 
 LICENSE:
@@ -105,7 +105,7 @@ public struct RVS_WeakObjectReference<T: AnyObject>: Equatable, Hashable {
  
  - returns: true, if they are the same.
  */
-public func ==<T>(lhs: RVS_WeakObjectReference<T>, rhs: RVS_WeakObjectReference<T>) -> Bool {
+public func == <T>(lhs: RVS_WeakObjectReference<T>, rhs: RVS_WeakObjectReference<T>) -> Bool {
     nil == lhs.value && nil == rhs.value ? true
         : nil == lhs.value || nil == rhs.value ? false
             : lhs.value! === rhs.value!

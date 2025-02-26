@@ -1,3 +1,6 @@
+*Version 1.15.6* **February 26, 2025**
+- Just some code documentation changes. No visible API change.
+
 *Version 1.15.5* **January 16, 2025**
 - Reintroduced SwiftLint to the project, and did some code cleanup, to make it happy.
 

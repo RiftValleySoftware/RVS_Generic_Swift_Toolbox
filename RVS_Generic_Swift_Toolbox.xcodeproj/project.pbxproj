@@ -42,6 +42,9 @@
 		D4512E162CEE663A00EAA5D4 /* RVS_Generic_Swift_Toolbox_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4512E172CEE671300EAA5D4 /* RVS_WeakObjectReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_WeakObjectReference.swift; sourceTree = "<group>"; };
 		D4907AC324956330007FAE32 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
+		D4AD65142E268E0A004FEA6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D4AD65172E268E2A004FEA6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Errors.strings; sourceTree = "<group>"; };
+		D4AD65182E268E2A004FEA6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Accessibility.strings; sourceTree = "<group>"; };
 		D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Extensions_Tests.swift; sourceTree = "<group>"; };
 		D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Collection_Tests.swift; sourceTree = "<group>"; };
 		D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Foundation_Extensions.swift; sourceTree = "<group>"; };
@@ -123,6 +126,9 @@
 		D4D03C1923DDDE9D005B54B5 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D4AD65132E268E0A004FEA6F /* Localizable.strings */,
+				D4AD65152E268E2A004FEA6F /* Accessibility.strings */,
+				D4AD65162E268E2A004FEA6F /* Errors.strings */,
 				D49CCCAD24D479DF00047CAD /* RVS_Generic_Swift_ToolboxTest */,
 			);
 			path = Tests;
@@ -283,6 +289,33 @@
 			targetProxy = D4512E1F2CEE7E2E00EAA5D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4AD65132E268E0A004FEA6F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4AD65142E268E0A004FEA6F /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D4AD65152E268E2A004FEA6F /* Accessibility.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4AD65182E268E2A004FEA6F /* en */,
+			);
+			name = Accessibility.strings;
+			sourceTree = "<group>";
+		};
+		D4AD65162E268E2A004FEA6F /* Errors.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4AD65172E268E2A004FEA6F /* en */,
+			);
+			name = Errors.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D451C744282BD713000F8A2D /* Debug */ = {

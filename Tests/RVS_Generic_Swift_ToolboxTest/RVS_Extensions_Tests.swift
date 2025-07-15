@@ -1,5 +1,5 @@
 /**
-© Copyright 2019-2024, The Great Rift Valley Software Company
+© Copyright 2019-2025, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.15.6
+Version: 1.15.7
 */
 
 import XCTest
@@ -464,6 +464,13 @@ class RVS_String_Extensions_Tests: XCTestCase {
         XCTAssertEqual(3, "3".hex2Int)
         XCTAssertNil("G".hex2Int)
         XCTAssertEqual(238, "George".hex2Int)
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    func testLocalizableStrings() {
+        XCTAssertEqual("Test 1", "Test 1".localizedVariant)
     }
 }
 

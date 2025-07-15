@@ -22,20 +22,4 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 Version: 1.15.7
 */
 
-import Foundation   // Required for the ProcessInfo stuff.
-
-/* ###################################################################################################################################### */
-// MARK: - Debug Tools Class -
-/* ###################################################################################################################################### */
-/**
- This class is a "junk drawer" of various debug/testing tools.
- */
-public class RVS_DebugTools {
-    /* ################################################################## */
-    /**
-     This is used to see whether or not we are running under unit tests. It is optional, and isn't really supposed to be replaced.
-     
-     - returns: True, if we are currently in a unit test.
-     */
-    static public var isRunningUnitTests: Bool { nil != NSClassFromString("XCTest") }
-}
+"Test 2"               =   "Test 2";

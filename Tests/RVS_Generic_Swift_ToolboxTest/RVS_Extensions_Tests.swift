@@ -465,13 +465,6 @@ class RVS_String_Extensions_Tests: XCTestCase {
         XCTAssertNil("G".hex2Int)
         XCTAssertEqual(238, "George".hex2Int)
     }
-    
-    /* ################################################################## */
-    /**
-     */
-    func testLocalizableStrings() {
-        XCTAssertEqual("Test 1", "Test 1".localizedVariant)
-    }
 }
 
 /* ###################################################################################################################################### */

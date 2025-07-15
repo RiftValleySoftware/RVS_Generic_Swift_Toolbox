@@ -1,3 +1,8 @@
+*Version 1.15.7* **July 15, 2025**
+- Just some code documentation changes. No visible API change.
+- Updated to latest tools.
+- Converted tests to test plan.
+
 *Version 1.15.6* **February 26, 2025**
 - Just some code documentation changes. No visible API change.
 

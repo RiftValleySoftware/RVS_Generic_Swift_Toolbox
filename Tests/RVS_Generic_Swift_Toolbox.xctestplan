@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "DBB1DD38-CFBE-4798-BF2D-57F5B743C990",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RVS_Generic_Swift_Toolbox.xcodeproj",
+        "identifier" : "D4D03C1723DDDE9D005B54B5",
+        "name" : "RVS_Generic_Swift_Toolbox_Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -41,10 +41,8 @@
 		D4512E152CEE663A00EAA5D4 /* RVS_Generic_Swift_Toolbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4512E162CEE663A00EAA5D4 /* RVS_Generic_Swift_Toolbox_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4512E172CEE671300EAA5D4 /* RVS_WeakObjectReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_WeakObjectReference.swift; sourceTree = "<group>"; };
+		D458A2B12E26ACB40077F9A4 /* RVS_Generic_Swift_Toolbox.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RVS_Generic_Swift_Toolbox.xctestplan; sourceTree = "<group>"; };
 		D4907AC324956330007FAE32 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
-		D4AD65142E268E0A004FEA6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D4AD65172E268E2A004FEA6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Errors.strings; sourceTree = "<group>"; };
-		D4AD65182E268E2A004FEA6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Accessibility.strings; sourceTree = "<group>"; };
 		D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Extensions_Tests.swift; sourceTree = "<group>"; };
 		D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Collection_Tests.swift; sourceTree = "<group>"; };
 		D4FCFD29282BEE9500EDD66C /* RVS_Foundation_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Foundation_Extensions.swift; sourceTree = "<group>"; };
@@ -126,9 +124,7 @@
 		D4D03C1923DDDE9D005B54B5 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D4AD65132E268E0A004FEA6F /* Localizable.strings */,
-				D4AD65152E268E2A004FEA6F /* Accessibility.strings */,
-				D4AD65162E268E2A004FEA6F /* Errors.strings */,
+				D458A2B12E26ACB40077F9A4 /* RVS_Generic_Swift_Toolbox.xctestplan */,
 				D49CCCAD24D479DF00047CAD /* RVS_Generic_Swift_ToolboxTest */,
 			);
 			path = Tests;
@@ -182,6 +178,7 @@
 			buildPhases = (
 				D4D03C1423DDDE9D005B54B5 /* Sources */,
 				D4E19E3F282D777F00C0D755 /* Frameworks */,
+				D458A2AC2E26AA7D0077F9A4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -201,7 +198,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1640;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
 					D451C73C282BD713000F8A2D = {
@@ -232,6 +229,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D458A2AC2E26AA7D0077F9A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		D443520C2D39409300271DF3 /* SwiftLint */ = {
@@ -290,33 +297,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		D4AD65132E268E0A004FEA6F /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4AD65142E268E0A004FEA6F /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		D4AD65152E268E2A004FEA6F /* Accessibility.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4AD65182E268E2A004FEA6F /* en */,
-			);
-			name = Accessibility.strings;
-			sourceTree = "<group>";
-		};
-		D4AD65162E268E2A004FEA6F /* Errors.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4AD65172E268E2A004FEA6F /* en */,
-			);
-			name = Errors.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		D451C744282BD713000F8A2D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -325,7 +305,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXECUTABLE_PREFIX = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -351,7 +330,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXECUTABLE_PREFIX = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -377,7 +355,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"TESTING=1",
@@ -412,7 +389,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				GCC_PREPROCESSOR_DEFINITIONS = "TESTING=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -474,6 +450,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -542,6 +519,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;

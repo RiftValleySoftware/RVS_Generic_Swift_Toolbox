@@ -156,6 +156,8 @@ public extension Date {
 public extension StringProtocol {
     /* ################################################################## */
     /**
+     > NOTE: This function cannot be unit-tested. XCTest does not allow us to assign a `Localizable.strings` file to the test bundle.
+     
      - returns: the localized string (main bundle) for this string, trying each of the specialized localizations.
      */
     var localizedVariant: String {
@@ -167,12 +169,16 @@ public extension StringProtocol {
 
     /* ################################################################## */
     /**
+     > NOTE: This function cannot be unit-tested. XCTest does not allow us to assign an `Accessibility.strings` file to the test bundle.
+     
      - returns: the localized string (main bundle) for this string, from an `Accessibility.strings` file.
      */
     var accessibilityLocalizedVariant: String { NSLocalizedString(String(self), tableName: "Accessibility", comment: "")  }
 
     /* ################################################################## */
     /**
+     > NOTE: This function cannot be unit-tested. XCTest does not allow us to assign an `Errors.strings` file to the test bundle.
+     
      - returns: the localized string (main bundle) for this string, from an `Errors.strings` file.
      */
     var errorsLocalizedVariant: String { NSLocalizedString(String(self), tableName: "Errors", comment: "")  }

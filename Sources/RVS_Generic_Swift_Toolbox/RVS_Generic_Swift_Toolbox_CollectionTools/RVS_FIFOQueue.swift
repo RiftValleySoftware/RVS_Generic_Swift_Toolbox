@@ -204,7 +204,7 @@ extension RVS_FIFOQueue: MutableCollection {
     
     /* ################################################################## */
     /**
-     - parameter after: The index we want to get after.
+     - parameter inAfter: The index we want to get after.
      
      - returns: The input plus one (Can't get simpler than that). It can return the endIndex, which is past the last element.
      */

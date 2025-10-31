@@ -100,8 +100,8 @@ public extension FixedWidthInteger {
         - The sum of `firstPlace` and `runLength` cannot exceed the maximum size of a UInt64.
 
      - parameters:
-        - firstPlace: The 1-based (1 is the first bit) starting position for the mask.
-        - runLength: The inclusive (includes the starting place) number of bits to mask. If 0, then the return will always be 0.
+        - inFirstPlace: The 1-based (1 is the first bit) starting position for the mask.
+        - inRunLength: The inclusive (includes the starting place) number of bits to mask. If 0, then the return will always be 0.
      
      - returns: An Unsigned Int, with the masked value.
      */

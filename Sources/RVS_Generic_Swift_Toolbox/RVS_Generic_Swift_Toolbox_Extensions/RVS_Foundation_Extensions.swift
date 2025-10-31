@@ -67,9 +67,9 @@ public extension CGPoint {
     /**
      Rotate this point around a given point, by an angle given in degrees.
      
-     - parameter around: Another point, that is the "fulcrum" of the rotation.
-     - parameter byDegrees: The rotation angle, in degrees. 0 is no change. - is counter-clockwise, + is clockwise.
-     - parameter precisionInDecimalPlaces: The precision, in decimal places to the right of the decimal. This is optional, and, if omitted, uses full precision.
+     - parameter inCenter: Another point, that is the "fulcrum" of the rotation.
+     - parameter inDegrees: The rotation angle, in degrees. 0 is no change. - is counter-clockwise, + is clockwise.
+     - parameter inPrecision: The precision, in decimal places to the right of the decimal. This is optional, and, if omitted, uses full precision.
      - returns: The transformed point.
      */
     func rotated(around inCenter: CGPoint, byDegrees inDegrees: CGFloat, precisionInDecimalPlaces inPrecision: UInt8? = nil) -> CGPoint { rotated(around: inCenter,
@@ -81,9 +81,9 @@ public extension CGPoint {
      This was inspired by [this SO answer](https://stackoverflow.com/a/35683523/879365).
      Rotate this point around a given point, by an angle given in radians.
      
-     - parameter around: Another point, that is the "fulcrum" of the rotation.
-     - parameter byRadians: The rotation angle, in radians. 0 is no change. - is counter-clockwise, + is clockwise.
-     - parameter precisionInDecimalPlaces: The precision, in decimal places to the right of the decimal. This is optional, and, if omitted, uses full precision. The range is 0...14.
+     - parameter inCenter: Another point, that is the "fulcrum" of the rotation.
+     - parameter inRadians: The rotation angle, in radians. 0 is no change. - is counter-clockwise, + is clockwise.
+     - parameter inPrecision: The precision, in decimal places to the right of the decimal. This is optional, and, if omitted, uses full precision. The range is 0...14.
      - returns: The transformed point.
      */
     func rotated(around inCenter: CGPoint, byRadians inRadians: CGFloat, precisionInDecimalPlaces inPrecision: UInt8? = nil) -> CGPoint {
@@ -118,7 +118,7 @@ public extension Date {
      Compares another date to this one, with a day (24 hours) granularity.
      
      - parameter inDay: The date against which we are comparing ourselves.
-     - parameter calendar: An optional (default is the current calendar) calendar instance, to use for the calculation.
+     - parameter inCalendar: An optional (default is the current calendar) calendar instance, to use for the calculation.
      
      - returns: True, if this date is on a day prior to the one provided.
      */
@@ -129,7 +129,7 @@ public extension Date {
      Compares another date to this one, with a day (24 hours) granularity.
      
      - parameter inDay: The date against which we are comparing ourselves.
-     - parameter calendar: An optional (default is the current calendar) calendar instance, to use for the calculation.
+     - parameter inCalendar: An optional (default is the current calendar) calendar instance, to use for the calculation.
      
      - returns: True, if this date is on a day after the one provided.
      */
@@ -140,7 +140,7 @@ public extension Date {
      Compares another date to this one, with a day (24 hours) granularity.
      
      - parameter inDay: The date against which we are comparing ourselves.
-     - parameter calendar: An optional (default is the current calendar) calendar instance, to use for the calculation.
+     - parameter inCalendar: An optional (default is the current calendar) calendar instance, to use for the calculation.
      
      - returns: True, if this date is the same day as the one provided.
      */
@@ -407,8 +407,8 @@ public extension StringProtocol {
     /**
      This allows us to find the first index of a substring.
      
-     - parameter of: The substring we're looking for.
-     - parameter options: The String options for the search.
+     - parameter inString: The substring we're looking for.
+     - parameter inOptions: The String options for the search.
      
      - returns: The index of the first occurrence. Nil, if does not occur.
      */
@@ -418,8 +418,8 @@ public extension StringProtocol {
     /**
      This allows us to find the last index of a substring.
      
-     - parameter of: The substring we're looking for.
-     - parameter options: The String options for the search.
+     - parameter inString: The substring we're looking for.
+     - parameter inOptions: The String options for the search.
      
      - returns: The index of the last occurrence. Nil, if does not occur.
      */
@@ -429,8 +429,8 @@ public extension StringProtocol {
     /**
      This returns an Array of indexes that map all the occurrences of a given substring.
      
-     - parameter of: The substring we're looking for.
-     - parameter options: The String options for the search.
+     - parameter inString: The substring we're looking for.
+     - parameter inOptions: The String options for the search.
      
      - returns: an Array, containing the indexes of each occurrence. Empty Array, if does not occur.
      */
@@ -451,8 +451,8 @@ public extension StringProtocol {
     /**
      This returns an Array of Index Ranges that map all the occurrences of a given substring.
      
-     - parameter of: The substring we're looking for.
-     - parameter options: The String options for the search.
+     - parameter inString: The substring we're looking for.
+     - parameter inOptions: The String options for the search.
      
      - returns: an Array, containing the Ranges that map each occurrence. Empty Array, if does not occur.
      */
@@ -490,7 +490,7 @@ public extension StringProtocol {
     /**
      This allows us to split a String, if one or more character members of a String are present.
      
-     - parameter charactersIn: A String, containing all of the possible characters for a split.
+     - parameter inString: A String, containing all of the possible characters for a split.
      - returns: An Array of Substrings. The result of the split.
      */
     func setSplit(charactersIn inString: String) -> [Self.SubSequence] { setSplit(CharacterSet(inString.unicodeScalars)) }

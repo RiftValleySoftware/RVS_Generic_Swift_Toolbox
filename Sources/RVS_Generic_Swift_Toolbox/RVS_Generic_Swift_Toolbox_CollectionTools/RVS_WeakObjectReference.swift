@@ -34,7 +34,7 @@ Version 1.16.0
  
  Each instance keeps a hash of the original object, even if that object is released, so we can use these as hashable keys or set members.
  
- > NOTE: Remember to access the ``RVS_WeakObjectReference.value`` property of each instance, instead of the instance, itself. The value will always be an optional, and may be nil.
+ > NOTE: Remember to access the ``value`` property of each instance, instead of the instance, itself. The value will always be an optional, and may be nil.
 
  [Inspired by this SO answer](https://stackoverflow.com/a/32938615/879365)
  */
@@ -56,7 +56,7 @@ public struct RVS_WeakObjectReference<T: AnyObject>: Equatable, Hashable {
     /**
      Main Initializer
      
-     - parameter value: The object reference.
+     - parameter inValue: The object reference.
      */
     public init (value inValue: T) {
         _value = inValue
@@ -89,7 +89,7 @@ public struct RVS_WeakObjectReference<T: AnyObject>: Equatable, Hashable {
     /**
      Hashable Conformance
      
-     - parameter into: The hasher to receive the hashed key.
+     - parameter inoutHasher: The hasher to receive the hashed key.
      */
     public func hash(into inoutHasher: inout Hasher) {
         _originalHashValue.hash(into: &inoutHasher)

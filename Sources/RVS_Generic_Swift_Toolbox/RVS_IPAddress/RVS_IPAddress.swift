@@ -192,9 +192,9 @@ public func RVS_IPAddressExtractIPAddress(_ inString: String, isPadded inIsPadde
 /**
  This is a factory for IP addresses (as Int Arrays).
  
- - parameter array: The Array to be used.
- - parameter port: An optional (default is 0 -no port) Int, with the TCP port.
- - parameter isPadded: Optional IPv6 padding variable. If true (default is false), then IPv6 addresses will be fully 0-padded (no shortcuts). Ignored for IPv4.
+ - parameter inArray: The Array to be used.
+ - parameter inPort: An optional (default is 0 -no port) Int, with the TCP port.
+ - parameter inIsPadded: Optional IPv6 padding variable. If true (default is false), then IPv6 addresses will be fully 0-padded (no shortcuts). Ignored for IPv4.
  - returns: a valid IPv4 or IPv6 address object. nil, if the Array cannot produce a valid IP address.
  */
 public func RVS_IPAddressExtractIPAddress(array inArray: [Int], port inPort: Int = 0, isPadded inIsPadded: Bool = false) -> RVS_IPAddress! {
@@ -561,8 +561,8 @@ public struct RVS_IPAddressV6: RVS_IPAddress {
      Default initializer -Allows us to forgo initial values.
      
      - parameter inArray: An optional Array of Int. Exactly 8 elements, with positive integer values below 65536.
-     - parameter port: An optional (Default is 0) positive Int, with the TCP Port for the address.
-     - parameter isPadded: An optional Bool. If true (default is false), then the address components are complete (no shortcuts) and 0-padded.
+     - parameter inPort: An optional (Default is 0) positive Int, with the TCP Port for the address.
+     - parameter inIsPadded: An optional Bool. If true (default is false), then the address components are complete (no shortcuts) and 0-padded.
      */
     public init(_ inArray: [Int] = [], port inPort: Int = 0, isPadded inIsPadded: Bool = false) {
         var adArr: [Int] = inArray

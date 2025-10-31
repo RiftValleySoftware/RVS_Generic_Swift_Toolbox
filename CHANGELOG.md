@@ -1,3 +1,7 @@
+*Version 1.16.0* **October 1, 2025**
+- Added the IP Address parser to the project.
+- Updated to the latest tools.
+
 *Version 1.15.7* **July 15, 2025**
 - Just some code documentation changes. No visible API change.
 - Updated to latest tools.

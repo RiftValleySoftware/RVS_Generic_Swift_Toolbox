@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D443D04D2EB4EFDF00DB4F2C /* RVS_IPAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443D04B2EB4EFDF00DB4F2C /* RVS_IPAddress.swift */; };
+		D443D0502EB4EFF800DB4F2C /* RVS_IPAddress_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443D04F2EB4EFF800DB4F2C /* RVS_IPAddress_Test.swift */; };
 		D4512E182CEE671300EAA5D4 /* RVS_WeakObjectReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4512E172CEE671300EAA5D4 /* RVS_WeakObjectReference.swift */; };
 		D4512E1E2CEE7E2E00EAA5D4 /* RVS_Generic_Swift_Toolbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4512E152CEE663A00EAA5D4 /* RVS_Generic_Swift_Toolbox.a */; };
 		D451C746282BD73C000F8A2D /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427DB2923DDC66900849489 /* RVS_FIFOQueue.swift */; };
@@ -38,6 +40,8 @@
 		D427DB2E23DDC66900849489 /* RVS_Number_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Number_Extensions.swift; sourceTree = "<group>"; };
 		D427DB2F23DDC66900849489 /* RVS_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_String_Extensions.swift; sourceTree = "<group>"; };
 		D43FBD9425094E160024FE2D /* RVS_Bundle_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Bundle_Extensions.swift; sourceTree = "<group>"; };
+		D443D04B2EB4EFDF00DB4F2C /* RVS_IPAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_IPAddress.swift; sourceTree = "<group>"; };
+		D443D04F2EB4EFF800DB4F2C /* RVS_IPAddress_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_IPAddress_Test.swift; sourceTree = "<group>"; };
 		D4512E152CEE663A00EAA5D4 /* RVS_Generic_Swift_Toolbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4512E162CEE663A00EAA5D4 /* RVS_Generic_Swift_Toolbox_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Generic_Swift_Toolbox_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4512E172CEE671300EAA5D4 /* RVS_WeakObjectReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_WeakObjectReference.swift; sourceTree = "<group>"; };
@@ -89,6 +93,14 @@
 			path = RVS_Generic_Swift_Toolbox_Extensions;
 			sourceTree = "<group>";
 		};
+		D443D04C2EB4EFDF00DB4F2C /* RVS_IPAddress */ = {
+			isa = PBXGroup;
+			children = (
+				D443D04B2EB4EFDF00DB4F2C /* RVS_IPAddress.swift */,
+			);
+			path = RVS_IPAddress;
+			sourceTree = "<group>";
+		};
 		D4512E192CEE6A2E00EAA5D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +113,7 @@
 			children = (
 				D4D03C1A23DDDE9D005B54B5 /* RVS_Collection_Tests.swift */,
 				D4CE2A7723DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift */,
+				D443D04F2EB4EFF800DB4F2C /* RVS_IPAddress_Test.swift */,
 			);
 			path = RVS_Generic_Swift_ToolboxTest;
 			sourceTree = "<group>";
@@ -133,6 +146,7 @@
 		D4D03C2023DDE029005B54B5 /* RVS_Generic_Swift_Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				D443D04C2EB4EFDF00DB4F2C /* RVS_IPAddress */,
 				D427DB2823DDC66900849489 /* RVS_Generic_Swift_Toolbox_CollectionTools */,
 				D427DB2623DDC66900849489 /* RVS_Generic_Swift_Toolbox_DebugTools */,
 				D427DB2D23DDC66900849489 /* RVS_Generic_Swift_Toolbox_Extensions */,
@@ -198,7 +212,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2600;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
 					D451C73C282BD713000F8A2D = {
@@ -267,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D443D04D2EB4EFDF00DB4F2C /* RVS_IPAddress.swift in Sources */,
 				D451C74A282BD73C000F8A2D /* RVS_Bundle_Extensions.swift in Sources */,
 				D451C746282BD73C000F8A2D /* RVS_FIFOQueue.swift in Sources */,
 				D4512E182CEE671300EAA5D4 /* RVS_WeakObjectReference.swift in Sources */,
@@ -284,6 +299,7 @@
 			files = (
 				D4D03C1B23DDDE9D005B54B5 /* RVS_Collection_Tests.swift in Sources */,
 				D4CE2A7823DF4C7F00B37EF3 /* RVS_Extensions_Tests.swift in Sources */,
+				D443D0502EB4EFF800DB4F2C /* RVS_IPAddress_Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +490,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -536,6 +553,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;

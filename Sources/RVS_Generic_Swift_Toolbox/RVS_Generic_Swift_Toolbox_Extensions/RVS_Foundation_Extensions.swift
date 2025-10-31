@@ -513,7 +513,7 @@ public extension ContiguousBytes {
      
      This is a straight-up cast, so the bytes are stuffed in, exactly as they appear in memory.
      
-     NB: Bad things can happen, if the data isn't aligned and/or padded.
+     > WARNING: Bad things can happen, if the data isn't aligned and/or padded.
      
      - returns: The memory, mapped into an Array, as requested in FOOT.
      */

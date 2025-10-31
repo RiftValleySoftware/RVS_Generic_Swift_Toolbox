@@ -52,6 +52,11 @@ These tools will work for all of these platforms, and will, at most, rely only o
     
         Adds rotation support to [CGPoint](https://developer.apple.com/documentation/corefoundation/cgpoint/).
 
+- [IP ADDRESS PARSING](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/RVS_IPAddress)
+    - [RVS_IPAddress](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/tree/master/Sources/RVS_Generic_Swift_Toolbox/RVS_IPAddress/RVS_IPAddress.swift)
+
+    A set of simple tools for parsing and formatting [IPv4](https://en.wikipedia.org/wiki/IPv4) and [IPv6](https://en.wikipedia.org/wiki/IPv6) addresses. This was originally the [RVS_IPAddress](https://github.com/RiftValleySoftware/RVS_IPAddress) project.
+
 ## Usage
 
 ### [**Swift Package Manager (SPM)**](https://swift.org/package-manager/)

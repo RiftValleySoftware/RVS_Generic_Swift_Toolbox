@@ -220,9 +220,11 @@ public struct RVS_IPAddressV4: RVS_IPAddress {
     
     /* ################################################################## */
     /**
-     - returns: The IP address element Array, vetted and cleaned for V4
+     This is the array, containing the address.
+     
+     It clears the Address Array, if it is not "legal."
      */
-    public var addressArray: [Int]  = [] {
+    public var addressArray: [Int] = [] {
         didSet {    // This validates the array. It clears it if the array is invalid.
             if 4 != addressArray.count || addressArray.contains(where: { (element) -> Bool in (0 > element) || (255 < element) }) {
                 addressArray = []
@@ -234,7 +236,7 @@ public struct RVS_IPAddressV4: RVS_IPAddress {
     /**
      - returns: The IPV4 String representation.
      */
-    public var address: String { !addressArray.isEmpty ? addressArray.compactMap { String(format: "%d", $0) }.joined(separator: ".") : "0.0.0.0" }
+    public var address: String { addressArray.compactMap { String(format: "%d", $0) }.joined(separator: ".") }
     
     /* ################################################################## */
     /**
@@ -280,8 +282,10 @@ public struct RVS_IPAddressV4: RVS_IPAddress {
                     return nil
                 }
                 
-                if 4 == addressArray.count, 1 < addrPort.count {
-                    port = Int(addrPort[1]) ?? 0
+                if 4 == addressArray.count,
+                   1 < addrPort.count,
+                   let pt = Int(addrPort[1]) {
+                    port = pt
                 } else if 4 != addressArray.count {
                     addressArray = []
                     port = 0
@@ -414,16 +418,8 @@ public struct RVS_IPAddressV6: RVS_IPAddress {
     /* ################################################################## */
     /**
      This is the array, containing the address.
-     
-     It clears the Address Array, if it is not "legal."
      */
-    public var addressArray: [Int] {
-        didSet {
-            if 8 != addressArray.count || addressArray.contains(where: { (element) -> Bool in (0 > element) || (65535 < element) }) {
-                addressArray = []
-            }
-        }
-    }
+    public var addressArray: [Int] = []
 
     /* ################################################################## */
     /**

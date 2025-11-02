@@ -229,5 +229,7 @@ class RVS_IPAddress_Tests: XCTestCase {
         } else {
             XCTFail("Bad Address!")
         }
+        let iPv6 = RVS_IPAddressV6([0, 1, 2, 3])
+        print(iPv6)
     }
 }

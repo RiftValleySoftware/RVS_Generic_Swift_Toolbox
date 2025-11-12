@@ -1,3 +1,6 @@
+*Version 1.16.2* **November 12, 2025**
+- Upped minimum MacOS to 10.13.
+
 *Version 1.16.1* **November 1, 2025**
 - Test and documentation fixes.
 

@@ -1,10 +1,10 @@
 # ``RVS_Generic_Swift_Toolbox``
 
+![Icon](icon.png)
+
 A Set of utilities to ease basic and repetitive tasks, in Swift.
 
 ## Overview
-
-![Icon](icon.png)
 
 This repository is an Xcode project with a set of ambidextrous (That's what I really mean by "generic"; not just using generics) tools that can be applied to Swift projects deployed for [iOS](https://apple.com/ios), [iPadOS](https://apple.com/ipados), [MacOS](https://apple.com/macos), [WatchOS](https://apple.com/watchos) and [TVOS](https://apple.com/tvos).
 

@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version 1.16.0
+Version 1.16.4
 */
 
 import Foundation   // Required for the ProcessInfo stuff.

@@ -92,6 +92,9 @@
                 <a class="nav-group-task-link" href="Extensions/Float.html">Float</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/StringProtocol.html">StringProtocol</a>
               </li>
             </ul>
@@ -102,6 +105,12 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:25RVS_Generic_Swift_Toolbox2eeoiySbAA0A20_WeakObjectReferenceVyxG_AEtRlzClF">==(_:_:)</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:25RVS_Generic_Swift_Toolbox0a17_IPAddressExtractE0_8isPaddedAA0a1_E0_pSgSS_SbtF">RVS_IPAddressExtractIPAddress(_:isPadded:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:25RVS_Generic_Swift_Toolbox0a17_IPAddressExtractE05array4port8isPaddedAA0a1_E0_pSgSaySiG_SiSbtF">RVS_IPAddressExtractIPAddress(array:port:isPadded:)</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -109,6 +118,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/OLEB_Queue.html">OLEB_Queue</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/RVS_IPAddress.html">RVS_IPAddress</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/RVS_SequenceProtocol.html">RVS_SequenceProtocol</a>
@@ -120,6 +132,12 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/RVS_FIFOQueue.html">RVS_FIFOQueue</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/RVS_IPAddressV4.html">RVS_IPAddressV4</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/RVS_IPAddressV6.html">RVS_IPAddressV6</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/RVS_WeakObjectReference.html">RVS_WeakObjectReference</a>
@@ -216,7 +234,7 @@
 <p>Each instance keeps a hash of the original object, even if that object is released, so we can use these as hashable keys or set members.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    <p>Remember to access the <code><a href="Structs/RVS_WeakObjectReference.html#/s:25RVS_Generic_Swift_Toolbox0A20_WeakObjectReferenceV5valuexSgvp">RVS_WeakObjectReference.value</a></code> property of each instance, instead of the instance, itself. The value will always be an optional, and may be nil.</p>
+    <p>Remember to access the <code>value</code> property of each instance, instead of the instance, itself. The value will always be an optional, and may be nil.</p>
 
 </div>
 
@@ -235,6 +253,62 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V"></a>
+                    <a name="//apple_ref/swift/Struct/RVS_IPAddressV4" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V">RVS_IPAddressV4</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a specialization for IPV4</p>
+
+                        <a href="Structs/RVS_IPAddressV4.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RVS_IPAddressV4</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RVS_IPAddress.html">RVS_IPAddress</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV6V"></a>
+                    <a name="//apple_ref/swift/Struct/RVS_IPAddressV6" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV6V">RVS_IPAddressV6</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a specialization for IPV6</p>
+
+                        <a href="Structs/RVS_IPAddressV6.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RVS_IPAddressV6</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RVS_IPAddress.html">RVS_IPAddress</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -244,7 +318,7 @@
     </div>
     <section class="footer">
       <p><a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">©2019 The Great Rift Valley Software Company</a></p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

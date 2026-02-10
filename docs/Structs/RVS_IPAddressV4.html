@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OLEB_Queue Protocol Reference</title>
+    <title>RVS_IPAddressV4 Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Protocol/OLEB_Queue" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/RVS_IPAddressV4" class="dashAnchor"></a>
 
-    <a title="OLEB_Queue Protocol Reference"></a>
+    <a title="RVS_IPAddressV4 Structure Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,9 +44,9 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">RVS_Generic_Swift_Toolbox</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      <a class="breadcrumb" href="../Protocols.html">Protocols</a>
+      <a class="breadcrumb" href="../Structs.html">Structures</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      OLEB_Queue Protocol Reference
+      RVS_IPAddressV4 Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -152,21 +152,15 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>OLEB_Queue</h1>
+            <h1>RVS_IPAddressV4</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">OLEB_Queue</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RVS_IPAddressV4</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RVS_IPAddress.html">RVS_IPAddress</a></span></code></pre>
 
                 </div>
               </div>
-            <p>This was taken straight from the objc.io book &ldquo;Advanced Swift.&rdquo; It&rsquo;s so damn useful, that I have it made into a standard tool.</p>
-
-<p>The original design was done by <a href="https://oleb.net">Ole Begemann</a> and <a href="https://chris.eidhof.nl">Chris Eidhof</a>. I have modified it slightly; but not much.</p>
-
-<p>It is fast as all git-go.</p>
-
-<p>A type that can efficiently &ldquo;enqueue&rdquo; and &ldquo;dequeue&rdquo; elements. It works on one element at a time. You cannot dequeue groups of elements.</p>
+            <p>This is a specialization for IPV4</p>
 
           </div>
         </section>
@@ -178,9 +172,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7ElementQa"></a>
-                    <a name="//apple_ref/swift/Alias/Element" class="dashAnchor"></a>
-                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7ElementQa">Element</a>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V4portSivp"></a>
+                    <a name="//apple_ref/swift/Property/port" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V4portSivp">port</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -188,14 +182,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Defines the type for the Elements</p>
+                        <p>The TCP Port of the IP address.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Element</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">port</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -205,9 +199,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP10cutTheLineyy7ElementQzF"></a>
-                    <a name="//apple_ref/swift/Method/cutTheLine(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP10cutTheLineyy7ElementQzF">cutTheLine(_:<wbr>)</a>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V12addressArraySaySiGvp"></a>
+                    <a name="//apple_ref/swift/Property/addressArray" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V12addressArraySaySiGvp">addressArray</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -215,14 +209,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This will push the single element into the 0th (first) place.</p>
+                        <p>This is the array, containing the address.</p>
+
+<p>It clears the Address Array, if it is not &ldquo;legal.&rdquo;</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">cutTheLine</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt"><a href="../Protocols/OLEB_Queue.html#/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7ElementQa">Element</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">addressArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -232,9 +228,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7enqueueyy7ElementQzF"></a>
-                    <a name="//apple_ref/swift/Method/enqueue(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7enqueueyy7ElementQzF">enqueue(_:<wbr>)</a>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V7addressSSvp"></a>
+                    <a name="//apple_ref/swift/Property/address" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V7addressSSvp">address</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -242,16 +238,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Adds a new Element to the end (back) of the queue</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">enqueue</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt"><a href="../Protocols/OLEB_Queue.html#/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7ElementQa">Element</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The IPV4 String representation.</p>
                       </div>
                     </section>
                   </div>
@@ -259,9 +258,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7enqueueyySay7ElementQzGF"></a>
-                    <a name="//apple_ref/swift/Method/enqueue(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7enqueueyySay7ElementQzGF">enqueue(_:<wbr>)</a>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V14addressAndPortSSvp"></a>
+                    <a name="//apple_ref/swift/Property/addressAndPort" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V14addressAndPortSSvp">addressAndPort</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -269,16 +268,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Adds a new Array of Element to the end (back) of the queue</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">enqueue</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/OLEB_Queue.html#/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7ElementQa">Element</a></span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">addressAndPort</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The String, representing both the address and the port. Just the address, if no port. 0 is a valid TCP port, but we don&rsquo;t count that. 0 is &ldquo;no port.&rdquo;</p>
                       </div>
                     </section>
                   </div>
@@ -286,9 +288,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7dequeue7ElementQzSgyF"></a>
-                    <a name="//apple_ref/swift/Method/dequeue()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7dequeue7ElementQzSgyF">dequeue()</a>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V14isValidAddressSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isValidAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4V14isValidAddressSbvp">isValidAddress</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -296,16 +298,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Removes and returns the first element from the beginning (front) of the queue. nil, if the queue is empty.</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">dequeue</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/OLEB_Queue.html#/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP7ElementQa">Element</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isValidAddress</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if this is a valid IPV4 address.</p>
                       </div>
                     </section>
                   </div>
@@ -313,9 +318,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP9removeAllyyF"></a>
-                    <a name="//apple_ref/swift/Method/removeAll()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox10OLEB_QueueP9removeAllyyF">removeAll()</a>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4VyACSScfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0A12_IPAddressV4VyACSScfc">init(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -323,16 +328,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Deletes all data in the queue.</p>
+                        <p>This init extracts an IPV4 address, and, if applicable, TCP port, from a given string.</p>
+
+<p>The rule for an IPv4 address is quite simple. It is four (4) sequential bytes (8 bits), expressed as decimal (not hexadecimal) numbers, and separated by periods (.), like so: <code>123.123.123.123</code>.</p>
+
+<p>Each segment is a positive integer, from 0-255. They can be zero-padded, but generally are not.</p>
+
+<p>If an additional TCP port is provided, that is indicated by appending a colon (:) to the end, followed immediately by a positive integer, like so: <code>123.123.123.123:456</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">removeAll</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">inString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The String to be parsed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

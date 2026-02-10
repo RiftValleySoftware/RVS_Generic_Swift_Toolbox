@@ -92,6 +92,9 @@
                 <a class="nav-group-task-link" href="Extensions/Float.html">Float</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/StringProtocol.html">StringProtocol</a>
               </li>
             </ul>
@@ -102,6 +105,12 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:25RVS_Generic_Swift_Toolbox2eeoiySbAA0A20_WeakObjectReferenceVyxG_AEtRlzClF">==(_:_:)</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:25RVS_Generic_Swift_Toolbox0a17_IPAddressExtractE0_8isPaddedAA0a1_E0_pSgSS_SbtF">RVS_IPAddressExtractIPAddress(_:isPadded:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:25RVS_Generic_Swift_Toolbox0a17_IPAddressExtractE05array4port8isPaddedAA0a1_E0_pSgSaySiG_SiSbtF">RVS_IPAddressExtractIPAddress(array:port:isPadded:)</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -109,6 +118,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/OLEB_Queue.html">OLEB_Queue</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/RVS_IPAddress.html">RVS_IPAddress</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/RVS_SequenceProtocol.html">RVS_SequenceProtocol</a>
@@ -120,6 +132,12 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/RVS_FIFOQueue.html">RVS_FIFOQueue</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/RVS_IPAddressV4.html">RVS_IPAddressV4</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/RVS_IPAddressV6.html">RVS_IPAddressV6</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/RVS_WeakObjectReference.html">RVS_WeakObjectReference</a>
@@ -212,6 +230,142 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0a17_IPAddressExtractE0_8isPaddedAA0a1_E0_pSgSS_SbtF"></a>
+                    <a name="//apple_ref/swift/Function/RVS_IPAddressExtractIPAddress(_:isPadded:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0a17_IPAddressExtractE0_8isPaddedAA0a1_E0_pSgSS_SbtF">RVS_IPAddressExtractIPAddress(_:<wbr>isPadded:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a factory for IP addresses (as Strings).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">RVS_IPAddressExtractIPAddress</span><span class="p">(</span><span class="n">_</span> <span class="nv">inString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">isPadded</span> <span class="nv">inIsPadded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Protocols/RVS_IPAddress.html">RVS_IPAddress</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The string to be parsed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inIsPadded</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional IPv6 padding variable. If true (default is false), then IPv6 addresses will be fully padded. Ignored for IPv4.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a valid IPv4 or IPv6 address object. nil, if the String cannot produce a valid IP address.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25RVS_Generic_Swift_Toolbox0a17_IPAddressExtractE05array4port8isPaddedAA0a1_E0_pSgSaySiG_SiSbtF"></a>
+                    <a name="//apple_ref/swift/Function/RVS_IPAddressExtractIPAddress(array:port:isPadded:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25RVS_Generic_Swift_Toolbox0a17_IPAddressExtractE05array4port8isPaddedAA0a1_E0_pSgSaySiG_SiSbtF">RVS_IPAddressExtractIPAddress(array:<wbr>port:<wbr>isPadded:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a factory for IP addresses (as Int Arrays).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">RVS_IPAddressExtractIPAddress</span><span class="p">(</span><span class="n">array</span> <span class="nv">inArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">port</span> <span class="nv">inPort</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">isPadded</span> <span class="nv">inIsPadded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Protocols/RVS_IPAddress.html">RVS_IPAddress</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inArray</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Array to be used.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inPort</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional (default is 0 -no port) Int, with the TCP port.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inIsPadded</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional IPv6 padding variable. If true (default is false), then IPv6 addresses will be fully 0-padded (no shortcuts). Ignored for IPv4.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a valid IPv4 or IPv6 address object. nil, if the Array cannot produce a valid IP address.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -221,7 +375,7 @@
     </div>
     <section class="footer">
       <p><a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">©2019 The Great Rift Valley Software Company</a></p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

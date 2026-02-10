@@ -1,3 +1,6 @@
+*Version 1.16.4* **February 10, 2026**
+- Slight documentation tweak. No operational difference.
+
 *Version 1.16.3* **February 8, 2026**
 - Slight documentation tweak. No operational difference.
 

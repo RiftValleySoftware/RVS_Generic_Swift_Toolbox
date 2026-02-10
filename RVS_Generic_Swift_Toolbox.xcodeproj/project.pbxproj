@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D43828722F3BE8EF0018040C /* RVS_Generic_Swift_Toolbox.docc in Sources */ = {isa = PBXBuildFile; fileRef = D41B468727A422DE00B95E61 /* RVS_Generic_Swift_Toolbox.docc */; };
 		D443D04D2EB4EFDF00DB4F2C /* RVS_IPAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443D04B2EB4EFDF00DB4F2C /* RVS_IPAddress.swift */; };
 		D443D0502EB4EFF800DB4F2C /* RVS_IPAddress_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443D04F2EB4EFF800DB4F2C /* RVS_IPAddress_Test.swift */; };
 		D4512E182CEE671300EAA5D4 /* RVS_WeakObjectReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4512E172CEE671300EAA5D4 /* RVS_WeakObjectReference.swift */; };
@@ -101,13 +102,6 @@
 			path = RVS_IPAddress;
 			sourceTree = "<group>";
 		};
-		D4512E192CEE6A2E00EAA5D4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D49CCCAD24D479DF00047CAD /* RVS_Generic_Swift_ToolboxTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +157,6 @@
 				D4D03C1923DDDE9D005B54B5 /* Tests */,
 				D4512E152CEE663A00EAA5D4 /* RVS_Generic_Swift_Toolbox.a */,
 				D4512E162CEE663A00EAA5D4 /* RVS_Generic_Swift_Toolbox_Tests.xctest */,
-				D4512E192CEE6A2E00EAA5D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -283,6 +276,7 @@
 			files = (
 				D443D04D2EB4EFDF00DB4F2C /* RVS_IPAddress.swift in Sources */,
 				D451C74A282BD73C000F8A2D /* RVS_Bundle_Extensions.swift in Sources */,
+				D43828722F3BE8EF0018040C /* RVS_Generic_Swift_Toolbox.docc in Sources */,
 				D451C746282BD73C000F8A2D /* RVS_FIFOQueue.swift in Sources */,
 				D4512E182CEE671300EAA5D4 /* RVS_WeakObjectReference.swift in Sources */,
 				D451C74B282BD73C000F8A2D /* RVS_SequenceProtocol.swift in Sources */,

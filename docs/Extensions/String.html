@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CGSize Extension Reference</title>
+    <title>String Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Extension/CGSize" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Extension/String" class="dashAnchor"></a>
 
-    <a title="CGSize Extension Reference"></a>
+    <a title="String Extension Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -46,7 +46,7 @@
       <img class="carat" src="../img/carat.png" alt=""/>
       <a class="breadcrumb" href="../Extensions.html">Extensions</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      CoreFoundation.CGSize Extension Reference
+      Swift.String Extension Reference
     </p>
 
     <div class="content-wrapper">
@@ -152,15 +152,15 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>CGSize</h1>
+            <h1>String</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">CGSize</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">String</span></code></pre>
 
                 </div>
               </div>
-            <p>Adds calculations to the CGSize struct.</p>
+            <p>This is an extension to the String type that returns the String as an IP address.</p>
 
           </div>
         </section>
@@ -172,9 +172,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So6CGSizeV25RVS_Generic_Swift_ToolboxE8diagonal14CoreFoundation7CGFloatVvp"></a>
-                    <a name="//apple_ref/swift/Property/diagonal" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So6CGSizeV25RVS_Generic_Swift_ToolboxE8diagonal14CoreFoundation7CGFloatVvp">diagonal</a>
+                    <a name="/s:SS25RVS_Generic_Swift_ToolboxE9ipAddressAA0A10_IPAddress_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/ipAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SS25RVS_Generic_Swift_ToolboxE9ipAddressAA0A10_IPAddress_pSgvp">ipAddress</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -182,16 +182,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the diagonal size of a rectangular size.</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">diagonal</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">ipAddress</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RVS_IPAddress.html">RVS_IPAddress</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the String, parsed as an IP address. It will be either an instance of RVS_IPAddressV4 or RVS_IPAddressV6. It will be nil, if the IP Address is invalid (no instance).</p>
                       </div>
                     </section>
                   </div>

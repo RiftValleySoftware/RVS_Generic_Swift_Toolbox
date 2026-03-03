@@ -1,3 +1,6 @@
+*Version 1.17.0* **March 3, 2026**
+- Added an array initializer to the FIFOQueue.
+
 *Version 1.16.4* **February 10, 2026**
 - Slight documentation tweak. No operational difference.
 

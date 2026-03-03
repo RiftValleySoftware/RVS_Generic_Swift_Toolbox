@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version 1.16.4
+Version 1.17.0
 */
 
 /* ###################################################################################################################################### */
@@ -182,6 +182,15 @@ extension RVS_FIFOQueue: ExpressibleByArrayLiteral {
      */
     public init(arrayLiteral inElements: Element...) {
         _leftQueue = inElements.reversed()
+        _rightQueue = []
+    }
+    
+    /* ################################################################## */
+    /**
+     Array initializer.
+     */
+    public init(_ inElements: [Element]) {
+        _leftQueue = Array(inElements.reversed())
         _rightQueue = []
     }
 }

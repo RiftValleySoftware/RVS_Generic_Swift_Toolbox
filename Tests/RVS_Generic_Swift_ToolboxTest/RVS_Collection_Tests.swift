@@ -19,7 +19,7 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
   
- Version 1.16.4
+ Version 1.17.0
 */
 
 import XCTest
@@ -269,6 +269,20 @@ class RVS_FIFOQueue_Tests: XCTestCase {
         XCTAssertEqual(testTargetInt[testCount], 42)
         testTargetInt[testCount] += 1
         XCTAssertEqual(testTargetInt[testCount], 43)
+    }
+    
+    /* ################################################################## */
+    /**
+     Tests initializing the queue with an array.
+     */
+    func testArrayInitializer() {
+        let testArray: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+        var testTargetInt = RVS_FIFOQueue<Int>(testArray)
+        XCTAssertEqual(testArray.count, testTargetInt.count)
+        
+        for index in 0..<testArray.count {
+            XCTAssertEqual(testTargetInt.dequeue(), testArray[index])
+        }
     }
 }
 
